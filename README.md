@@ -1,1 +1,1 @@
-This is an attempt to build some sort of React/Redux application that will simulate the Snap Suplex e-wrestling ruleset written by David Tiemroth and currently being used by [Pacific Rim Wrestling](https://sites.google.com/site/pacificrimwrest/).
+This is an attempt to build some sort of React/Redux application that will simulate the [Snap Suplex e-wrestling ruleset](https://www.scribd.com/document/335375586/Snap-Suplex) written by David Tiemroth and currently being used by [Pacific Rim Wrestling](https://sites.google.com/site/pacificrimwrest/).
