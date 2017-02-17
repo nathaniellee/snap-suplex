@@ -20,6 +20,12 @@ describe('match reducer', () => {
 	});
 
 	test('combines the appropriate reducers.', () => {
+		expect(_.xor([
+			'maxRounds',
+			'roundNumber',
+			'wrestlers',
+		], _.keys(initialState))).toHaveLength(0);
+
 		// Compare results from an action that the `maxRounds` reducer handles.
 		action = {
 			type: SET_MAX_ROUNDS,
