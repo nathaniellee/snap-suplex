@@ -10,8 +10,7 @@ describe('match.wrestlers reducer', () => {
 	});
 
 	test('returns initial state of [].', () => {
-		expect(initialState).toBeInstanceOf(Array);
-		expect(initialState).toHaveLength(0);
+		expect(initialState).toEqual([]);
 	});
 
 	test(`returns current state with "wrestler" from an "${ADD_WRESTLER_TO_MATCH}" action appended if its "id" is not already found in state.`, () => {
