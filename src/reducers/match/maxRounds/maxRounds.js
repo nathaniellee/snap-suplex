@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import actionTypes from '../../../actions/actionTypes';
 
-const maxRounds = (state = 0, action) => {
+const maxRounds = (state = 1, action) => {
 	switch (action.type) {
 		case actionTypes.SET_MAX_ROUNDS: {
 			return action.maxRounds;
