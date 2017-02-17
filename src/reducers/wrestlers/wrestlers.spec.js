@@ -4,7 +4,10 @@ import reducer, * as selectors from './wrestlers';
 import _ from 'lodash';
 
 describe('wrestlers reducer', () => {
-	const { ADD_WRESTLER } = actionTypes;
+	const {
+		ADD_WRESTLER,
+		SET_WRESTLERS,
+	} = actionTypes;
 	let initialState;
 
 	beforeEach(() => {
@@ -76,6 +79,23 @@ describe('wrestlers reducer', () => {
 				id: 3,
 			}
 		]);
+	});
+
+	test(`returns "wrestlers" from a "${SET_WRESTLERS}" action.`, () => {
+		const action = {
+			type: SET_WRESTLERS,
+			wrestlers: [
+				{
+					name: 'Ric Flair',
+					id: 1,
+				},
+				{
+					name: 'Sting',
+					id: 2,
+				},
+			],
+		};
+		expect(reducer(initialState, action)).toEqual(action.wrestlers);
 	});
 
 	test(`returns current state when it receives an unrecognized action.`, () => {
