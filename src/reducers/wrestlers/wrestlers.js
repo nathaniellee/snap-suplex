@@ -3,7 +3,7 @@ import actionTypes from '../../actions/actionTypes';
 
 const getMaxId = (wrestlers) => _(wrestlers)
 	.map('id')
-	.max();
+	.max() || 0;
 
 const wrestlers = (state = [], action) => {
 	switch (action.type) {
