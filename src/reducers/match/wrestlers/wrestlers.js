@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import actionTypes from '../../../actions/actionTypes';
 
-const participants = (state = [], action) => {
+const wrestlers = (state = [], action) => {
 	switch (action.type) {
 		case actionTypes.ADD_WRESTLER_TO_MATCH: {
 			return _.uniqBy([
@@ -16,5 +16,5 @@ const participants = (state = [], action) => {
 	}
 };
 
-export default participants;
+export default wrestlers;
 export const get = _.identity;
