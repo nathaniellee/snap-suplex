@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import match from './match/actionTypes';
-import wrestlers from './match/actionTypes';
+import wrestlers from './wrestlers/actionTypes';
 
 export default _.reduce([
 	...match,
