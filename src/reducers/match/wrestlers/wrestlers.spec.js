@@ -1,7 +1,7 @@
 import actionTypes from '../../../actions/actionTypes';
 import reducer, * as selectors from './wrestlers';
 
-describe('match.wrestlers reducer', () => {
+describe('match/wrestlers reducer', () => {
 	const { ADD_WRESTLER_TO_MATCH } = actionTypes;
 	const addWrestlerAction = {
 		type: ADD_WRESTLER_TO_MATCH,
@@ -37,7 +37,7 @@ describe('match.wrestlers reducer', () => {
 	});
 });
 
-describe('match.wrestlers selectors', () => {
+describe('match/wrestlers selectors', () => {
 	let initialState;
 
 	beforeEach(() => {

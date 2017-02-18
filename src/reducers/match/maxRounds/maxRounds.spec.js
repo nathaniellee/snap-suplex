@@ -1,7 +1,7 @@
 import actionTypes from '../../../actions/actionTypes';
 import reducer from './maxRounds';
 
-describe('match.maxRounds reducer', () => {
+describe('match/maxRounds reducer', () => {
 	const { SET_MAX_ROUNDS } = actionTypes;
 	const setMaxRoundsAction = {
 		type: SET_MAX_ROUNDS,

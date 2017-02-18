@@ -1,7 +1,7 @@
 import actionTypes from '../../../actions/actionTypes';
 import reducer from './roundNumber';
 
-describe('match.roundNumber reducer', () => {
+describe('match/roundNumber reducer', () => {
 	const {
 		DECREMENT_ROUND_NUMBER,
 		INCREMENT_ROUND_NUMBER,
