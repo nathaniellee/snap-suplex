@@ -1,0 +1,17 @@
+.NavLink {
+	border-top: solid 5px #9932cc;
+	color: white;
+	display: inline-block;
+	font-weight: 500;
+	padding: 10px 15px 15px;
+	text-decoration: none;
+}
+
+.NavLink:hover {
+	text-decoration: underline;
+}
+
+.NavLink.active {
+	background-color: white;
+	color: #9932cc;
+}
