@@ -2178,6 +2178,12 @@ form-data@~2.1.1:
     combined-stream "^1.0.5"
     mime-types "^2.1.12"
 
+formatio@1.1.1:
+  version "1.1.1"
+  resolved "https://npm.corp.appnexus.com/formatio/-/formatio-1.1.1.tgz#5ed3ccd636551097383465d996199100e86161e9"
+  dependencies:
+    samsam "~1.1"
+
 forwarded@~0.1.0:
   version "0.1.0"
   resolved "https://npm.corp.appnexus.com/forwarded/-/forwarded-0.1.0.tgz#19ef9874c4ae1c297bcf078fde63a09b66a84363"
@@ -3252,6 +3258,10 @@ lodash.uniq@^4.3.0:
 "lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.16.4, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
   version "4.17.4"
   resolved "https://npm.corp.appnexus.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
+
+lolex@^1.4.0:
+  version "1.5.2"
+  resolved "https://npm.corp.appnexus.com/lolex/-/lolex-1.5.2.tgz#94a4ce41c61185a05e98b8660dc509423ac1c416"
 
 longest@^1.0.1:
   version "1.0.1"
@@ -4521,6 +4531,14 @@ rx-lite@^3.1.2:
   version "3.1.2"
   resolved "https://npm.corp.appnexus.com/rx-lite/-/rx-lite-3.1.2.tgz#19ce502ca572665f3b647b10939f97fd1615f102"
 
+samsam@^1.1.3:
+  version "1.2.1"
+  resolved "https://npm.corp.appnexus.com/samsam/-/samsam-1.2.1.tgz#edd39093a3184370cb859243b2bdf255e7d8ea67"
+
+samsam@~1.1:
+  version "1.1.3"
+  resolved "https://npm.corp.appnexus.com/samsam/-/samsam-1.1.3.tgz#9f5087419b4d091f232571e7fa52e90b0f552621"
+
 sane@~1.4.1:
   version "1.4.1"
   resolved "https://npm.corp.appnexus.com/sane/-/sane-1.4.1.tgz#88f763d74040f5f0c256b6163db399bf110ac715"
@@ -4610,6 +4628,15 @@ shellwords@^0.1.0:
 signal-exit@^3.0.0:
   version "3.0.2"
   resolved "https://npm.corp.appnexus.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
+
+sinon@^2.0.0-pre.4:
+  version "2.0.0-pre.4"
+  resolved "https://npm.corp.appnexus.com/sinon/-/sinon-2.0.0-pre.4.tgz#f29fbcca8d2fa73b633a3b0c0e4e3c78f2360c2c"
+  dependencies:
+    formatio "1.1.1"
+    lolex "^1.4.0"
+    samsam "^1.1.3"
+    text-encoding "0.5.2"
 
 slash@^1.0.0:
   version "1.0.0"
@@ -4876,6 +4903,10 @@ test-exclude@^3.3.0:
     object-assign "^4.1.0"
     read-pkg-up "^1.0.1"
     require-main-filename "^1.0.1"
+
+text-encoding@0.5.2:
+  version "0.5.2"
+  resolved "https://npm.corp.appnexus.com/text-encoding/-/text-encoding-0.5.2.tgz#85b4660819f088777609465551690fea137d824a"
 
 text-table@~0.2.0:
   version "0.2.0"
