@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import {
 	hashHistory,
 	IndexRoute,
@@ -12,7 +12,7 @@ import Matches from './components/Matches/Matches';
 import Wrestlers from './components/Wrestlers/Wrestlers';
 import './index.css';
 
-ReactDOM.render(
+render(
   <Router history={hashHistory}>
   	<Route path='/' component={App}>
   		<IndexRoute component={Home} />
