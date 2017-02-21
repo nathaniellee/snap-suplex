@@ -4,7 +4,7 @@ import actionTypes from './actionTypes';
 describe('fetch action creators', () => {
 	describe('fetchWrestlersRequest', () => {
 		test('creates the expected action.', () => {
-			const expectedAction = { type: actionTypes.FETCH_WRESTLERS_SUCCESS };
+			const expectedAction = { type: actionTypes.FETCH_WRESTLERS_REQUEST };
 			expect(actionCreators.fetchWrestlersRequest()).toEqual(expectedAction);
 		});
 	});

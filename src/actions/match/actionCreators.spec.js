@@ -9,7 +9,7 @@ describe('match action creators', () => {
 				name: 'Ravishing Rick Rude',
 			};
 			const expectedAction = {
-				type: actionCreators.ADD_WRESTLER_TO_MATCH,
+				type: actionTypes.ADD_WRESTLER_TO_MATCH,
 				wrestler,
 			};
 
@@ -34,7 +34,7 @@ describe('match action creators', () => {
 	describe('setMaxRounds', () => {
 		test('creates the expected action.', () => {
 			const expectedAction = {
-				type: actionTypes.INCREMENT_ROUND_NUMBER,
+				type: actionTypes.SET_MAX_ROUNDS,
 				maxRounds: 8,
 			};
 			expect(actionCreators.setMaxRounds(8)).toEqual(expectedAction);

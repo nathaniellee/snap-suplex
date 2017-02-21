@@ -9,7 +9,7 @@ describe('match action creators', () => {
 				name: 'Ravishing Rick Rude',
 			};
 			const expectedAction = {
-				type: actionCreators.ADD_WRESTLER,
+				type: actionTypes.ADD_WRESTLER,
 				wrestler,
 			};
 
@@ -30,7 +30,7 @@ describe('match action creators', () => {
 				}
 			];
 			const expectedAction = {
-				type: actionCreators.SET_WRESTLERS,
+				type: actionTypes.SET_WRESTLERS,
 				wrestlers,
 			};
 
