@@ -1,5 +1,4 @@
 import actionCreators from './actionCreators';
-import actionTypes from './actionTypes';
 
 export default (api) => ({
 	fetchWrestlers: () => (dispatch) => {
