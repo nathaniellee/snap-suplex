@@ -22,6 +22,14 @@ const wrestlers = (state = [], action) => {
 			return [...action.wrestlers];
 		}
 
+		case actionTypes.FETCH_WRESTLERS_SUCCESS: {
+			return [...action.wrestlers];
+		}
+
+		case actionTypes.FETCH_WRESTLERS_FAILURE: {
+			return state;
+		}
+
 		default: {
 			return state;
 		}
