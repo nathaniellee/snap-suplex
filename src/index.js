@@ -7,7 +7,7 @@ import {
 	Route,
 	Router,
 } from 'react-router';
-import App from './components/App/App';
+import App from './components/App/ConnectedApp';
 import Home from './components/Home/Home';
 import Matches from './components/Matches/Matches';
 import Wrestlers from './components/Wrestlers/Wrestlers';
