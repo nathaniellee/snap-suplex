@@ -9,13 +9,21 @@
 .WrestlersGrid th,
 .WrestlersGrid td {
 	border: solid 1px #999;
-	padding: 5px;
+	padding: 10px;
 }
 
 .WrestlersGrid th {
 	background-color: #ccc;
 }
 
-.WrestlersGrid-wrestler-name {
-	text-align: left;
+.WrestlersGrid-wrestler-name div {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+.WrestlersGrid-edit-link {
+	cursor: pointer;
+	font-size: small;
+	text-decoration: underline;
 }

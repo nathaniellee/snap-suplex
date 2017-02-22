@@ -45,7 +45,12 @@ export default React.createClass({
 								stats,
 							}) => (
 								<tr key={id}>
-									<td className='WrestlersGrid-wrestler-name'>{name}</td>
+									<td className='WrestlersGrid-wrestler-name'>
+										<div>
+											<span>{name}</span>
+											<span className='WrestlersGrid-edit-link'>Edit</span>
+										</div>
+									</td>
 									<td>{stats.str}</td>
 									<td>{stats.bra}</td>
 									<td>{stats.dex}</td>
