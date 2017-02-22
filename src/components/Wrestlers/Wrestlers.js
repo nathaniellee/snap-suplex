@@ -1,10 +1,11 @@
 import React from 'react';
+import WrestlersGrid from './Grid/ConnectedGrid';
 
 export default React.createClass({
 	render() {
 		return (
 			<div className='Wrestlers'>
-				<p>Placeholder for the wrestlers listing</p>
+				<WrestlersGrid />
 			</div>
 		);
 	},

@@ -1,0 +1,21 @@
+.WrestlersGrid {
+	margin: 20px;
+}
+
+.WrestlersGrid table {
+	border-collapse: collapse;
+}
+
+.WrestlersGrid th,
+.WrestlersGrid td {
+	border: solid 1px #999;
+	padding: 5px;
+}
+
+.WrestlersGrid th {
+	background-color: #ccc;
+}
+
+.WrestlersGrid-wrestler-name {
+	text-align: left;
+}
