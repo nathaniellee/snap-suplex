@@ -14,17 +14,17 @@ describe('match/maxRounds reducer', () => {
 	});
 
 	test('returns initial state of 1.', () => {
-		expect(initialState).toBe(1);
+		expect(initialState).toEqual(1);
 	});
 
 	test(`returns "maxRounds" from a "${SET_MAX_ROUNDS}" action.`, () => {
-		expect(reducer(initialState, setMaxRoundsAction)).toBe(setMaxRoundsAction.maxRounds);
+		expect(reducer(initialState, setMaxRoundsAction)).toEqual(setMaxRoundsAction.maxRounds);
 	});
 
 	test(`returns current state when it receives an unrecognized action.`, () => {
 		const updatedState = reducer(initialState, setMaxRoundsAction);
 		const unrecognizedAction = { type: 'unrecognized action' };
 
-		expect(reducer(updatedState, unrecognizedAction)).toBe(updatedState);
+		expect(reducer(updatedState, unrecognizedAction)).toEqual(updatedState);
 	});
 });

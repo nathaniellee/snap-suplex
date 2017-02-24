@@ -58,25 +58,25 @@ describe('match selectors', () => {
 
 	describe('get', () => {
 		test('returns the appropriate state.', () => {
-			expect(selectors.get(initialState)).toBe(initialState);
+			expect(selectors.get(initialState)).toEqual(initialState);
 		});
 	});
 
 	describe('getMaxRounds', () => {
 		test('returns the appropriate state.', () => {
-			expect(selectors.getMaxRounds(initialState)).toBe(fromMaxRounds.get(initialState.maxRounds));
+			expect(selectors.getMaxRounds(initialState)).toEqual(fromMaxRounds.get(initialState.maxRounds));
 		});
 	});
 
 	describe('getRoundNumber', () => {
 		test('returns the appropriate state.', () => {
-			expect(selectors.getRoundNumber(initialState)).toBe(fromRoundNumber.get(initialState.roundNumber));
+			expect(selectors.getRoundNumber(initialState)).toEqual(fromRoundNumber.get(initialState.roundNumber));
 		});
 	});
 
 	describe('getWrestlers', () => {
 		test('returns the appropriate state.', () => {
-			expect(selectors.getWrestlers(initialState)).toBe(fromWrestlers.get(initialState.wrestlers));
+			expect(selectors.getWrestlers(initialState)).toEqual(fromWrestlers.get(initialState.wrestlers));
 		});
 	});
 });

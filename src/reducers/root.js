@@ -16,5 +16,8 @@ export const selectors = {
 		getRoundNumber: (state) => fromMatch.getRoundNumber(state.match),
 		getWrestlers: (state) => fromMatch.getWrestlers(state.match),
 	},
-	getWrestlers: (state) => fromWrestlers.get(state.wrestlers),
+	wrestlers: {
+		getWrestler: (state, id) => fromWrestlers.getWrestler(state.wrestlers, id),
+		getWrestlers: (state) => fromWrestlers.getWrestlers(state.wrestlers),
+	},
 };

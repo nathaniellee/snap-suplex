@@ -37,4 +37,5 @@ const wrestlers = (state = [], action) => {
 };
 
 export default wrestlers;
-export const get = _.identity;
+export const getWrestler = (state, id) => _.find(state, { id });
+export const getWrestlers = _.identity;

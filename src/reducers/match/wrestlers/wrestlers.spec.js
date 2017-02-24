@@ -33,7 +33,7 @@ describe('match/wrestlers reducer', () => {
 		const updatedState = reducer(initialState, addWrestlerAction);
 		const unrecognizedAction = { type: 'unrecognized action' };
 
-		expect(reducer(updatedState, unrecognizedAction)).toBe(updatedState);
+		expect(reducer(updatedState, unrecognizedAction)).toEqual(updatedState);
 	});
 });
 
@@ -46,7 +46,7 @@ describe('match/wrestlers selectors', () => {
 
 	describe('get', () => {
 		test('returns the appropriate state.', () => {
-			expect(selectors.get(initialState)).toBe(initialState);
+			expect(selectors.get(initialState)).toEqual(initialState);
 		});
 	});
 });

@@ -1,13 +1,27 @@
+import _ from 'lodash';
 import actionTypes from '../../actions/actionTypes';
 import reducer, * as selectors from './wrestlers';
 
-import _ from 'lodash';
+const {
+	ADD_WRESTLER,
+	SET_WRESTLERS,
+} = actionTypes;
+
+const setWrestlersAction = {
+	type: SET_WRESTLERS,
+	wrestlers: [
+		{
+			name: 'Steve Austin',
+			id: 1,
+		},
+		{
+			name: 'The Rock',
+			id: 2,
+		},
+	],
+};
 
 describe('wrestlers reducer', () => {
-	const {
-		ADD_WRESTLER,
-		SET_WRESTLERS,
-	} = actionTypes;
 	let initialState;
 
 	beforeEach(() => {
@@ -82,20 +96,7 @@ describe('wrestlers reducer', () => {
 	});
 
 	test(`returns "wrestlers" from a "${SET_WRESTLERS}" action.`, () => {
-		const action = {
-			type: SET_WRESTLERS,
-			wrestlers: [
-				{
-					name: 'Ric Flair',
-					id: 1,
-				},
-				{
-					name: 'Sting',
-					id: 2,
-				},
-			],
-		};
-		expect(reducer(initialState, action)).toEqual(action.wrestlers);
+		expect(reducer(initialState, setWrestlersAction)).toEqual(setWrestlersAction.wrestlers);
 	});
 
 	test(`returns current state when it receives an unrecognized action.`, () => {
@@ -106,20 +107,22 @@ describe('wrestlers reducer', () => {
 		const updatedState = reducer(initialState, addWrestlerAction);
 		const unrecognizedAction = { type: 'unrecognized action' };
 
-		expect(reducer(updatedState, unrecognizedAction)).toBe(updatedState);
+		expect(reducer(updatedState, unrecognizedAction)).toEqual(updatedState);
 	});
 });
 
 describe('wrestlers selectors', () => {
-	let initialState;
-
-	beforeEach(() => {
-		initialState = reducer(undefined, {});
+	describe('getWrestler', () => {
+		test('returns the appropriate state.', () => {
+			const initialState = reducer(undefined, setWrestlersAction);
+			expect(selectors.getWrestler(initialState, 1)).toEqual(_.find(initialState, { id: 1 }));
+		});
 	});
 
-	describe('get', () => {
+	describe('getWrestlers', () => {
 		test('returns the appropriate state.', () => {
-			expect(selectors.get(initialState)).toBe(initialState);
+			const initialState = reducer(undefined, {});
+			expect(selectors.getWrestlers(initialState)).toEqual(initialState);
 		});
 	});
 });
