@@ -1,41 +1,34 @@
 import _ from 'lodash';
 import actionTypes from '../../actions/actionTypes';
 
-const getMaxId = (wrestlers) => _(wrestlers)
-	.map('id')
-	.max() || 0;
+const getMaxId = (wrestlers) => _(wrestlers).map('id').max() || 0;
 
-const wrestlers = (state = [], action) => {
-	switch (action.type) {
-		case actionTypes.ADD_WRESTLER: {
-			const nextId = getMaxId(state) + 1;
-			return [
-				...state,
-				{
-					...action.wrestler,
-					id: nextId,
-				},
-			];
-		}
+const reducer = (state = {}, action) => {
+  switch (action.type) {
+    case actionTypes.ADD_WRESTLER: {
+      const nextId = getMaxId(state) + 1;
+      return {
+        ...state,
+        [nextId]: {
+          ...action.wrestler,
+          id: nextId,
+        },
+      };
+    }
 
-		case actionTypes.SET_WRESTLERS: {
-			return [...action.wrestlers];
-		}
+    case actionTypes.SET_WRESTLERS: {
+      return _.keyBy(action.wrestlers, 'id');
+    }
 
-		case actionTypes.FETCH_WRESTLERS_SUCCESS: {
-			return [...action.wrestlers];
-		}
-
-		case actionTypes.FETCH_WRESTLERS_FAILURE: {
-			return state;
-		}
-
-		default: {
-			return state;
-		}
-	}
+    default: {
+      return state;
+    }
+  }
 };
 
-export default wrestlers;
-export const getWrestler = (state, id) => _.find(state, { id });
-export const getWrestlers = _.identity;
+export default reducer;
+export const selectors = {
+  getWrestler: (state, id) => _.get(state, id, null),
+  getWrestlersAsArray: (state) => _.map(state, _.identity),
+  getWrestlersAsMap: _.identity,
+};
