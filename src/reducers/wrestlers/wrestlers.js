@@ -3,7 +3,7 @@ import actionTypes from '../../actions/actionTypes';
 
 const getMaxId = (wrestlers) => _(wrestlers).map('id').max() || 0;
 
-const reducer = (state = {}, action) => {
+export default (state = {}, action) => {
   switch (action.type) {
     case actionTypes.ADD_WRESTLER: {
       const nextId = getMaxId(state) + 1;
@@ -26,7 +26,6 @@ const reducer = (state = {}, action) => {
   }
 };
 
-export default reducer;
 export const selectors = {
   getWrestler: (state, id) => _.get(state, id, null),
   getWrestlersAsArray: (state) => _.map(state, _.identity),
