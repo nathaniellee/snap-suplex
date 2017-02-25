@@ -3,21 +3,35 @@ import actionTypes from '../../actions/actionTypes';
 
 const getMaxId = (wrestlers) => _(wrestlers).map('id').max() || 0;
 
-export default (state = {}, action) => {
+const defaultState = {
+  byId: {},
+  allIds: [],
+};
+
+export default (state = defaultState, action) => {
   switch (action.type) {
     case actionTypes.ADD_WRESTLER: {
-      const nextId = getMaxId(state) + 1;
+      const nextId = getMaxId(state.byId) + 1;
       return {
-        ...state,
-        [nextId]: {
-          ...action.wrestler,
-          id: nextId,
+        byId: {
+          ...state.byId,
+          [nextId]: {
+            ...action.wrestler,
+            id: nextId,
+          },
         },
+        allIds: [
+          ...state.allIds,
+          nextId,
+        ],
       };
     }
 
     case actionTypes.SET_WRESTLERS: {
-      return _.keyBy(action.wrestlers, 'id');
+      return {
+        byId: _.keyBy(action.wrestlers, 'id'),
+        allIds: _.map(action.wrestlers, 'id'),
+      };
     }
 
     default: {
@@ -27,7 +41,8 @@ export default (state = {}, action) => {
 };
 
 export const selectors = {
-  getWrestler: (state, id) => _.get(state, id, null),
-  getWrestlersAsArray: (state) => _.map(state, _.identity),
-  getWrestlersAsMap: _.identity,
+  getWrestler: (state, id) => _.get(state.byId, id, null),
+  getWrestlerIds: (state) => state.allIds,
+  getWrestlersAsArray: (state) => _.map(state.byId, _.identity),
+  getWrestlersAsMap: (state) => state.byId,
 };

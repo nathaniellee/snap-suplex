@@ -8,11 +8,17 @@ const {
 } = actionTypes;
 
 describe('wrestlers', () => {
-  let initialState;
+  let state;
+  let addWrestlerAction;
   let setWrestlersAction;
+  let unrecognizedAction;
 
   beforeEach(() => {
-    initialState = reducer(undefined, {});
+    state = reducer(undefined, {});
+    addWrestlerAction = {
+      type: ADD_WRESTLER,
+      wrestler: { name: 'The Heartbreak Kid Shawn Michaels' },
+    };
     setWrestlersAction = {
       type: SET_WRESTLERS,
       wrestlers: [
@@ -26,93 +32,106 @@ describe('wrestlers', () => {
         },
       ],
     };
+    unrecognizedAction = { type: 'unrecognized action' };
   });
 
   describe('reducers', () => {
-    describe('default state', () => {
-      test('returns an empty object.', () => {
-        expect(initialState).toEqual({});
-      });
-    });
-
     describe(`"${SET_WRESTLERS}" action`, () => {
-      test('converts the provided array of wrestlers into a map keyed by id.', () => {
-        expect(reducer(initialState, setWrestlersAction)).toEqual({
-          1: {
-            id: 1,
-            name: 'Stone Cold Steve Austin',
+      test('replaces state with the new wrestlers.', () => {
+        expect(state).toEqual({
+          byId: {},
+          allIds: [],
+        });
+        expect(reducer(state, setWrestlersAction)).toEqual({
+          byId: {
+            1: {
+              id: 1,
+              name: 'Stone Cold Steve Austin',
+            },
+            2: {
+              id: 2,
+              name: 'The Rock',
+            },
           },
-          2: {
-            id: 2,
-            name: 'The Rock',
-          },
+          allIds: [1, 2],
         });
       });
     });
 
     describe(`"${ADD_WRESTLER} action`, () => {
-      test('assigns a new id to the provided wrestler and adds it to the map in state.', () => {
-        const updatedState = reducer(initialState, setWrestlersAction);
-        const addWrestlerAction = {
-          type: ADD_WRESTLER,
-          wrestler: { name: 'The Heartbreak Kid Shawn Michaels' },
-        };
-
-        expect(reducer(updatedState, addWrestlerAction)).toEqual({
-          1: {
-            id: 1,
-            name: 'Stone Cold Steve Austin',
+      test('adds the new wrestler to state.', () => {
+        expect(state).toEqual({
+          byId: {},
+          allIds: [],
+        });
+        state = reducer(state, setWrestlersAction);
+        expect(reducer(state, addWrestlerAction)).toEqual({
+          byId: {
+            1: {
+              id: 1,
+              name: 'Stone Cold Steve Austin',
+            },
+            2: {
+              id: 2,
+              name: 'The Rock',
+            },
+            3: {
+              id: 3,
+              name: 'The Heartbreak Kid Shawn Michaels',
+            },
           },
-          2: {
-            id: 2,
-            name: 'The Rock',
-          },
-          3: {
-            id: 3,
-            name: 'The Heartbreak Kid Shawn Michaels',
-          },
+          allIds: [1, 2, 3],
         });
       });
     });
 
     describe('unrecognized action', () => {
       test('returns current state.', () => {
-        const updatedState = reducer(initialState, setWrestlersAction);
-        const unrecognizedAction = { type: 'unrecognized action' };
-
-        expect(reducer(updatedState, unrecognizedAction)).toEqual({
-          1: {
-            id: 1,
-            name: 'Stone Cold Steve Austin',
+        expect(state).toEqual({
+          byId: {},
+          allIds: [],
+        });
+        state = reducer(state, setWrestlersAction);
+        expect(reducer(state, unrecognizedAction)).toEqual({
+          byId: {
+            1: {
+              id: 1,
+              name: 'Stone Cold Steve Austin',
+            },
+            2: {
+              id: 2,
+              name: 'The Rock',
+            },
           },
-          2: {
-            id: 2,
-            name: 'The Rock',
-          },
+          allIds: [1, 2],
         });
       });
     });
   });
 
   describe('selectors', () => {
-    let updatedState;
-
     beforeEach(() => {
-      updatedState = reducer(initialState, setWrestlersAction);
+      state = reducer(state, setWrestlersAction);
     });
 
     describe('getWrestler', () => {
       test('returns the appropriate state.', () => {
-        expect(selectors.getWrestler(updatedState, 1)).toEqual({
+        expect(selectors.getWrestler(state, 1)).toEqual({
           id: 1,
           name: 'Stone Cold Steve Austin',
         });
       });
     });
 
+    describe('getWrestlerIds', () => {
+      test('returns the appropriate state.', () => {
+        expect(selectors.getWrestlerIds(state)).toEqual([1, 2]);
+      });
+    });
+
     describe('getWrestlersAsArray', () => {
       test('returns the appropriate state.', () => {
-        expect(selectors.getWrestlersAsArray(updatedState)).toEqual([
+        expect(selectors.getWrestlersAsArray(state)).toEqual([
           {
             id: 1,
             name: 'Stone Cold Steve Austin',
@@ -127,7 +146,7 @@ describe('wrestlers', () => {
 
     describe('getWrestlersAsMap', () => {
       test('returns the appropriate state.', () => {
-        expect(selectors.getWrestlersAsMap(updatedState)).toEqual({
+        expect(selectors.getWrestlersAsMap(state)).toEqual({
           1: {
             id: 1,
             name: 'Stone Cold Steve Austin',

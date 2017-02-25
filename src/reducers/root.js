@@ -13,6 +13,7 @@ export const selectors = {
   get: _.identity,
   getMatch: (state) => matchSelectors.get(state.match),
   getWrestler: (state, id) => wrestlersSelectors.getWrestler(state.wrestlers, id),
+  getWrestlerIds: (state) => wrestlersSelectors.getWrestlerIds(state.wrestlers),
   getWrestlersAsArray: (state) => wrestlersSelectors.getWrestlersAsArray(state.wrestlers),
   getWrestlersAsMap: (state) => wrestlersSelectors.getWrestlersAsMap(state.wrestlers),
 };

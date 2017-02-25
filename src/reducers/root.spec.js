@@ -70,6 +70,13 @@ describe('root selectors', () => {
       });
     });
 
+    describe('getWrestlerIds', () => {
+      test('returns the appropriate state.', () => {
+        expect(selectors.getWrestlerIds(initialState))
+          .toEqual(wrestlersSelectors.getWrestlerIds(initialState.wrestlers));
+      });
+    });
+
     describe('getWrestlersAsArray', () => {
       test('returns the appropriate state.', () => {
         expect(selectors.getWrestlersAsArray(initialState))
