@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import actionTypes from '../actions/actionTypes';
-import match, * as fromMatch from './match/match';
+import match, { selectors as matchSelectors } from './match/match';
 import wrestlers, { selectors as wrestlersSelectors } from './wrestlers/wrestlers';
 import reducer, { selectors } from './root';
 
@@ -50,61 +50,38 @@ describe('root selectors', () => {
     initialState = reducer(undefined, {});
   });
 
-  describe('match', () => {
-    const {
-      getMaxRounds,
-      getRoundNumber,
-      getWrestlers,
-    } = selectors.match;
-
-    describe('getMaxRounds', () => {
-      test('returns the appropriate state.', () => {
-        expect(getMaxRounds(initialState)).toEqual(fromMatch.getMaxRounds(initialState.match));
-      });
+  describe('get', () => {
+    test('returns the appropriate state.', () => {
+      expect(selectors.get(initialState)).toEqual(initialState);
     });
+  });
 
-    describe('getRoundNumber', () => {
-      test('returns the appropriate state.', () => {
-        expect(getRoundNumber(initialState)).toEqual(fromMatch.getRoundNumber(initialState.match));
-      });
-    });
-
-    describe('getWrestlers', () => {
-      test('returns the appropriate state.', () => {
-        expect(getWrestlers(initialState)).toEqual(fromMatch.getWrestlers(initialState.match));
-      });
+  describe('getMatch', () => {
+    test('returns the appropriate state.', () => {
+      expect(selectors.getMatch(initialState)).toEqual(matchSelectors.get(initialState.match));
     });
   });
 
   describe('wrestlers', () => {
-    const {
-      getWrestler,
-      getWrestlersAsArray,
-      getWrestlersAsMap,
-    } = selectors.wrestlers;
-
     describe('getWrestler', () => {
       test('returns the appropriate state.', () => {
-        expect(getWrestler(initialState, 0)).toEqual(wrestlersSelectors.getWrestler(initialState.wrestlers, 0));
+        expect(selectors.getWrestler(initialState, 0))
+          .toEqual(wrestlersSelectors.getWrestler(initialState.wrestlers, 0));
       });
     });
 
     describe('getWrestlersAsArray', () => {
       test('returns the appropriate state.', () => {
-        expect(getWrestlersAsArray(initialState)).toEqual(wrestlersSelectors.getWrestlersAsArray(initialState.wrestlers));
+        expect(selectors.getWrestlersAsArray(initialState))
+          .toEqual(wrestlersSelectors.getWrestlersAsArray(initialState.wrestlers));
       });
     });
 
     describe('getWrestlersAsMap', () => {
       test('returns the appropriate state.', () => {
-        expect(getWrestlersAsMap(initialState)).toEqual(wrestlersSelectors.getWrestlersAsMap(initialState.wrestlers));
+        expect(selectors.getWrestlersAsMap(initialState))
+          .toEqual(wrestlersSelectors.getWrestlersAsMap(initialState.wrestlers));
       });
-    });
-  });
-
-  describe('get', () => {
-    test('returns the appropriate state.', () => {
-      expect(selectors.get(initialState)).toEqual(initialState);
     });
   });
 });

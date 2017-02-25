@@ -1,82 +1,126 @@
 import _ from 'lodash';
 import actionTypes from '../../actions/actionTypes';
-import maxRounds, * as fromMaxRounds from './maxRounds/maxRounds';
-import roundNumber, * as fromRoundNumber from './roundNumber/roundNumber';
-import wrestlers, * as fromWrestlers from './wrestlers/wrestlers';
-import reducer, * as selectors from './match';
+import reducer, { selectors } from './match';
 
-describe('match reducer', () => {
-	const {
-		ADD_WRESTLER_TO_MATCH,
-		SET_MAX_ROUNDS,
-		START_MATCH,
-	} = actionTypes;
-	let action;
-	let initialState;
-	let updatedState;
+const {
+	SET_MAX_ROUNDS,
+	INCREMENT_ROUND_NUMBER,
+	START_MATCH,
+	ADD_WRESTLER_TO_MATCH,
+} = actionTypes;
+
+describe('match', () => {
+	let state;
+	let addWrestlerAction;
+	let incrementAction;
+	let setMaxRoundsAction;
+	let startMatchAction;
 
 	beforeEach(() => {
-		initialState = reducer(undefined, {});
-	});
-
-	test('combines the appropriate reducers.', () => {
-		expect(_.xor([
-			'maxRounds',
-			'roundNumber',
-			'wrestlers',
-		], _.keys(initialState))).toHaveLength(0);
-
-		// Compare results from an action that the `maxRounds` reducer handles.
-		action = {
+		state = reducer(undefined, {});
+		addWrestlerAction = {
+			type: ADD_WRESTLER_TO_MATCH,
+			id: 2,
+		};
+		incrementAction = { type: INCREMENT_ROUND_NUMBER };
+		setMaxRoundsAction = {
 			type: SET_MAX_ROUNDS,
 			maxRounds: 10,
 		};
-		updatedState = reducer(initialState, action);
-		expect(updatedState.maxRounds).toEqual(maxRounds(initialState.maxRounds, action));
-
-		// Compare results from an action that the `roundNumber` reducer handles.
-		action = { type: START_MATCH };
-		updatedState = reducer(updatedState, action);
-		expect(updatedState.roundNumber).toEqual(roundNumber(updatedState.roundNumber, action));
-
-		// Compare results from an action that the `wrestlers` reducer handles.
-		action = {
-			type: ADD_WRESTLER_TO_MATCH,
-			wrestler: { id: 2 },
-		};
-		updatedState = reducer(updatedState, action);
-		expect(updatedState.wrestlers).toEqual(wrestlers(updatedState.wrestlers, action));
-	});
-});
-
-describe('match selectors', () => {
-	let initialState;
-
-	beforeEach(() => {
-		initialState = reducer(undefined, {});
+		startMatchAction = { type: START_MATCH };
 	});
 
-	describe('get', () => {
-		test('returns the appropriate state.', () => {
-			expect(selectors.get(initialState)).toEqual(initialState);
+	describe('reducer', () => {
+		describe('default state', () => {
+			test('returns a clean object.', () => {
+				expect(state).toEqual({
+					maxRounds: 1,
+					roundNumber: 1,
+					wrestlers: [],
+				});
+			});
+		});
+
+		describe(`"${SET_MAX_ROUNDS}" action`, () => {
+			test('sets `maxRounds` in state to the value of `maxRounds` from the action.', () => {
+				expect(state).toEqual({
+					maxRounds: 1,
+					roundNumber: 1,
+					wrestlers: [],
+				});
+				expect(reducer(state, setMaxRoundsAction)).toEqual({
+					maxRounds: 10,
+					roundNumber: 1,
+					wrestlers: [],
+				});
+			});
+		});
+
+		describe(`"${INCREMENT_ROUND_NUMBER}" action`, () => {
+			test('increments `roundNumber` in state by 1.', () => {
+				expect(state).toEqual({
+					maxRounds: 1,
+					roundNumber: 1,
+					wrestlers: [],
+				});
+				expect(reducer(state, incrementAction)).toEqual({
+					maxRounds: 1,
+					roundNumber: 2,
+					wrestlers: [],
+				});
+			});
+		});
+
+		describe(`"${START_MATCH}" action`, () => {
+			test('sets `roundNumber` in state to 1.', () => {
+				expect(state).toEqual({
+					maxRounds: 1,
+					roundNumber: 1,
+					wrestlers: [],
+				});
+				state = reducer(state, incrementAction);
+				state = reducer(state, incrementAction);
+				expect(state).toEqual({
+					maxRounds: 1,
+					roundNumber: 3,
+					wrestlers: [],
+				});
+				expect(reducer(state, startMatchAction)).toEqual({
+					maxRounds: 1,
+					roundNumber: 1,
+					wrestlers: [],
+				});
+			});
+		});
+
+		describe(`"${ADD_WRESTLER_TO_MATCH}" action`, () => {
+			test('adds the provided id to the `wrestlers` array in state.', () => {
+				expect(state).toEqual({
+					maxRounds: 1,
+					roundNumber: 1,
+					wrestlers: [],
+				});
+				expect(reducer(state, addWrestlerAction)).toEqual({
+					maxRounds: 1,
+					roundNumber: 1,
+					wrestlers: [2],
+				});
+			});
 		});
 	});
 
-	describe('getMaxRounds', () => {
-		test('returns the appropriate state.', () => {
-			expect(selectors.getMaxRounds(initialState)).toEqual(fromMaxRounds.get(initialState.maxRounds));
-		});
-	});
-
-	describe('getRoundNumber', () => {
-		test('returns the appropriate state.', () => {
-			expect(selectors.getRoundNumber(initialState)).toEqual(fromRoundNumber.get(initialState.roundNumber));
-		});
-	});
-
-	describe('getWrestlers', () => {
-		test('returns the appropriate state.', () => {
-			expect(selectors.getWrestlers(initialState)).toEqual(fromWrestlers.get(initialState.wrestlers));
+	describe('selectors', () => {
+		describe('get', () => {
+			test('returns the appropriate state.', () => {
+				state = reducer(state, addWrestlerAction);
+				state = reducer(state, incrementAction);
+				state = reducer(state, setMaxRoundsAction);
+				expect(selectors.get(state)).toEqual({
+					maxRounds: 10,
+					roundNumber: 2,
+					wrestlers: [2],
+				});
+			});
 		});
 	});
 });
