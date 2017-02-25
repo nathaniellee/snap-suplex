@@ -15,6 +15,7 @@ describe('match', () => {
 	let incrementAction;
 	let setMaxRoundsAction;
 	let startMatchAction;
+	let unrecognizedAction;
 
 	beforeEach(() => {
 		state = reducer(undefined, {});
@@ -28,6 +29,7 @@ describe('match', () => {
 			maxRounds: 10,
 		};
 		startMatchAction = { type: START_MATCH };
+    unrecognizedAction = { type: 'unrecognized action' };
 	});
 
 	describe('reducer', () => {
@@ -104,6 +106,22 @@ describe('match', () => {
 					maxRounds: 1,
 					roundNumber: 1,
 					wrestlers: [2],
+				});
+			});
+		});
+
+		describe('unrecognized action', () => {
+			test('returns the current state.', () => {
+				expect(state).toEqual({
+					maxRounds: 1,
+					roundNumber: 1,
+					wrestlers: [],
+				});
+				state = reducer(state, incrementAction);
+				expect(reducer(state, unrecognizedAction)).toEqual({
+					maxRounds: 1,
+					roundNumber: 2,
+					wrestlers: [],
 				});
 			});
 		});
