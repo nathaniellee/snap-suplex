@@ -6,8 +6,6 @@ export default {
 		wrestler,
 	}),
 
-	decrementRoundNumber: () => ({ type: actionTypes.DECREMENT_ROUND_NUMBER }),
-
 	incrementRoundNumber: () => ({ type: actionTypes.INCREMENT_ROUND_NUMBER }),
 
 	setMaxRounds: (maxRounds) => ({

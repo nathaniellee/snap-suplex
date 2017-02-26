@@ -1,17 +1,56 @@
 import _ from 'lodash';
 import { combineReducers } from 'redux';
-import maxRounds, * as fromMaxRounds from './maxRounds/maxRounds';
-import roundNumber, * as fromRoundNumber from './roundNumber/roundNumber';
-import wrestlers, * as fromWrestlers from './wrestlers/wrestlers';
+import actionTypes from '../../actions/actionTypes';
 
-const match = combineReducers({
-	maxRounds,
-	roundNumber,
-	wrestlers,
+const maxRounds = (state = 1, action) => {
+  switch (action.type) {
+    case actionTypes.SET_MAX_ROUNDS: {
+      return action.maxRounds;
+    }
+
+    default: {
+      return state;
+    }
+  }
+};
+
+const roundNumber = (state = 1, action) => {
+  switch (action.type) {
+    case actionTypes.INCREMENT_ROUND_NUMBER: {
+      return state + 1;
+    }
+
+    case actionTypes.START_MATCH: {
+      return 1;
+    }
+
+    default: {
+      return state;
+    }
+  }
+};
+
+const wrestlers = (state = [], action) => {
+  switch (action.type) {
+    case actionTypes.ADD_WRESTLER_TO_MATCH: {
+      return _.uniq([
+        ...state,
+        action.id,
+      ]);
+    }
+
+    default: {
+      return state;
+    }
+  }
+};
+
+export default combineReducers({
+  maxRounds,
+  roundNumber,
+  wrestlers,
 });
 
-export default match;
-export const get = _.identity;
-export const getMaxRounds = (state) => fromMaxRounds.get(state.maxRounds);
-export const getRoundNumber = (state) => fromRoundNumber.get(state.roundNumber);
-export const getWrestlers = (state) => fromWrestlers.get(state.wrestlers);
+export const selectors = {
+  get: _.identity,
+};

@@ -1,11 +1,11 @@
 import React from 'react';
-import WrestlersGrid from './Grid/ConnectedGrid';
+import WrestlersTable from './Table/ConnectedTable';
 
 export default React.createClass({
 	render() {
 		return (
 			<div className='Wrestlers'>
-				<WrestlersGrid />
+				<WrestlersTable />
 			</div>
 		);
 	},

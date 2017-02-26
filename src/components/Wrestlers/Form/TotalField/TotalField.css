@@ -1,0 +1,17 @@
+.TotalField {
+	border-top: solid 1px #e3e3e3;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+
+.TotalField-cost {
+	display: flex;
+}
+
+.TotalField-cost span {
+	flex: 1;
+}
+
+.TotalField-cost span:last-child {
+	text-align: right;
+}

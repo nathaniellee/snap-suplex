@@ -1,28 +1,29 @@
-.WrestlersGrid {
+.WrestlersTable {
+	display: flex;
 	margin: 20px;
 }
 
-.WrestlersGrid table {
+.WrestlersTable table {
 	border-collapse: collapse;
 }
 
-.WrestlersGrid th,
-.WrestlersGrid td {
+.WrestlersTable th,
+.WrestlersTable td {
 	border: solid 1px #999;
 	padding: 10px;
 }
 
-.WrestlersGrid th {
+.WrestlersTable th {
 	background-color: #ccc;
 }
 
-.WrestlersGrid-wrestler-name div {
+.WrestlersTable-wrestler-name div {
 	align-items: center;
 	display: flex;
 	justify-content: space-between;
 }
 
-.WrestlersGrid-edit-link {
+.WrestlersTable-edit-link {
 	cursor: pointer;
 	font-size: small;
 	text-decoration: underline;

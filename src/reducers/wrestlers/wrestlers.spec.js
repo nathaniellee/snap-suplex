@@ -1,125 +1,162 @@
-import actionTypes from '../../actions/actionTypes';
-import reducer, * as selectors from './wrestlers';
-
 import _ from 'lodash';
+import actionTypes from '../../actions/actionTypes';
+import reducer, { selectors } from './wrestlers';
 
-describe('wrestlers reducer', () => {
-	const {
-		ADD_WRESTLER,
-		SET_WRESTLERS,
-	} = actionTypes;
-	let initialState;
+const {
+  ADD_WRESTLER,
+  SET_WRESTLERS,
+} = actionTypes;
 
-	beforeEach(() => {
-		initialState = reducer(undefined, {});
-	});
+describe('wrestlers', () => {
+  let state;
+  let addWrestlerAction;
+  let setWrestlersAction;
+  let unrecognizedAction;
 
-	test('returns initial state of [].', () => {
-		expect(initialState).toEqual([]);
-	});
+  beforeEach(() => {
+    state = reducer(undefined, {});
+    addWrestlerAction = {
+      type: ADD_WRESTLER,
+      wrestler: { name: 'The Heartbreak Kid Shawn Michaels' },
+    };
+    setWrestlersAction = {
+      type: SET_WRESTLERS,
+      wrestlers: [
+        {
+          id: 1,
+          name: 'Stone Cold Steve Austin',
+        },
+        {
+          id: 2,
+          name: 'The Rock',
+        },
+      ],
+    };
+    unrecognizedAction = { type: 'unrecognized action' };
+  });
 
-	test(`returns current state with "wrestler" from an "${ADD_WRESTLER}" action appended and updated with "id" 1 when current state is empty.`, () => {
-		const action = {
-			type: ADD_WRESTLER,
-			wrestler: { name: 'Hulk Hogan' },
-		};
-		expect(reducer(initialState, action)).toEqual([
-			{
-				name: 'Hulk Hogan',
-				id: 1,
-			},
-		]);
-	});
+  describe('reducers', () => {
+    describe(`"${SET_WRESTLERS}" action`, () => {
+      test('replaces state with the new wrestlers.', () => {
+        expect(state).toEqual({
+          byId: {},
+          allIds: [],
+        });
+        expect(reducer(state, setWrestlersAction)).toEqual({
+          byId: {
+            1: {
+              id: 1,
+              name: 'Stone Cold Steve Austin',
+            },
+            2: {
+              id: 2,
+              name: 'The Rock',
+            },
+          },
+          allIds: [1, 2],
+        });
+      });
+    });
 
-	test(`returns current state with "wrestler" from an "${ADD_WRESTLER}" action appended and updated with "id" 1 more than the highest "id" when current state is not empty.`, () => {
-		let action = {
-			type: ADD_WRESTLER,
-			wrestler: { name: 'Ultimate Warrior' },
-		};
-		let updatedState = reducer(initialState, action);
-		expect(updatedState).toEqual([
-			{
-				name: 'Ultimate Warrior',
-				id: 1,
-			}
-		]);
+    describe(`"${ADD_WRESTLER} action`, () => {
+      test('adds the new wrestler to state.', () => {
+        expect(state).toEqual({
+          byId: {},
+          allIds: [],
+        });
+        state = reducer(state, setWrestlersAction);
+        expect(reducer(state, addWrestlerAction)).toEqual({
+          byId: {
+            1: {
+              id: 1,
+              name: 'Stone Cold Steve Austin',
+            },
+            2: {
+              id: 2,
+              name: 'The Rock',
+            },
+            3: {
+              id: 3,
+              name: 'The Heartbreak Kid Shawn Michaels',
+            },
+          },
+          allIds: [1, 2, 3],
+        });
+      });
+    });
 
-		action = {
-			type: ADD_WRESTLER,
-			wrestler: { name: 'Randy Savage' },
-		};
-		updatedState = reducer(updatedState, action);
-		expect(updatedState).toEqual([
-			{
-				name: 'Ultimate Warrior',
-				id: 1,
-			},
-			{
-				name: 'Randy Savage',
-				id: 2,
-			}
-		]);
+    describe('unrecognized action', () => {
+      test('returns current state.', () => {
+        expect(state).toEqual({
+          byId: {},
+          allIds: [],
+        });
+        state = reducer(state, setWrestlersAction);
+        expect(reducer(state, unrecognizedAction)).toEqual({
+          byId: {
+            1: {
+              id: 1,
+              name: 'Stone Cold Steve Austin',
+            },
+            2: {
+              id: 2,
+              name: 'The Rock',
+            },
+          },
+          allIds: [1, 2],
+        });
+      });
+    });
+  });
 
-		action = {
-			type: ADD_WRESTLER,
-			wrestler: { name: 'Andre the Giant' },
-		};
-		updatedState = reducer(updatedState, action);
-		expect(updatedState).toEqual([
-			{
-				name: 'Ultimate Warrior',
-				id: 1,
-			},
-			{
-				name: 'Randy Savage',
-				id: 2,
-			},
-			{
-				name: 'Andre the Giant',
-				id: 3,
-			}
-		]);
-	});
+  describe('selectors', () => {
+    beforeEach(() => {
+      state = reducer(state, setWrestlersAction);
+    });
 
-	test(`returns "wrestlers" from a "${SET_WRESTLERS}" action.`, () => {
-		const action = {
-			type: SET_WRESTLERS,
-			wrestlers: [
-				{
-					name: 'Ric Flair',
-					id: 1,
-				},
-				{
-					name: 'Sting',
-					id: 2,
-				},
-			],
-		};
-		expect(reducer(initialState, action)).toEqual(action.wrestlers);
-	});
+    describe('getWrestler', () => {
+      test('returns the appropriate state.', () => {
+        expect(selectors.getWrestler(state, 1)).toEqual({
+          id: 1,
+          name: 'Stone Cold Steve Austin',
+        });
+      });
+    });
 
-	test(`returns current state when it receives an unrecognized action.`, () => {
-		const addWrestlerAction = {
-			type: ADD_WRESTLER,
-			wrestler: { name: 'Brutus Beefcake' },
-		};
-		const updatedState = reducer(initialState, addWrestlerAction);
-		const unrecognizedAction = { type: 'unrecognized action' };
+    describe('getWrestlerIds', () => {
+      test('returns the appropriate state.', () => {
+        expect(selectors.getWrestlerIds(state)).toEqual([1, 2]);
+      });
+    });
 
-		expect(reducer(updatedState, unrecognizedAction)).toBe(updatedState);
-	});
-});
+    describe('getWrestlersAsArray', () => {
+      test('returns the appropriate state.', () => {
+        expect(selectors.getWrestlersAsArray(state)).toEqual([
+          {
+            id: 1,
+            name: 'Stone Cold Steve Austin',
+          },
+          {
+            id: 2,
+            name: 'The Rock',
+          },
+        ]);
+      });
+    });
 
-describe('wrestlers selectors', () => {
-	let initialState;
-
-	beforeEach(() => {
-		initialState = reducer(undefined, {});
-	});
-
-	describe('get', () => {
-		test('returns the appropriate state.', () => {
-			expect(selectors.get(initialState)).toBe(initialState);
-		});
-	});
+    describe('getWrestlersAsMap', () => {
+      test('returns the appropriate state.', () => {
+        expect(selectors.getWrestlersAsMap(state)).toEqual({
+          1: {
+            id: 1,
+            name: 'Stone Cold Steve Austin',
+          },
+          2: {
+            id: 2,
+            name: 'The Rock',
+          },
+        });
+      });
+    });
+  });
 });

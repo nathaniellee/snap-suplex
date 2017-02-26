@@ -1,17 +1,14 @@
 import { connect } from 'react-redux';
 import { selectors } from '../../../reducers/root';
-import Grid from './Grid';
+import Table from './Table';
 
-const mapStateToProps = (state) => {
-	const { getWrestlers } = selectors;
-	return {
-		wrestlers: getWrestlers(state),
-	};
-};
+const mapStateToProps = (state) => ({
+	wrestlers: selectors.getWrestlersAsArray(state),
+});
 
 const mapDispatchToProps = () => ({});
 
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps,
-)(Grid);
+)(Table);

@@ -17,13 +17,6 @@ describe('match action creators', () => {
 		});
 	});
 
-	describe('decrementRoundNumber', () => {
-		test('creates the expected action.', () => {
-			const expectedAction = { type: actionTypes.DECREMENT_ROUND_NUMBER };
-			expect(actionCreators.decrementRoundNumber()).toEqual(expectedAction);
-		});
-	});
-
 	describe('incrementRoundNumber', () => {
 		test('creates the expected action.', () => {
 			const expectedAction = { type: actionTypes.INCREMENT_ROUND_NUMBER };
