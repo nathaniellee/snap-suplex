@@ -1,0 +1,25 @@
+.StatField {
+	margin-top: 10px;
+}
+
+.StatField-input .lucid-RadioButtonLabeled {
+	align-items: center;
+	margin-right: 20px;
+}
+
+.StatField-input .lucid-RadioButtonLabeled-label {
+	padding-top: 0;
+}
+
+.StatField-cost {
+	display: flex;
+}
+
+.StatField-cost span {
+	flex: 1;
+}
+
+.StatField-cost span:first-child,
+.StatField-cost span:last-child {
+	text-align: right;
+}
