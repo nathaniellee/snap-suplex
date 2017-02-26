@@ -15,7 +15,7 @@ import createStore from './utils/createStore';
 import '../node_modules/lucid/dist/index.css';
 import './index.css';
 
-const store = createStore();
+const store = createStore({});
 
 render(
 	<Provider store={store}>
@@ -26,6 +26,6 @@ render(
 		  	<Route path='/wrestlers' component={Wrestlers} />
 	  	</Route>
 	  </Router>
-	 </Provider>,
+	</Provider>,
   document.getElementById('root'),
 );
