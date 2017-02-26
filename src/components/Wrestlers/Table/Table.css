@@ -1,6 +1,5 @@
 .WrestlersTable {
 	display: flex;
-	margin: 20px;
 }
 
 .WrestlersTable table {
@@ -21,10 +20,4 @@
 	align-items: center;
 	display: flex;
 	justify-content: space-between;
-}
-
-.WrestlersTable-edit-link {
-	cursor: pointer;
-	font-size: small;
-	text-decoration: underline;
 }
