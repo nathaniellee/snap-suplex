@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 import WrestlerDialog from '../Dialog/ConnectedDialog';
-import './Grid.css';
+import './Table.css';
 
 const {
 	array,
@@ -53,7 +53,7 @@ export default React.createClass({
 		} = this.state;
 
 		return (
-			<div className='WrestlersGrid'>
+			<div className='WrestlersTable'>
 				<table>
 					<thead>
 						<tr>
@@ -77,11 +77,11 @@ export default React.createClass({
 								stats,
 							}) => (
 								<tr key={id}>
-									<td className='WrestlersGrid-wrestler-name'>
+									<td className='WrestlersTable-wrestler-name'>
 										<div>
 											<span>{name}</span>
 											<span
-												className='WrestlersGrid-edit-link'
+												className='WrestlersTable-edit-link'
 												onClick={_.partial(this.onWrestlerEditClick, id)}
 											>
 												Edit
