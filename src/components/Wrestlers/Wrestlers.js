@@ -19,18 +19,23 @@ export default React.createClass({
 		};
 	},
 
-	onWrestlerDialogCancel() {
-		this.setState(hideDialog);
-	},
-
-	onWrestlerDialogSubmit() {
+	onCancelEditWrestler() {
 		this.setState(resetEditId);
 		this.setState(hideDialog);
 	},
 
-	onEditWrestler(editId) {
+	onClickAddWrestler() {
+		this.setState(showDialog);
+	},
+
+	onClickEditWrestler(editId) {
 		this.setState(_.partial(setEditId, editId));
 		this.setState(showDialog);
+	},
+
+	onSubmitEditWrestler() {
+		this.setState(resetEditId);
+		this.setState(hideDialog);
 	},
 
 	render() {
@@ -41,17 +46,19 @@ export default React.createClass({
 
 		return (
 			<div className='Wrestlers'>
-				<Button>
+				<Button
+					onClick={this.onClickAddWrestler}
+				>
 					Add Wrestler
 				</Button>
 				<WrestlersTable
-					onEdit={this.onEditWrestler}
+					onEdit={this.onClickEditWrestler}
 				/>
 				{isDialogShown ? (
 					<WrestlerDialog
 						id={editId}
-						onCancel={this.onWrestlerDialogCancel}
-						onSubmit={this.onWrestlerDialogSubmit}
+						onCancel={this.onCancelEditWrestler}
+						onSubmit={this.onSubmitEditWrestler}
 					/>
 				) : null}
 			</div>
