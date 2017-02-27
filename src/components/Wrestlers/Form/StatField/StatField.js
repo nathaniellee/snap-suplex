@@ -65,10 +65,7 @@ export default React.createClass({
 						))}
 					</RadioGroup>
 				</Grid.Cell>
-				<Grid.Cell className='StatField-cost'>
-					<span>Cost:</span>
-					<span>{cost}</span>
-				</Grid.Cell>
+				<Grid.Cell className='StatField-cost'>{cost}</Grid.Cell>
 			</Grid>
 		);
 	},
