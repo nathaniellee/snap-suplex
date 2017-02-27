@@ -27,6 +27,8 @@ export default React.createClass({
 	getInitialState() {
 		const { wrestler } = this.props;
 
+		const name = _.get(wrestler, 'name', '');
+
 		const bra = _.get(wrestler, 'stats.bra', 1);
 		const braCost = getSpecialtyStatCost(bra);
 
@@ -47,7 +49,7 @@ export default React.createClass({
 			braCost,
 			dex,
 			dexCost,
-			name: wrestler.name || '',
+			name,
 			sta,
 			staCost,
 			str,
