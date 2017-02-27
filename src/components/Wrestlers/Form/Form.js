@@ -25,26 +25,21 @@ export default React.createClass({
 	},
 
 	getInitialState() {
-		const {
-			wrestler: {
-				name,
-				stats,
-			},
-		} = this.props;
+		const { wrestler } = this.props;
 
-		const bra = _.isNil(stats.bra) ? 1 : stats.bra;
+		const bra = _.get(wrestler, 'stats.bra', 1);
 		const braCost = getSpecialtyStatCost(bra);
 
-		const dex = _.isNil(stats.dex) ? 1 : stats.dex;
+		const dex = _.get(wrestler, 'stats.dex', 1);
 		const dexCost = getSpecialtyStatCost(dex);
 
-		const sta = _.isNil(stats.sta) ? 1 : stats.sta;
+		const sta = _.get(wrestler, 'stats.sta', 1);
 		const staCost = getStaminaStatCost(sta);
 
-		const str = _.isNil(stats.str) ? 1 : stats.str;
+		const str = _.get(wrestler, 'stats.str', 1);
 		const strCost = getSpecialtyStatCost(str);
 
-		const tec = _.isNil(stats.tec) ? 1 : stats.tec;
+		const tec = _.get(wrestler, 'stats.tec', 1);
 		const tecCost = getSpecialtyStatCost(tec);
 
 		return {
@@ -52,7 +47,7 @@ export default React.createClass({
 			braCost,
 			dex,
 			dexCost,
-			name: name || '',
+			name: wrestler.name || '',
 			sta,
 			staCost,
 			str,
