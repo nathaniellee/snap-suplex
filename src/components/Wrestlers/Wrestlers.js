@@ -24,7 +24,7 @@ export default React.createClass({
 		this.setState(hideDialog);
 	},
 
-	onClickAddWrestler() {
+	onClickCreateWrestler() {
 		this.setState(showDialog);
 	},
 
@@ -47,9 +47,9 @@ export default React.createClass({
 		return (
 			<div className='Wrestlers'>
 				<Button
-					onClick={this.onClickAddWrestler}
+					onClick={this.onClickCreateWrestler}
 				>
-					Add Wrestler
+					Create Wrestler
 				</Button>
 				<WrestlersTable
 					onEdit={this.onClickEditWrestler}
