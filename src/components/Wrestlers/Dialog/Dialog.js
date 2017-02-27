@@ -47,7 +47,7 @@ export default React.createClass({
 				<Dialog.Footer>
 					<Button
 						kind='primary'
-						onSubmit={onSubmit}
+						onClick={onSubmit}
 					>
 						Submit
 					</Button>
