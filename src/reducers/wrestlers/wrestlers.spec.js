@@ -5,12 +5,15 @@ import reducer, { selectors } from './wrestlers';
 const {
   ADD_WRESTLER,
   SET_WRESTLERS,
+  UPDATE_WRESTLER,
 } = actionTypes;
 
 describe('wrestlers', () => {
   let state;
   let addWrestlerAction;
   let setWrestlersAction;
+  let updateFoundWrestlerAction;
+  let updateNotFoundWrestlerAction;
   let unrecognizedAction;
 
   beforeEach(() => {
@@ -31,6 +34,20 @@ describe('wrestlers', () => {
           name: 'The Rock',
         },
       ],
+    };
+    updateFoundWrestlerAction = {
+      type: UPDATE_WRESTLER,
+      wrestler: {
+        id: 1,
+        name: 'The Undertaker',
+      },
+    };
+    updateNotFoundWrestlerAction = {
+      type: UPDATE_WRESTLER,
+      wrestler: {
+        id: 5,
+        name: 'Mick Foley'
+      },
     };
     unrecognizedAction = { type: 'unrecognized action' };
   });
@@ -81,6 +98,82 @@ describe('wrestlers', () => {
             },
           },
           allIds: [1, 2, 3],
+        });
+      });
+    });
+
+    describe(`"${UPDATE_WRESTLER} action`, () => {
+      describe('wrestler is found in state', () => {
+        test('updates wrestler in state with new data.', () => {
+          expect(state).toEqual({
+            byId: {},
+            allIds: [],
+          });
+          state = reducer(state, setWrestlersAction);
+          expect(state).toEqual({
+            byId: {
+              1: {
+                id: 1,
+                name: 'Stone Cold Steve Austin',
+              },
+              2: {
+                id: 2,
+                name: 'The Rock',
+              },
+            },
+            allIds: [1, 2],
+          });
+          state = reducer(state, updateFoundWrestlerAction);
+          expect(state).toEqual({
+            byId: {
+              1: {
+                id: 1,
+                name: 'The Undertaker',
+              },
+              2: {
+                id: 2,
+                name: 'The Rock',
+              },
+            },
+            allIds: [1, 2],
+          });
+        });
+      });
+
+      describe('wrestler is not found in state', () => {
+        test('returns current state.', () => {
+          expect(state).toEqual({
+            byId: {},
+            allIds: [],
+          });
+          state = reducer(state, setWrestlersAction);
+          expect(state).toEqual({
+            byId: {
+              1: {
+                id: 1,
+                name: 'Stone Cold Steve Austin',
+              },
+              2: {
+                id: 2,
+                name: 'The Rock',
+              },
+            },
+            allIds: [1, 2],
+          });
+          state = reducer(state, updateNotFoundWrestlerAction);
+          expect(state).toEqual({
+            byId: {
+              1: {
+                id: 1,
+                name: 'Stone Cold Steve Austin',
+              },
+              2: {
+                id: 2,
+                name: 'The Rock',
+              },
+            },
+            allIds: [1, 2],
+          });
         });
       });
     });

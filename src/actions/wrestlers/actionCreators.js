@@ -10,4 +10,9 @@ export default {
 		type: actionTypes.SET_WRESTLERS,
 		wrestlers,
 	}),
+
+	updateWrestler: (wrestler) => ({
+		type: actionTypes.UPDATE_WRESTLER,
+		wrestler,
+	}),
 };
