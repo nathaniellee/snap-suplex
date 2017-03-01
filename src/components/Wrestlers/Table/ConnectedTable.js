@@ -1,10 +1,17 @@
+import _ from 'lodash';
 import { connect } from 'react-redux';
 import { selectors } from '../../../reducers/root';
 import Table from './Table';
 
-const mapStateToProps = (state) => ({
-	wrestlers: selectors.getWrestlersAsArray(state),
-});
+const mapStateToProps = (state) => {
+	const wrestlers = selectors.getWrestlersAsArray(state);
+	return {
+		wrestlers: _.chain(wrestlers)
+			.sortBy('id')
+			.reverse()
+			.value(),
+	};
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => ({ ...ownProps });
 
