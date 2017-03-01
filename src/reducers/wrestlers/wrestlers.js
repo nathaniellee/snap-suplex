@@ -35,6 +35,23 @@ export default (state = defaultState, action) => {
       };
     }
 
+    case actionTypes.UPDATE_WRESTLER: {
+      const { wrestler } = action;
+      const { id } = wrestler;
+
+      if (_.includes(state.allIds, id)) {
+        return {
+          ...state,
+          byId: {
+            ...state.byId,
+            [id]: wrestler,
+          },
+        };
+      }
+
+      return state;
+    }
+
     default: {
       return state;
     }

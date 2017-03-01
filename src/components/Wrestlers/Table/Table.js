@@ -1,56 +1,31 @@
 import _ from 'lodash';
+import { Button } from 'lucid';
 import React from 'react';
-import WrestlerDialog from '../Dialog/ConnectedDialog';
 import './Table.css';
 
 const {
 	array,
+	func,
 } = React.PropTypes;
-
-const resetEditId = () => ({ editId: null });
-const setEditId = (editId) => ({ editId });
-
-const hideDialog = () => ({ isDialogShown: false });
-const showDialog = () => ({ isDialogShown: true });
 
 export default React.createClass({
 	propTypes: {
 		wrestlers: array,
+		onEdit: func,
 	},
 
 	getDefaultProps() {
 		return {
 			wrestlers: [],
+			onEdit: _.noop,
 		};
-	},
-
-	getInitialState() {
-		return {
-			editId: null,
-			isDialogShown: false,
-		};
-	},
-
-	onWrestlerDialogCancel() {
-		this.setState(hideDialog);
-	},
-
-	onWrestlerDialogSubmit() {
-		this.setState(resetEditId);
-		this.setState(hideDialog);
-	},
-
-	onWrestlerEditClick(editId) {
-		this.setState(_.partial(setEditId, editId));
-		this.setState(showDialog);
 	},
 
 	render() {
-		const { wrestlers } = this.props;
 		const {
-			editId,
-			isDialogShown,
-		} = this.state;
+			wrestlers,
+			onEdit,
+		} = this.props;
 
 		return (
 			<div className='WrestlersTable'>
@@ -80,12 +55,12 @@ export default React.createClass({
 									<td className='WrestlersTable-wrestler-name'>
 										<div>
 											<span>{name}</span>
-											<span
-												className='WrestlersTable-edit-link'
-												onClick={_.partial(this.onWrestlerEditClick, id)}
+											<Button
+												kind='link'
+												onClick={_.partial(onEdit, id)}
 											>
 												Edit
-											</span>
+											</Button>
 										</div>
 									</td>
 									<td>{stats.str}</td>
@@ -98,13 +73,6 @@ export default React.createClass({
 						)}
 					</tbody>
 				</table>
-				{isDialogShown ? (
-					<WrestlerDialog
-						id={editId}
-						onCancel={this.onWrestlerDialogCancel}
-						onSubmit={this.onWrestlerDialogSubmit}
-					/>
-				) : null}
 			</div>
 		);
 	},

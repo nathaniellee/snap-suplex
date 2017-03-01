@@ -10,7 +10,7 @@ import {
 import App from './components/App/ConnectedApp';
 import Home from './components/Home/Home';
 import Matches from './components/Matches/Matches';
-import Wrestlers from './components/Wrestlers/Wrestlers';
+import Wrestlers from './components/Wrestlers/ConnectedWrestlers';
 import createStore from './utils/createStore';
 import '../node_modules/lucid/dist/index.css';
 import './index.css';

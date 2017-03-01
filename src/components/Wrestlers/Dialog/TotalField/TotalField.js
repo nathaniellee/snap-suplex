@@ -11,10 +11,7 @@ const TotalField = ({ total }) => (
 		isGutterless
 	>
 		<Grid.Cell is11 />
-		<Grid.Cell className='TotalField-cost'>
-			<span>Total:</span>
-			<span>{total}</span>
-		</Grid.Cell>
+		<Grid.Cell className='TotalField-cost'>{total}</Grid.Cell>
 	</Grid>
 );
 

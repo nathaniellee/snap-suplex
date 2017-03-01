@@ -12,14 +12,6 @@
 }
 
 .StatField-cost {
-	display: flex;
-}
-
-.StatField-cost span {
-	flex: 1;
-}
-
-.StatField-cost span:first-child,
-.StatField-cost span:last-child {
+	padding-right: 5px !important;
 	text-align: right;
 }

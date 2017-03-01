@@ -6,7 +6,7 @@ const mapStateToProps = (state) => ({
 	wrestlers: selectors.getWrestlersAsArray(state),
 });
 
-const mapDispatchToProps = () => ({});
+const mapDispatchToProps = (dispatch, ownProps) => ({ ...ownProps });
 
 export default connect(
 	mapStateToProps,

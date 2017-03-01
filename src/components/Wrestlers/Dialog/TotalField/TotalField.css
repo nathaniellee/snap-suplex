@@ -5,13 +5,6 @@
 }
 
 .TotalField-cost {
-	display: flex;
-}
-
-.TotalField-cost span {
-	flex: 1;
-}
-
-.TotalField-cost span:last-child {
+	padding-right: 5px !important;
 	text-align: right;
 }
