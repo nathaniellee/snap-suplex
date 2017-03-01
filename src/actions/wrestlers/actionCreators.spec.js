@@ -37,4 +37,19 @@ describe('match action creators', () => {
 			expect(actionCreators.setWrestlers(wrestlers)).toEqual(expectedAction);
 		});
 	});
+
+	describe('updateWrestler', () => {
+		test('creates the expected action.', () => {
+			const wrestler = {
+				id: 1,
+				name: 'Ravishing Rick Rude',
+			};
+			const expectedAction = {
+				type: actionTypes.UPDATE_WRESTLER,
+				wrestler,
+			};
+
+			expect(actionCreators.updateWrestler(wrestler)).toEqual(expectedAction);
+		});
+	});
 });
