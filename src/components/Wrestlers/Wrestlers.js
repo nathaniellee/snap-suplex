@@ -5,6 +5,10 @@ import WrestlerDialog from './Dialog/ConnectedDialog';
 import WrestlersTable from './Table/ConnectedTable';
 import './Wrestlers.css';
 
+const {
+	func,
+} = React.PropTypes;
+
 const resetEditId = () => ({ editId: null });
 const setEditId = (editId) => ({ editId });
 
@@ -12,6 +16,18 @@ const hideDialog = () => ({ isDialogShown: false });
 const showDialog = () => ({ isDialogShown: true });
 
 export default React.createClass({
+	propTypes: {
+		onAddWrestler: func,
+		onUpdateWrestler: func,
+	},
+
+	getDefaultProps() {
+		return {
+			onAddWrestler: _.noop,
+			onUpdateWrestler: _.noop,
+		};
+	},
+
 	getInitialState() {
 		return {
 			editId: null,
@@ -33,9 +49,17 @@ export default React.createClass({
 		this.setState(showDialog);
 	},
 
-	onSubmitEditWrestler() {
+	onSubmitEditWrestler(wrestler) {
+		const isNewWrestler = _.isNull(wrestler.id);
+
 		this.setState(resetEditId);
 		this.setState(hideDialog);
+
+		if (isNewWrestler) {
+			this.props.onAddWrestler(wrestler);
+		} else {
+			this.props.onUpdateWrestler(wrestler);
+		}
 	},
 
 	render() {
