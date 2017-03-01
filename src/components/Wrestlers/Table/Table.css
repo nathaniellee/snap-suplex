@@ -10,10 +10,15 @@
 .WrestlersTable td {
 	border: solid 1px #999;
 	padding: 10px;
+	text-align: center;
 }
 
 .WrestlersTable th {
 	background-color: #ccc;
+}
+
+.WrestlersTable td:first-child {
+	text-align: left;
 }
 
 .WrestlersTable-wrestler-name div {
