@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import {
-	Banner,
 	Button,
 	Dialog,
 } from 'lucid';
