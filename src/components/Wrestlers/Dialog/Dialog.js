@@ -18,6 +18,7 @@ const {
 	arrayOf,
 	func,
 	number,
+	object,
 	shape,
 	string,
 } = React.PropTypes;
@@ -28,11 +29,11 @@ export default React.createClass({
 			id: number,
 			name: string,
 			moves: shape({
-				bra: arrayOf(number),
-				dex: arrayOf(number),
-				str: arrayOf(number),
-				tec: arrayOf(number),
-				fin: arrayOf(number),
+				bra: arrayOf(object),
+				dex: arrayOf(object),
+				str: arrayOf(object),
+				tec: arrayOf(object),
+				fin: arrayOf(object),
 			}),
 			stats: shape({
 				bra: number,
