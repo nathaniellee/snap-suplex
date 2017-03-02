@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { combineReducers } from 'redux';
 import actionTypes from '../../actions/actionTypes';
 
-const maxRounds = (state = 1, action) => {
+const maxRounds = (state = 1, action = {}) => {
   switch (action.type) {
     case actionTypes.SET_MAX_ROUNDS: {
       return action.maxRounds;
@@ -14,7 +14,7 @@ const maxRounds = (state = 1, action) => {
   }
 };
 
-const roundNumber = (state = 1, action) => {
+const roundNumber = (state = 1, action = {}) => {
   switch (action.type) {
     case actionTypes.INCREMENT_ROUND_NUMBER: {
       return state + 1;
@@ -30,7 +30,7 @@ const roundNumber = (state = 1, action) => {
   }
 };
 
-const wrestlers = (state = [], action) => {
+const wrestlers = (state = [], action = {}) => {
   switch (action.type) {
     case actionTypes.ADD_WRESTLER_TO_MATCH: {
       return _.uniq([
