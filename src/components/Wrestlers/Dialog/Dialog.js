@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import {
+	Banner,
 	Button,
 	Dialog,
 } from 'lucid';
@@ -147,6 +148,7 @@ export default React.createClass({
 						value={name}
 						onChange={this.onChangeName}
 					/>
+					<div className='WrestlerDialog-form-heading-stats'>Stats</div>
 					<StatField
 						cost={strCost}
 						label='Strength'
@@ -186,6 +188,7 @@ export default React.createClass({
 							tecCost,
 						])}
 					/>
+					<div className='WrestlerDialog-form-heading-moves'>Moves</div>
 				</section>
 				<Dialog.Footer>
 					<Button
