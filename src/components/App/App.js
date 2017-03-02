@@ -13,16 +13,19 @@ const {
 export default React.createClass({
 	propTypes: {
 		children: node,
+		fetchMoves: func,
 		fetchWrestlers: func,
 	},
 
 	getDefaultProps() {
 		return {
+			fetchMoves: _.noop,
 			fetchWrestlers: _.noop,
 		};
 	},
 
 	componentDidMount() {
+		this.props.fetchMoves();
 		this.props.fetchWrestlers();
 	},
 
