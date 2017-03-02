@@ -1,7 +1,7 @@
 import actionCreators from './actionCreators';
 import actionTypes from './actionTypes';
 
-describe('match action creators', () => {
+describe('wrestlers action creators', () => {
 	describe('addWrestler', () => {
 		test('creates the expected action.', () => {
 			const wrestler = {

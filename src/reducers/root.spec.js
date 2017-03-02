@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import actionTypes from '../actions/actionTypes';
 import match, { selectors as matchSelectors } from './match/match';
+import moves, { selectors as movesSelectors } from './moves/moves';
 import wrestlers, { selectors as wrestlersSelectors } from './wrestlers/wrestlers';
 import reducer, { selectors } from './root';
 
@@ -26,6 +27,7 @@ describe('root reducer', () => {
   test('combines the appropriate reducers.', () => {
     expect(_.xor([
       'match',
+      'moves',
       'wrestlers',
     ], _.keys(initialState))).toHaveLength(0);
 
@@ -59,6 +61,36 @@ describe('root selectors', () => {
   describe('getMatch', () => {
     test('returns the appropriate state.', () => {
       expect(selectors.getMatch(initialState)).toEqual(matchSelectors.get(initialState.match));
+    });
+  });
+
+  describe('moves', () => {
+    describe('getMove', () => {
+      test('returns the appropriate state.', () => {
+        expect(selectors.getMove(initialState, 0))
+          .toEqual(movesSelectors.getMove(initialState.moves, 0));
+      });
+    });
+
+    describe('getMoveIds', () => {
+      test('returns the appropriate state.', () => {
+        expect(selectors.getMoveIds(initialState))
+          .toEqual(movesSelectors.getMoveIds(initialState.moves));
+      });
+    });
+
+    describe('getMovesAsArray', () => {
+      test('returns the appropriate state.', () => {
+        expect(selectors.getMovesAsArray(initialState))
+          .toEqual(movesSelectors.getMovesAsArray(initialState.moves));
+      });
+    });
+
+    describe('getMovesAsMap', () => {
+      test('returns the appropriate state.', () => {
+        expect(selectors.getMovesAsMap(initialState))
+          .toEqual(movesSelectors.getMovesAsMap(initialState.moves));
+      });
     });
   });
 

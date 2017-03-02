@@ -12,6 +12,55 @@ describe('create fetch action creators', () => {
 		store = mockStore({});
 	});
 
+	describe('fetchMoves', () => {
+		const getMockApi = (response) => ({
+			moves: {
+				get: () => response,
+			},
+		});
+
+		test('creates the expected request action.', () => {
+			const api = getMockApi(Promise.resolve());
+
+			return store.dispatch(createAsyncActionCreators(api).fetchMoves()).then(() => {
+				const actions = store.getActions();
+				expect(actions[0]).toEqual({ type: actionTypes.FETCH_MOVES_REQUEST });
+			});
+		});
+
+		test('creates the expected success action upon success.', () => {
+			const moves = [
+				{ id: 1 },
+				{ id: 2 },
+			];
+			const api = getMockApi(Promise.resolve(moves));
+
+			return store.dispatch(createAsyncActionCreators(api).fetchMoves()).then(() => {
+				const actions = store.getActions();
+				expect(actions[1]).toEqual({
+					type: actionTypes.FETCH_MOVES_SUCCESS,
+					moves,
+				});
+			});
+		});
+
+		test('creates the expected failure action upon failure.', () => {
+			const moves = [
+				{ id: 1 },
+				{ id: 2 },
+			];
+			const api = getMockApi(Promise.reject('boo'));
+
+			return store.dispatch(createAsyncActionCreators(api).fetchMoves()).then(() => {
+				const actions = store.getActions();
+				expect(actions[1]).toEqual({
+					type: actionTypes.FETCH_MOVES_FAILURE,
+					error: 'boo',
+				});
+			});
+		});
+	});
+
 	describe('fetchWrestlers', () => {
 		const getMockApi = (response) => ({
 			wrestlers: {

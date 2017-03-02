@@ -9,6 +9,9 @@ const mapDispatchToProps = (dispatch) => {
 	const fetchActionCreators = createFetchActionCreators(api);
 
 	return {
+		fetchMoves: () => {
+			dispatch(fetchActionCreators.fetchMoves());
+		},
 		fetchWrestlers: () => {
 			dispatch(fetchActionCreators.fetchWrestlers());
 		},

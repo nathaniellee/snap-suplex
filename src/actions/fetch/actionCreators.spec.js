@@ -2,6 +2,38 @@ import actionCreators from './actionCreators';
 import actionTypes from './actionTypes';
 
 describe('fetch action creators', () => {
+	describe('fetchMovesRequest', () => {
+		test('creates the expected action.', () => {
+			const expectedAction = { type: actionTypes.FETCH_MOVES_REQUEST };
+			expect(actionCreators.fetchMovesRequest()).toEqual(expectedAction);
+		});
+	});
+
+	describe('fetchMovesSuccess', () => {
+		test('creates the expected action.', () => {
+			const moves = [
+				{ id: 1 },
+				{ id: 2 },
+			];
+			const expectedAction = {
+				type: actionTypes.FETCH_MOVES_SUCCESS,
+				moves,
+			};
+			expect(actionCreators.fetchMovesSuccess(moves)).toEqual(expectedAction);
+		});
+	});
+
+	describe('fetchMovesFailure', () => {
+		test('creates the expected action.', () => {
+			const error = new Error();
+			const expectedAction = {
+				type: actionTypes.FETCH_MOVES_FAILURE,
+				error,
+			};
+			expect(actionCreators.fetchMovesFailure(error)).toEqual(expectedAction);
+		});
+	});
+
 	describe('fetchWrestlersRequest', () => {
 		test('creates the expected action.', () => {
 			const expectedAction = { type: actionTypes.FETCH_WRESTLERS_REQUEST };

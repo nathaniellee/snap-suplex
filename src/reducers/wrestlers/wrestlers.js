@@ -8,7 +8,7 @@ const defaultState = {
   allIds: [],
 };
 
-export default (state = defaultState, action) => {
+export default (state = defaultState, action = {}) => {
   switch (action.type) {
     case actionTypes.ADD_WRESTLER: {
       const nextId = getMaxId(state.byId) + 1;
