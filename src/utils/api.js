@@ -1,6 +1,7 @@
 if (!localStorage.getItem('snap-suplex')) {
 	localStorage.setItem('snap-suplex', JSON.stringify({
 		wrestlers: [],
+		moves: {},
 	}));
 }
 
