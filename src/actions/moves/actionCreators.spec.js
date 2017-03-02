@@ -17,27 +17,6 @@ describe('moves action creators', () => {
 		});
 	});
 
-	describe('setMoves', () => {
-		test('creates the expected action.', () => {
-			const moves = [
-				{
-					id: 1,
-					name: 'Rude Awakening',
-				},
-				{
-					id: 2,
-					name: 'Perfect-plex',
-				}
-			];
-			const expectedAction = {
-				type: actionTypes.SET_MOVES,
-				moves,
-			};
-
-			expect(actionCreators.setMoves(moves)).toEqual(expectedAction);
-		});
-	});
-
 	describe('updateMove', () => {
 		test('creates the expected action.', () => {
 			const move = {

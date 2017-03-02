@@ -6,11 +6,6 @@ export default {
 		move,
 	}),
 
-	setMoves: (moves) => ({
-		type: actionTypes.SET_MOVES,
-		moves,
-	}),
-
 	updateMove: (move) => ({
 		type: actionTypes.UPDATE_MOVE,
 		move,
