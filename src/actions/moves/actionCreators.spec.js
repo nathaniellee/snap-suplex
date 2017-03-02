@@ -6,7 +6,7 @@ describe('moves action creators', () => {
 		test('creates the expected action.', () => {
 			const move = {
 				id: 1,
-				name: 'Rude Awakening',
+				description: 'Rude Awakening',
 			};
 			const expectedAction = {
 				type: actionTypes.ADD_MOVE,
@@ -22,11 +22,11 @@ describe('moves action creators', () => {
 			const moves = [
 				{
 					id: 1,
-					name: 'Rude Awakening',
+					description: 'Rude Awakening',
 				},
 				{
 					id: 2,
-					name: 'Perfect-plex',
+					description: 'Perfect-plex',
 				}
 			];
 			const expectedAction = {
@@ -42,7 +42,7 @@ describe('moves action creators', () => {
 		test('creates the expected action.', () => {
 			const move = {
 				id: 1,
-				name: 'Rude Awakening',
+				description: 'Rude Awakening',
 			};
 			const expectedAction = {
 				type: actionTypes.UPDATE_MOVE,
