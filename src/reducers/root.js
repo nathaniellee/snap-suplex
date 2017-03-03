@@ -10,15 +10,36 @@ const root = combineReducers({
   wrestlers,
 });
 
+const getMove = (state, id) => movesSelectors.getMove(state.moves, id);
+
+const getWrestlerMoves = (wrestler, state) => {
+  return _.reduce(wrestler.moves, (results, moveIds, statKey) => {
+    return {
+      ...results,
+      [statKey]: _.map(moveIds, (moveId) => getMove(state, moveId)),
+    };
+  }, {});
+};
+
 export default root;
 export const selectors = {
   get: _.identity,
   getMatch: (state) => matchSelectors.get(state.match),
-  getMove: (state, id) => movesSelectors.getMove(state.moves, id),
+  getMove,
   getMoveIds: (state) => movesSelectors.getMoveIds(state.moves),
   getMovesAsArray: (state) => movesSelectors.getMovesAsArray(state.moves),
   getMovesAsMap: (state) => movesSelectors.getMovesAsMap(state.moves),
-  getWrestler: (state, id) => wrestlersSelectors.getWrestler(state.wrestlers, id),
+  getWrestler: (state, id) => {
+    const wrestler = wrestlersSelectors.getWrestler(state.wrestlers, id);
+    return _.isNull(wrestler)
+      ? null
+      : {
+        wrestler: {
+          ...wrestler,
+          moves: getWrestlerMoves(wrestler, state),
+        },
+      };
+  },
   getWrestlerIds: (state) => wrestlersSelectors.getWrestlerIds(state.wrestlers),
   getWrestlersAsArray: (state) => wrestlersSelectors.getWrestlersAsArray(state.wrestlers),
   getWrestlersAsMap: (state) => wrestlersSelectors.getWrestlersAsMap(state.wrestlers),
