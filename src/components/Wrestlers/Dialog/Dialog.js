@@ -8,6 +8,7 @@ import {
 	getSpecialtyStatCost,
 	getStaminaStatCost,
 } from '../../../utils/statCosts';
+import MoveField from './MoveField/MoveField';
 import NameField from './NameField/NameField';
 import StatField from './StatField/StatField';
 import TotalField from './TotalField/TotalField';
@@ -21,6 +22,14 @@ const {
 	shape,
 	string,
 } = React.PropTypes;
+
+const statLabelMap = {
+	'bra': 'Brawling',
+	'dex': 'Dexterity',
+	'sta': 'Stamina',
+	'str': 'Strength',
+	'tec': 'Technical',
+};
 
 export default React.createClass({
 	propTypes: {
@@ -59,20 +68,16 @@ export default React.createClass({
 		return {
 			id: _.get(wrestler, 'id', null),
 			name: _.get(wrestler, 'name', ''),
-			moves: {
-				bra: _.get(wrestler, 'moves.bra', []),
-				dex: _.get(wrestler, 'moves.dex', []),
-				str: _.get(wrestler, 'moves.str', []),
-				tec: _.get(wrestler, 'moves.tec', []),
-				fin: _.get(wrestler, 'moves.fin', []),
-			},
-			stats: {
-				bra: _.get(wrestler, 'stats.bra', 1),
-				dex: _.get(wrestler, 'stats.dex', 1),
-				sta: _.get(wrestler, 'stats.sta', 1),
-				str: _.get(wrestler, 'stats.str', 1),
-				tec: _.get(wrestler, 'stats.tec', 1),
-			},
+			bra: _.get(wrestler, 'stats.bra', 1),
+			dex: _.get(wrestler, 'stats.dex', 1),
+			sta: _.get(wrestler, 'stats.sta', 1),
+			str: _.get(wrestler, 'stats.str', 1),
+			tec: _.get(wrestler, 'stats.tec', 1),
+			braMoves: _.get(wrestler, 'moves.bra', []),
+			dexMoves: _.get(wrestler, 'moves.dex', []),
+			strMoves: _.get(wrestler, 'moves.str', []),
+			tecMoves: _.get(wrestler, 'moves.tec', []),
+			finisher: _.head(_.get(wrestler, 'moves.fin', [])),
 		};
 	},
 
@@ -81,12 +86,8 @@ export default React.createClass({
 	},
 
 	onChangeStat(statName, statValue) {
-		const { stats } = this.state;
 		this.setState({
-			stats: {
-				...stats,
-				[statName]: statValue,
-			},
+			[statName]: statValue,
 		});
 	},
 
@@ -110,15 +111,48 @@ export default React.createClass({
 		this.onChangeStat('tec', value);
 	},
 
-	onSubmit() {
-		this.props.onSubmit(this.state);
+	onChangeMoveDescription(moveType, moveId, description) {
+		const stateKey = `${moveType}Moves`;
+		this.setState({
+			[stateKey]: _.map(this.state[stateKey], (move) => move.id === moveId
+				? {
+					...move,
+					description,
+				}
+				: move),
+		});
 	},
 
-	render() {
-		const { onCancel } = this.props;
+	onChangeMoveFavorites(moveType, moveId, favoriteTags) {
+		const stateKey = `${moveType}Moves`;
+		this.setState({
+			[stateKey]: _.map(this.state[stateKey], (move) => move.id === moveId
+				? {
+					...move,
+					favoriteTags,
+				}
+				: move),
+		});
+	},
+
+	onSubmit() {
 		const {
 			id,
-			// moves,
+			name,
+			bra,
+			dex,
+			sta,
+			str,
+			tec,
+			braMoves,
+			dexMoves,
+			strMoves,
+			tecMoves,
+			finisher,
+		} = this.state;
+
+		this.props.onSubmit({
+			id,
 			name,
 			stats: {
 				bra,
@@ -127,6 +161,31 @@ export default React.createClass({
 				str,
 				tec,
 			},
+			moves: {
+				bra: braMoves,
+				dex: dexMoves,
+				str: strMoves,
+				tec: tecMoves,
+				fin: [finisher],
+			},
+		});
+	},
+
+	render() {
+		const { onCancel } = this.props;
+		const {
+			id,
+			name,
+			bra,
+			dex,
+			sta,
+			str,
+			tec,
+			braMoves,
+			dexMoves,
+			strMoves,
+			tecMoves,
+			finisher,
 		} = this.state;
 
 		const title = _.isNull(id) ? 'Create Wrestler' : 'Edit Wrestler';
@@ -151,31 +210,31 @@ export default React.createClass({
 					<div className='WrestlerDialog-form-heading-stats'>Stats</div>
 					<StatField
 						cost={strCost}
-						label='Strength'
+						label={statLabelMap.str}
 						value={str}
 						onChange={this.onChangeStrength}
 					/>
 					<StatField
 						cost={braCost}
-						label='Brawling'
+						label={statLabelMap.bra}
 						value={bra}
 						onChange={this.onChangeBrawling}
 					/>
 					<StatField
 						cost={dexCost}
-						label='Dexterity'
+						label={statLabelMap.dex}
 						value={dex}
 						onChange={this.onChangeDexterity}
 					/>
 					<StatField
 						cost={tecCost}
-						label='Technical'
+						label={statLabelMap.tec}
 						value={tec}
 						onChange={this.onChangeTechnical}
 					/>
 					<StatField
 						cost={staCost}
-						label='Stamina'
+						label={statLabelMap.sta}
 						value={sta}
 						onChange={this.onChangeStamina}
 					/>
@@ -189,6 +248,46 @@ export default React.createClass({
 						])}
 					/>
 					<div className='WrestlerDialog-form-heading-moves'>Moves</div>
+					{_.map(strMoves, (move, i) => (
+						<MoveField
+							description={move.description}
+							favoriteTags={move.favoriteTags}
+							key={move.id}
+							label={`${statLabelMap.str} ${i + 1}`}
+							onChangeDescription={_.partial(this.onChangeMoveDescription, 'str', move.id)}
+							onChangeFavorites={_.partial(this.onChangeMoveFavorites, 'str', move.id)}
+						/>
+					))}
+					{_.map(braMoves, (move, i) => (
+						<MoveField
+							description={move.description}
+							favoriteTags={move.favoriteTags}
+							key={move.id}
+							label={`${statLabelMap.bra} ${i + 1}`}
+							onChangeDescription={_.partial(this.onChangeMoveDescription, 'bra', move.id)}
+							onChangeFavorites={_.partial(this.onChangeMoveFavorites, 'bra', move.id)}
+						/>
+					))}
+					{_.map(dexMoves, (move, i) => (
+						<MoveField
+							description={move.description}
+							favoriteTags={move.favoriteTags}
+							key={move.id}
+							label={`${statLabelMap.dex} ${i + 1}`}
+							onChangeDescription={_.partial(this.onChangeMoveDescription, 'dex', move.id)}
+							onChangeFavorites={_.partial(this.onChangeMoveFavorites, 'dex', move.id)}
+						/>
+					))}
+					{_.map(tecMoves, (move, i) => (
+						<MoveField
+							description={move.description}
+							favoriteTags={move.favoriteTags}
+							key={move.id}
+							label={`${statLabelMap.tec} ${i + 1}`}
+							onChangeDescription={_.partial(this.onChangeMoveDescription, 'tec', move.id)}
+							onChangeFavorites={_.partial(this.onChangeMoveFavorites, 'tec', move.id)}
+						/>
+					))}
 				</section>
 				<Dialog.Footer>
 					<Button
