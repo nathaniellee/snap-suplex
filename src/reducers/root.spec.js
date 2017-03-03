@@ -5,14 +5,27 @@ import moves, { selectors as movesSelectors } from './moves/moves';
 import wrestlers, { selectors as wrestlersSelectors } from './wrestlers/wrestlers';
 import reducer, { selectors } from './root';
 
+const mockWrestler = {
+  id: 3,
+  name: 'Gillberg',
+  stats: {
+    bra: 1,
+    dex: 1,
+    sta: 1,
+    str: 1,
+    tec: 1,
+  },
+  moves: {
+    bra: [],
+    dex: [],
+    str: [],
+    tec: [],
+    fin: [],
+  },
+};
 const setWrestlersAction = {
   type: actionTypes.SET_WRESTLERS,
-  wrestlers: [
-    {
-      id: 2,
-      name: 'Andre the Giant',
-    },
-  ],
+  wrestlers: [mockWrestler],
 };
 
 describe('root reducer', () => {
@@ -97,8 +110,11 @@ describe('root selectors', () => {
   describe('wrestlers', () => {
     describe('getWrestler', () => {
       test('returns the appropriate state.', () => {
+        const updatedState = reducer(initialState, setWrestlersAction);
         expect(selectors.getWrestler(initialState, 0))
           .toEqual(wrestlersSelectors.getWrestler(initialState.wrestlers, 0));
+        expect(selectors.getWrestler(initialState, mockWrestler.id))
+          .toEqual(wrestlersSelectors.getWrestler(initialState.wrestlers, mockWrestler.id));
       });
     });
 
