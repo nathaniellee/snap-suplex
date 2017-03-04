@@ -31,14 +31,14 @@ export const selectors = {
   getMovesAsMap: (state) => movesSelectors.getMovesAsMap(state.moves),
   getWrestler: (state, id) => {
     const wrestler = wrestlersSelectors.getWrestler(state.wrestlers, id);
-    return _.isNull(wrestler)
-      ? null
-      : {
-        wrestler: {
+    return {
+      wrestler: _.isNull(wrestler)
+        ? null
+        : {
           ...wrestler,
           moves: getWrestlerMoves(wrestler, state),
         },
-      };
+    };
   },
   getWrestlerIds: (state) => wrestlersSelectors.getWrestlerIds(state.wrestlers),
   getWrestlersAsArray: (state) => wrestlersSelectors.getWrestlersAsArray(state.wrestlers),
