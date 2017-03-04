@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 if (!localStorage.getItem('snap-suplex')) {
 	localStorage.setItem('snap-suplex', JSON.stringify({
 		wrestlers: [],
@@ -5,27 +7,87 @@ if (!localStorage.getItem('snap-suplex')) {
 	}));
 }
 
-const getMoves = () => {
+const fetchData = () => {
 	const stringifiedData = localStorage.getItem('snap-suplex');
-	const data = JSON.parse(stringifiedData);
-	const { moves } = data;
+	return JSON.parse(stringifiedData);
+};
 
+const putData = (data) => {
+	const stringifiedData = JSON.stringify(data);
+	localStorage.setItem('snap-suplex', stringifiedData);
+};
+
+const getMoves = () => {
+	const { moves } = fetchData();
 	return Promise.resolve(moves);
 };
 
+const postMove = (move) => {
+	const data = fetchData();
+	const { moves } = data;
+	const {
+		allIds,
+		byId,
+	} = moves;
+
+	const newId = _.max(allIds) + 1;
+	const newMove = {
+		...move,
+		id: newId,
+	};
+	const updatedData = {
+		...data,
+		moves: {
+			allIds: [
+				...allIds,
+				newId,
+			],
+			byId: {
+				...byId,
+				[newId]: newMove,
+			},
+		},
+	};
+
+	putData(updatedData);
+
+	return Promise.resolve(newMove);
+};
+
 const getWrestlers = () => {
-	const stringifiedData = localStorage.getItem('snap-suplex');
-	const data = JSON.parse(stringifiedData);
+	const { wrestlers } = fetchData();
+	return Promise.resolve(wrestlers);
+};
+
+const postWrestler = (wrestler) => {
+	const data = fetchData();
 	const { wrestlers } = data;
 
-	return Promise.resolve(wrestlers);
+	const newId = _.max(_.map(wrestlers, 'id')) + 1;
+	const newWrestler = {
+		...wrestler,
+		id: newId,
+	};
+	const updatedData = {
+		...data,
+		wrestlers: [
+			...wrestlers,
+			newWrestler,
+		],
+	};
+
+	putData(updatedData);
+
+	return Promise.resolve(newWrestler);
 };
 
 export default {
 	moves: {
 		get: getMoves,
+		post: postMove,
 	},
 	wrestlers: {
 		get: getWrestlers,
+		post: postWrestler,
 	},
 };
