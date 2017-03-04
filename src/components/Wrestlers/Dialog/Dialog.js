@@ -31,6 +31,14 @@ const statLabelMap = {
 	'tec': 'Technical',
 };
 
+const defaultMove = {
+	description: '',
+	favoriteTags: 0,
+	isFinisher: false,
+};
+
+let uniqueId = 0;
+
 export default React.createClass({
 	propTypes: {
 		wrestler: shape({
@@ -73,11 +81,37 @@ export default React.createClass({
 			sta: _.get(wrestler, 'stats.sta', 1),
 			str: _.get(wrestler, 'stats.str', 1),
 			tec: _.get(wrestler, 'stats.tec', 1),
-			braMoves: _.get(wrestler, 'moves.bra', []),
-			dexMoves: _.get(wrestler, 'moves.dex', []),
-			strMoves: _.get(wrestler, 'moves.str', []),
-			tecMoves: _.get(wrestler, 'moves.tec', []),
-			finisher: _.head(_.get(wrestler, 'moves.fin', [])),
+			braMoves: _.get(wrestler, 'moves.bra', [
+				{
+					...defaultMove,
+					id: `tmp-${++uniqueId}`,
+				},
+			]),
+			dexMoves: _.get(wrestler, 'moves.dex', [
+				{
+					...defaultMove,
+					id: `tmp-${++uniqueId}`,
+				},
+			]),
+			strMoves: _.get(wrestler, 'moves.str', [
+				{
+					...defaultMove,
+					id: `tmp-${++uniqueId}`,
+				},
+			]),
+			tecMoves: _.get(wrestler, 'moves.tec', [
+				{
+					...defaultMove,
+					id: `tmp-${++uniqueId}`,
+				},
+			]),
+			finisher: _.head(_.get(wrestler, 'moves.fin', [
+				{
+					...defaultMove,
+					id: `tmp-${++uniqueId}`,
+					isFinisher: true,
+				},
+			])),
 		};
 	},
 
@@ -86,6 +120,25 @@ export default React.createClass({
 	},
 
 	onChangeStat(statName, statValue) {
+		const numMoves = _.floor(statValue / 2) || 1;
+		const statMovesKey = `${statName}Moves`;
+		const moves = this.state[statMovesKey];
+		const sizeDiff = numMoves - _.size(moves);
+
+		if (sizeDiff > 0) {
+			const addedMoves = _.fill(Array(sizeDiff), {
+				...defaultMove,
+				id: `tmp-${++uniqueId}`,
+			});
+			this.setState({
+				[statMovesKey]: _.concat(moves, addedMoves),
+			});
+		} else if (sizeDiff < 0) {
+			this.setState({
+				[statMovesKey]: _.dropRight(moves, -sizeDiff),
+			});
+		}
+
 		this.setState({
 			[statName]: statValue,
 		});
@@ -291,6 +344,7 @@ export default React.createClass({
 				</section>
 				<Dialog.Footer>
 					<Button
+						isDisabled={_.isEmpty(name)}
 						kind='primary'
 						onClick={this.onSubmit}
 					>
