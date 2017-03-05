@@ -81,6 +81,24 @@ const postWrestler = (wrestler) => {
 	return Promise.resolve(newWrestler);
 };
 
+const putWrestler = (updatedWrestler) => {
+	const data = fetchData();
+	const { wrestlers } = data;
+	const updatedData = {
+		...data,
+		wrestlers: _.map(wrestlers, (wrestler) => wrestler.id === updatedWrestler.id
+			? {
+				...wrestler,
+				...updatedWrestler,
+			}
+			: wrestler),
+	};
+
+	putData(updatedData);
+
+	return Promise.resolve(updatedWrestler);
+};
+
 export default {
 	moves: {
 		get: getMoves,
@@ -89,5 +107,6 @@ export default {
 	wrestlers: {
 		get: getWrestlers,
 		post: postWrestler,
+		put: putWrestler,
 	},
 };
