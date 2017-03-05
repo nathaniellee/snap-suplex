@@ -73,7 +73,7 @@ export default React.createClass({
 					Favorite Tags
 				</Grid.Cell>
 				<Grid.Cell
-					className='StatField-input'
+					className='MoveField-input'
 					is2
 				>
 					<RadioGroup
