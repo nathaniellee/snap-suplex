@@ -54,6 +54,39 @@ const postMove = (move) => {
 	return Promise.resolve(newMove);
 };
 
+const putMove = (updatedMove) => {
+	const data = fetchData();
+	const { moves } = data;
+	const {
+		byId,
+	} = moves;
+	const updatedMoveId = updatedMove.id;
+	const foundMove = _.get(byId, updatedMoveId);
+
+	if (!foundMove) {
+		const error = new Error(`There is no move with ID ${updatedMoveId} in the database.`);
+		return Promise.reject(error);
+	}
+
+	const updatedData = {
+		...data,
+		moves: {
+			...moves,
+			byId: {
+				...byId,
+				[updatedMoveId]: {
+					...foundMove,
+					...updatedMove,
+				},
+			},
+		},
+	};
+
+	putData(updatedData);
+
+	return Promise.resolve(updatedMove);
+};
+
 const getWrestlers = () => {
 	const { wrestlers } = fetchData();
 	return Promise.resolve(wrestlers);
@@ -84,6 +117,15 @@ const postWrestler = (wrestler) => {
 const putWrestler = (updatedWrestler) => {
 	const data = fetchData();
 	const { wrestlers } = data;
+	const updatedWrestlerId = updatedWrestler.id;
+	const foundWrestler = _.find(wrestlers, { id: updatedWrestlerId });
+
+	if (!foundWrestler) {
+		const error = new Error(`There is no wrestler with ID ${updatedWrestlerId} in the database.`);
+		return Promise.reject(error);
+	}
+
+	// TODO: Really need to adopt the `allIds`/`byId` pattern for wrestlers.
 	const updatedData = {
 		...data,
 		wrestlers: _.map(wrestlers, (wrestler) => wrestler.id === updatedWrestler.id
@@ -103,6 +145,7 @@ export default {
 	moves: {
 		get: getMoves,
 		post: postMove,
+		put: putMove,
 	},
 	wrestlers: {
 		get: getWrestlers,
