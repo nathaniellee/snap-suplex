@@ -373,7 +373,6 @@ export default React.createClass({
 					<FinisherField
 						description={finisher.description}
 						key='finisher'
-						label='Finisher'
 						level={finisher.level}
 						stat={finisher.stat}
 						onChangeDescription={this.onChangeFinisherDescription}

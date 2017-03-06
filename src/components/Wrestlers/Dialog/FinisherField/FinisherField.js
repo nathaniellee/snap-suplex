@@ -37,7 +37,6 @@ const levelRange = _.range(1, 5);
 export default React.createClass({
 	propTypes: {
 		description: string,
-		label: string,
 		level: number,
 		stat: string,
 		onChangeDescription: func,
@@ -48,7 +47,6 @@ export default React.createClass({
 	getDefaultProps() {
 		return {
 			description: '',
-			label: '',
 			level: 1,
 			stat: 'str',
 			onChangeDescription: _.noop,
@@ -68,7 +66,6 @@ export default React.createClass({
 	render() {
 		const {
 			description,
-			label,
 			level,
 			stat,
 			onChangeDescription,
