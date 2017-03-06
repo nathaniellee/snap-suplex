@@ -112,9 +112,9 @@ describe('root selectors', () => {
       test('returns the appropriate state.', () => {
         const updatedState = reducer(initialState, setWrestlersAction);
         expect(selectors.getWrestler(initialState, 0))
-          .toEqual(wrestlersSelectors.getWrestler(initialState.wrestlers, 0));
+          .toEqual({ wrestler: null });
         expect(selectors.getWrestler(initialState, mockWrestler.id))
-          .toEqual(wrestlersSelectors.getWrestler(initialState.wrestlers, mockWrestler.id));
+          .toEqual({ wrestler: wrestlersSelectors.getWrestler(initialState.wrestlers, mockWrestler.id) });
       });
     });
 
