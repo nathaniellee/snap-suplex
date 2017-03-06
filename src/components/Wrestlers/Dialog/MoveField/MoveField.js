@@ -70,7 +70,7 @@ export default React.createClass({
 					className='MoveField-favorite-label'
 					is2
 				>
-					Favorite Tags
+					Favorite Tags:
 				</Grid.Cell>
 				<Grid.Cell
 					className='MoveField-input'
