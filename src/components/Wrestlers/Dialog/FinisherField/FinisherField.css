@@ -1,0 +1,47 @@
+.FinisherField {
+	margin-top: 10px;
+}
+
+.FinisherField-level-label {
+	align-items: center;
+	display: flex;
+	height: 28px;
+	justify-content: flex-end;
+	padding-right: 10px !important;
+}
+
+.FinisherField-level-label {
+	padding-left: 10px !important;
+}
+
+.FinisherField-level-input {
+	text-align: right;
+}
+
+.FinisherField-level-input .lucid-RadioButtonLabeled {
+	align-items: center;
+	margin-right: 10px;
+}
+
+.FinisherField-level-input .lucid-RadioButtonLabeled:last-child {
+	margin-right: 0;
+}
+
+.FinisherField-level-input .lucid-RadioButtonLabeled-label {
+	padding-top: 0;
+}
+
+.FinisherField-stat-label {
+	align-items: center;
+	display: flex;
+	height: 28px;
+}
+
+.FinisherField-stat-label {
+	padding-left: 10px !important;
+}
+
+.FinisherField-stat-input .lucid-RadioButtonLabeled {
+	align-items: center;
+	margin-right: 10px;
+}
