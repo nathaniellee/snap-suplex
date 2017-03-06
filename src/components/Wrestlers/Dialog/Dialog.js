@@ -8,6 +8,7 @@ import {
 	getSpecialtyStatCost,
 	getStaminaStatCost,
 } from '../../../utils/statCosts';
+import FinisherField from './FinisherField/FinisherField';
 import MoveField from './MoveField/MoveField';
 import NameField from './NameField/NameField';
 import StatField from './StatField/StatField';
@@ -188,6 +189,33 @@ export default React.createClass({
 		});
 	},
 
+	onChangeFinisherDescription(description) {
+		this.setState({
+			finisher: {
+				...this.state.finisher,
+				description,
+			},
+		});
+	},
+
+	onChangeFinisherLevel(level) {
+		this.setState({
+			finisher: {
+				...this.state.finisher,
+				level,
+			},
+		});
+	},
+
+	onChangeFinisherStat(stat) {
+		this.setState({
+			finisher: {
+				...this.state.finisher,
+				stat,
+			},
+		});
+	},
+
 	onSubmit() {
 		const {
 			id,
@@ -341,6 +369,17 @@ export default React.createClass({
 							onChangeFavorites={_.partial(this.onChangeMoveFavorites, 'tec', move.id)}
 						/>
 					))}
+					<div className='WrestlerDialog-form-heading-finisher'>Finisher</div>
+					<FinisherField
+						description={finisher.description}
+						key='finisher'
+						label='Finisher'
+						level={finisher.level}
+						stat={finisher.stat}
+						onChangeDescription={this.onChangeFinisherDescription}
+						onChangeLevel={this.onChangeFinisherLevel}
+						onChangeStat={this.onChangeFinisherStat}
+					/>
 				</section>
 				<Dialog.Footer>
 					<Button

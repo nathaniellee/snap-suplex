@@ -2,12 +2,17 @@
 	align-items: center;
 }
 
+.WrestlerDialog-form-heading-finisher,
 .WrestlerDialog-form-heading-moves,
 .WrestlerDialog-form-heading-stats {
 	border-bottom: solid 1px #e3e3e3;
 	font-weight: bold;
 	margin-top: 10px;
 	padding-bottom: 5px;
+}
+
+.WrestlerDialog-form-heading-finisher {
+	margin-top: 30px;
 }
 
 .WrestlerDialog-form-heading-stats {
