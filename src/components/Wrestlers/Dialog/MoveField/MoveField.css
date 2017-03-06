@@ -3,5 +3,15 @@
 }
 
 .MoveField-favorite-label {
-	padding-left: 10px !important;
+	padding-right: 10px !important;
+	text-align: right;
+}
+
+.MoveField-input .lucid-RadioButtonLabeled {
+	align-items: center;
+	margin-right: 10px;
+}
+
+.MoveField-input .lucid-RadioButtonLabeled-label {
+	padding-top: 0;
 }
