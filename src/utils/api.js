@@ -15,6 +15,77 @@ const fetchData = () => {
 const putData = (data) => {
 	const stringifiedData = JSON.stringify(data);
 	localStorage.setItem('snap-suplex', stringifiedData);
+	return JSON.parse(stringifiedData);
+};
+
+const getNewId = (allIds) => _.max(allIds) + 1;
+
+const getMatches = () => {
+	const { matches } = fetchData();
+	return Promise.resolve(matches);
+};
+
+const postMatch = (match) => {
+	const data = fetchData();
+	const { matches } = data;
+	const {
+		allIds,
+		byId,
+	} = matches;
+
+	const newId = getNewId(allIds);
+	const newMatch = {
+		...match,
+		id: newId,
+	};
+	const updatedData = {
+		...data,
+		matches: {
+			allIds: [
+				...allIds,
+				newId,
+			],
+			byId: {
+				...byId,
+				[newId]: newMatch,
+			},
+		},
+	};
+
+	putData(updatedData);
+
+	return Promise.resolve(newMatch);
+};
+
+const putMatch = (updatedMatch) => {
+	const data = fetchData();
+	const { matches } = data;
+	const { byId } = matches;
+	const updatedMatchId = updatedMatch.id;
+	const foundMatch = _.get(byId, updatedMatchId);
+
+	if (!foundMatch) {
+		const error = new Error(`There is no match with ID ${updatedMatchId} in the database.`);
+		return Promise.reject(error);
+	}
+
+	const updatedData = {
+		...data,
+		matches: {
+			...matches,
+			byId: {
+				...byId,
+				[updatedMatchId]: {
+					...foundMatch,
+					...updatedMatch,
+				},
+			},
+		},
+	};
+
+	putData(updatedData);
+
+	return Promise.resolve(updatedMatch);
 };
 
 const getMoves = () => {
@@ -30,7 +101,7 @@ const postMove = (move) => {
 		byId,
 	} = moves;
 
-	const newId = _.max(allIds) + 1;
+	const newId = getNewId(allIds);
 	const newMove = {
 		...move,
 		id: newId,
@@ -57,9 +128,7 @@ const postMove = (move) => {
 const putMove = (updatedMove) => {
 	const data = fetchData();
 	const { moves } = data;
-	const {
-		byId,
-	} = moves;
+	const { byId } = moves;
 	const updatedMoveId = updatedMove.id;
 	const foundMove = _.get(byId, updatedMoveId);
 
@@ -142,6 +211,11 @@ const putWrestler = (updatedWrestler) => {
 };
 
 export default {
+	matches: {
+		get: getMatches,
+		post: postMatch,
+		put: putMatch,
+	},
 	moves: {
 		get: getMoves,
 		post: postMove,
