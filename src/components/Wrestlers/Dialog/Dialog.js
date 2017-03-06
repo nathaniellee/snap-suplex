@@ -127,10 +127,13 @@ export default React.createClass({
 		const sizeDiff = numMoves - _.size(moves);
 
 		if (sizeDiff > 0) {
-			const addedMoves = _.fill(Array(sizeDiff), {
-				...defaultMove,
-				id: `tmp-${++uniqueId}`,
-			});
+			const addedMoves = _(Array(sizeDiff))
+				.fill({ ...defaultMove })
+				.map((move) => ({
+					...move,
+					id: `tmp-${++uniqueId}`,
+				}))
+				.value();
 			this.setState({
 				[statMovesKey]: _.concat(moves, addedMoves),
 			});
@@ -194,6 +197,15 @@ export default React.createClass({
 			finisher: {
 				...this.state.finisher,
 				description,
+			},
+		});
+	},
+
+	onChangeFinisherFlag(flag) {
+		this.setState({
+			finisher: {
+				...this.state.finisher,
+				flags: [flag],
 			},
 		});
 	},
@@ -372,10 +384,12 @@ export default React.createClass({
 					<div className='WrestlerDialog-form-heading-finisher'>Finisher</div>
 					<FinisherField
 						description={finisher.description}
+						flag={_.head(finisher.flags)}
 						key='finisher'
 						level={finisher.level}
 						stat={finisher.stat}
 						onChangeDescription={this.onChangeFinisherDescription}
+						onChangeFlag={this.onChangeFinisherFlag}
 						onChangeLevel={this.onChangeFinisherLevel}
 						onChangeStat={this.onChangeFinisherStat}
 					/>

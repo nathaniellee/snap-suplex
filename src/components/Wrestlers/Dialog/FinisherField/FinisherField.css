@@ -2,16 +2,14 @@
 	margin-top: 10px;
 }
 
+.FinisherField .lucid-Grid:last-child {
+	margin-top: 10px;
+}
+
 .FinisherField-level-label {
 	align-items: center;
 	display: flex;
 	height: 28px;
-	justify-content: flex-end;
-	padding-right: 10px !important;
-}
-
-.FinisherField-level-label {
-	padding-left: 10px !important;
 }
 
 .FinisherField-level-input {
