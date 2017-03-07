@@ -1,10 +1,11 @@
 import React from 'react';
+import './Matches.css';
 
 export default React.createClass({
 	render() {
 		return (
 			<div className='Matches'>
-				<p>Placeholder for the matches listing</p>
+				<span>Placeholder for the matches listing</span>
 			</div>
 		);
 	},
