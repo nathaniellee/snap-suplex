@@ -2,10 +2,22 @@ import _ from 'lodash';
 import { combineReducers } from 'redux';
 import actionTypes from '../../actions/actionTypes';
 
-const maxRounds = (state = 1, action = {}) => {
+const maxRounds = (state = 10, action = {}) => {
   switch (action.type) {
     case actionTypes.SET_MAX_ROUNDS: {
       return action.maxRounds;
+    }
+
+    default: {
+      return state;
+    }
+  }
+};
+
+const refScore = (state = 5, action = {}) => {
+  switch (action.type) {
+    case actionTypes.SET_REF_SCORE: {
+      return action.refScore;
     }
 
     default: {
@@ -47,6 +59,7 @@ const wrestlers = (state = [], action = {}) => {
 
 export default combineReducers({
   maxRounds,
+  refScore,
   roundNumber,
   wrestlers,
 });

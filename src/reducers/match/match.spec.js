@@ -3,10 +3,11 @@ import actionTypes from '../../actions/actionTypes';
 import reducer, { selectors } from './match';
 
 const {
-	SET_MAX_ROUNDS,
-	INCREMENT_ROUND_NUMBER,
-	START_MATCH,
 	ADD_WRESTLER_TO_MATCH,
+	INCREMENT_ROUND_NUMBER,
+	SET_MAX_ROUNDS,
+	SET_REF_SCORE,
+	START_MATCH,
 } = actionTypes;
 
 describe('match', () => {
@@ -14,6 +15,7 @@ describe('match', () => {
 	let addWrestlerAction;
 	let incrementAction;
 	let setMaxRoundsAction;
+	let setRefScoreAction;
 	let startMatchAction;
 	let unrecognizedAction;
 
@@ -26,7 +28,11 @@ describe('match', () => {
 		incrementAction = { type: INCREMENT_ROUND_NUMBER };
 		setMaxRoundsAction = {
 			type: SET_MAX_ROUNDS,
-			maxRounds: 10,
+			maxRounds: 20,
+		};
+		setRefScoreAction = {
+			type: SET_REF_SCORE,
+			refScore: 8,
 		};
 		startMatchAction = { type: START_MATCH };
     unrecognizedAction = { type: 'unrecognized action' };
@@ -36,59 +42,8 @@ describe('match', () => {
 		describe('default state', () => {
 			test('returns a clean object.', () => {
 				expect(state).toEqual({
-					maxRounds: 1,
-					roundNumber: 1,
-					wrestlers: [],
-				});
-			});
-		});
-
-		describe(`"${SET_MAX_ROUNDS}" action`, () => {
-			test('sets `maxRounds` in state to the value of `maxRounds` from the action.', () => {
-				expect(state).toEqual({
-					maxRounds: 1,
-					roundNumber: 1,
-					wrestlers: [],
-				});
-				expect(reducer(state, setMaxRoundsAction)).toEqual({
 					maxRounds: 10,
-					roundNumber: 1,
-					wrestlers: [],
-				});
-			});
-		});
-
-		describe(`"${INCREMENT_ROUND_NUMBER}" action`, () => {
-			test('increments `roundNumber` in state by 1.', () => {
-				expect(state).toEqual({
-					maxRounds: 1,
-					roundNumber: 1,
-					wrestlers: [],
-				});
-				expect(reducer(state, incrementAction)).toEqual({
-					maxRounds: 1,
-					roundNumber: 2,
-					wrestlers: [],
-				});
-			});
-		});
-
-		describe(`"${START_MATCH}" action`, () => {
-			test('sets `roundNumber` in state to 1.', () => {
-				expect(state).toEqual({
-					maxRounds: 1,
-					roundNumber: 1,
-					wrestlers: [],
-				});
-				state = reducer(state, incrementAction);
-				state = reducer(state, incrementAction);
-				expect(state).toEqual({
-					maxRounds: 1,
-					roundNumber: 3,
-					wrestlers: [],
-				});
-				expect(reducer(state, startMatchAction)).toEqual({
-					maxRounds: 1,
+					refScore: 5,
 					roundNumber: 1,
 					wrestlers: [],
 				});
@@ -98,14 +53,92 @@ describe('match', () => {
 		describe(`"${ADD_WRESTLER_TO_MATCH}" action`, () => {
 			test('adds the provided id to the `wrestlers` array in state.', () => {
 				expect(state).toEqual({
-					maxRounds: 1,
+					maxRounds: 10,
+					refScore: 5,
 					roundNumber: 1,
 					wrestlers: [],
 				});
 				expect(reducer(state, addWrestlerAction)).toEqual({
-					maxRounds: 1,
+					maxRounds: 10,
+					refScore: 5,
 					roundNumber: 1,
 					wrestlers: [2],
+				});
+			});
+		});
+
+		describe(`"${INCREMENT_ROUND_NUMBER}" action`, () => {
+			test('increments `roundNumber` in state by 1.', () => {
+				expect(state).toEqual({
+					maxRounds: 10,
+					refScore: 5,
+					roundNumber: 1,
+					wrestlers: [],
+				});
+				expect(reducer(state, incrementAction)).toEqual({
+					maxRounds: 10,
+					refScore: 5,
+					roundNumber: 2,
+					wrestlers: [],
+				});
+			});
+		});
+
+		describe(`"${SET_MAX_ROUNDS}" action`, () => {
+			test('sets `maxRounds` in state to the value of `maxRounds` from the action.', () => {
+				expect(state).toEqual({
+					maxRounds: 10,
+					refScore: 5,
+					roundNumber: 1,
+					wrestlers: [],
+				});
+				expect(reducer(state, setMaxRoundsAction)).toEqual({
+					maxRounds: 20,
+					refScore: 5,
+					roundNumber: 1,
+					wrestlers: [],
+				});
+			});
+		});
+
+		describe(`"${SET_REF_SCORE}" action`, () => {
+			test('sets `refScore` in state to the value of `refScore` from the action.', () => {
+				expect(state).toEqual({
+					maxRounds: 10,
+					refScore: 5,
+					roundNumber: 1,
+					wrestlers: [],
+				});
+				expect(reducer(state, setRefScoreAction)).toEqual({
+					maxRounds: 10,
+					refScore: 8,
+					roundNumber: 1,
+					wrestlers: [],
+				});
+			});
+		});
+
+		describe(`"${START_MATCH}" action`, () => {
+			test('sets `roundNumber` in state to 1.', () => {
+				expect(state).toEqual({
+					maxRounds: 10,
+					refScore: 5,
+					roundNumber: 1,
+					wrestlers: [],
+				});
+				state = reducer(state, incrementAction);
+				state = reducer(state, incrementAction);
+				expect(state).toEqual({
+					maxRounds: 10,
+					refScore: 5,
+					roundNumber: 3,
+					wrestlers: [],
+				});
+				expect(reducer(state, startMatchAction)).toEqual({
+					maxRounds: 10,
+					refScore: 5,
+					roundNumber: 1,
+					wrestlers: [],
 				});
 			});
 		});
@@ -113,13 +146,15 @@ describe('match', () => {
 		describe('unrecognized action', () => {
 			test('returns the current state.', () => {
 				expect(state).toEqual({
-					maxRounds: 1,
+					maxRounds: 10,
+					refScore: 5,
 					roundNumber: 1,
 					wrestlers: [],
 				});
 				state = reducer(state, incrementAction);
 				expect(reducer(state, unrecognizedAction)).toEqual({
-					maxRounds: 1,
+					maxRounds: 10,
+					refScore: 5,
 					roundNumber: 2,
 					wrestlers: [],
 				});
@@ -134,7 +169,8 @@ describe('match', () => {
 				state = reducer(state, incrementAction);
 				state = reducer(state, setMaxRoundsAction);
 				expect(selectors.get(state)).toEqual({
-					maxRounds: 10,
+					maxRounds: 20,
+					refScore: 5,
 					roundNumber: 2,
 					wrestlers: [2],
 				});

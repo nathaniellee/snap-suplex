@@ -13,5 +13,10 @@ export default {
 		maxRounds,
 	}),
 
+	setRefScore: (refScore) => ({
+		type: actionTypes.SET_REF_SCORE,
+		refScore,
+	}),
+
 	startMatch: () => ({ type: actionTypes.START_MATCH }),
 };

@@ -34,6 +34,16 @@ describe('match action creators', () => {
 		});
 	});
 
+	describe('setRefScore', () => {
+		test('creates the expected action.', () => {
+			const expectedAction = {
+				type: actionTypes.SET_REF_SCORE,
+				refScore: 8,
+			};
+			expect(actionCreators.setRefScore(8)).toEqual(expectedAction);
+		});
+	});
+
 	describe('startMatch', () => {
 		test('creates the expected action.', () => {
 			const expectedAction = { type: actionTypes.START_MATCH };
