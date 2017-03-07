@@ -1,10 +1,11 @@
 import React from 'react';
+import './Home.css';
 
 export default React.createClass({
 	render() {
 		return (
 			<div className='Home'>
-				<p>Welcome to the SnapSuplex Simulator app!</p>
+				<span>Welcome to the SnapSuplex Simulator app!</span>
 			</div>
 		);
 	},
