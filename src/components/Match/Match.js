@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { Accordion } from 'lucid';
 import React from 'react';
-import Parameters from './Parameters/Parameters';
+import Parameters from './Parameters/ConnectedParameters';
 import './Match.css';
 
 export default React.createClass({

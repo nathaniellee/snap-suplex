@@ -6,10 +6,35 @@ import {
 import React from 'react';
 import './Parameters.css';
 
-const roundLimits = _.range(10, 70, 10);
+const {
+	func,
+	oneOf,
+} = React.PropTypes;
+
+const maxRoundsOptions = _.range(10, 70, 10);
 
 export default React.createClass({
+	propTypes: {
+		maxRounds: oneOf(maxRoundsOptions),
+		onChangeMaxRounds: func,
+	},
+
+	getDefaultProps() {
+		return {
+			maxRounds: 10,
+			onChangeMaxRounds: _.noop,
+		};
+	},
+
+	onChangeMaxRounds(selectedIndex) {
+		this.props.onChangeMaxRounds(maxRoundsOptions[selectedIndex]);
+	},
+
 	render() {
+		const {
+			maxRounds,
+		} = this.props;
+
 		return (
 			<div className='Parameters'>
 				<Grid isGutterless>
@@ -38,24 +63,24 @@ export default React.createClass({
 				</Grid>
 				<Grid isGutterless>
 					<Grid.Cell
-						className='Parameters-round-limit-label'
+						className='Parameters-max-rounds-label'
 						is2
 					>
 						Number of rounds:
 					</Grid.Cell>
 					<Grid.Cell
-						className='Parameters-round-limit-input'
+						className='Parameters-max-rounds-input'
 						is10
 					>
 						<RadioGroup
-							selectedIndex={0}
-							onSelect={_.noop}
+							selectedIndex={_.indexOf(maxRoundsOptions, maxRounds)}
+							onSelect={this.onChangeMaxRounds}
 						>
-							{_.map(roundLimits, (limit) => (
+							{_.map(maxRoundsOptions, (option) => (
 								<RadioGroup.RadioButton
-									key={limit}
+									key={option}
 								>
-									<RadioGroup.Label>{limit}</RadioGroup.Label>
+									<RadioGroup.Label>{option}</RadioGroup.Label>
 								</RadioGroup.RadioButton>
 							))}
 						</RadioGroup>
