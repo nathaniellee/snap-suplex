@@ -24,6 +24,16 @@ describe('match action creators', () => {
 		});
 	});
 
+	describe('setDqRating', () => {
+		test('creates the expected action.', () => {
+			const expectedAction = {
+				type: actionTypes.SET_DQ_RATING,
+				dqRating: 8,
+			};
+			expect(actionCreators.setDqRating(8)).toEqual(expectedAction);
+		});
+	});
+
 	describe('setMaxRounds', () => {
 		test('creates the expected action.', () => {
 			const expectedAction = {

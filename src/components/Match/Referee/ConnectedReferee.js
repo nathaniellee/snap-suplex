@@ -7,6 +7,9 @@ import Referee from './Referee';
 const mapStateToProps = (state) => selectors.getMatch(state);
 
 const mapDispatchToProps = (dispatch) => ({
+	onChangeDqRating: (dqRating) => {
+		dispatch(actionCreators.setDqRating(dqRating));
+	},
 	onChangeRefScore: (refScore) => {
 		dispatch(actionCreators.setRefScore(refScore));
 	},

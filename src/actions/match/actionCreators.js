@@ -8,6 +8,11 @@ export default {
 
 	incrementRoundNumber: () => ({ type: actionTypes.INCREMENT_ROUND_NUMBER }),
 
+	setDqRating: (dqRating) => ({
+		type: actionTypes.SET_DQ_RATING,
+		dqRating,
+	}),
+
 	setMaxRounds: (maxRounds) => ({
 		type: actionTypes.SET_MAX_ROUNDS,
 		maxRounds,

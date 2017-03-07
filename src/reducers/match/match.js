@@ -2,6 +2,18 @@ import _ from 'lodash';
 import { combineReducers } from 'redux';
 import actionTypes from '../../actions/actionTypes';
 
+const dqRating = (state = 5, action = {}) => {
+  switch (action.type) {
+    case actionTypes.SET_DQ_RATING: {
+      return action.dqRating;
+    }
+
+    default: {
+      return state;
+    }
+  }
+};
+
 const maxRounds = (state = 10, action = {}) => {
   switch (action.type) {
     case actionTypes.SET_MAX_ROUNDS: {
@@ -58,6 +70,7 @@ const wrestlers = (state = [], action = {}) => {
 };
 
 export default combineReducers({
+  dqRating,
   maxRounds,
   refScore,
   roundNumber,

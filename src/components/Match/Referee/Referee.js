@@ -11,19 +11,28 @@ const {
 	oneOf,
 } = React.PropTypes;
 
+const dqRatingValues = _.range(1, 11);
 const refScoreValues = _.range(1, 11);
 
 export default React.createClass({
 	propTypes: {
+		dqRating: oneOf(dqRatingValues),
 		refScore: oneOf(refScoreValues),
+		onChangeDqRating: func,
 		onChangeRefScore: func,
 	},
 
 	getDefaultProps() {
 		return {
-			refScore: 10,
+			dqRating: 5,
+			refScore: 5,
+			onChangeDqRating: _.noop,
 			onChangeRefScore: _.noop,
 		};
+	},
+
+	onChangeDqRating(selectedIndex) {
+		this.props.onChangeDqRating(dqRatingValues[selectedIndex]);
 	},
 
 	onChangeRefScore(selectedIndex) {
@@ -32,6 +41,7 @@ export default React.createClass({
 
 	render() {
 		const {
+			dqRating,
 			refScore,
 		} = this.props;
 
@@ -56,6 +66,30 @@ export default React.createClass({
 							{_.map(refScoreValues, (refScoreValue) => (
 								<SingleSelect.Option key={refScoreValue}>
 									{refScoreValue}
+								</SingleSelect.Option>
+							))}
+						</SingleSelect>
+					</Grid.Cell>
+				</Grid>
+				<Grid isGutterless>
+					<Grid.Cell
+						className='Referee-dq-rating-label'
+						is2
+					>
+						DQ rating:
+					</Grid.Cell>
+					<Grid.Cell
+						className='Referee-dq-rating-input'
+						is10
+					>
+						<SingleSelect
+							hasReset={false}
+							selectedIndex={_.indexOf(dqRatingValues, dqRating)}
+							onSelect={this.onChangeDqRating}
+						>
+							{_.map(dqRatingValues, (dqRatingValue) => (
+								<SingleSelect.Option key={dqRatingValue}>
+									{dqRatingValue}
 								</SingleSelect.Option>
 							))}
 						</SingleSelect>
