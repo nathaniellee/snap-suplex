@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import {
 	Grid,
-	RadioGroup,
+	SingleSelect,
 } from 'lucid';
 import React from 'react';
 import './Referee.css';
@@ -48,18 +48,17 @@ export default React.createClass({
 						className='Referee-ref-score-input'
 						is10
 					>
-						<RadioGroup
+						<SingleSelect
+							hasReset={false}
 							selectedIndex={_.indexOf(refScoreValues, refScore)}
 							onSelect={this.onChangeRefScore}
 						>
 							{_.map(refScoreValues, (refScoreValue) => (
-								<RadioGroup.RadioButton
-									key={refScoreValue}
-								>
-									<RadioGroup.Label>{refScoreValue}</RadioGroup.Label>
-								</RadioGroup.RadioButton>
+								<SingleSelect.Option key={refScoreValue}>
+									{refScoreValue}
+								</SingleSelect.Option>
 							))}
-						</RadioGroup>
+						</SingleSelect>
 					</Grid.Cell>
 				</Grid>
 			</div>
