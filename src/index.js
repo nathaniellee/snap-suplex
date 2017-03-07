@@ -9,6 +9,7 @@ import {
 } from 'react-router';
 import App from './components/App/ConnectedApp';
 import Home from './components/Home/Home';
+import Match from './components/Match/Match';
 import Matches from './components/Matches/Matches';
 import Wrestlers from './components/Wrestlers/ConnectedWrestlers';
 import createStore from './utils/createStore';
@@ -22,6 +23,7 @@ render(
 	  <Router history={hashHistory}>
 	  	<Route path='/' component={App}>
 	  		<IndexRoute component={Home} />
+	  		<Route path='/match' component={Match} />
 		  	<Route path='/matches' component={Matches} />
 		  	<Route path='/wrestlers' component={Wrestlers} />
 	  	</Route>
