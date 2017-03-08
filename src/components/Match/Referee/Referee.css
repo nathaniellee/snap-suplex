@@ -1,3 +1,15 @@
 .Referee {
 	padding: 10px;
 }
+
+.Referee .lucid-Grid {
+	margin-top: 5px;
+}
+
+.Referee .lucid-Grid:first-child {
+	margin-top: 0;
+}
+
+.Referee .lucid-Grid-is-gutterless {
+	align-items: center;
+}
