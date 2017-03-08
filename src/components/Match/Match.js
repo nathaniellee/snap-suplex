@@ -5,57 +5,48 @@ import Parameters from './Parameters/ConnectedParameters';
 import Referee from './Referee/ConnectedReferee';
 import './Match.css';
 
-const matchSetupSteps = {
-	parameters: {
-		index: 0,
+const matchSetupSteps = [
+	{
 		label: 'Parameters',
 		component: <Parameters />,
 	},
-	referee: {
-		index: 1,
+	{
 		label: 'Referee',
 		component: <Referee />,
 	},
-	participants: {
-		index: 2,
+	{
 		label: 'Participants',
 		component: <p>Hey now!</p>,
 	},
-	strategies: {
-		index: 3,
+	{
 		label: 'Strategies',
 		component: <p>Say what?</p>,
 	},
-};
+];
 
 export default React.createClass({
 	getInitialState() {
-		return {
-			step: 'parameters',
-		};
+		return { stepIndex: 0 };
 	},
 
-	onSelectStep(index) {
-		this.setState({
-			step: _.findKey(matchSetupSteps, { index }),
-		});
+	onSelectStep(stepIndex) {
+		this.setState({ stepIndex });
 	},
 
 	render() {
-		const { step } = this.state;
+		const { stepIndex } = this.state;
 
 		return (
 			<div className='Match'>
 				<Accordion
-					selectedIndex={matchSetupSteps[step].index}
+					selectedIndex={stepIndex}
 					onSelect={this.onSelectStep}
 				>
 					{_.map(matchSetupSteps, ({
 						component,
-						index,
 						label,
 					}) => (
-						<Accordion.Item key={index}>
+						<Accordion.Item key={label}>
 							<Accordion.Header>{label}</Accordion.Header>
 							{component}
 						</Accordion.Item>
