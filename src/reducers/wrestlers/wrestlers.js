@@ -29,10 +29,7 @@ export default (state = defaultState, action = {}) => {
 
     case actionTypes.SET_WRESTLERS:
     case actionTypes.FETCH_WRESTLERS_SUCCESS: {
-      return {
-        byId: _.keyBy(action.wrestlers, 'id'),
-        allIds: _.map(action.wrestlers, 'id'),
-      };
+      return action.wrestlers;
     }
 
     case actionTypes.UPDATE_WRESTLER: {

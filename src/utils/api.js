@@ -186,23 +186,27 @@ const postWrestler = (wrestler) => {
 const putWrestler = (updatedWrestler) => {
 	const data = fetchData();
 	const { wrestlers } = data;
+	const { byId } = wrestlers;
 	const updatedWrestlerId = updatedWrestler.id;
-	const foundWrestler = _.find(wrestlers, { id: updatedWrestlerId });
+	const foundWrestler = _.get(byId, updatedWrestlerId);
 
 	if (!foundWrestler) {
 		const error = new Error(`There is no wrestler with ID ${updatedWrestlerId} in the database.`);
 		return Promise.reject(error);
 	}
 
-	// TODO: Really need to adopt the `allIds`/`byId` pattern for wrestlers.
 	const updatedData = {
 		...data,
-		wrestlers: _.map(wrestlers, (wrestler) => wrestler.id === updatedWrestler.id
-			? {
-				...wrestler,
-				...updatedWrestler,
-			}
-			: wrestler),
+		wrestlers: {
+			...wrestlers,
+			byId: {
+				...byId,
+				[updatedWrestlerId]: {
+					...foundWrestler,
+					...updatedWrestler,
+				},
+			},
+		},
 	};
 
 	putData(updatedData);
