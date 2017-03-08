@@ -1,0 +1,44 @@
+.Participants {
+	display: flex;
+	padding: 10px;
+}
+
+.Participants .lucid-Grid {
+	margin-top: 5px;
+}
+
+.Participants .lucid-Grid:first-child {
+	margin-top: 0;
+}
+
+.Participants .lucid-Grid-is-gutterless {
+	align-items: center;
+}
+
+.Participants-table {
+	height: 350px;
+}
+
+.Participants-paginator {
+	border-top: solid 1px #e3e3e3;
+	display: flex;
+	justify-content: flex-end;
+	padding: 10px;
+}
+
+.Participants-summary {
+	display: flex;
+	flex: 1;
+	margin-left: 20px;
+}
+
+.Participants-summary .lucid-Panel {
+	flex: 1;
+}
+
+.Participants-summary .lucid-Panel-content {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}

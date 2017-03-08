@@ -2,6 +2,7 @@ import _ from 'lodash';
 import { Accordion } from 'lucid';
 import React from 'react';
 import Parameters from './Parameters/ConnectedParameters';
+import Participants from './Participants/ConnectedParticipants';
 import Referee from './Referee/ConnectedReferee';
 import './Match.css';
 
@@ -16,7 +17,7 @@ const matchSetupSteps = [
 	},
 	{
 		label: 'Participants',
-		component: <p>Hey now!</p>,
+		component: <Participants />,
 	},
 	{
 		label: 'Strategies',
