@@ -24,16 +24,19 @@ describe('wrestlers', () => {
     };
     setWrestlersAction = {
       type: SET_WRESTLERS,
-      wrestlers: [
-        {
-          id: 1,
-          name: 'Stone Cold Steve Austin',
+      wrestlers: {
+        byId: {
+          1: {
+            id: 1,
+            name: 'Stone Cold Steve Austin',
+          },
+          2: {
+            id: 2,
+            name: 'The Rock',
+          },
         },
-        {
-          id: 2,
-          name: 'The Rock',
-        },
-      ],
+        allIds: [1, 2],
+      },
     };
     updateFoundWrestlerAction = {
       type: UPDATE_WRESTLER,
