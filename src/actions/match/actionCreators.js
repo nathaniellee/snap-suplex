@@ -18,6 +18,11 @@ export default {
 		maxRounds,
 	}),
 
+	setPageIndex: (pageIndex) => ({
+		type: actionTypes.SET_PAGE_INDEX,
+		pageIndex,
+	}),
+
 	setRefScore: (refScore) => ({
 		type: actionTypes.SET_REF_SCORE,
 		refScore,
