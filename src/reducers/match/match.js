@@ -69,10 +69,14 @@ const roundNumber = (state = 1, action = {}) => {
 const wrestlers = (state = [], action = {}) => {
   switch (action.type) {
     case actionTypes.ADD_WRESTLER_TO_MATCH: {
-      return _.uniq([
+      return [
         ...state,
         action.wrestler.id,
-      ]);
+      ];
+    }
+
+    case actionTypes.REMOVE_WRESTLER_FROM_MATCH: {
+      return _.without(state, action.wrestler.id);
     }
 
     default: {

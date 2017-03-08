@@ -5,6 +5,7 @@ import reducer, { selectors } from './match';
 const {
 	ADD_WRESTLER_TO_MATCH,
 	INCREMENT_ROUND_NUMBER,
+	REMOVE_WRESTLER_FROM_MATCH,
 	SET_DQ_RATING,
 	SET_MAX_ROUNDS,
 	SET_PAGE_INDEX,
@@ -16,6 +17,7 @@ describe('match', () => {
 	let state;
 	let addWrestlerAction;
 	let incrementAction;
+	let removeWrestlerAction;
 	let setDqRatingAction;
 	let setMaxRoundsAction;
 	let setPageIndexAction;
@@ -32,6 +34,12 @@ describe('match', () => {
 			},
 		};
 		incrementAction = { type: INCREMENT_ROUND_NUMBER };
+		removeWrestlerAction = {
+			type: REMOVE_WRESTLER_FROM_MATCH,
+			wrestler: {
+				id: 2,
+			},
+		};
 		setDqRatingAction = {
 			type: SET_DQ_RATING,
 			dqRating: 6,
@@ -83,6 +91,35 @@ describe('match', () => {
 					refScore: 5,
 					roundNumber: 1,
 					wrestlers: [2],
+				});
+			});
+		});
+
+		describe(`"${REMOVE_WRESTLER_FROM_MATCH}" action`, () => {
+			test('removes the provided id from the `wrestlers` array in state.', () => {
+				expect(state).toEqual({
+					dqRating: 5,
+					maxRounds: 10,
+					pageIndex: 0,
+					refScore: 5,
+					roundNumber: 1,
+					wrestlers: [],
+				});
+				expect(reducer(state, addWrestlerAction)).toEqual({
+					dqRating: 5,
+					maxRounds: 10,
+					pageIndex: 0,
+					refScore: 5,
+					roundNumber: 1,
+					wrestlers: [2],
+				});
+				expect(reducer(state, removeWrestlerAction)).toEqual({
+					dqRating: 5,
+					maxRounds: 10,
+					pageIndex: 0,
+					refScore: 5,
+					roundNumber: 1,
+					wrestlers: [],
 				});
 			});
 		});
