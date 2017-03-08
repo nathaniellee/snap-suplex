@@ -27,7 +27,9 @@ describe('match', () => {
 		state = reducer(undefined, {});
 		addWrestlerAction = {
 			type: ADD_WRESTLER_TO_MATCH,
-			id: 2,
+			wrestler: {
+				id: 2,
+			},
 		};
 		incrementAction = { type: INCREMENT_ROUND_NUMBER };
 		setDqRatingAction = {

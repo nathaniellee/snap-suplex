@@ -71,7 +71,7 @@ const wrestlers = (state = [], action = {}) => {
     case actionTypes.ADD_WRESTLER_TO_MATCH: {
       return _.uniq([
         ...state,
-        action.id,
+        action.wrestler.id,
       ]);
     }
 
