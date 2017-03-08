@@ -5,6 +5,7 @@ export default _.reduce([
 	'INCREMENT_ROUND_NUMBER',
 	'SET_DQ_RATING',
 	'SET_MAX_ROUNDS',
+	'SET_PAGE_INDEX',
 	'SET_REF_SCORE',
 	'START_MATCH',
 ], (actionTypes, type) => ({
