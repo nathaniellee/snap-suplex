@@ -7,6 +7,7 @@ const {
 	INCREMENT_ROUND_NUMBER,
 	SET_DQ_RATING,
 	SET_MAX_ROUNDS,
+	SET_PAGE_INDEX,
 	SET_REF_SCORE,
 	START_MATCH,
 } = actionTypes;
@@ -17,6 +18,7 @@ describe('match', () => {
 	let incrementAction;
 	let setDqRatingAction;
 	let setMaxRoundsAction;
+	let setPageIndexAction;
 	let setRefScoreAction;
 	let startMatchAction;
 	let unrecognizedAction;
@@ -36,6 +38,10 @@ describe('match', () => {
 			type: SET_MAX_ROUNDS,
 			maxRounds: 20,
 		};
+		setPageIndexAction = {
+			type: SET_PAGE_INDEX,
+			pageIndex: 5,
+		};
 		setRefScoreAction = {
 			type: SET_REF_SCORE,
 			refScore: 8,
@@ -50,6 +56,7 @@ describe('match', () => {
 				expect(state).toEqual({
 					dqRating: 5,
 					maxRounds: 10,
+					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
 					wrestlers: [],
@@ -62,6 +69,7 @@ describe('match', () => {
 				expect(state).toEqual({
 					dqRating: 5,
 					maxRounds: 10,
+					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
 					wrestlers: [],
@@ -69,6 +77,7 @@ describe('match', () => {
 				expect(reducer(state, addWrestlerAction)).toEqual({
 					dqRating: 5,
 					maxRounds: 10,
+					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
 					wrestlers: [2],
@@ -81,6 +90,7 @@ describe('match', () => {
 				expect(state).toEqual({
 					dqRating: 5,
 					maxRounds: 10,
+					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
 					wrestlers: [],
@@ -88,6 +98,7 @@ describe('match', () => {
 				expect(reducer(state, incrementAction)).toEqual({
 					dqRating: 5,
 					maxRounds: 10,
+					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 2,
 					wrestlers: [],
@@ -100,6 +111,7 @@ describe('match', () => {
 				expect(state).toEqual({
 					dqRating: 5,
 					maxRounds: 10,
+					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
 					wrestlers: [],
@@ -107,6 +119,7 @@ describe('match', () => {
 				expect(reducer(state, setDqRatingAction)).toEqual({
 					dqRating: 6,
 					maxRounds: 10,
+					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
 					wrestlers: [],
@@ -119,6 +132,7 @@ describe('match', () => {
 				expect(state).toEqual({
 					dqRating: 5,
 					maxRounds: 10,
+					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
 					wrestlers: [],
@@ -126,6 +140,28 @@ describe('match', () => {
 				expect(reducer(state, setMaxRoundsAction)).toEqual({
 					dqRating: 5,
 					maxRounds: 20,
+					pageIndex: 0,
+					refScore: 5,
+					roundNumber: 1,
+					wrestlers: [],
+				});
+			});
+		});
+
+		describe(`"${SET_PAGE_INDEX}" action`, () => {
+			test('sets `pageIndex` in state to the value of `pageIndex` from the action.', () => {
+				expect(state).toEqual({
+					dqRating: 5,
+					maxRounds: 10,
+					pageIndex: 0,
+					refScore: 5,
+					roundNumber: 1,
+					wrestlers: [],
+				});
+				expect(reducer(state, setPageIndexAction)).toEqual({
+					dqRating: 5,
+					maxRounds: 10,
+					pageIndex: 5,
 					refScore: 5,
 					roundNumber: 1,
 					wrestlers: [],
@@ -138,6 +174,7 @@ describe('match', () => {
 				expect(state).toEqual({
 					dqRating: 5,
 					maxRounds: 10,
+					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
 					wrestlers: [],
@@ -145,6 +182,7 @@ describe('match', () => {
 				expect(reducer(state, setRefScoreAction)).toEqual({
 					dqRating: 5,
 					maxRounds: 10,
+					pageIndex: 0,
 					refScore: 8,
 					roundNumber: 1,
 					wrestlers: [],
@@ -157,6 +195,7 @@ describe('match', () => {
 				expect(state).toEqual({
 					dqRating: 5,
 					maxRounds: 10,
+					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
 					wrestlers: [],
@@ -166,6 +205,7 @@ describe('match', () => {
 				expect(state).toEqual({
 					dqRating: 5,
 					maxRounds: 10,
+					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 3,
 					wrestlers: [],
@@ -173,6 +213,7 @@ describe('match', () => {
 				expect(reducer(state, startMatchAction)).toEqual({
 					dqRating: 5,
 					maxRounds: 10,
+					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
 					wrestlers: [],
@@ -185,6 +226,7 @@ describe('match', () => {
 				expect(state).toEqual({
 					dqRating: 5,
 					maxRounds: 10,
+					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
 					wrestlers: [],
@@ -193,6 +235,7 @@ describe('match', () => {
 				expect(reducer(state, unrecognizedAction)).toEqual({
 					dqRating: 5,
 					maxRounds: 10,
+					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 2,
 					wrestlers: [],
@@ -210,6 +253,7 @@ describe('match', () => {
 				expect(selectors.get(state)).toEqual({
 					dqRating: 5,
 					maxRounds: 20,
+					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 2,
 					wrestlers: [2],

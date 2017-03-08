@@ -26,6 +26,18 @@ const maxRounds = (state = 10, action = {}) => {
   }
 };
 
+const pageIndex = (state = 0, action = {}) => {
+  switch (action.type) {
+    case actionTypes.SET_PAGE_INDEX: {
+      return action.pageIndex;
+    }
+
+    default: {
+      return state;
+    }
+  }
+};
+
 const refScore = (state = 5, action = {}) => {
   switch (action.type) {
     case actionTypes.SET_REF_SCORE: {
@@ -72,6 +84,7 @@ const wrestlers = (state = [], action = {}) => {
 export default combineReducers({
   dqRating,
   maxRounds,
+  pageIndex,
   refScore,
   roundNumber,
   wrestlers,
