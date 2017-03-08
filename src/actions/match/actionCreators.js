@@ -8,6 +8,11 @@ export default {
 
 	incrementRoundNumber: () => ({ type: actionTypes.INCREMENT_ROUND_NUMBER }),
 
+	removeWrestler: (wrestler) => ({
+		type: actionTypes.REMOVE_WRESTLER_FROM_MATCH,
+		wrestler,
+	}),
+
 	setDqRating: (dqRating) => ({
 		type: actionTypes.SET_DQ_RATING,
 		dqRating,

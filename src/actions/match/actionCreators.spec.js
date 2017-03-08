@@ -24,6 +24,21 @@ describe('match action creators', () => {
 		});
 	});
 
+	describe('removeWrestler', () => {
+		test('creates the expected action.', () => {
+			const wrestler = {
+				id: 1,
+				name: 'Ravishing Rick Rude',
+			};
+			const expectedAction = {
+				type: actionTypes.REMOVE_WRESTLER_FROM_MATCH,
+				wrestler,
+			};
+
+			expect(actionCreators.removeWrestler(wrestler)).toEqual(expectedAction);
+		});
+	});
+
 	describe('setDqRating', () => {
 		test('creates the expected action.', () => {
 			const expectedAction = {
