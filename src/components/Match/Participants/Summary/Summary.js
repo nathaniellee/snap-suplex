@@ -29,7 +29,7 @@ const Summary = ({ selectedWrestlers = [] }) => {
 		<div className='ParticipantsSummary'>
 			<Panel>
 				{_.isEmpty(selectedWrestlers) ? (
-					<span>No wrestlers selected</span>
+					<span>No wrestlers selected.</span>
 				) : (
 					<Versus
 						name1={_.get(selectedWrestlers, '[0].name')}
