@@ -25,20 +25,3 @@
 	justify-content: flex-end;
 	padding: 10px;
 }
-
-.Participants-summary {
-	display: flex;
-	flex: 1;
-	margin-left: 20px;
-}
-
-.Participants-summary .lucid-Panel {
-	flex: 1;
-}
-
-.Participants-summary .lucid-Panel-content {
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}

@@ -32,7 +32,6 @@ const mapStateToProps = (state) => {
 	return {
 		pageIndex,
 		selectableWrestlers,
-		selectedWrestlers,
 		totalCount,
 	};
 };

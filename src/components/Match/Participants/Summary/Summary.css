@@ -1,0 +1,30 @@
+.ParticipantsSummary {
+	display: flex;
+	flex: 1;
+	margin-left: 20px;
+}
+
+.ParticipantsSummary .lucid-Panel {
+	flex: 1;
+}
+
+.ParticipantsSummary .lucid-Panel-content {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.ParticipantsSummary-versus {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.ParticipantsSummary-versus > span {
+	margin-top: 10px;
+}
+
+.ParticipantsSummary-versus > span:first-child {
+	margin-top: 0;
+}

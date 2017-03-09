@@ -2,10 +2,10 @@ import _ from 'lodash';
 import {
 	DataTable,
 	Paginator,
-	Panel,
 } from 'lucid';
 import React from 'react';
 import statLabels from '../../../constants/statLabels';
+import Summary from './Summary/ConnectedSummary';
 import './Participants.css';
 
 const {
@@ -18,7 +18,6 @@ export default React.createClass({
 	propTypes: {
 		pageIndex: number,
 		selectableWrestlers: array,
-		selectedWrestlers: array,
 		totalCount: number,
 		onSelectPage: func,
 	},
@@ -27,7 +26,6 @@ export default React.createClass({
 		return {
 			pageIndex: 0,
 			selectableWrestlers: [],
-			selectedWrestlers: [],
 			totalCount: 0,
 			onSelectPage: _.noop,
 		};
@@ -37,7 +35,6 @@ export default React.createClass({
 		const {
 			pageIndex,
 			selectableWrestlers,
-			selectedWrestlers,
 			totalCount,
 			onSelectPage,
 			onSelectWrestler,
@@ -77,18 +74,7 @@ export default React.createClass({
 						/>
 					</div>
 				</div>
-				<div className='Participants-summary'>
-					<Panel>
-						{_.isEmpty(selectedWrestlers) ? (
-							<span>No wrestlers selected</span>
-						) : _.map(selectedWrestlers, ({
-							id,
-							name,
-						}) => (
-							<p key={id}>{name}</p>
-						))}
-					</Panel>
-				</div>
+				<Summary />
 			</div>
 		);
 	},
