@@ -24,7 +24,7 @@ export default {
 
 		if (_.includes(wrestlers, wrestler.id)) {
 			dispatch(removeWrestler(wrestler));
-		} else {
+		} else if (_.size(wrestlers) < 2) {
 			dispatch(addWrestler(wrestler));
 		}
 	},
