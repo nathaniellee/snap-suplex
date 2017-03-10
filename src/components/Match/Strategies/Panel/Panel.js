@@ -8,9 +8,11 @@ import {
 import React from 'react';
 import spotFlags from '../../../../constants/spotFlags';
 import statMap from '../../../../constants/statMap';
+import FavoritesSelector from './FavoritesSelector/FavoritesSelector';
 import './Panel.css';
 
 const {
+	func,
 	number,
 	object,
 } = React.PropTypes;
@@ -23,7 +25,6 @@ const {
 	Td,
 } = Table;
 
-const favorites = _.range(0, 3);
 const levels = _.range(1, 5);
 const stats = _.omit(statMap, 'sta');
 
@@ -31,12 +32,18 @@ export default React.createClass({
 	propTypes: {
 		numRounds: number,
 		wrestler: object.isRequired,
+		onSelectFavorites: func,
 	},
 
 	getDefaultProps() {
 		return {
 			numRounds: 1,
+			onSelectFavorites: _.noop,
 		};
+	},
+
+	onSelectFavorites(numFavorites) {
+		this.props.onSelectFavorites(numFavorites);
 	},
 
 	render() {
@@ -94,14 +101,10 @@ export default React.createClass({
 										</SingleSelect>
 									</Td>
 									<Td className='StrategyPanel-round-favorites'>
-										<SingleSelect
-											hasReset={false}
+										<FavoritesSelector
 											selectedIndex={0}
-										>
-											{_.map(favorites, (favorite) => (
-												<SingleSelect.Option key={favorite}>{favorite}</SingleSelect.Option>
-											))}
-										</SingleSelect>
+											onSelect={this.onSelectFavorites}
+										/>
 									</Td>
 									<Td className='StrategyPanel-round-spot-flags'>
 										<SingleSelect
