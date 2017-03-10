@@ -9,6 +9,7 @@ import React from 'react';
 import spotFlags from '../../../../constants/spotFlags';
 import statMap from '../../../../constants/statMap';
 import FavoritesSelector from './FavoritesSelector/FavoritesSelector';
+import LevelSelector from './LevelSelector/LevelSelector';
 import './Panel.css';
 
 const {
@@ -25,7 +26,6 @@ const {
 	Td,
 } = Table;
 
-const levels = _.range(1, 5);
 const stats = _.omit(statMap, 'sta');
 
 export default React.createClass({
@@ -33,17 +33,24 @@ export default React.createClass({
 		numRounds: number,
 		wrestler: object.isRequired,
 		onSelectFavorites: func,
+		onSelectLevel: func,
 	},
 
 	getDefaultProps() {
 		return {
 			numRounds: 1,
 			onSelectFavorites: _.noop,
+			onSelectLevel: _.noop,
 		};
 	},
 
 	onSelectFavorites(numFavorites) {
 		this.props.onSelectFavorites(numFavorites);
+	},
+
+	onSelectLevel(selectedIndex) {
+		const level = selectedIndex + 1;
+		this.props.onSelectLevel(level);
 	},
 
 	render() {
@@ -91,14 +98,10 @@ export default React.createClass({
 										</SingleSelect>
 									</Td>
 									<Td className='StrategyPanel-round-level'>
-										<SingleSelect
-											hasReset={false}
+										<LevelSelector
 											selectedIndex={0}
-										>
-											{_.map(levels, (level) => (
-												<SingleSelect.Option key={level}>{level}</SingleSelect.Option>
-											))}
-										</SingleSelect>
+											onSelect={this.onSelectLevel}
+										/>
 									</Td>
 									<Td className='StrategyPanel-round-favorites'>
 										<FavoritesSelector
