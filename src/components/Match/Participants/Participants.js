@@ -4,7 +4,7 @@ import {
 	Paginator,
 } from 'lucid';
 import React from 'react';
-import statLabels from '../../../constants/statLabels';
+import statMap from '../../../constants/statMap';
 import Summary from './Summary/ConnectedSummary';
 import './Participants.css';
 
@@ -55,7 +55,10 @@ export default React.createClass({
 							>
 								Name
 							</DataTable.Column>
-							{_.map(statLabels, (label, key) => (
+							{_.map(statMap, ({
+								key,
+								label,
+							}) => (
 								<DataTable.Column
 									align='center'
 									field={`stats.${key}`}
