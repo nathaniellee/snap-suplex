@@ -17,23 +17,23 @@ const {
 
 const spotFlagLabels = [
 	{
-		key: spotFlags.stiff,
+		key: spotFlags.stiff.key,
 		label: 'Stiff',
 	},
 	{
-		key: spotFlags.illegal,
+		key: spotFlags.illegal.key,
 		label: 'Illegal',
 	},
 	{
-		key: spotFlags.highrisk,
+		key: spotFlags.highrisk.key,
 		label: 'High Risk',
 	},
 	{
-		key: spotFlags.pinning,
+		key: spotFlags.pinning.key,
 		label: 'Pinning',
 	},
 	{
-		key: spotFlags.submission,
+		key: spotFlags.submission.key,
 		label: 'Submission',
 	},
 ];
