@@ -12,12 +12,18 @@ const stats = _.chain(statMap.allIds)
   .reject((value) => value === 'sta')
   .value();
 
-debugger;
-
-export default {
+const defaultStrategy = {
   flag: null,
   level: _.head(roundLevels),
   numFavorites: _.head(favorites),
   stat: _.head(stats),
   targetStat: null,
+};
+
+export default (count) => {
+  const range = _.range(1, count + 1);
+  return _.reduce(range, (results) => [
+    ...results,
+    { ...defaultStrategy },
+  ], []);
 };
