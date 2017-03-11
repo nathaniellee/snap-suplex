@@ -71,7 +71,7 @@ describe('root selectors', () => {
     });
   });
 
-  describe('getMatch', () => {
+  describe('getMatchSetup', () => {
     test('returns the appropriate state.', () => {
       expect(selectors.getMatchSetup(initialState)).toEqual(matchSetupSelectors.get(initialState.matchSetup));
     });
