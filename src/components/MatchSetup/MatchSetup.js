@@ -5,7 +5,7 @@ import Parameters from './Parameters/ConnectedParameters';
 import Participants from './Participants/ConnectedParticipants';
 import Referee from './Referee/ConnectedReferee';
 import Strategies from './Strategies/ConnectedStrategies';
-import './Match.css';
+import './MatchSetup.css';
 
 const matchSetupSteps = [
 	{
@@ -39,7 +39,7 @@ export default React.createClass({
 		const { stepIndex } = this.state;
 
 		return (
-			<div className='Match'>
+			<div className='MatchSetup'>
 				<Accordion
 					selectedIndex={stepIndex}
 					onSelect={this.onSelectStep}
