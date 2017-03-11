@@ -6,7 +6,7 @@ import {
 	TextField,
 } from 'lucid';
 import React from 'react';
-import spotFlags from '../../../../constants/spotFlags';
+import FlagSelector from '../../../selectors/FlagSelector/FlagSelector';
 import './FinisherField.css';
 
 const {
@@ -15,28 +15,6 @@ const {
 	string,
 } = React.PropTypes;
 
-const spotFlagLabels = [
-	{
-		key: spotFlags.stiff,
-		label: 'Stiff',
-	},
-	{
-		key: spotFlags.illegal,
-		label: 'Illegal',
-	},
-	{
-		key: spotFlags.highrisk,
-		label: 'High Risk',
-	},
-	{
-		key: spotFlags.pinning,
-		label: 'Pinning',
-	},
-	{
-		key: spotFlags.submission,
-		label: 'Submission',
-	},
-];
 const statLabels = [
 	{
 		key: 'str',
@@ -82,8 +60,8 @@ export default React.createClass({
 		};
 	},
 
-	onChangeFlag(selectedIndex) {
-		this.props.onChangeFlag(spotFlagLabels[selectedIndex].key);
+	onChangeFlag(flag) {
+		this.props.onChangeFlag(flag);
 	},
 
 	onChangeLevel(selectedIndex) {
@@ -130,21 +108,10 @@ export default React.createClass({
 				</Grid>
 				<Grid isGutterless>
 					<Grid.Cell is2>
-						<SingleSelect
-							selectedIndex={
-								_.isNull(flag)
-									? null
-									: _.findIndex(spotFlagLabels, { key: flag })
-							}
-							onSelect={this.onChangeFlag}
-						>
-							<SingleSelect.Placeholder>No spot flag</SingleSelect.Placeholder>
-							{_.map(spotFlagLabels, ({ key, label }) => (
-								<SingleSelect.Option key={key}>
-									{label}
-								</SingleSelect.Option>
-							))}
-						</SingleSelect>
+						<FlagSelector
+							flag={flag}
+							onChange={this.onChangeFlag}
+						/>
 					</Grid.Cell>
 					<Grid.Cell className='FinisherField-level-label'>
 						Level:

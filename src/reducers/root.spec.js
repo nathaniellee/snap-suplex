@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import actionTypes from '../actions/actionTypes';
-import match, { selectors as matchSelectors } from './match/match';
+import matchSetup, { selectors as matchSetupSelectors } from './matchSetup/matchSetup';
 import moves, { selectors as movesSelectors } from './moves/moves';
 import wrestlers, { selectors as wrestlersSelectors } from './wrestlers/wrestlers';
 import reducer, { selectors } from './root';
@@ -39,18 +39,18 @@ describe('root reducer', () => {
 
   test('combines the appropriate reducers.', () => {
     expect(_.xor([
-      'match',
+      'matchSetup',
       'moves',
       'wrestlers',
     ], _.keys(initialState))).toHaveLength(0);
 
-    // Compare results from an action that the `match` reducer handles.
+    // Compare results from an action that the `matchSetup` reducer handles.
     action = {
       type: actionTypes.SET_MAX_ROUNDS,
       maxRounds: 10,
     };
     updatedState = reducer(initialState, action);
-    expect(updatedState.match).toEqual(match(initialState.match, action));
+    expect(updatedState.matchSetup).toEqual(matchSetup(initialState.matchSetup, action));
 
     // Compare results from an action that the `wrestlers` reducer handles.
     updatedState = reducer(updatedState, setWrestlersAction);
@@ -73,7 +73,7 @@ describe('root selectors', () => {
 
   describe('getMatch', () => {
     test('returns the appropriate state.', () => {
-      expect(selectors.getMatch(initialState)).toEqual(matchSelectors.get(initialState.match));
+      expect(selectors.getMatchSetup(initialState)).toEqual(matchSetupSelectors.get(initialState.matchSetup));
     });
   });
 

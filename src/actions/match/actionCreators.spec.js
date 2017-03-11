@@ -4,16 +4,12 @@ import actionTypes from './actionTypes';
 describe('match action creators', () => {
 	describe('addWrestler', () => {
 		test('creates the expected action.', () => {
-			const wrestler = {
-				id: 1,
-				name: 'Ravishing Rick Rude',
-			};
 			const expectedAction = {
 				type: actionTypes.ADD_WRESTLER_TO_MATCH,
-				wrestler,
+				wrestlerId: 1,
 			};
 
-			expect(actionCreators.addWrestler(wrestler)).toEqual(expectedAction);
+			expect(actionCreators.addWrestler(1)).toEqual(expectedAction);
 		});
 	});
 
@@ -26,16 +22,12 @@ describe('match action creators', () => {
 
 	describe('removeWrestler', () => {
 		test('creates the expected action.', () => {
-			const wrestler = {
-				id: 1,
-				name: 'Ravishing Rick Rude',
-			};
 			const expectedAction = {
 				type: actionTypes.REMOVE_WRESTLER_FROM_MATCH,
-				wrestler,
+				wrestlerId: 1,
 			};
 
-			expect(actionCreators.removeWrestler(wrestler)).toEqual(expectedAction);
+			expect(actionCreators.removeWrestler(1)).toEqual(expectedAction);
 		});
 	});
 

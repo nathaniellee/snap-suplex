@@ -2,14 +2,14 @@ import _ from 'lodash';
 import { selectors } from '../../reducers/root';
 import actionTypes from './actionTypes';
 
-const addWrestler = (wrestler) => ({
+const addWrestler = (wrestlerId) => ({
 	type: actionTypes.ADD_WRESTLER_TO_MATCH,
-	wrestler,
+	wrestlerId,
 });
 
-const removeWrestler = (wrestler) => ({
+const removeWrestler = (wrestlerId) => ({
 	type: actionTypes.REMOVE_WRESTLER_FROM_MATCH,
-	wrestler,
+	wrestlerId,
 });
 
 export default {
@@ -18,14 +18,14 @@ export default {
 
 	incrementRoundNumber: () => ({ type: actionTypes.INCREMENT_ROUND_NUMBER }),
 
-	selectWrestler: (wrestler) => (dispatch, getState) => {
+	selectWrestler: (wrestlerId) => (dispatch, getState) => {
 		const state = getState();
-		const { wrestlers } = selectors.getMatch(state);
+		const { wrestlers } = selectors.getMatchSetup(state);
 
-		if (_.includes(wrestlers, wrestler.id)) {
-			dispatch(removeWrestler(wrestler));
+		if (_.includes(wrestlers, wrestlerId)) {
+			dispatch(removeWrestler(wrestlerId));
 		} else if (_.size(wrestlers) < 2) {
-			dispatch(addWrestler(wrestler));
+			dispatch(addWrestler(wrestlerId));
 		}
 	},
 

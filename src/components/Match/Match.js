@@ -4,6 +4,7 @@ import React from 'react';
 import Parameters from './Parameters/ConnectedParameters';
 import Participants from './Participants/ConnectedParticipants';
 import Referee from './Referee/ConnectedReferee';
+import Strategies from './Strategies/ConnectedStrategies';
 import './Match.css';
 
 const matchSetupSteps = [
@@ -21,7 +22,7 @@ const matchSetupSteps = [
 	},
 	{
 		label: 'Strategies',
-		component: <p>Say what?</p>,
+		component: <Strategies />,
 	},
 ];
 

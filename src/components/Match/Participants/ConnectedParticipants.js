@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 	const {
 		pageIndex,
 		wrestlers: wrestlerIds,
-	} = selectors.getMatch(state);
+	} = selectors.getMatchSetup(state);
 	const selectedWrestlers = _.map(wrestlerIds, (id) => selectors.getWrestler(state, id).wrestler);
 	const availableWrestlers = selectors.getWrestlersAsArray(state);
 	const totalCount = _.size(availableWrestlers);
@@ -41,7 +41,7 @@ const mapDispatchToProps = (dispatch) => ({
 		dispatch(actionCreators.setPageIndex(pageIndex));
 	},
 	onSelectWrestler: (wrestler) => {
-		dispatch(actionCreators.selectWrestler(wrestler));
+		dispatch(actionCreators.selectWrestler(wrestler.id));
 	},
 });
 

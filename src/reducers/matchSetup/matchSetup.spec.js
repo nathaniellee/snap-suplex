@@ -1,6 +1,10 @@
 import _ from 'lodash';
 import actionTypes from '../../actions/actionTypes';
-import reducer, { selectors } from './match';
+import {
+	defaultMaxRounds,
+	getDefaultStrategies,
+} from '../../constants/defaults';
+import reducer, { selectors } from './matchSetup';
 
 const {
 	ADD_WRESTLER_TO_MATCH,
@@ -13,7 +17,7 @@ const {
 	START_MATCH,
 } = actionTypes;
 
-describe('match', () => {
+describe('matchSetup', () => {
 	let state;
 	let addWrestlerAction;
 	let incrementAction;
@@ -29,16 +33,12 @@ describe('match', () => {
 		state = reducer(undefined, {});
 		addWrestlerAction = {
 			type: ADD_WRESTLER_TO_MATCH,
-			wrestler: {
-				id: 2,
-			},
+			wrestlerId: 2,
 		};
 		incrementAction = { type: INCREMENT_ROUND_NUMBER };
 		removeWrestlerAction = {
 			type: REMOVE_WRESTLER_FROM_MATCH,
-			wrestler: {
-				id: 2,
-			},
+			wrestlerId: 2,
 		};
 		setDqRatingAction = {
 			type: SET_DQ_RATING,
@@ -69,6 +69,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [],
 				});
 			});
@@ -82,6 +83,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [],
 				});
 				expect(reducer(state, addWrestlerAction)).toEqual({
@@ -90,6 +92,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [2],
 				});
 			});
@@ -103,6 +106,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [],
 				});
 				expect(reducer(state, addWrestlerAction)).toEqual({
@@ -111,6 +115,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [2],
 				});
 				expect(reducer(state, removeWrestlerAction)).toEqual({
@@ -119,6 +124,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [],
 				});
 			});
@@ -132,6 +138,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [],
 				});
 				expect(reducer(state, incrementAction)).toEqual({
@@ -140,6 +147,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 2,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [],
 				});
 			});
@@ -153,6 +161,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [],
 				});
 				expect(reducer(state, setDqRatingAction)).toEqual({
@@ -161,6 +170,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [],
 				});
 			});
@@ -174,6 +184,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [],
 				});
 				expect(reducer(state, setMaxRoundsAction)).toEqual({
@@ -182,6 +193,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
+					strategies: getDefaultStrategies(setMaxRoundsAction.maxRounds),
 					wrestlers: [],
 				});
 			});
@@ -195,6 +207,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [],
 				});
 				expect(reducer(state, setPageIndexAction)).toEqual({
@@ -203,6 +216,7 @@ describe('match', () => {
 					pageIndex: 5,
 					refScore: 5,
 					roundNumber: 1,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [],
 				});
 			});
@@ -216,6 +230,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [],
 				});
 				expect(reducer(state, setRefScoreAction)).toEqual({
@@ -224,6 +239,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 8,
 					roundNumber: 1,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [],
 				});
 			});
@@ -237,6 +253,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [],
 				});
 				state = reducer(state, incrementAction);
@@ -247,6 +264,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 3,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [],
 				});
 				expect(reducer(state, startMatchAction)).toEqual({
@@ -255,6 +273,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [],
 				});
 			});
@@ -268,6 +287,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 1,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [],
 				});
 				state = reducer(state, incrementAction);
@@ -277,6 +297,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 2,
+					strategies: getDefaultStrategies(defaultMaxRounds),
 					wrestlers: [],
 				});
 			});
@@ -295,6 +316,7 @@ describe('match', () => {
 					pageIndex: 0,
 					refScore: 5,
 					roundNumber: 2,
+					strategies: getDefaultStrategies(setMaxRoundsAction.maxRounds),
 					wrestlers: [2],
 				});
 			});
