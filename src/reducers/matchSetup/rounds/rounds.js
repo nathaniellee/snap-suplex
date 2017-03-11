@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import { combineReducers } from 'redux';
 import actionTypes from '../../../actions/actionTypes';
 import {
 	defaultMaxRounds,
@@ -43,6 +42,23 @@ const rounds = (state = getDefaultState(), action = {}) => {
 			return {
 				maxRounds,
 				strategies: updatedStrategies,
+			};
+		}
+
+		case actionTypes.ADD_WRESTLER_TO_MATCH: {
+			return {
+				...state,
+				strategies: {
+					...state.strategies,
+					[action.wrestlerId]: getDefaultStrategies(state.maxRounds),
+				},
+			};
+		}
+
+		case actionTypes.REMOVE_WRESTLER_FROM_MATCH: {
+			return {
+				...state,
+				strategies: _.omit(state.strategies, [action.wrestlerId]),
 			};
 		}
 

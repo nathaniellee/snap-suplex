@@ -7,20 +7,22 @@ import {
 } from '../../../constants/defaults';
 import reducer, { selectors } from './rounds';
 
-const { SET_MAX_ROUNDS } = actionTypes;
+const {
+	ADD_WRESTLER_TO_MATCH,
+	REMOVE_WRESTLER_FROM_MATCH,
+	SET_MAX_ROUNDS,
+} = actionTypes;
 
 describe('rounds', () => {
+	let addWrestlerToMatchAction = { type: ADD_WRESTLER_TO_MATCH };
+	let setMaxRoundsAction = { type: SET_MAX_ROUNDS };
+	let removeWrestlerFromMatchAction = { type: REMOVE_WRESTLER_FROM_MATCH };
+	let unrecognizedAction = { type: 'unrecognized action' };
 	let state;
-	let setMaxRoundsAction;
-	let unrecognizedAction;
+	let selection;
 
 	beforeEach(() => {
 		state = reducer(undefined, {});
-		setMaxRoundsAction = {
-			type: SET_MAX_ROUNDS,
-			maxRounds: 20,
-		};
-    unrecognizedAction = { type: 'unrecognized action' };
 	});
 
 	describe('reducer', () => {
@@ -30,6 +32,61 @@ describe('rounds', () => {
 					maxRounds: defaultMaxRounds,
 					strategies: {},
 				});
+			});
+		});
+
+		describe(`"${SET_MAX_ROUNDS}" action`, () => {
+			test('sets `maxRounds` in state to the provided `maxRounds` value.', () => {
+				expect(state).toEqual({
+					maxRounds: defaultMaxRounds,
+					strategies: {},
+				});
+				expect(reducer(state, {
+					...setMaxRoundsAction,
+					maxRounds: 50,
+				})).toEqual({
+					maxRounds: 50,
+					strategies: {},
+				});
+			});
+		});
+
+		describe(`"${ADD_WRESTLER_TO_MATCH}" action`, () => {
+			test('adds the wrestler ID to `strategies` in state.', () => {
+				const wrestlerId = 8;
+
+				state = reducer(state, {
+					...setMaxRoundsAction,
+					maxRounds: 5,
+				});
+				state = reducer(state, {
+					...addWrestlerToMatchAction,
+					wrestlerId,
+				});
+				expect(state.strategies[wrestlerId]).toBeDefined();
+				expect(state.strategies[wrestlerId]).toEqual(getDefaultStrategies(5));
+			});
+		});
+
+		describe(`"${REMOVE_WRESTLER_FROM_MATCH}" action`, () => {
+			test('removes the wrestler ID from `strategies` in state.', () => {
+				const wrestlerId = 8;
+
+				state = reducer(state, {
+					...setMaxRoundsAction,
+					maxRounds: 5,
+				});
+				state = reducer(state, {
+					...addWrestlerToMatchAction,
+					wrestlerId,
+				});
+				expect(state.strategies[wrestlerId]).toBeDefined();
+				expect(state.strategies[wrestlerId]).toEqual(getDefaultStrategies(5));
+				state = reducer(state, {
+					...removeWrestlerFromMatchAction,
+					wrestlerId,
+				});
+				expect(state.strategies[wrestlerId]).toBeUndefined();
 			});
 		});
 
@@ -59,7 +116,10 @@ describe('rounds', () => {
 	describe('selectors', () => {
 		describe('get', () => {
 			test('returns the appropriate state.', () => {
-				state = reducer(state, setMaxRoundsAction);
+				state = reducer(state, {
+					...setMaxRoundsAction,
+					maxRounds: 20,
+				});
 				expect(selectors.get(state)).toEqual({
 					maxRounds: 20,
 					strategies: {},
@@ -89,12 +149,38 @@ describe('rounds', () => {
 				});
 				expect(selectors.getStrategies(state)).toEqual({});
 			});
+
+			test(`returns the appropriate state after an "${ADD_WRESTLER_TO_MATCH}" action.`, () => {
+				const wrestlerId = 11;
+
+				state = reducer(state, {
+					...addWrestlerToMatchAction,
+					wrestlerId,
+				});
+				selection = selectors.getStrategies(state);
+
+				expect(selection[wrestlerId]).toBeDefined();
+				expect(selection[wrestlerId]).toEqual(getDefaultStrategies(defaultMaxRounds));
+			});
 		});
 
 		describe('getStrategyByWrestlerId', () => {
 			test('returns the appropriate state.', () => {
 				expect(selectors.getStrategyByWrestlerId(state)).toEqual(null);
 				expect(selectors.getStrategyByWrestlerId(state, 1)).toEqual(null);
+			});
+
+			test(`returns the appropriate state after an "${ADD_WRESTLER_TO_MATCH}" action.`, () => {
+				const wrestlerId = 11;
+
+				state = reducer(state, {
+					...addWrestlerToMatchAction,
+					wrestlerId,
+				});
+				selection = selectors.getStrategyByWrestlerId(state, wrestlerId);
+
+				expect(selection).toBeDefined();
+				expect(selection).toEqual(getDefaultStrategies(defaultMaxRounds));
 			});
 		});
 	});
