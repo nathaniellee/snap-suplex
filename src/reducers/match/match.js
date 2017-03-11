@@ -102,12 +102,12 @@ const wrestlers = (state = [], action = {}) => {
     case actionTypes.ADD_WRESTLER_TO_MATCH: {
       return [
         ...state,
-        action.wrestler.id,
+        action.wrestlerId,
       ];
     }
 
     case actionTypes.REMOVE_WRESTLER_FROM_MATCH: {
-      return _.without(state, action.wrestler.id);
+      return _.without(state, action.wrestlerId);
     }
 
     default: {

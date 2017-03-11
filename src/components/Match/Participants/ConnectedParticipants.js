@@ -41,7 +41,7 @@ const mapDispatchToProps = (dispatch) => ({
 		dispatch(actionCreators.setPageIndex(pageIndex));
 	},
 	onSelectWrestler: (wrestler) => {
-		dispatch(actionCreators.selectWrestler(wrestler));
+		dispatch(actionCreators.selectWrestler(wrestler.id));
 	},
 });
 
