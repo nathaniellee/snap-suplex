@@ -33,6 +33,8 @@ const defaultMove = {
 
 let uniqueId = 0;
 
+const getLabel = (key) => _.find(statMap.byId, { key }).label;
+
 export default React.createClass({
 	propTypes: {
 		wrestler: shape({
@@ -296,31 +298,31 @@ export default React.createClass({
 					<div className='WrestlerDialog-form-heading-stats'>Stats</div>
 					<StatField
 						cost={strCost}
-						label={statMap.str.label}
+						label={getLabel('str')}
 						value={str}
 						onChange={this.onChangeStrength}
 					/>
 					<StatField
 						cost={braCost}
-						label={statMap.bra.label}
+						label={getLabel('bra')}
 						value={bra}
 						onChange={this.onChangeBrawling}
 					/>
 					<StatField
 						cost={dexCost}
-						label={statMap.dex.label}
+						label={getLabel('dex')}
 						value={dex}
 						onChange={this.onChangeDexterity}
 					/>
 					<StatField
 						cost={tecCost}
-						label={statMap.tec.label}
+						label={getLabel('tec')}
 						value={tec}
 						onChange={this.onChangeTechnical}
 					/>
 					<StatField
 						cost={staCost}
-						label={statMap.sta.label}
+						label={getLabel('sta')}
 						value={sta}
 						onChange={this.onChangeStamina}
 					/>
@@ -339,7 +341,7 @@ export default React.createClass({
 							description={move.description}
 							favoriteTags={move.favoriteTags}
 							key={move.id}
-							label={`${statMap.str.label} ${i + 1}`}
+							label={`${getLabel('str')} ${i + 1}`}
 							onChangeDescription={_.partial(this.onChangeMoveDescription, 'str', move.id)}
 							onChangeFavorites={_.partial(this.onChangeMoveFavorites, 'str', move.id)}
 						/>
@@ -349,7 +351,7 @@ export default React.createClass({
 							description={move.description}
 							favoriteTags={move.favoriteTags}
 							key={move.id}
-							label={`${statMap.bra.label} ${i + 1}`}
+							label={`${getLabel('bra')} ${i + 1}`}
 							onChangeDescription={_.partial(this.onChangeMoveDescription, 'bra', move.id)}
 							onChangeFavorites={_.partial(this.onChangeMoveFavorites, 'bra', move.id)}
 						/>
@@ -359,7 +361,7 @@ export default React.createClass({
 							description={move.description}
 							favoriteTags={move.favoriteTags}
 							key={move.id}
-							label={`${statMap.dex.label} ${i + 1}`}
+							label={`${getLabel('dex')} ${i + 1}`}
 							onChangeDescription={_.partial(this.onChangeMoveDescription, 'dex', move.id)}
 							onChangeFavorites={_.partial(this.onChangeMoveFavorites, 'dex', move.id)}
 						/>
@@ -369,7 +371,7 @@ export default React.createClass({
 							description={move.description}
 							favoriteTags={move.favoriteTags}
 							key={move.id}
-							label={`${statMap.tec.label} ${i + 1}`}
+							label={`${getLabel('tec')} ${i + 1}`}
 							onChangeDescription={_.partial(this.onChangeMoveDescription, 'tec', move.id)}
 							onChangeFavorites={_.partial(this.onChangeMoveFavorites, 'tec', move.id)}
 						/>

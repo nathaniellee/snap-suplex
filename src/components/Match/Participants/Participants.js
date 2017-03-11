@@ -55,18 +55,21 @@ export default React.createClass({
 							>
 								Name
 							</DataTable.Column>
-							{_.map(statMap, ({
-								key,
-								label,
-							}) => (
-								<DataTable.Column
-									align='center'
-									field={`stats.${key}`}
-									key={key}
-								>
-									{label}
-								</DataTable.Column>
-							))}
+							{_.map(statMap.allIds, (id) => {
+								const {
+									key,
+									label,
+								} = statMap.byId[id];
+								return (
+									<DataTable.Column
+										align='center'
+										field={`stats.${key}`}
+										key={key}
+									>
+										{label}
+									</DataTable.Column>
+								);
+							})}
 						</DataTable>
 					</div>
 					<div className='Participants-paginator'>
