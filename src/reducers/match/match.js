@@ -1,6 +1,9 @@
 import _ from 'lodash';
 import { combineReducers } from 'redux';
 import actionTypes from '../../actions/actionTypes';
+import getDefaultStrategies from '../../constants/defaultStrategy';
+
+const defaultMaxRounds = 10;
 
 const dqRating = (state = 5, action = {}) => {
   switch (action.type) {
@@ -14,7 +17,7 @@ const dqRating = (state = 5, action = {}) => {
   }
 };
 
-const maxRounds = (state = 10, action = {}) => {
+const maxRounds = (state = defaultMaxRounds, action = {}) => {
   switch (action.type) {
     case actionTypes.SET_MAX_ROUNDS: {
       return action.maxRounds;
@@ -66,6 +69,33 @@ const roundNumber = (state = 1, action = {}) => {
   }
 };
 
+const strategies = (state = getDefaultStrategies(defaultMaxRounds), action = {}) => {
+  switch (action.type) {
+    case actionTypes.SET_MAX_ROUNDS: {
+      const { maxRounds } = action;
+      const stratCount = _.size(state);
+
+      if (maxRounds < stratCount) {
+        return _.take(state, maxRounds);
+      }
+
+      if (maxRounds > stratCount) {
+        const difference = maxRounds - stratCount;
+        return [
+          ...state,
+          ...getDefaultStrategies(difference),
+        ];
+      }
+
+      return state;
+    }
+
+    default: {
+      return state;
+    }
+  }
+};
+
 const wrestlers = (state = [], action = {}) => {
   switch (action.type) {
     case actionTypes.ADD_WRESTLER_TO_MATCH: {
@@ -91,6 +121,7 @@ export default combineReducers({
   pageIndex,
   refScore,
   roundNumber,
+  strategies,
   wrestlers,
 });
 
