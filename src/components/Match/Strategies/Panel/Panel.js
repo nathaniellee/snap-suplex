@@ -30,14 +30,14 @@ const {
 	Td,
 } = Table;
 
-const stats = _.chain(statMap.allIds)
-	.map((id) => _.find(statMap.byId, { id }).value)
-	.reject((value) => value === 'sta')
-	.value();
 const favorites = _.map(favoritesMap.allIds, (id) =>
 	_.find(favoritesMap.byId, { id }).value);
 const roundLevels = _.map(roundLevelMap.allIds, (id) =>
 	_.find(roundLevelMap.byId, { id }).value);
+const stats = _.chain(statMap.allIds)
+	.map((id) => _.find(statMap.byId, { id }).value)
+	.reject((value) => value === 'sta')
+	.value();
 
 export default React.createClass({
 	propTypes: {
@@ -51,6 +51,8 @@ export default React.createClass({
 		onChangeFlag: func,
 		onChangeLevel: func,
 		onChangeNumFavorites: func,
+		onChangeStat: func,
+		onChangeTargetStat: func,
 	},
 
 	getDefaultProps() {
@@ -64,6 +66,8 @@ export default React.createClass({
 			onChangeFlag: _.noop,
 			onChangeLevel: _.noop,
 			onChangeNumFavorites: _.noop,
+			onChangeStat: _.noop,
+			onChangeTargetStat: _.noop,
 		};
 	},
 
