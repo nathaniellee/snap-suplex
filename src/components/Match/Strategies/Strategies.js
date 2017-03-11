@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import React from 'react';
-// import statLabels from '../../../constants/statLabels';
 import Panel from './Panel/Panel';
 import './Strategies.css';
 
