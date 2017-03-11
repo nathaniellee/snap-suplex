@@ -20,7 +20,7 @@ export default {
 
 	selectWrestler: (wrestlerId) => (dispatch, getState) => {
 		const state = getState();
-		const { wrestlers } = selectors.getMatch(state);
+		const { wrestlers } = selectors.getMatchSetup(state);
 
 		if (_.includes(wrestlers, wrestlerId)) {
 			dispatch(removeWrestler(wrestlerId));

@@ -8,7 +8,7 @@ const mapStateToProps = (state) => {
 		maxRounds,
 		strategies,
 		wrestlers: wrestlerIds,
-	} = selectors.getMatch(state);
+	} = selectors.getMatchSetup(state);
 	const selectedWrestlers = _.map(wrestlerIds, (id) => selectors.getWrestler(state, id).wrestler);
 
 	return {

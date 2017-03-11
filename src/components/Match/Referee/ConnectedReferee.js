@@ -4,7 +4,7 @@ import actionCreators from '../../../actions/match/actionCreators';
 import { selectors } from '../../../reducers/root';
 import Referee from './Referee';
 
-const mapStateToProps = (state) => selectors.getMatch(state);
+const mapStateToProps = (state) => selectors.getMatchSetup(state);
 
 const mapDispatchToProps = (dispatch) => ({
 	onChangeDqRating: (dqRating) => {

@@ -4,7 +4,7 @@ import {
 	defaultMaxRounds,
 	getDefaultStrategies,
 } from '../../constants/defaults';
-import reducer, { selectors } from './match';
+import reducer, { selectors } from './matchSetup';
 
 const {
 	ADD_WRESTLER_TO_MATCH,
@@ -17,7 +17,7 @@ const {
 	START_MATCH,
 } = actionTypes;
 
-describe('match', () => {
+describe('matchSetup', () => {
 	let state;
 	let addWrestlerAction;
 	let incrementAction;

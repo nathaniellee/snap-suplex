@@ -4,7 +4,7 @@ import { selectors } from '../../../../reducers/root';
 import Summary from './Summary';
 
 const mapStateToProps = (state) => {
-	const { wrestlers: wrestlerIds } = selectors.getMatch(state);
+	const { wrestlers: wrestlerIds } = selectors.getMatchSetup(state);
 	const selectedWrestlers = _.map(wrestlerIds, (id) => selectors.getWrestler(state, id).wrestler);
 
 	return { selectedWrestlers };
