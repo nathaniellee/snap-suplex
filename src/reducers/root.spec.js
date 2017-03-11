@@ -71,9 +71,29 @@ describe('root selectors', () => {
     });
   });
 
-  describe('getMatchSetup', () => {
-    test('returns the appropriate state.', () => {
-      expect(selectors.getMatchSetup(initialState)).toEqual(matchSetupSelectors.get(initialState.matchSetup));
+  describe('match setup', () => {
+    describe('getMatchSetup', () => {
+      test('returns the appropriate state.', () => {
+        expect(selectors.getMatchSetup(initialState)).toEqual(matchSetupSelectors.get(initialState.matchSetup));
+      });
+    });
+
+    describe('getMaxRounds', () => {
+      test('returns the appropriate state.', () => {
+        expect(selectors.getMaxRounds(initialState)).toEqual(matchSetupSelectors.getMaxRounds(initialState.matchSetup));
+      });
+    });
+
+    describe('getStrategies', () => {
+      test('returns the appropriate state.', () => {
+        expect(selectors.getStrategies(initialState)).toEqual(matchSetupSelectors.getStrategies(initialState.matchSetup));
+      });
+    });
+
+    describe('getStrategyByWrestlerId', () => {
+      test('returns the appropriate state.', () => {
+        expect(selectors.getStrategyByWrestlerId(initialState, 1)).toEqual(matchSetupSelectors.getStrategyByWrestlerId(initialState.matchSetup, 1));
+      });
     });
   });
 

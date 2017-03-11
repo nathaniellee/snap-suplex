@@ -25,6 +25,10 @@ export default root;
 export const selectors = {
   get: _.identity,
   getMatchSetup: (state) => matchSetupSelectors.get(state.matchSetup),
+  getMaxRounds: (state) => matchSetupSelectors.getMaxRounds(state.matchSetup),
+  getStrategies: (state) => matchSetupSelectors.getStrategies(state.matchSetup),
+  getStrategyByWrestlerId: (state, wrestlerId) =>
+    matchSetupSelectors.getStrategyByWrestlerId(state.matchSetup, wrestlerId),
   getMove,
   getMoveIds: (state) => movesSelectors.getMoveIds(state.moves),
   getMovesAsArray: (state) => movesSelectors.getMovesAsArray(state.moves),
