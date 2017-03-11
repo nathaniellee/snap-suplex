@@ -1,9 +1,10 @@
 import _ from 'lodash';
 import { combineReducers } from 'redux';
 import actionTypes from '../../actions/actionTypes';
-import getDefaultStrategies from '../../constants/defaultStrategy';
-
-const defaultMaxRounds = 10;
+import {
+  defaultMaxRounds,
+  getDefaultStrategies,
+} from '../../constants/defaults';
 
 const dqRating = (state = 5, action = {}) => {
   switch (action.type) {

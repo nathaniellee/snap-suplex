@@ -1,6 +1,9 @@
 import _ from 'lodash';
 import actionTypes from '../../actions/actionTypes';
-import getDefaultStrategies from '../../constants/defaultStrategy';
+import {
+	defaultMaxRounds,
+	getDefaultStrategies,
+} from '../../constants/defaults';
 import reducer, { selectors } from './match';
 
 const {
@@ -13,8 +16,6 @@ const {
 	SET_REF_SCORE,
 	START_MATCH,
 } = actionTypes;
-
-const defaultMaxRounds = 10;
 
 describe('match', () => {
 	let state;

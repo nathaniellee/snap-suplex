@@ -3,6 +3,10 @@ import favoritesMap from './favoritesMap';
 import roundLevelMap from './roundLevelMap';
 import statMap from './statMap';
 
+export default null;
+
+export const defaultMaxRounds = 10;
+
 const favorites = _.map(favoritesMap.allIds, (id) =>
   _.find(favoritesMap.byId, { id }).value);
 const roundLevels = _.map(roundLevelMap.allIds, (id) =>
@@ -20,7 +24,7 @@ const defaultStrategy = {
   targetStat: null,
 };
 
-export default (count) => {
+export const getDefaultStrategies = (count) => {
   const range = _.range(1, count + 1);
   return _.reduce(range, (results) => [
     ...results,
