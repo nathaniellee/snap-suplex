@@ -30,43 +30,70 @@ export default React.createClass({
 	propTypes: {
 		strategies: array,
 		wrestlerName: string,
-		onChangeFlag: func,
-		onChangeLevel: func,
-		onChangeNumFavorites: func,
-		onChangeStat: func,
-		onChangeTargetStat: func,
+		onChangeStrategies: func,
 	},
 
 	getDefaultProps() {
 		return {
 			strategies: [],
 			wrestlerName: '',
-			onChangeFlag: _.noop,
-			onChangeLevel: _.noop,
-			onChangeNumFavorites: _.noop,
-			onChangeStat: _.noop,
-			onChangeTargetStat: _.noop,
+			onChangeStrategies: _.noop,
 		};
 	},
 
-	onChangeFlag(flag) {
-		this.props.onChangeFlag(flag);
+	onChangeFlag(index, flag) {
+		const { strategies } = this.props;
+		const updatedStrategies = _.map(strategies, (strategy, i) => index === i
+			? {
+				...strategy,
+				flag,
+			}
+			: strategy);
+		this.props.onChangeStrategies(updatedStrategies);
 	},
 
-	onChangeNumFavorites(numFavorites) {
-		this.props.onChangeNumFavorites(numFavorites);
+	onChangeNumFavorites(index, numFavorites) {
+		const { strategies } = this.props;
+		const updatedStrategies = _.map(strategies, (strategy, i) => index === i
+			? {
+				...strategy,
+				numFavorites,
+			}
+			: strategy);
+		this.props.onChangeStrategies(updatedStrategies);
 	},
 
-	onChangeLevel(level) {
-		this.props.onChangeLevel(level);
+	onChangeLevel(index, level) {
+		const { strategies } = this.props;
+		const updatedStrategies = _.map(strategies, (strategy, i) => index === i
+			? {
+				...strategy,
+				level,
+			}
+			: strategy);
+		this.props.onChangeStrategies(updatedStrategies);
 	},
 
-	onChangeStat(stat) {
-		this.props.onChangeStat(stat);
+	onChangeStat(index, stat) {
+		const { strategies } = this.props;
+		const updatedStrategies = _.map(strategies, (strategy, i) => index === i
+			? {
+				...strategy,
+				stat,
+			}
+			: strategy);
+		this.props.onChangeStrategies(updatedStrategies);
 	},
 
-	onChangeTargetStat(targetStat) {
-		this.props.onChangeTargetStat(targetStat);
+	onChangeTargetStat(index, targetStat) {
+		const { strategies } = this.props;
+		const updatedStrategies = _.map(strategies, (strategy, i) => index === i
+			? {
+				...strategy,
+				targetStat,
+			}
+			: strategy);
+		this.props.onChangeStrategies(updatedStrategies);
 	},
 
 	render() {
@@ -112,7 +139,7 @@ export default React.createClass({
 									>
 										<StatSelector
 											stat={stat}
-											onChange={this.onChangeStat}
+											onChange={_.partial(this.onChangeStat, index)}
 										/>
 									</Td>
 									<Td
@@ -121,7 +148,7 @@ export default React.createClass({
 									>
 										<LevelSelector
 											level={level}
-											onChange={this.onChangeLevel}
+											onChange={_.partial(this.onChangeLevel, index)}
 										/>
 									</Td>
 									<Td
@@ -130,7 +157,7 @@ export default React.createClass({
 									>
 										<FavoritesSelector
 											numFavorites={numFavorites}
-											onChange={this.onChangeFavorites}
+											onChange={_.partial(this.onChangeNumFavorites, index)}
 										/>
 									</Td>
 									<Td
@@ -139,7 +166,7 @@ export default React.createClass({
 									>
 										<FlagSelector
 											flag={flag}
-											onChange={this.onChangeFlag}
+											onChange={_.partial(this.onChangeFlag, index)}
 										/>
 									</Td>
 									<Td
@@ -148,7 +175,7 @@ export default React.createClass({
 									>
 										<TargetStatSelector
 											targetStat={targetStat}
-											onChange={this.onChangeTargetStat}
+											onChange={_.partial(this.onChangeTargetStat, index)}
 										/>
 									</Td>
 									<Td
