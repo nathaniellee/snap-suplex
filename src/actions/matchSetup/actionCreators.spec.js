@@ -13,13 +13,6 @@ describe('match action creators', () => {
 		});
 	});
 
-	describe('incrementRoundNumber', () => {
-		test('creates the expected action.', () => {
-			const expectedAction = { type: actionTypes.INCREMENT_ROUND_NUMBER };
-			expect(actionCreators.incrementRoundNumber()).toEqual(expectedAction);
-		});
-	});
-
 	describe('removeWrestler', () => {
 		test('creates the expected action.', () => {
 			const expectedAction = {
@@ -58,13 +51,6 @@ describe('match action creators', () => {
 				refScore: 8,
 			};
 			expect(actionCreators.setRefScore(8)).toEqual(expectedAction);
-		});
-	});
-
-	describe('startMatch', () => {
-		test('creates the expected action.', () => {
-			const expectedAction = { type: actionTypes.START_MATCH };
-			expect(actionCreators.startMatch()).toEqual(expectedAction);
 		});
 	});
 });

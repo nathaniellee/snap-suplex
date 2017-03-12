@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { connect } from 'react-redux';
-import actionCreators from '../../../actions/match/actionCreators';
+import actionCreators from '../../../actions/matchSetup/actionCreators';
 import { selectors } from '../../../reducers/root';
 import Parameters from './Parameters';
 

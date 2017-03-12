@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import actionTypes from '../../../actions/actionTypes';
-import actionCreators from '../../../actions/match/actionCreators';
+import actionCreators from '../../../actions/matchSetup/actionCreators';
 import {
 	defaultMaxRounds,
 	getDefaultStrategies,

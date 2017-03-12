@@ -16,8 +16,6 @@ export default {
 	addWrestler,
 	removeWrestler,
 
-	incrementRoundNumber: () => ({ type: actionTypes.INCREMENT_ROUND_NUMBER }),
-
 	selectWrestler: (wrestlerId) => (dispatch, getState) => {
 		const state = getState();
 		const { wrestlers } = selectors.getMatchSetup(state);
@@ -48,6 +46,4 @@ export default {
 		type: actionTypes.SET_REF_SCORE,
 		refScore,
 	}),
-
-	startMatch: () => ({ type: actionTypes.START_MATCH }),
 };
