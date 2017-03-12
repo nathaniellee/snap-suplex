@@ -46,4 +46,9 @@ export default {
 		type: actionTypes.SET_REF_SCORE,
 		refScore,
 	}),
+
+	setStrategies: (strategies) => ({
+		type: actionTypes.SET_STRATEGIES,
+		strategies,
+	}),
 };

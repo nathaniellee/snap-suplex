@@ -7,6 +7,7 @@ export default _.reduce([
 	'SET_MAX_ROUNDS',
 	'SET_PAGE_INDEX',
 	'SET_REF_SCORE',
+	'SET_STRATEGIES',
 ], (actionTypes, type) => ({
 	...actionTypes,
 	[type]: type,

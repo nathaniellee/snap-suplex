@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import { connect } from 'react-redux';
+import actionCreators from '../../../actions/matchSetup/actionCreators';
 import { selectors } from '../../../reducers/root';
 import Strategies from './Strategies';
 
@@ -18,7 +19,11 @@ const mapStateToProps = (state) => {
 	};
 };
 
-const mapDispatchToProps = () => ({});
+const mapDispatchToProps = (dispatch) => ({
+	onChangeStrategies: (strategies) => {
+		dispatch(actionCreators.setStrategies(strategies));
+	},
+});
 
 export default connect(
 	mapStateToProps,
