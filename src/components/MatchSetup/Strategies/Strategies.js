@@ -5,28 +5,26 @@ import './Strategies.css';
 
 const {
 	array,
-	oneOf,
+	object,
 } = React.PropTypes;
-
-const maxRoundsOptions = _.range(10, 70, 10);
 
 export default React.createClass({
 	propTypes: {
-		maxRounds: oneOf(maxRoundsOptions),
 		selectedWrestlers: array,
+		strategies: object,
 	},
 
 	getDefaultProps() {
 		return {
-			maxRounds: 10,
 			selectedWrestlers: [],
+			strategies: {},
 		};
 	},
 
 	render() {
 		const {
-			maxRounds,
 			selectedWrestlers,
+			strategies: strategiesById,
 		} = this.props;
 
 		return (
@@ -35,13 +33,19 @@ export default React.createClass({
 					<p>Please finish selecting participants.</p>
 				) : (
 					<div className='Strategies-panels'>
-						{_.map(selectedWrestlers, (wrestler) => (
-							<Panel
-								key={wrestler.id}
-								numRounds={maxRounds}
-								wrestler={wrestler}
-							/>
-						))}
+						{_.map(selectedWrestlers, ({
+							id,
+							name,
+						}) => {
+							const strategies = _.get(strategiesById, id);
+							return (
+								<Panel
+									key={id}
+									strategies={strategies}
+									wrestlerName={name}
+								/>
+							);
+						})}
 					</div>
 				)}
 			</div>

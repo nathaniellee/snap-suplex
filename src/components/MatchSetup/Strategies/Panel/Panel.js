@@ -5,9 +5,6 @@ import {
 	Table,
 } from 'lucid';
 import React from 'react';
-import favoritesMap from '../../../../constants/favoritesMap';
-import roundLevelMap from '../../../../constants/roundLevelMap';
-import statMap from '../../../../constants/statMap';
 import FlagSelector from '../../../selectors/FlagSelector/FlagSelector';
 import FavoritesSelector from '../../../selectors/FavoritesSelector/FavoritesSelector';
 import LevelSelector from '../../../selectors/LevelSelector/LevelSelector';
@@ -16,9 +13,8 @@ import TargetStatSelector from '../../../selectors/TargetStatSelector/TargetStat
 import './Panel.css';
 
 const {
+	array,
 	func,
-	number,
-	object,
 	string,
 } = React.PropTypes;
 
@@ -30,24 +26,10 @@ const {
 	Td,
 } = Table;
 
-const favorites = _.map(favoritesMap.allIds, (id) =>
-	_.find(favoritesMap.byId, { id }).value);
-const roundLevels = _.map(roundLevelMap.allIds, (id) =>
-	_.find(roundLevelMap.byId, { id }).value);
-const stats = _.chain(statMap.allIds)
-	.map((id) => _.find(statMap.byId, { id }).value)
-	.reject((value) => value === 'sta')
-	.value();
-
 export default React.createClass({
 	propTypes: {
-		flag: string,
-		level: number,
-		numFavorites: number,
-		numRounds: number,
-		stat: string,
-		targetStat: string,
-		wrestler: object.isRequired,
+		strategies: array,
+		wrestlerName: string,
 		onChangeFlag: func,
 		onChangeLevel: func,
 		onChangeNumFavorites: func,
@@ -57,12 +39,8 @@ export default React.createClass({
 
 	getDefaultProps() {
 		return {
-			flag: null,
-			level: _.head(roundLevels).value,
-			numFavorites: _.head(favorites).value,
-			numRounds: 1,
-			stat: _.head(stats).value,
-			targetStat: null,
+			strategies: [],
+			wrestlerName: '',
 			onChangeFlag: _.noop,
 			onChangeLevel: _.noop,
 			onChangeNumFavorites: _.noop,
@@ -93,18 +71,13 @@ export default React.createClass({
 
 	render() {
 		const {
-			flag,
-			level,
-			numFavorites,
-			numRounds,
-			stat,
-			targetStat,
-			wrestler,
+			strategies,
+			wrestlerName,
 		} = this.props;
 
 		return (
 			<Panel className='StrategyPanel'>
-				<Panel.Header>{wrestler.name}</Panel.Header>
+				<Panel.Header>{wrestlerName}</Panel.Header>
 				<div>
 					<Table>
 						<Thead>
@@ -119,13 +92,19 @@ export default React.createClass({
 							</Tr>
 						</Thead>
 						<Tbody>
-							{_.map(_.range(1, numRounds + 1), (roundNumber) => (
-								<Tr key={roundNumber}>
+							{_.map(strategies, ({
+								flag,
+								level,
+								numFavorites,
+								stat,
+								targetStat,
+							}, index) => (
+								<Tr key={index}>
 									<Td
 										align='right'
 										className='StrategyPanel-round-number'
 									>
-										{roundNumber}
+										{index + 1}
 									</Td>
 									<Td
 										align='center'
