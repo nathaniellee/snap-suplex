@@ -5,6 +5,7 @@ import './Strategies.css';
 
 const {
 	array,
+	func,
 	object,
 } = React.PropTypes;
 
@@ -12,13 +13,22 @@ export default React.createClass({
 	propTypes: {
 		selectedWrestlers: array,
 		strategies: object,
+		onChangeStrategies: func,
 	},
 
 	getDefaultProps() {
 		return {
 			selectedWrestlers: [],
 			strategies: {},
+			onChangeStrategies: _.noop,
 		};
+	},
+
+	onChangeStrategies(wrestlerId, updatedStrategies) {
+		this.props.onChangeStrategies({
+			...this.props.strategies,
+			[wrestlerId]: updatedStrategies,
+		});
 	},
 
 	render() {
@@ -43,6 +53,7 @@ export default React.createClass({
 									key={id}
 									strategies={strategies}
 									wrestlerName={name}
+									onChangeStrategies={_.partial(this.onChangeStrategies, id)}
 								/>
 							);
 						})}
