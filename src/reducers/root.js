@@ -1,10 +1,12 @@
 import _ from 'lodash';
 import { combineReducers } from 'redux';
+import match, { selectors as matchSelectors } from './match/match';
 import matchSetup, { selectors as matchSetupSelectors } from './matchSetup/matchSetup';
 import moves, { selectors as movesSelectors } from './moves/moves';
 import wrestlers, { selectors as wrestlersSelectors } from './wrestlers/wrestlers';
 
 const root = combineReducers({
+  match,
   matchSetup,
   moves,
   wrestlers,
@@ -24,6 +26,7 @@ const getWrestlerMoves = (wrestler, state) => {
 export default root;
 export const selectors = {
   get: _.identity,
+  getMatch: (state) => matchSelectors.get(state.match),
   getMatchSetup: (state) => matchSetupSelectors.get(state.matchSetup),
   getMaxRounds: (state) => matchSetupSelectors.getMaxRounds(state.matchSetup),
   getStrategies: (state) => matchSetupSelectors.getStrategies(state.matchSetup),
