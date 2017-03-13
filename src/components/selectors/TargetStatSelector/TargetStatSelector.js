@@ -35,14 +35,20 @@ export default React.createClass({
 	},
 
 	onSelect(selectedIndex) {
-		const id = statMap.allIds[selectedIndex];
-		const targetStat = getStat(id);
-		this.props.onChange(targetStat);
+		if (_.isNull(selectedIndex)) {
+			this.props.onChange(null);
+		} else {
+			const id = statMap.allIds[selectedIndex];
+			const targetStat = getStat(id);
+			this.props.onChange(targetStat);
+		}
 	},
 
 	render() {
 		const { targetStat } = this.props;
-		const selectedIndex = getSelectedIndex(targetStat);
+		const selectedIndex = _.isNull(targetStat)
+			? null
+			: getSelectedIndex(targetStat);
 		const stats = _.chain(statMap.allIds)
 			.map((id) => _.get(statMap, `byId.${id}.value`))
 			.without('sta')

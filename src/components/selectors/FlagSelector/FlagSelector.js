@@ -35,14 +35,20 @@ export default React.createClass({
 	},
 
 	onSelect(selectedIndex) {
-		const id = spotFlagsMap.allIds[selectedIndex];
-		const flag = getFlag(id);
-		this.props.onChange(flag);
+		if (_.isNull(selectedIndex)) {
+			this.props.onChange(null);
+		} else {
+			const id = spotFlagsMap.allIds[selectedIndex];
+			const flag = getFlag(id);
+			this.props.onChange(flag);
+		}
 	},
 
 	render() {
 		const { flag } = this.props;
-		const selectedIndex = getSelectedIndex(flag);
+		const selectedIndex = _.isNull(flag)
+			? null
+			: getSelectedIndex(flag);
 
 		return (
 			<SingleSelect
