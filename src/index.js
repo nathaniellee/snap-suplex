@@ -9,7 +9,7 @@ import {
 } from 'react-router';
 import App from './components/App/ConnectedApp';
 import Home from './components/Home/Home';
-import MatchSetup from './components/MatchSetup/MatchSetup';
+import MatchSetup from './components/MatchSetup/ConnectedMatchSetup';
 import Matches from './components/Matches/Matches';
 import Wrestlers from './components/Wrestlers/ConnectedWrestlers';
 import createStore from './utils/createStore';

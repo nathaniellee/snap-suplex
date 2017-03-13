@@ -1,3 +1,9 @@
 .MatchSetup {
 	padding: 20px;
 }
+
+.MatchSetup-footer {
+	border-top: solid 1px #e3e3e3;
+	margin: 12px;
+	padding-top: 12px;
+}
