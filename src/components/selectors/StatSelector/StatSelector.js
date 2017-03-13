@@ -35,6 +35,10 @@ export default React.createClass({
 		const { stat } = this.props;
 		const id = _.find(statMap.byId, { value: stat }).id;
 		const selectedIndex = _.indexOf(statMap.allIds, id);
+		const stats = _.chain(statMap.allIds)
+			.map((id) => _.get(statMap, `byId.${id}.value`))
+			.without('sta')
+			.value();
 
 		return (
 			<SingleSelect
@@ -42,10 +46,9 @@ export default React.createClass({
 				selectedIndex={selectedIndex}
 				onSelect={this.onSelect}
 			>
-				{_.map(statMap.allIds, (id) => {
-					const { value } = statMap.byId[id];
-					return <SingleSelect.Option key={value}>{_.upperCase(value)}</SingleSelect.Option>;
-				})}
+				{_.map(stats, (stat) => (
+					<SingleSelect.Option key={stat}>{_.upperCase(stat)}</SingleSelect.Option>
+				))}
 			</SingleSelect>
 		);
 	},
