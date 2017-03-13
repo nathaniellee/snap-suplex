@@ -4,6 +4,7 @@ import {
 	Button,
 } from 'lucid';
 import React from 'react';
+import MatchDialog from '../Match/Dialog/ConnectedDialog';
 import Parameters from './Parameters/ConnectedParameters';
 import Participants from './Participants/ConnectedParticipants';
 import Referee from './Referee/ConnectedReferee';
@@ -36,12 +37,14 @@ const matchSetupSteps = [
 
 export default React.createClass({
 	propTypes: {
+		isMatchUnderway: bool,
 		isStartDisabled: bool,
 		onClickStartMatch: func,
 	},
 
 	getDefaultProps() {
 		return {
+			isMatchUnderway: false,
 			isStartDisabled: false,
 			onClickStartMatch: _.noop,
 		};
@@ -57,6 +60,7 @@ export default React.createClass({
 
 	render() {
 		const {
+			isMatchUnderway,
 			isStartDisabled,
 			onClickStartMatch,
 		} = this.props;
@@ -87,6 +91,9 @@ export default React.createClass({
 						Start the Match!
 					</Button>
 				</div>
+				{isMatchUnderway ? (
+					<MatchDialog />
+				) : null}
 			</div>
 		);
 	},

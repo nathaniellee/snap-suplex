@@ -6,7 +6,12 @@ import MatchSetup from './MatchSetup';
 
 const mapStateToProps = (state) => {
 	const { wrestlers } = selectors.getMatchSetup(state);
-	return { isStartDisabled: _.size(wrestlers) < 2 };
+	const { isMatchUnderway } = selectors.getMatch(state);
+
+	return {
+		isMatchUnderway,
+		isStartDisabled: _.size(wrestlers) < 2
+	};
 };
 
 const mapDispatchToProps = (dispatch) => ({
