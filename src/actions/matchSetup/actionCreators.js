@@ -51,4 +51,6 @@ export default {
 		type: actionTypes.SET_STRATEGIES,
 		strategies,
 	}),
+
+	startMatch: () => ({ type: actionTypes.START_MATCH }),
 };

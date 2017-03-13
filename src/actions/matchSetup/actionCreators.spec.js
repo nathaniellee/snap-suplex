@@ -67,4 +67,11 @@ describe('match action creators', () => {
 			expect(actionCreators.setStrategies(strategies)).toEqual(expectedAction);
 		});
 	});
+
+	describe('startMatch', () => {
+		test('creates the expected action.', () => {
+			const expectedAction = { type: actionTypes.START_MATCH };
+			expect(actionCreators.startMatch()).toEqual(expectedAction);
+		});
+	});
 });
