@@ -31,11 +31,10 @@ const setWrestlersAction = {
 
 describe('root reducer', () => {
   let action;
-  let initialState;
-  let updatedState;
+  let state;
 
   beforeEach(() => {
-    initialState = reducer(undefined, {});
+    state = reducer(undefined, {});
   });
 
   test('combines the appropriate reducers.', () => {
@@ -44,44 +43,44 @@ describe('root reducer', () => {
       'matchSetup',
       'moves',
       'wrestlers',
-    ], _.keys(initialState))).toHaveLength(0);
+    ], _.keys(state))).toHaveLength(0);
 
     // Compare results from an action that the `match` reducer handles.
     action = { type: actionTypes.START_MATCH };
-    updatedState = reducer(initialState, action);
-    expect(updatedState.match).toEqual(match(initialState.match, action));
+    state = reducer(state, action);
+    expect(state.match).toEqual(match(state.match, action));
 
     // Compare results from an action that the `matchSetup` reducer handles.
     action = {
       type: actionTypes.SET_MAX_ROUNDS,
       maxRounds: 10,
     };
-    updatedState = reducer(updatedState, action);
-    expect(updatedState.matchSetup).toEqual(matchSetup(updatedState.matchSetup, action));
+    state = reducer(state, action);
+    expect(state.matchSetup).toEqual(matchSetup(state.matchSetup, action));
 
     // Compare results from an action that the `wrestlers` reducer handles.
-    updatedState = reducer(updatedState, setWrestlersAction);
-    expect(updatedState.wrestlers).toEqual(wrestlers(updatedState.wrestlers, setWrestlersAction));
+    state = reducer(state, setWrestlersAction);
+    expect(state.wrestlers).toEqual(wrestlers(state.wrestlers, setWrestlersAction));
   });
 });
 
 describe('root selectors', () => {
-  let initialState;
+  let state;
 
   beforeEach(() => {
-    initialState = reducer(undefined, {});
+    state = reducer(undefined, {});
   });
 
   describe('get', () => {
     test('returns the appropriate state.', () => {
-      expect(selectors.get(initialState)).toEqual(initialState);
+      expect(selectors.get(state)).toEqual(state);
     });
   });
 
   describe('match', () => {
     describe('getMatch', () => {
       test('returns the appropriate state.', () => {
-        expect(selectors.getMatch(initialState)).toEqual(matchSelectors.get(initialState.match));
+        expect(selectors.getMatch(state)).toEqual(matchSelectors.get(state.match));
       });
     });
   });
@@ -89,25 +88,25 @@ describe('root selectors', () => {
   describe('match setup', () => {
     describe('getMatchSetup', () => {
       test('returns the appropriate state.', () => {
-        expect(selectors.getMatchSetup(initialState)).toEqual(matchSetupSelectors.get(initialState.matchSetup));
+        expect(selectors.getMatchSetup(state)).toEqual(matchSetupSelectors.get(state.matchSetup));
       });
     });
 
     describe('getMaxRounds', () => {
       test('returns the appropriate state.', () => {
-        expect(selectors.getMaxRounds(initialState)).toEqual(matchSetupSelectors.getMaxRounds(initialState.matchSetup));
+        expect(selectors.getMaxRounds(state)).toEqual(matchSetupSelectors.getMaxRounds(state.matchSetup));
       });
     });
 
     describe('getStrategies', () => {
       test('returns the appropriate state.', () => {
-        expect(selectors.getStrategies(initialState)).toEqual(matchSetupSelectors.getStrategies(initialState.matchSetup));
+        expect(selectors.getStrategies(state)).toEqual(matchSetupSelectors.getStrategies(state.matchSetup));
       });
     });
 
     describe('getStrategyByWrestlerId', () => {
       test('returns the appropriate state.', () => {
-        expect(selectors.getStrategyByWrestlerId(initialState, 1)).toEqual(matchSetupSelectors.getStrategyByWrestlerId(initialState.matchSetup, 1));
+        expect(selectors.getStrategyByWrestlerId(state, 1)).toEqual(matchSetupSelectors.getStrategyByWrestlerId(state.matchSetup, 1));
       });
     });
   });
@@ -115,29 +114,29 @@ describe('root selectors', () => {
   describe('moves', () => {
     describe('getMove', () => {
       test('returns the appropriate state.', () => {
-        expect(selectors.getMove(initialState, 0))
-          .toEqual(movesSelectors.getMove(initialState.moves, 0));
+        expect(selectors.getMove(state, 0))
+          .toEqual(movesSelectors.getMove(state.moves, 0));
       });
     });
 
     describe('getMoveIds', () => {
       test('returns the appropriate state.', () => {
-        expect(selectors.getMoveIds(initialState))
-          .toEqual(movesSelectors.getMoveIds(initialState.moves));
+        expect(selectors.getMoveIds(state))
+          .toEqual(movesSelectors.getMoveIds(state.moves));
       });
     });
 
     describe('getMovesAsArray', () => {
       test('returns the appropriate state.', () => {
-        expect(selectors.getMovesAsArray(initialState))
-          .toEqual(movesSelectors.getMovesAsArray(initialState.moves));
+        expect(selectors.getMovesAsArray(state))
+          .toEqual(movesSelectors.getMovesAsArray(state.moves));
       });
     });
 
     describe('getMovesAsMap', () => {
       test('returns the appropriate state.', () => {
-        expect(selectors.getMovesAsMap(initialState))
-          .toEqual(movesSelectors.getMovesAsMap(initialState.moves));
+        expect(selectors.getMovesAsMap(state))
+          .toEqual(movesSelectors.getMovesAsMap(state.moves));
       });
     });
   });
@@ -145,32 +144,31 @@ describe('root selectors', () => {
   describe('wrestlers', () => {
     describe('getWrestler', () => {
       test('returns the appropriate state.', () => {
-        const updatedState = reducer(initialState, setWrestlersAction);
-        expect(selectors.getWrestler(initialState, 0))
+        expect(selectors.getWrestler(state, 0))
           .toEqual({ wrestler: null });
-        expect(selectors.getWrestler(initialState, mockWrestler.id))
-          .toEqual({ wrestler: wrestlersSelectors.getWrestler(initialState.wrestlers, mockWrestler.id) });
+        expect(selectors.getWrestler(state, mockWrestler.id))
+          .toEqual({ wrestler: wrestlersSelectors.getWrestler(state.wrestlers, mockWrestler.id) });
       });
     });
 
     describe('getWrestlerIds', () => {
       test('returns the appropriate state.', () => {
-        expect(selectors.getWrestlerIds(initialState))
-          .toEqual(wrestlersSelectors.getWrestlerIds(initialState.wrestlers));
+        expect(selectors.getWrestlerIds(state))
+          .toEqual(wrestlersSelectors.getWrestlerIds(state.wrestlers));
       });
     });
 
     describe('getWrestlersAsArray', () => {
       test('returns the appropriate state.', () => {
-        expect(selectors.getWrestlersAsArray(initialState))
-          .toEqual(wrestlersSelectors.getWrestlersAsArray(initialState.wrestlers));
+        expect(selectors.getWrestlersAsArray(state))
+          .toEqual(wrestlersSelectors.getWrestlersAsArray(state.wrestlers));
       });
     });
 
     describe('getWrestlersAsMap', () => {
       test('returns the appropriate state.', () => {
-        expect(selectors.getWrestlersAsMap(initialState))
-          .toEqual(wrestlersSelectors.getWrestlersAsMap(initialState.wrestlers));
+        expect(selectors.getWrestlersAsMap(state))
+          .toEqual(wrestlersSelectors.getWrestlersAsMap(state.wrestlers));
       });
     });
   });
