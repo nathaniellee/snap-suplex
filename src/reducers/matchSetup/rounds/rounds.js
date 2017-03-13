@@ -45,6 +45,13 @@ const rounds = (state = getDefaultState(), action = {}) => {
 			};
 		}
 
+		case actionTypes.SET_STRATEGIES: {
+			return {
+				...state,
+				strategies: action.strategies,
+			};
+		}
+
 		case actionTypes.ADD_WRESTLER_TO_MATCH: {
 			return {
 				...state,

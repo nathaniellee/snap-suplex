@@ -11,13 +11,15 @@ const {
 	ADD_WRESTLER_TO_MATCH,
 	REMOVE_WRESTLER_FROM_MATCH,
 	SET_MAX_ROUNDS,
+	SET_STRATEGIES,
 } = actionTypes;
 
 describe('rounds', () => {
-	let addWrestlerToMatchAction = { type: ADD_WRESTLER_TO_MATCH };
-	let setMaxRoundsAction = { type: SET_MAX_ROUNDS };
-	let removeWrestlerFromMatchAction = { type: REMOVE_WRESTLER_FROM_MATCH };
-	let unrecognizedAction = { type: 'unrecognized action' };
+	const addWrestlerToMatchAction = { type: ADD_WRESTLER_TO_MATCH };
+	const setMaxRoundsAction = { type: SET_MAX_ROUNDS };
+	const setStrategiesAction = { type: SET_STRATEGIES };
+	const removeWrestlerFromMatchAction = { type: REMOVE_WRESTLER_FROM_MATCH };
+	const unrecognizedAction = { type: 'unrecognized action' };
 	let state;
 	let selection;
 
@@ -36,7 +38,7 @@ describe('rounds', () => {
 		});
 
 		describe(`"${SET_MAX_ROUNDS}" action`, () => {
-			test('sets `maxRounds` in state to the provided `maxRounds` value.', () => {
+			test('sets `maxRounds` in state to the value of `maxRounds` from the action.', () => {
 				expect(state).toEqual({
 					maxRounds: defaultMaxRounds,
 					strategies: {},
@@ -47,6 +49,27 @@ describe('rounds', () => {
 				})).toEqual({
 					maxRounds: 50,
 					strategies: {},
+				});
+			});
+		});
+
+		describe(`"${SET_STRATEGIES}" action`, () => {
+			test('sets `strategies` in state using the value of `strategies` from the action.', () => {
+				const updatedStrategies = {
+					1: [],
+					2: [],
+				};
+
+				expect(state).toEqual({
+					maxRounds: defaultMaxRounds,
+					strategies: {},
+				});
+				expect(reducer(state, {
+					...setStrategiesAction,
+					strategies: updatedStrategies,
+				})).toEqual({
+					maxRounds: defaultMaxRounds,
+					strategies: updatedStrategies,
 				});
 			});
 		});
