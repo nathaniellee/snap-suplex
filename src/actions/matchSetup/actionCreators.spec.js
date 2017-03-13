@@ -53,4 +53,18 @@ describe('match action creators', () => {
 			expect(actionCreators.setRefScore(8)).toEqual(expectedAction);
 		});
 	});
+
+	describe('setStrategies', () => {
+		test('creates the expected action.', () => {
+			const strategies = {
+				1: [],
+				2: [],
+			};
+			const expectedAction = {
+				type: actionTypes.SET_STRATEGIES,
+				strategies,
+			};
+			expect(actionCreators.setStrategies(strategies)).toEqual(expectedAction);
+		});
+	});
 });
