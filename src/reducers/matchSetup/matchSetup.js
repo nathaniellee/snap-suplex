@@ -1,55 +1,113 @@
 import _ from 'lodash';
-import { combineReducers } from 'redux';
 import actionTypes from '../../actions/actionTypes';
-import rounds, { selectors as roundsSelectors } from './rounds/rounds';
+import {
+  defaultDqRating,
+  defaultNumRounds,
+  defaultRefScore,
+  defaultStrategyId,
+} from '../../constants/defaults';
 
-const dqRating = (state = 5, action = {}) => {
+const initialState = {
+  dqRating: defaultDqRating,
+  numRounds: defaultNumRounds,
+  pageIndex: 0,
+  refScore: defaultRefScore,
+  strategies: {},
+  wrestlers: [],
+};
+
+const match = (state = initialState, action = {}) => {
   switch (action.type) {
     case actionTypes.SET_DQ_RATING: {
-      return action.dqRating;
-    }
-
-    default: {
-      return state;
-    }
-  }
-};
-
-const pageIndex = (state = 0, action = {}) => {
-  switch (action.type) {
-    case actionTypes.SET_PAGE_INDEX: {
-      return action.pageIndex;
-    }
-
-    default: {
-      return state;
-    }
-  }
-};
-
-const refScore = (state = 5, action = {}) => {
-  switch (action.type) {
-    case actionTypes.SET_REF_SCORE: {
-      return action.refScore;
-    }
-
-    default: {
-      return state;
-    }
-  }
-};
-
-const wrestlers = (state = [], action = {}) => {
-  switch (action.type) {
-    case actionTypes.ADD_WRESTLER_TO_MATCH: {
-      return [
+      const { dqRating } = action;
+      return {
         ...state,
-        action.wrestlerId,
-      ];
+        dqRating,
+      };
+    }
+
+    case actionTypes.SET_NUM_ROUNDS: {
+      const { numRounds } = action;
+      const {
+        numRounds: currentNumRounds,
+        strategies,
+      } = state;
+
+      if (numRounds === currentNumRounds) {
+        return state;
+      }
+
+      if (_.isEmpty(strategies)) {
+        return {
+          ...state,
+          numRounds,
+        };
+      }
+
+      if (numRounds < currentNumRounds) {
+        return {
+          ...state,
+          numRounds,
+          strategies: _.reduce(strategies, (results, rounds, wrestlerId) => ({
+            ...results,
+            [wrestlerId]: _.take(rounds, numRounds),
+          }), {}),
+        };
+      }
+
+      const difference = numRounds - currentNumRounds;
+      return {
+        ...state,
+        numRounds,
+        strategies: _.reduce(strategies, (results, rounds, wrestlerId) => ({
+          ...results,
+          [wrestlerId]: [
+            ...rounds,
+            ..._.fill(Array(difference), defaultStrategyId),
+          ],
+        })),
+      };
+    }
+
+    case actionTypes.SET_PAGE_INDEX: {
+      const { pageIndex } = action;
+      return {
+        ...state,
+        pageIndex,
+      };
+    }
+
+    case actionTypes.SET_REF_SCORE: {
+      const { refScore } = action;
+      return {
+        ...state,
+        refScore,
+      };
+    }
+
+    case actionTypes.ADD_WRESTLER_TO_MATCH: {
+      const { wrestlerId } = action;
+      const { numRounds } = state;
+      return {
+        ...state,
+        strategies: {
+          ...state.strategies,
+          [wrestlerId]: _.fill(Array(numRounds), defaultStrategyId),
+        },
+        wrestlers: [
+          ...state.wrestlers,
+          wrestlerId,
+        ],
+      };
     }
 
     case actionTypes.REMOVE_WRESTLER_FROM_MATCH: {
-      return _.without(state, action.wrestlerId);
+      const { wrestlerId } = action;
+      return {
+        ...state,
+        strategies: _.omit(state.strategies, wrestlerId),
+        wrestlers: _.without(state.wrestlers, wrestlerId),
+      };
     }
 
     default: {
@@ -58,18 +116,8 @@ const wrestlers = (state = [], action = {}) => {
   }
 };
 
-export default combineReducers({
-  dqRating,
-  pageIndex,
-  refScore,
-  rounds,
-  wrestlers,
-});
+export default match;
 
 export const selectors = {
   get: _.identity,
-  getMaxRounds: (state) => roundsSelectors.getMaxRounds(state.rounds),
-  getStrategies: (state) => roundsSelectors.getStrategies(state.rounds),
-  getStrategyByWrestlerId: (state, wrestlerId) =>
-    roundsSelectors.getStrategyByWrestlerId(state.rounds, wrestlerId),
 };

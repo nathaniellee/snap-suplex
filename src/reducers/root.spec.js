@@ -102,24 +102,6 @@ describe('root', () => {
           expect(selectors.getMatchSetup(state)).toEqual(matchSetupSelectors.get(state.matchSetup));
         });
       });
-
-      describe('getMaxRounds', () => {
-        test('returns the appropriate state.', () => {
-          expect(selectors.getMaxRounds(state)).toEqual(matchSetupSelectors.getMaxRounds(state.matchSetup));
-        });
-      });
-
-      describe('getStrategies', () => {
-        test('returns the appropriate state.', () => {
-          expect(selectors.getStrategies(state)).toEqual(matchSetupSelectors.getStrategies(state.matchSetup));
-        });
-      });
-
-      describe('getStrategyByWrestlerId', () => {
-        test('returns the appropriate state.', () => {
-          expect(selectors.getStrategyByWrestlerId(state, 1)).toEqual(matchSetupSelectors.getStrategyByWrestlerId(state.matchSetup, 1));
-        });
-      });
     });
 
     describe('moves', () => {
