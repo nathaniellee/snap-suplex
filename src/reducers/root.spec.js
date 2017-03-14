@@ -3,9 +3,18 @@ import actionTypes from '../actions/actionTypes';
 import match, { selectors as matchSelectors } from './match/match';
 import matchSetup, { selectors as matchSetupSelectors } from './matchSetup/matchSetup';
 import moves, { selectors as movesSelectors } from './moves/moves';
+import strategies, { selectors as strategiesSelectors } from './strategies/strategies';
 import wrestlers, { selectors as wrestlersSelectors } from './wrestlers/wrestlers';
 import reducer, { selectors } from './root';
 
+const mockStrategy = {
+  id: 11111,
+  stat: 'str',
+  level: 1,
+  numFavorites: 1,
+  flag: 'stiff',
+  targetStat: 'str',
+};
 const mockWrestler = {
   id: 3,
   name: 'Gillberg',
@@ -43,6 +52,7 @@ describe('root', () => {
         'match',
         'matchSetup',
         'moves',
+        'strategies',
         'wrestlers',
       ], _.keys(state))).toHaveLength(0);
 
@@ -138,6 +148,38 @@ describe('root', () => {
         test('returns the appropriate state.', () => {
           expect(selectors.getMovesAsMap(state))
             .toEqual(movesSelectors.getMovesAsMap(state.moves));
+        });
+      });
+    });
+
+    describe('strategies', () => {
+      describe('getStrategy', () => {
+        test('returns the appropriate state.', () => {
+          expect(selectors.getStrategy(state, 0))
+            .toEqual(null);
+          expect(selectors.getStrategy(state, mockStrategy.id))
+            .toEqual(strategiesSelectors.getStrategy(state.strategies, mockStrategy.id));
+        });
+      });
+
+      describe('getStrategyIds', () => {
+        test('returns the appropriate state.', () => {
+          expect(selectors.getStrategyIds(state))
+            .toEqual(strategiesSelectors.getStrategyIds(state.strategies));
+        });
+      });
+
+      describe('getStrategiesAsArray', () => {
+        test('returns the appropriate state.', () => {
+          expect(selectors.getStrategiesAsArray(state))
+            .toEqual(strategiesSelectors.getStrategiesAsArray(state.strategies));
+        });
+      });
+
+      describe('getStrategiesAsMap', () => {
+        test('returns the appropriate state.', () => {
+          expect(selectors.getStrategiesAsMap(state))
+            .toEqual(strategiesSelectors.getStrategiesAsMap(state.strategies));
         });
       });
     });
