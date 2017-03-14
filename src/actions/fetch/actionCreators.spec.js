@@ -34,6 +34,38 @@ describe('fetch action creators', () => {
 		});
 	});
 
+	describe('fetchStrategiesRequest', () => {
+		test('creates the expected action.', () => {
+			const expectedAction = { type: actionTypes.FETCH_STRATEGIES_REQUEST };
+			expect(actionCreators.fetchStrategiesRequest()).toEqual(expectedAction);
+		});
+	});
+
+	describe('fetchStrategiesSuccess', () => {
+		test('creates the expected action.', () => {
+			const strategies = [
+				{ id: 1 },
+				{ id: 2 },
+			];
+			const expectedAction = {
+				type: actionTypes.FETCH_STRATEGIES_SUCCESS,
+				strategies,
+			};
+			expect(actionCreators.fetchStrategiesSuccess(strategies)).toEqual(expectedAction);
+		});
+	});
+
+	describe('fetchStrategiesFailure', () => {
+		test('creates the expected action.', () => {
+			const error = new Error();
+			const expectedAction = {
+				type: actionTypes.FETCH_STRATEGIES_FAILURE,
+				error,
+			};
+			expect(actionCreators.fetchStrategiesFailure(error)).toEqual(expectedAction);
+		});
+	});
+
 	describe('fetchWrestlersRequest', () => {
 		test('creates the expected action.', () => {
 			const expectedAction = { type: actionTypes.FETCH_WRESTLERS_REQUEST };

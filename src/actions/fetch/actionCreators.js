@@ -10,6 +10,15 @@ export default {
 		type: actionTypes.FETCH_MOVES_FAILURE,
 		error,
 	}),
+	fetchStrategiesRequest: () => ({ type: actionTypes.FETCH_STRATEGIES_REQUEST }),
+	fetchStrategiesSuccess: (strategies) => ({
+		type: actionTypes.FETCH_STRATEGIES_SUCCESS,
+		strategies,
+	}),
+	fetchStrategiesFailure: (error) => ({
+		type: actionTypes.FETCH_STRATEGIES_FAILURE,
+		error,
+	}),
 	fetchWrestlersRequest: () => ({ type: actionTypes.FETCH_WRESTLERS_REQUEST }),
 	fetchWrestlersSuccess: (wrestlers) => ({
 		type: actionTypes.FETCH_WRESTLERS_SUCCESS,
