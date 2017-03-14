@@ -25175,6720 +25175,6720 @@ export default {
     },
     "strategies": {
         "byId": {
-            "111101": {
+            "11111": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "111102": {
+            "11112": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "111103": {
+            "11113": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "111104": {
+            "11114": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "111201": {
+            "11121": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "111202": {
+            "11122": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "111203": {
+            "11123": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "111204": {
+            "11124": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "111301": {
+            "11131": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "111302": {
+            "11132": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "111303": {
+            "11133": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "111304": {
+            "11134": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "111401": {
+            "11141": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "111402": {
+            "11142": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "111403": {
+            "11143": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "111404": {
+            "11144": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "111501": {
+            "11151": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "111502": {
+            "11152": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "111503": {
+            "11153": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "111504": {
+            "11154": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "112101": {
+            "11211": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "112102": {
+            "11212": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "112103": {
+            "11213": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "112104": {
+            "11214": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "112201": {
+            "11221": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "112202": {
+            "11222": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "112203": {
+            "11223": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "112204": {
+            "11224": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "112301": {
+            "11231": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "112302": {
+            "11232": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "112303": {
+            "11233": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "112304": {
+            "11234": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "112401": {
+            "11241": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "112402": {
+            "11242": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "112403": {
+            "11243": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "112404": {
+            "11244": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "112501": {
+            "11251": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "112502": {
+            "11252": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "112503": {
+            "11253": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "112504": {
+            "11254": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "113101": {
+            "11311": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "113102": {
+            "11312": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "113103": {
+            "11313": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "113104": {
+            "11314": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "113201": {
+            "11321": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "113202": {
+            "11322": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "113203": {
+            "11323": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "113204": {
+            "11324": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "113301": {
+            "11331": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "113302": {
+            "11332": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "113303": {
+            "11333": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "113304": {
+            "11334": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "113401": {
+            "11341": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "113402": {
+            "11342": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "113403": {
+            "11343": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "113404": {
+            "11344": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "113501": {
+            "11351": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "113502": {
+            "11352": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "113503": {
+            "11353": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "113504": {
+            "11354": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "121101": {
+            "12111": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "121102": {
+            "12112": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "121103": {
+            "12113": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "121104": {
+            "12114": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "121201": {
+            "12121": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "121202": {
+            "12122": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "121203": {
+            "12123": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "121204": {
+            "12124": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "121301": {
+            "12131": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "121302": {
+            "12132": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "121303": {
+            "12133": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "121304": {
+            "12134": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "121401": {
+            "12141": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "121402": {
+            "12142": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "121403": {
+            "12143": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "121404": {
+            "12144": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "121501": {
+            "12151": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "121502": {
+            "12152": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "121503": {
+            "12153": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "121504": {
+            "12154": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "122101": {
+            "12211": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "122102": {
+            "12212": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "122103": {
+            "12213": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "122104": {
+            "12214": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "122201": {
+            "12221": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "122202": {
+            "12222": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "122203": {
+            "12223": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "122204": {
+            "12224": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "122301": {
+            "12231": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "122302": {
+            "12232": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "122303": {
+            "12233": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "122304": {
+            "12234": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "122401": {
+            "12241": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "122402": {
+            "12242": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "122403": {
+            "12243": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "122404": {
+            "12244": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "122501": {
+            "12251": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "122502": {
+            "12252": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "122503": {
+            "12253": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "122504": {
+            "12254": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "123101": {
+            "12311": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "123102": {
+            "12312": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "123103": {
+            "12313": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "123104": {
+            "12314": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "123201": {
+            "12321": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "123202": {
+            "12322": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "123203": {
+            "12323": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "123204": {
+            "12324": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "123301": {
+            "12331": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "123302": {
+            "12332": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "123303": {
+            "12333": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "123304": {
+            "12334": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "123401": {
+            "12341": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "123402": {
+            "12342": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "123403": {
+            "12343": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "123404": {
+            "12344": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "123501": {
+            "12351": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "123502": {
+            "12352": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "123503": {
+            "12353": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "123504": {
+            "12354": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "131101": {
+            "13111": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "131102": {
+            "13112": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "131103": {
+            "13113": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "131104": {
+            "13114": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "131201": {
+            "13121": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "131202": {
+            "13122": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "131203": {
+            "13123": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "131204": {
+            "13124": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "131301": {
+            "13131": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "131302": {
+            "13132": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "131303": {
+            "13133": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "131304": {
+            "13134": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "131401": {
+            "13141": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "131402": {
+            "13142": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "131403": {
+            "13143": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "131404": {
+            "13144": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "131501": {
+            "13151": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "131502": {
+            "13152": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "131503": {
+            "13153": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "131504": {
+            "13154": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "132101": {
+            "13211": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "132102": {
+            "13212": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "132103": {
+            "13213": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "132104": {
+            "13214": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "132201": {
+            "13221": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "132202": {
+            "13222": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "132203": {
+            "13223": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "132204": {
+            "13224": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "132301": {
+            "13231": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "132302": {
+            "13232": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "132303": {
+            "13233": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "132304": {
+            "13234": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "132401": {
+            "13241": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "132402": {
+            "13242": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "132403": {
+            "13243": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "132404": {
+            "13244": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "132501": {
+            "13251": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "132502": {
+            "13252": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "132503": {
+            "13253": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "132504": {
+            "13254": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "133101": {
+            "13311": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "133102": {
+            "13312": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "133103": {
+            "13313": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "133104": {
+            "13314": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "133201": {
+            "13321": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "133202": {
+            "13322": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "133203": {
+            "13323": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "133204": {
+            "13324": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "133301": {
+            "13331": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "133302": {
+            "13332": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "133303": {
+            "13333": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "133304": {
+            "13334": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "133401": {
+            "13341": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "133402": {
+            "13342": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "133403": {
+            "13343": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "133404": {
+            "13344": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "133501": {
+            "13351": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "133502": {
+            "13352": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "133503": {
+            "13353": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "133504": {
+            "13354": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "141101": {
+            "14111": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "141102": {
+            "14112": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "141103": {
+            "14113": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "141104": {
+            "14114": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "141201": {
+            "14121": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "141202": {
+            "14122": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "141203": {
+            "14123": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "141204": {
+            "14124": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "141301": {
+            "14131": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "141302": {
+            "14132": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "141303": {
+            "14133": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "141304": {
+            "14134": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "141401": {
+            "14141": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "141402": {
+            "14142": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "141403": {
+            "14143": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "141404": {
+            "14144": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "141501": {
+            "14151": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "141502": {
+            "14152": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "141503": {
+            "14153": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "141504": {
+            "14154": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "142101": {
+            "14211": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "142102": {
+            "14212": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "142103": {
+            "14213": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "142104": {
+            "14214": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "142201": {
+            "14221": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "142202": {
+            "14222": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "142203": {
+            "14223": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "142204": {
+            "14224": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "142301": {
+            "14231": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "142302": {
+            "14232": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "142303": {
+            "14233": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "142304": {
+            "14234": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "142401": {
+            "14241": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "142402": {
+            "14242": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "142403": {
+            "14243": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "142404": {
+            "14244": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "142501": {
+            "14251": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "142502": {
+            "14252": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "142503": {
+            "14253": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "142504": {
+            "14254": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "143101": {
+            "14311": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "143102": {
+            "14312": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "143103": {
+            "14313": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "143104": {
+            "14314": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "143201": {
+            "14321": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "143202": {
+            "14322": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "143203": {
+            "14323": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "143204": {
+            "14324": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "143301": {
+            "14331": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "143302": {
+            "14332": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "143303": {
+            "14333": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "143304": {
+            "14334": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "143401": {
+            "14341": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "143402": {
+            "14342": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "143403": {
+            "14343": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "143404": {
+            "14344": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "143501": {
+            "14351": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "str"
             },
-            "143502": {
+            "14352": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "bra"
             },
-            "143503": {
+            "14353": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "dex"
             },
-            "143504": {
+            "14354": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "str",
                 "targetStat": "tec"
             },
-            "211101": {
+            "21111": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "211102": {
+            "21112": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "211103": {
+            "21113": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "211104": {
+            "21114": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "211201": {
+            "21121": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "211202": {
+            "21122": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "211203": {
+            "21123": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "211204": {
+            "21124": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "211301": {
+            "21131": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "211302": {
+            "21132": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "211303": {
+            "21133": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "211304": {
+            "21134": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "211401": {
+            "21141": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "211402": {
+            "21142": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "211403": {
+            "21143": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "211404": {
+            "21144": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "211501": {
+            "21151": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "211502": {
+            "21152": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "211503": {
+            "21153": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "211504": {
+            "21154": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "212101": {
+            "21211": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "212102": {
+            "21212": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "212103": {
+            "21213": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "212104": {
+            "21214": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "212201": {
+            "21221": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "212202": {
+            "21222": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "212203": {
+            "21223": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "212204": {
+            "21224": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "212301": {
+            "21231": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "212302": {
+            "21232": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "212303": {
+            "21233": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "212304": {
+            "21234": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "212401": {
+            "21241": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "212402": {
+            "21242": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "212403": {
+            "21243": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "212404": {
+            "21244": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "212501": {
+            "21251": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "212502": {
+            "21252": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "212503": {
+            "21253": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "212504": {
+            "21254": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "213101": {
+            "21311": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "213102": {
+            "21312": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "213103": {
+            "21313": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "213104": {
+            "21314": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "213201": {
+            "21321": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "213202": {
+            "21322": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "213203": {
+            "21323": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "213204": {
+            "21324": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "213301": {
+            "21331": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "213302": {
+            "21332": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "213303": {
+            "21333": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "213304": {
+            "21334": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "213401": {
+            "21341": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "213402": {
+            "21342": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "213403": {
+            "21343": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "213404": {
+            "21344": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "213501": {
+            "21351": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "213502": {
+            "21352": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "213503": {
+            "21353": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "213504": {
+            "21354": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "221101": {
+            "22111": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "221102": {
+            "22112": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "221103": {
+            "22113": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "221104": {
+            "22114": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "221201": {
+            "22121": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "221202": {
+            "22122": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "221203": {
+            "22123": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "221204": {
+            "22124": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "221301": {
+            "22131": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "221302": {
+            "22132": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "221303": {
+            "22133": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "221304": {
+            "22134": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "221401": {
+            "22141": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "221402": {
+            "22142": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "221403": {
+            "22143": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "221404": {
+            "22144": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "221501": {
+            "22151": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "221502": {
+            "22152": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "221503": {
+            "22153": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "221504": {
+            "22154": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "222101": {
+            "22211": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "222102": {
+            "22212": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "222103": {
+            "22213": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "222104": {
+            "22214": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "222201": {
+            "22221": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "222202": {
+            "22222": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "222203": {
+            "22223": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "222204": {
+            "22224": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "222301": {
+            "22231": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "222302": {
+            "22232": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "222303": {
+            "22233": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "222304": {
+            "22234": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "222401": {
+            "22241": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "222402": {
+            "22242": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "222403": {
+            "22243": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "222404": {
+            "22244": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "222501": {
+            "22251": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "222502": {
+            "22252": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "222503": {
+            "22253": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "222504": {
+            "22254": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "223101": {
+            "22311": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "223102": {
+            "22312": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "223103": {
+            "22313": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "223104": {
+            "22314": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "223201": {
+            "22321": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "223202": {
+            "22322": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "223203": {
+            "22323": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "223204": {
+            "22324": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "223301": {
+            "22331": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "223302": {
+            "22332": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "223303": {
+            "22333": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "223304": {
+            "22334": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "223401": {
+            "22341": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "223402": {
+            "22342": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "223403": {
+            "22343": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "223404": {
+            "22344": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "223501": {
+            "22351": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "223502": {
+            "22352": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "223503": {
+            "22353": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "223504": {
+            "22354": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "231101": {
+            "23111": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "231102": {
+            "23112": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "231103": {
+            "23113": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "231104": {
+            "23114": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "231201": {
+            "23121": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "231202": {
+            "23122": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "231203": {
+            "23123": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "231204": {
+            "23124": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "231301": {
+            "23131": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "231302": {
+            "23132": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "231303": {
+            "23133": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "231304": {
+            "23134": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "231401": {
+            "23141": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "231402": {
+            "23142": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "231403": {
+            "23143": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "231404": {
+            "23144": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "231501": {
+            "23151": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "231502": {
+            "23152": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "231503": {
+            "23153": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "231504": {
+            "23154": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "232101": {
+            "23211": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "232102": {
+            "23212": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "232103": {
+            "23213": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "232104": {
+            "23214": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "232201": {
+            "23221": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "232202": {
+            "23222": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "232203": {
+            "23223": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "232204": {
+            "23224": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "232301": {
+            "23231": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "232302": {
+            "23232": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "232303": {
+            "23233": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "232304": {
+            "23234": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "232401": {
+            "23241": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "232402": {
+            "23242": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "232403": {
+            "23243": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "232404": {
+            "23244": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "232501": {
+            "23251": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "232502": {
+            "23252": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "232503": {
+            "23253": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "232504": {
+            "23254": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "233101": {
+            "23311": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "233102": {
+            "23312": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "233103": {
+            "23313": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "233104": {
+            "23314": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "233201": {
+            "23321": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "233202": {
+            "23322": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "233203": {
+            "23323": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "233204": {
+            "23324": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "233301": {
+            "23331": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "233302": {
+            "23332": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "233303": {
+            "23333": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "233304": {
+            "23334": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "233401": {
+            "23341": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "233402": {
+            "23342": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "233403": {
+            "23343": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "233404": {
+            "23344": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "233501": {
+            "23351": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "233502": {
+            "23352": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "233503": {
+            "23353": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "233504": {
+            "23354": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "241101": {
+            "24111": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "241102": {
+            "24112": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "241103": {
+            "24113": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "241104": {
+            "24114": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "241201": {
+            "24121": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "241202": {
+            "24122": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "241203": {
+            "24123": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "241204": {
+            "24124": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "241301": {
+            "24131": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "241302": {
+            "24132": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "241303": {
+            "24133": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "241304": {
+            "24134": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "241401": {
+            "24141": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "241402": {
+            "24142": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "241403": {
+            "24143": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "241404": {
+            "24144": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "241501": {
+            "24151": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "241502": {
+            "24152": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "241503": {
+            "24153": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "241504": {
+            "24154": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "242101": {
+            "24211": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "242102": {
+            "24212": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "242103": {
+            "24213": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "242104": {
+            "24214": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "242201": {
+            "24221": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "242202": {
+            "24222": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "242203": {
+            "24223": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "242204": {
+            "24224": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "242301": {
+            "24231": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "242302": {
+            "24232": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "242303": {
+            "24233": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "242304": {
+            "24234": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "242401": {
+            "24241": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "242402": {
+            "24242": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "242403": {
+            "24243": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "242404": {
+            "24244": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "242501": {
+            "24251": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "242502": {
+            "24252": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "242503": {
+            "24253": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "242504": {
+            "24254": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "243101": {
+            "24311": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "243102": {
+            "24312": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "243103": {
+            "24313": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "243104": {
+            "24314": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "243201": {
+            "24321": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "243202": {
+            "24322": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "243203": {
+            "24323": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "243204": {
+            "24324": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "243301": {
+            "24331": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "243302": {
+            "24332": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "243303": {
+            "24333": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "243304": {
+            "24334": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "243401": {
+            "24341": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "243402": {
+            "24342": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "243403": {
+            "24343": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "243404": {
+            "24344": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "243501": {
+            "24351": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "str"
             },
-            "243502": {
+            "24352": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "bra"
             },
-            "243503": {
+            "24353": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "dex"
             },
-            "243504": {
+            "24354": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "bra",
                 "targetStat": "tec"
             },
-            "311101": {
+            "31111": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "311102": {
+            "31112": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "311103": {
+            "31113": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "311104": {
+            "31114": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "311201": {
+            "31121": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "311202": {
+            "31122": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "311203": {
+            "31123": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "311204": {
+            "31124": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "311301": {
+            "31131": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "311302": {
+            "31132": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "311303": {
+            "31133": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "311304": {
+            "31134": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "311401": {
+            "31141": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "311402": {
+            "31142": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "311403": {
+            "31143": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "311404": {
+            "31144": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "311501": {
+            "31151": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "311502": {
+            "31152": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "311503": {
+            "31153": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "311504": {
+            "31154": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "312101": {
+            "31211": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "312102": {
+            "31212": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "312103": {
+            "31213": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "312104": {
+            "31214": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "312201": {
+            "31221": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "312202": {
+            "31222": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "312203": {
+            "31223": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "312204": {
+            "31224": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "312301": {
+            "31231": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "312302": {
+            "31232": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "312303": {
+            "31233": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "312304": {
+            "31234": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "312401": {
+            "31241": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "312402": {
+            "31242": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "312403": {
+            "31243": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "312404": {
+            "31244": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "312501": {
+            "31251": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "312502": {
+            "31252": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "312503": {
+            "31253": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "312504": {
+            "31254": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "313101": {
+            "31311": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "313102": {
+            "31312": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "313103": {
+            "31313": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "313104": {
+            "31314": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "313201": {
+            "31321": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "313202": {
+            "31322": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "313203": {
+            "31323": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "313204": {
+            "31324": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "313301": {
+            "31331": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "313302": {
+            "31332": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "313303": {
+            "31333": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "313304": {
+            "31334": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "313401": {
+            "31341": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "313402": {
+            "31342": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "313403": {
+            "31343": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "313404": {
+            "31344": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "313501": {
+            "31351": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "313502": {
+            "31352": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "313503": {
+            "31353": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "313504": {
+            "31354": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "321101": {
+            "32111": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "321102": {
+            "32112": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "321103": {
+            "32113": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "321104": {
+            "32114": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "321201": {
+            "32121": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "321202": {
+            "32122": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "321203": {
+            "32123": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "321204": {
+            "32124": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "321301": {
+            "32131": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "321302": {
+            "32132": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "321303": {
+            "32133": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "321304": {
+            "32134": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "321401": {
+            "32141": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "321402": {
+            "32142": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "321403": {
+            "32143": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "321404": {
+            "32144": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "321501": {
+            "32151": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "321502": {
+            "32152": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "321503": {
+            "32153": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "321504": {
+            "32154": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "322101": {
+            "32211": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "322102": {
+            "32212": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "322103": {
+            "32213": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "322104": {
+            "32214": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "322201": {
+            "32221": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "322202": {
+            "32222": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "322203": {
+            "32223": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "322204": {
+            "32224": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "322301": {
+            "32231": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "322302": {
+            "32232": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "322303": {
+            "32233": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "322304": {
+            "32234": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "322401": {
+            "32241": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "322402": {
+            "32242": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "322403": {
+            "32243": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "322404": {
+            "32244": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "322501": {
+            "32251": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "322502": {
+            "32252": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "322503": {
+            "32253": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "322504": {
+            "32254": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "323101": {
+            "32311": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "323102": {
+            "32312": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "323103": {
+            "32313": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "323104": {
+            "32314": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "323201": {
+            "32321": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "323202": {
+            "32322": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "323203": {
+            "32323": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "323204": {
+            "32324": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "323301": {
+            "32331": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "323302": {
+            "32332": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "323303": {
+            "32333": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "323304": {
+            "32334": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "323401": {
+            "32341": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "323402": {
+            "32342": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "323403": {
+            "32343": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "323404": {
+            "32344": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "323501": {
+            "32351": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "323502": {
+            "32352": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "323503": {
+            "32353": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "323504": {
+            "32354": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "331101": {
+            "33111": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "331102": {
+            "33112": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "331103": {
+            "33113": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "331104": {
+            "33114": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "331201": {
+            "33121": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "331202": {
+            "33122": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "331203": {
+            "33123": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "331204": {
+            "33124": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "331301": {
+            "33131": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "331302": {
+            "33132": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "331303": {
+            "33133": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "331304": {
+            "33134": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "331401": {
+            "33141": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "331402": {
+            "33142": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "331403": {
+            "33143": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "331404": {
+            "33144": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "331501": {
+            "33151": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "331502": {
+            "33152": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "331503": {
+            "33153": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "331504": {
+            "33154": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "332101": {
+            "33211": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "332102": {
+            "33212": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "332103": {
+            "33213": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "332104": {
+            "33214": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "332201": {
+            "33221": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "332202": {
+            "33222": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "332203": {
+            "33223": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "332204": {
+            "33224": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "332301": {
+            "33231": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "332302": {
+            "33232": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "332303": {
+            "33233": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "332304": {
+            "33234": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "332401": {
+            "33241": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "332402": {
+            "33242": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "332403": {
+            "33243": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "332404": {
+            "33244": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "332501": {
+            "33251": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "332502": {
+            "33252": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "332503": {
+            "33253": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "332504": {
+            "33254": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "333101": {
+            "33311": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "333102": {
+            "33312": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "333103": {
+            "33313": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "333104": {
+            "33314": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "333201": {
+            "33321": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "333202": {
+            "33322": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "333203": {
+            "33323": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "333204": {
+            "33324": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "333301": {
+            "33331": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "333302": {
+            "33332": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "333303": {
+            "33333": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "333304": {
+            "33334": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "333401": {
+            "33341": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "333402": {
+            "33342": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "333403": {
+            "33343": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "333404": {
+            "33344": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "333501": {
+            "33351": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "333502": {
+            "33352": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "333503": {
+            "33353": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "333504": {
+            "33354": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "341101": {
+            "34111": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "341102": {
+            "34112": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "341103": {
+            "34113": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "341104": {
+            "34114": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "341201": {
+            "34121": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "341202": {
+            "34122": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "341203": {
+            "34123": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "341204": {
+            "34124": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "341301": {
+            "34131": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "341302": {
+            "34132": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "341303": {
+            "34133": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "341304": {
+            "34134": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "341401": {
+            "34141": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "341402": {
+            "34142": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "341403": {
+            "34143": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "341404": {
+            "34144": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "341501": {
+            "34151": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "341502": {
+            "34152": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "341503": {
+            "34153": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "341504": {
+            "34154": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "342101": {
+            "34211": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "342102": {
+            "34212": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "342103": {
+            "34213": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "342104": {
+            "34214": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "342201": {
+            "34221": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "342202": {
+            "34222": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "342203": {
+            "34223": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "342204": {
+            "34224": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "342301": {
+            "34231": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "342302": {
+            "34232": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "342303": {
+            "34233": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "342304": {
+            "34234": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "342401": {
+            "34241": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "342402": {
+            "34242": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "342403": {
+            "34243": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "342404": {
+            "34244": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "342501": {
+            "34251": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "342502": {
+            "34252": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "342503": {
+            "34253": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "342504": {
+            "34254": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "343101": {
+            "34311": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "343102": {
+            "34312": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "343103": {
+            "34313": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "343104": {
+            "34314": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "343201": {
+            "34321": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "343202": {
+            "34322": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "343203": {
+            "34323": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "343204": {
+            "34324": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "343301": {
+            "34331": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "343302": {
+            "34332": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "343303": {
+            "34333": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "343304": {
+            "34334": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "343401": {
+            "34341": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "343402": {
+            "34342": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "343403": {
+            "34343": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "343404": {
+            "34344": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "343501": {
+            "34351": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "str"
             },
-            "343502": {
+            "34352": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "bra"
             },
-            "343503": {
+            "34353": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "dex"
             },
-            "343504": {
+            "34354": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "dex",
                 "targetStat": "tec"
             },
-            "411101": {
+            "41111": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "411102": {
+            "41112": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "411103": {
+            "41113": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "411104": {
+            "41114": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "411201": {
+            "41121": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "411202": {
+            "41122": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "411203": {
+            "41123": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "411204": {
+            "41124": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "411301": {
+            "41131": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "411302": {
+            "41132": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "411303": {
+            "41133": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "411304": {
+            "41134": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "411401": {
+            "41141": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "411402": {
+            "41142": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "411403": {
+            "41143": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "411404": {
+            "41144": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "411501": {
+            "41151": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "411502": {
+            "41152": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "411503": {
+            "41153": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "411504": {
+            "41154": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "412101": {
+            "41211": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "412102": {
+            "41212": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "412103": {
+            "41213": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "412104": {
+            "41214": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "412201": {
+            "41221": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "412202": {
+            "41222": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "412203": {
+            "41223": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "412204": {
+            "41224": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "412301": {
+            "41231": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "412302": {
+            "41232": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "412303": {
+            "41233": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "412304": {
+            "41234": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "412401": {
+            "41241": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "412402": {
+            "41242": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "412403": {
+            "41243": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "412404": {
+            "41244": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "412501": {
+            "41251": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "412502": {
+            "41252": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "412503": {
+            "41253": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "412504": {
+            "41254": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "413101": {
+            "41311": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "413102": {
+            "41312": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "413103": {
+            "41313": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "413104": {
+            "41314": {
                 "flag": "stiff",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "413201": {
+            "41321": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "413202": {
+            "41322": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "413203": {
+            "41323": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "413204": {
+            "41324": {
                 "flag": "illegal",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "413301": {
+            "41331": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "413302": {
+            "41332": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "413303": {
+            "41333": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "413304": {
+            "41334": {
                 "flag": "highrisk",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "413401": {
+            "41341": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "413402": {
+            "41342": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "413403": {
+            "41343": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "413404": {
+            "41344": {
                 "flag": "pinning",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "413501": {
+            "41351": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "413502": {
+            "41352": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "413503": {
+            "41353": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "413504": {
+            "41354": {
                 "flag": "submission",
                 "level": 1,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "421101": {
+            "42111": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "421102": {
+            "42112": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "421103": {
+            "42113": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "421104": {
+            "42114": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "421201": {
+            "42121": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "421202": {
+            "42122": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "421203": {
+            "42123": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "421204": {
+            "42124": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "421301": {
+            "42131": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "421302": {
+            "42132": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "421303": {
+            "42133": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "421304": {
+            "42134": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "421401": {
+            "42141": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "421402": {
+            "42142": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "421403": {
+            "42143": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "421404": {
+            "42144": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "421501": {
+            "42151": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "421502": {
+            "42152": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "421503": {
+            "42153": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "421504": {
+            "42154": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "422101": {
+            "42211": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "422102": {
+            "42212": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "422103": {
+            "42213": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "422104": {
+            "42214": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "422201": {
+            "42221": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "422202": {
+            "42222": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "422203": {
+            "42223": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "422204": {
+            "42224": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "422301": {
+            "42231": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "422302": {
+            "42232": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "422303": {
+            "42233": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "422304": {
+            "42234": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "422401": {
+            "42241": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "422402": {
+            "42242": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "422403": {
+            "42243": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "422404": {
+            "42244": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "422501": {
+            "42251": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "422502": {
+            "42252": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "422503": {
+            "42253": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "422504": {
+            "42254": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "423101": {
+            "42311": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "423102": {
+            "42312": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "423103": {
+            "42313": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "423104": {
+            "42314": {
                 "flag": "stiff",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "423201": {
+            "42321": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "423202": {
+            "42322": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "423203": {
+            "42323": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "423204": {
+            "42324": {
                 "flag": "illegal",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "423301": {
+            "42331": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "423302": {
+            "42332": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "423303": {
+            "42333": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "423304": {
+            "42334": {
                 "flag": "highrisk",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "423401": {
+            "42341": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "423402": {
+            "42342": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "423403": {
+            "42343": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "423404": {
+            "42344": {
                 "flag": "pinning",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "423501": {
+            "42351": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "423502": {
+            "42352": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "423503": {
+            "42353": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "423504": {
+            "42354": {
                 "flag": "submission",
                 "level": 2,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "431101": {
+            "43111": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "431102": {
+            "43112": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "431103": {
+            "43113": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "431104": {
+            "43114": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "431201": {
+            "43121": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "431202": {
+            "43122": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "431203": {
+            "43123": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "431204": {
+            "43124": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "431301": {
+            "43131": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "431302": {
+            "43132": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "431303": {
+            "43133": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "431304": {
+            "43134": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "431401": {
+            "43141": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "431402": {
+            "43142": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "431403": {
+            "43143": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "431404": {
+            "43144": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "431501": {
+            "43151": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "431502": {
+            "43152": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "431503": {
+            "43153": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "431504": {
+            "43154": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "432101": {
+            "43211": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "432102": {
+            "43212": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "432103": {
+            "43213": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "432104": {
+            "43214": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "432201": {
+            "43221": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "432202": {
+            "43222": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "432203": {
+            "43223": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "432204": {
+            "43224": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "432301": {
+            "43231": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "432302": {
+            "43232": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "432303": {
+            "43233": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "432304": {
+            "43234": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "432401": {
+            "43241": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "432402": {
+            "43242": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "432403": {
+            "43243": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "432404": {
+            "43244": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "432501": {
+            "43251": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "432502": {
+            "43252": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "432503": {
+            "43253": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "432504": {
+            "43254": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "433101": {
+            "43311": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "433102": {
+            "43312": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "433103": {
+            "43313": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "433104": {
+            "43314": {
                 "flag": "stiff",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "433201": {
+            "43321": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "433202": {
+            "43322": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "433203": {
+            "43323": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "433204": {
+            "43324": {
                 "flag": "illegal",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "433301": {
+            "43331": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "433302": {
+            "43332": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "433303": {
+            "43333": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "433304": {
+            "43334": {
                 "flag": "highrisk",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "433401": {
+            "43341": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "433402": {
+            "43342": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "433403": {
+            "43343": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "433404": {
+            "43344": {
                 "flag": "pinning",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "433501": {
+            "43351": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "433502": {
+            "43352": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "433503": {
+            "43353": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "433504": {
+            "43354": {
                 "flag": "submission",
                 "level": 3,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "441101": {
+            "44111": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "441102": {
+            "44112": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "441103": {
+            "44113": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "441104": {
+            "44114": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "441201": {
+            "44121": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "441202": {
+            "44122": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "441203": {
+            "44123": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "441204": {
+            "44124": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "441301": {
+            "44131": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "441302": {
+            "44132": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "441303": {
+            "44133": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "441304": {
+            "44134": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "441401": {
+            "44141": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "441402": {
+            "44142": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "441403": {
+            "44143": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "441404": {
+            "44144": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "441501": {
+            "44151": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "441502": {
+            "44152": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "441503": {
+            "44153": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "441504": {
+            "44154": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 1,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "442101": {
+            "44211": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "442102": {
+            "44212": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "442103": {
+            "44213": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "442104": {
+            "44214": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "442201": {
+            "44221": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "442202": {
+            "44222": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "442203": {
+            "44223": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "442204": {
+            "44224": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "442301": {
+            "44231": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "442302": {
+            "44232": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "442303": {
+            "44233": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "442304": {
+            "44234": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "442401": {
+            "44241": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "442402": {
+            "44242": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "442403": {
+            "44243": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "442404": {
+            "44244": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "442501": {
+            "44251": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "442502": {
+            "44252": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "442503": {
+            "44253": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "442504": {
+            "44254": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 2,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "443101": {
+            "44311": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "443102": {
+            "44312": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "443103": {
+            "44313": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "443104": {
+            "44314": {
                 "flag": "stiff",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "443201": {
+            "44321": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "443202": {
+            "44322": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "443203": {
+            "44323": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "443204": {
+            "44324": {
                 "flag": "illegal",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "443301": {
+            "44331": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "443302": {
+            "44332": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "443303": {
+            "44333": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "443304": {
+            "44334": {
                 "flag": "highrisk",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "443401": {
+            "44341": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "443402": {
+            "44342": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "443403": {
+            "44343": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "443404": {
+            "44344": {
                 "flag": "pinning",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "tec"
             },
-            "443501": {
+            "44351": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "str"
             },
-            "443502": {
+            "44352": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "bra"
             },
-            "443503": {
+            "44353": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 3,
                 "stat": "tec",
                 "targetStat": "dex"
             },
-            "443504": {
+            "44354": {
                 "flag": "submission",
                 "level": 4,
                 "numFavorites": 3,
@@ -31896,6 +31896,6 @@ export default {
                 "targetStat": "tec"
             }
         },
-        "allIds": ["111101", "111102", "111103", "111104", "111201", "111202", "111203", "111204", "111301", "111302", "111303", "111304", "111401", "111402", "111403", "111404", "111501", "111502", "111503", "111504", "112101", "112102", "112103", "112104", "112201", "112202", "112203", "112204", "112301", "112302", "112303", "112304", "112401", "112402", "112403", "112404", "112501", "112502", "112503", "112504", "113101", "113102", "113103", "113104", "113201", "113202", "113203", "113204", "113301", "113302", "113303", "113304", "113401", "113402", "113403", "113404", "113501", "113502", "113503", "113504", "121101", "121102", "121103", "121104", "121201", "121202", "121203", "121204", "121301", "121302", "121303", "121304", "121401", "121402", "121403", "121404", "121501", "121502", "121503", "121504", "122101", "122102", "122103", "122104", "122201", "122202", "122203", "122204", "122301", "122302", "122303", "122304", "122401", "122402", "122403", "122404", "122501", "122502", "122503", "122504", "123101", "123102", "123103", "123104", "123201", "123202", "123203", "123204", "123301", "123302", "123303", "123304", "123401", "123402", "123403", "123404", "123501", "123502", "123503", "123504", "131101", "131102", "131103", "131104", "131201", "131202", "131203", "131204", "131301", "131302", "131303", "131304", "131401", "131402", "131403", "131404", "131501", "131502", "131503", "131504", "132101", "132102", "132103", "132104", "132201", "132202", "132203", "132204", "132301", "132302", "132303", "132304", "132401", "132402", "132403", "132404", "132501", "132502", "132503", "132504", "133101", "133102", "133103", "133104", "133201", "133202", "133203", "133204", "133301", "133302", "133303", "133304", "133401", "133402", "133403", "133404", "133501", "133502", "133503", "133504", "141101", "141102", "141103", "141104", "141201", "141202", "141203", "141204", "141301", "141302", "141303", "141304", "141401", "141402", "141403", "141404", "141501", "141502", "141503", "141504", "142101", "142102", "142103", "142104", "142201", "142202", "142203", "142204", "142301", "142302", "142303", "142304", "142401", "142402", "142403", "142404", "142501", "142502", "142503", "142504", "143101", "143102", "143103", "143104", "143201", "143202", "143203", "143204", "143301", "143302", "143303", "143304", "143401", "143402", "143403", "143404", "143501", "143502", "143503", "143504", "211101", "211102", "211103", "211104", "211201", "211202", "211203", "211204", "211301", "211302", "211303", "211304", "211401", "211402", "211403", "211404", "211501", "211502", "211503", "211504", "212101", "212102", "212103", "212104", "212201", "212202", "212203", "212204", "212301", "212302", "212303", "212304", "212401", "212402", "212403", "212404", "212501", "212502", "212503", "212504", "213101", "213102", "213103", "213104", "213201", "213202", "213203", "213204", "213301", "213302", "213303", "213304", "213401", "213402", "213403", "213404", "213501", "213502", "213503", "213504", "221101", "221102", "221103", "221104", "221201", "221202", "221203", "221204", "221301", "221302", "221303", "221304", "221401", "221402", "221403", "221404", "221501", "221502", "221503", "221504", "222101", "222102", "222103", "222104", "222201", "222202", "222203", "222204", "222301", "222302", "222303", "222304", "222401", "222402", "222403", "222404", "222501", "222502", "222503", "222504", "223101", "223102", "223103", "223104", "223201", "223202", "223203", "223204", "223301", "223302", "223303", "223304", "223401", "223402", "223403", "223404", "223501", "223502", "223503", "223504", "231101", "231102", "231103", "231104", "231201", "231202", "231203", "231204", "231301", "231302", "231303", "231304", "231401", "231402", "231403", "231404", "231501", "231502", "231503", "231504", "232101", "232102", "232103", "232104", "232201", "232202", "232203", "232204", "232301", "232302", "232303", "232304", "232401", "232402", "232403", "232404", "232501", "232502", "232503", "232504", "233101", "233102", "233103", "233104", "233201", "233202", "233203", "233204", "233301", "233302", "233303", "233304", "233401", "233402", "233403", "233404", "233501", "233502", "233503", "233504", "241101", "241102", "241103", "241104", "241201", "241202", "241203", "241204", "241301", "241302", "241303", "241304", "241401", "241402", "241403", "241404", "241501", "241502", "241503", "241504", "242101", "242102", "242103", "242104", "242201", "242202", "242203", "242204", "242301", "242302", "242303", "242304", "242401", "242402", "242403", "242404", "242501", "242502", "242503", "242504", "243101", "243102", "243103", "243104", "243201", "243202", "243203", "243204", "243301", "243302", "243303", "243304", "243401", "243402", "243403", "243404", "243501", "243502", "243503", "243504", "311101", "311102", "311103", "311104", "311201", "311202", "311203", "311204", "311301", "311302", "311303", "311304", "311401", "311402", "311403", "311404", "311501", "311502", "311503", "311504", "312101", "312102", "312103", "312104", "312201", "312202", "312203", "312204", "312301", "312302", "312303", "312304", "312401", "312402", "312403", "312404", "312501", "312502", "312503", "312504", "313101", "313102", "313103", "313104", "313201", "313202", "313203", "313204", "313301", "313302", "313303", "313304", "313401", "313402", "313403", "313404", "313501", "313502", "313503", "313504", "321101", "321102", "321103", "321104", "321201", "321202", "321203", "321204", "321301", "321302", "321303", "321304", "321401", "321402", "321403", "321404", "321501", "321502", "321503", "321504", "322101", "322102", "322103", "322104", "322201", "322202", "322203", "322204", "322301", "322302", "322303", "322304", "322401", "322402", "322403", "322404", "322501", "322502", "322503", "322504", "323101", "323102", "323103", "323104", "323201", "323202", "323203", "323204", "323301", "323302", "323303", "323304", "323401", "323402", "323403", "323404", "323501", "323502", "323503", "323504", "331101", "331102", "331103", "331104", "331201", "331202", "331203", "331204", "331301", "331302", "331303", "331304", "331401", "331402", "331403", "331404", "331501", "331502", "331503", "331504", "332101", "332102", "332103", "332104", "332201", "332202", "332203", "332204", "332301", "332302", "332303", "332304", "332401", "332402", "332403", "332404", "332501", "332502", "332503", "332504", "333101", "333102", "333103", "333104", "333201", "333202", "333203", "333204", "333301", "333302", "333303", "333304", "333401", "333402", "333403", "333404", "333501", "333502", "333503", "333504", "341101", "341102", "341103", "341104", "341201", "341202", "341203", "341204", "341301", "341302", "341303", "341304", "341401", "341402", "341403", "341404", "341501", "341502", "341503", "341504", "342101", "342102", "342103", "342104", "342201", "342202", "342203", "342204", "342301", "342302", "342303", "342304", "342401", "342402", "342403", "342404", "342501", "342502", "342503", "342504", "343101", "343102", "343103", "343104", "343201", "343202", "343203", "343204", "343301", "343302", "343303", "343304", "343401", "343402", "343403", "343404", "343501", "343502", "343503", "343504", "411101", "411102", "411103", "411104", "411201", "411202", "411203", "411204", "411301", "411302", "411303", "411304", "411401", "411402", "411403", "411404", "411501", "411502", "411503", "411504", "412101", "412102", "412103", "412104", "412201", "412202", "412203", "412204", "412301", "412302", "412303", "412304", "412401", "412402", "412403", "412404", "412501", "412502", "412503", "412504", "413101", "413102", "413103", "413104", "413201", "413202", "413203", "413204", "413301", "413302", "413303", "413304", "413401", "413402", "413403", "413404", "413501", "413502", "413503", "413504", "421101", "421102", "421103", "421104", "421201", "421202", "421203", "421204", "421301", "421302", "421303", "421304", "421401", "421402", "421403", "421404", "421501", "421502", "421503", "421504", "422101", "422102", "422103", "422104", "422201", "422202", "422203", "422204", "422301", "422302", "422303", "422304", "422401", "422402", "422403", "422404", "422501", "422502", "422503", "422504", "423101", "423102", "423103", "423104", "423201", "423202", "423203", "423204", "423301", "423302", "423303", "423304", "423401", "423402", "423403", "423404", "423501", "423502", "423503", "423504", "431101", "431102", "431103", "431104", "431201", "431202", "431203", "431204", "431301", "431302", "431303", "431304", "431401", "431402", "431403", "431404", "431501", "431502", "431503", "431504", "432101", "432102", "432103", "432104", "432201", "432202", "432203", "432204", "432301", "432302", "432303", "432304", "432401", "432402", "432403", "432404", "432501", "432502", "432503", "432504", "433101", "433102", "433103", "433104", "433201", "433202", "433203", "433204", "433301", "433302", "433303", "433304", "433401", "433402", "433403", "433404", "433501", "433502", "433503", "433504", "441101", "441102", "441103", "441104", "441201", "441202", "441203", "441204", "441301", "441302", "441303", "441304", "441401", "441402", "441403", "441404", "441501", "441502", "441503", "441504", "442101", "442102", "442103", "442104", "442201", "442202", "442203", "442204", "442301", "442302", "442303", "442304", "442401", "442402", "442403", "442404", "442501", "442502", "442503", "442504", "443101", "443102", "443103", "443104", "443201", "443202", "443203", "443204", "443301", "443302", "443303", "443304", "443401", "443402", "443403", "443404", "443501", "443502", "443503", "443504"]
+        "allIds": ["11111", "11112", "11113", "11114", "11121", "11122", "11123", "11124", "11131", "11132", "11133", "11134", "11141", "11142", "11143", "11144", "11151", "11152", "11153", "11154", "11211", "11212", "11213", "11214", "11221", "11222", "11223", "11224", "11231", "11232", "11233", "11234", "11241", "11242", "11243", "11244", "11251", "11252", "11253", "11254", "11311", "11312", "11313", "11314", "11321", "11322", "11323", "11324", "11331", "11332", "11333", "11334", "11341", "11342", "11343", "11344", "11351", "11352", "11353", "11354", "12111", "12112", "12113", "12114", "12121", "12122", "12123", "12124", "12131", "12132", "12133", "12134", "12141", "12142", "12143", "12144", "12151", "12152", "12153", "12154", "12211", "12212", "12213", "12214", "12221", "12222", "12223", "12224", "12231", "12232", "12233", "12234", "12241", "12242", "12243", "12244", "12251", "12252", "12253", "12254", "12311", "12312", "12313", "12314", "12321", "12322", "12323", "12324", "12331", "12332", "12333", "12334", "12341", "12342", "12343", "12344", "12351", "12352", "12353", "12354", "13111", "13112", "13113", "13114", "13121", "13122", "13123", "13124", "13131", "13132", "13133", "13134", "13141", "13142", "13143", "13144", "13151", "13152", "13153", "13154", "13211", "13212", "13213", "13214", "13221", "13222", "13223", "13224", "13231", "13232", "13233", "13234", "13241", "13242", "13243", "13244", "13251", "13252", "13253", "13254", "13311", "13312", "13313", "13314", "13321", "13322", "13323", "13324", "13331", "13332", "13333", "13334", "13341", "13342", "13343", "13344", "13351", "13352", "13353", "13354", "14111", "14112", "14113", "14114", "14121", "14122", "14123", "14124", "14131", "14132", "14133", "14134", "14141", "14142", "14143", "14144", "14151", "14152", "14153", "14154", "14211", "14212", "14213", "14214", "14221", "14222", "14223", "14224", "14231", "14232", "14233", "14234", "14241", "14242", "14243", "14244", "14251", "14252", "14253", "14254", "14311", "14312", "14313", "14314", "14321", "14322", "14323", "14324", "14331", "14332", "14333", "14334", "14341", "14342", "14343", "14344", "14351", "14352", "14353", "14354", "21111", "21112", "21113", "21114", "21121", "21122", "21123", "21124", "21131", "21132", "21133", "21134", "21141", "21142", "21143", "21144", "21151", "21152", "21153", "21154", "21211", "21212", "21213", "21214", "21221", "21222", "21223", "21224", "21231", "21232", "21233", "21234", "21241", "21242", "21243", "21244", "21251", "21252", "21253", "21254", "21311", "21312", "21313", "21314", "21321", "21322", "21323", "21324", "21331", "21332", "21333", "21334", "21341", "21342", "21343", "21344", "21351", "21352", "21353", "21354", "22111", "22112", "22113", "22114", "22121", "22122", "22123", "22124", "22131", "22132", "22133", "22134", "22141", "22142", "22143", "22144", "22151", "22152", "22153", "22154", "22211", "22212", "22213", "22214", "22221", "22222", "22223", "22224", "22231", "22232", "22233", "22234", "22241", "22242", "22243", "22244", "22251", "22252", "22253", "22254", "22311", "22312", "22313", "22314", "22321", "22322", "22323", "22324", "22331", "22332", "22333", "22334", "22341", "22342", "22343", "22344", "22351", "22352", "22353", "22354", "23111", "23112", "23113", "23114", "23121", "23122", "23123", "23124", "23131", "23132", "23133", "23134", "23141", "23142", "23143", "23144", "23151", "23152", "23153", "23154", "23211", "23212", "23213", "23214", "23221", "23222", "23223", "23224", "23231", "23232", "23233", "23234", "23241", "23242", "23243", "23244", "23251", "23252", "23253", "23254", "23311", "23312", "23313", "23314", "23321", "23322", "23323", "23324", "23331", "23332", "23333", "23334", "23341", "23342", "23343", "23344", "23351", "23352", "23353", "23354", "24111", "24112", "24113", "24114", "24121", "24122", "24123", "24124", "24131", "24132", "24133", "24134", "24141", "24142", "24143", "24144", "24151", "24152", "24153", "24154", "24211", "24212", "24213", "24214", "24221", "24222", "24223", "24224", "24231", "24232", "24233", "24234", "24241", "24242", "24243", "24244", "24251", "24252", "24253", "24254", "24311", "24312", "24313", "24314", "24321", "24322", "24323", "24324", "24331", "24332", "24333", "24334", "24341", "24342", "24343", "24344", "24351", "24352", "24353", "24354", "31111", "31112", "31113", "31114", "31121", "31122", "31123", "31124", "31131", "31132", "31133", "31134", "31141", "31142", "31143", "31144", "31151", "31152", "31153", "31154", "31211", "31212", "31213", "31214", "31221", "31222", "31223", "31224", "31231", "31232", "31233", "31234", "31241", "31242", "31243", "31244", "31251", "31252", "31253", "31254", "31311", "31312", "31313", "31314", "31321", "31322", "31323", "31324", "31331", "31332", "31333", "31334", "31341", "31342", "31343", "31344", "31351", "31352", "31353", "31354", "32111", "32112", "32113", "32114", "32121", "32122", "32123", "32124", "32131", "32132", "32133", "32134", "32141", "32142", "32143", "32144", "32151", "32152", "32153", "32154", "32211", "32212", "32213", "32214", "32221", "32222", "32223", "32224", "32231", "32232", "32233", "32234", "32241", "32242", "32243", "32244", "32251", "32252", "32253", "32254", "32311", "32312", "32313", "32314", "32321", "32322", "32323", "32324", "32331", "32332", "32333", "32334", "32341", "32342", "32343", "32344", "32351", "32352", "32353", "32354", "33111", "33112", "33113", "33114", "33121", "33122", "33123", "33124", "33131", "33132", "33133", "33134", "33141", "33142", "33143", "33144", "33151", "33152", "33153", "33154", "33211", "33212", "33213", "33214", "33221", "33222", "33223", "33224", "33231", "33232", "33233", "33234", "33241", "33242", "33243", "33244", "33251", "33252", "33253", "33254", "33311", "33312", "33313", "33314", "33321", "33322", "33323", "33324", "33331", "33332", "33333", "33334", "33341", "33342", "33343", "33344", "33351", "33352", "33353", "33354", "34111", "34112", "34113", "34114", "34121", "34122", "34123", "34124", "34131", "34132", "34133", "34134", "34141", "34142", "34143", "34144", "34151", "34152", "34153", "34154", "34211", "34212", "34213", "34214", "34221", "34222", "34223", "34224", "34231", "34232", "34233", "34234", "34241", "34242", "34243", "34244", "34251", "34252", "34253", "34254", "34311", "34312", "34313", "34314", "34321", "34322", "34323", "34324", "34331", "34332", "34333", "34334", "34341", "34342", "34343", "34344", "34351", "34352", "34353", "34354", "41111", "41112", "41113", "41114", "41121", "41122", "41123", "41124", "41131", "41132", "41133", "41134", "41141", "41142", "41143", "41144", "41151", "41152", "41153", "41154", "41211", "41212", "41213", "41214", "41221", "41222", "41223", "41224", "41231", "41232", "41233", "41234", "41241", "41242", "41243", "41244", "41251", "41252", "41253", "41254", "41311", "41312", "41313", "41314", "41321", "41322", "41323", "41324", "41331", "41332", "41333", "41334", "41341", "41342", "41343", "41344", "41351", "41352", "41353", "41354", "42111", "42112", "42113", "42114", "42121", "42122", "42123", "42124", "42131", "42132", "42133", "42134", "42141", "42142", "42143", "42144", "42151", "42152", "42153", "42154", "42211", "42212", "42213", "42214", "42221", "42222", "42223", "42224", "42231", "42232", "42233", "42234", "42241", "42242", "42243", "42244", "42251", "42252", "42253", "42254", "42311", "42312", "42313", "42314", "42321", "42322", "42323", "42324", "42331", "42332", "42333", "42334", "42341", "42342", "42343", "42344", "42351", "42352", "42353", "42354", "43111", "43112", "43113", "43114", "43121", "43122", "43123", "43124", "43131", "43132", "43133", "43134", "43141", "43142", "43143", "43144", "43151", "43152", "43153", "43154", "43211", "43212", "43213", "43214", "43221", "43222", "43223", "43224", "43231", "43232", "43233", "43234", "43241", "43242", "43243", "43244", "43251", "43252", "43253", "43254", "43311", "43312", "43313", "43314", "43321", "43322", "43323", "43324", "43331", "43332", "43333", "43334", "43341", "43342", "43343", "43344", "43351", "43352", "43353", "43354", "44111", "44112", "44113", "44114", "44121", "44122", "44123", "44124", "44131", "44132", "44133", "44134", "44141", "44142", "44143", "44144", "44151", "44152", "44153", "44154", "44211", "44212", "44213", "44214", "44221", "44222", "44223", "44224", "44231", "44232", "44233", "44234", "44241", "44242", "44243", "44244", "44251", "44252", "44253", "44254", "44311", "44312", "44313", "44314", "44321", "44322", "44323", "44324", "44331", "44332", "44333", "44334", "44341", "44342", "44343", "44344", "44351", "44352", "44353", "44354"]
     }
 };
