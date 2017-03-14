@@ -61,6 +61,55 @@ describe('create fetch action creators', () => {
 		});
 	});
 
+	describe('fetchStrategies', () => {
+		const getMockApi = (response) => ({
+			strategies: {
+				get: () => response,
+			},
+		});
+
+		test('creates the expected request action.', () => {
+			const api = getMockApi(Promise.resolve());
+
+			return store.dispatch(createAsyncActionCreators(api).fetchStrategies()).then(() => {
+				const actions = store.getActions();
+				expect(actions[0]).toEqual({ type: actionTypes.FETCH_STRATEGIES_REQUEST });
+			});
+		});
+
+		test('creates the expected success action upon success.', () => {
+			const strategies = [
+				{ id: 1 },
+				{ id: 2 },
+			];
+			const api = getMockApi(Promise.resolve(strategies));
+
+			return store.dispatch(createAsyncActionCreators(api).fetchStrategies()).then(() => {
+				const actions = store.getActions();
+				expect(actions[1]).toEqual({
+					type: actionTypes.FETCH_STRATEGIES_SUCCESS,
+					strategies,
+				});
+			});
+		});
+
+		test('creates the expected failure action upon failure.', () => {
+			const strategies = [
+				{ id: 1 },
+				{ id: 2 },
+			];
+			const api = getMockApi(Promise.reject('boo'));
+
+			return store.dispatch(createAsyncActionCreators(api).fetchStrategies()).then(() => {
+				const actions = store.getActions();
+				expect(actions[1]).toEqual({
+					type: actionTypes.FETCH_STRATEGIES_FAILURE,
+					error: 'boo',
+				});
+			});
+		});
+	});
+
 	describe('fetchWrestlers', () => {
 		const getMockApi = (response) => ({
 			wrestlers: {

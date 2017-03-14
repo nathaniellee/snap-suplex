@@ -9,6 +9,14 @@ export default (api) => ({
 			dispatch(actionCreators.fetchMovesFailure(error));
 		});
 	},
+	fetchStrategies: () => (dispatch) => {
+		dispatch(actionCreators.fetchStrategiesRequest());
+		return api.strategies.get().then((strategies) => {
+			dispatch(actionCreators.fetchStrategiesSuccess(strategies));
+		}, (error) => {
+			dispatch(actionCreators.fetchStrategiesFailure(error));
+		});
+	},
 	fetchWrestlers: () => (dispatch) => {
 		dispatch(actionCreators.fetchWrestlersRequest());
 		return api.wrestlers.get().then((wrestlers) => {
