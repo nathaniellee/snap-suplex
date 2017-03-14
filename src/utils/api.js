@@ -1,10 +1,8 @@
 import _ from 'lodash';
+import sampleData from '../data/sampleData';
 
 if (!localStorage.getItem('snap-suplex')) {
-	localStorage.setItem('snap-suplex', JSON.stringify({
-		wrestlers: [],
-		moves: {},
-	}));
+	localStorage.setItem('snap-suplex', JSON.stringify(sampleData));
 }
 
 const fetchData = () => {
