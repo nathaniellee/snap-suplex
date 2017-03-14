@@ -154,6 +154,11 @@ const putMove = (updatedMove) => {
 	return Promise.resolve(updatedMove);
 };
 
+const getStrategies = () => {
+	const { strategies } = fetchData();
+	return Promise.resolve(strategies);
+};
+
 const getWrestlers = () => {
 	const { wrestlers } = fetchData();
 	return Promise.resolve(wrestlers);
@@ -222,6 +227,9 @@ export default {
 		get: getMoves,
 		post: postMove,
 		put: putMove,
+	},
+	strategies: {
+		get: getStrategies,
 	},
 	wrestlers: {
 		get: getWrestlers,
