@@ -5,7 +5,9 @@ import statMap from './statMap';
 
 export default null;
 
-export const defaultMaxRounds = 10;
+export const defaultDqRating = 5;
+export const defaultNumRounds = 10;
+export const defaultRefScore = 5;
 
 const favorites = _.map(favoritesMap.allIds, (id) =>
   _.find(favoritesMap.byId, { id }).value);
