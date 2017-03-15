@@ -24,7 +24,13 @@ export default {
 		if (_.has(wrestlers, wrestlerId)) {
 			dispatch(removeWrestler(wrestlerId));
 		} else {
-			dispatch(addWrestler(wrestler));
+			dispatch(addWrestler({
+				...wrestler,
+				moves: _.reduce(wrestler.moves, (results, moveIds, statKey) => ({
+					...results,
+					[statKey]: _.map(moveIds, (moveId) => selectors.getMove(state, moveId)),
+				}), {}),
+			}));
 		}
 	},
 
