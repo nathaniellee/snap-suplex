@@ -14,7 +14,7 @@ const initialState = {
   refScore: defaultRefScore,
   roundNumber: null,
   rounds: [],
-  wrestlers: [],
+  wrestlers: {},
 };
 
 const match = (state = initialState, action = {}) => {
@@ -61,10 +61,10 @@ const match = (state = initialState, action = {}) => {
       const wrestler = _.cloneDeep(action.wrestler);
       return {
         ...state,
-        wrestlers: [
+        wrestlers: {
           ...wrestlers,
-          wrestler,
-        ],
+          [wrestler.id]: wrestler,
+        },
       };
     }
 
@@ -72,7 +72,7 @@ const match = (state = initialState, action = {}) => {
       const { wrestlerId } = action;
       return {
         ...state,
-        wrestlers: _.reject(state.wrestlers, { id: wrestlerId }),
+        wrestlers: _.omit(state.wrestlers, wrestlerId),
       };
     }
 

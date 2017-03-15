@@ -4,7 +4,7 @@ import React from 'react';
 import './Summary.css';
 
 const {
-	array,
+	object,
 	string,
 } = React.PropTypes;
 
@@ -24,16 +24,17 @@ Versus.propTypes = {
 	name2: string,
 };
 
-const Summary = ({ selectedWrestlers = [] }) => {
+const Summary = ({ wrestlers = {} }) => {
+	const names = _.map(wrestlers, 'name');
 	return (
 		<div className='ParticipantsSummary'>
 			<Panel>
-				{_.isEmpty(selectedWrestlers) ? (
+				{_.isEmpty(names) ? (
 					<span>No wrestlers selected.</span>
 				) : (
 					<Versus
-						name1={_.get(selectedWrestlers, '[0].name')}
-						name2={_.get(selectedWrestlers, '[1].name')}
+						name1={names[0]}
+						name2={names[1]}
 					/>
 				)}
 			</Panel>
@@ -42,7 +43,7 @@ const Summary = ({ selectedWrestlers = [] }) => {
 };
 
 Summary.propTypes = {
-	selectedWrestlers: array,
+	wrestlers: object,
 };
 
 export default Summary;

@@ -10,9 +10,9 @@ const selectionLimit = 2;
 const mapStateToProps = (state) => {
 	const {
 		pageIndex,
-		wrestlers: wrestlerIds,
+		wrestlers,
 	} = selectors.getMatchSetup(state);
-	const selectedWrestlers = _.map(wrestlerIds, (id) => selectors.getWrestler(state, id));
+	const wrestlerIds = _.map(wrestlers, 'id');
 	const availableWrestlers = selectors.getWrestlersAsArray(state);
 	const totalCount = _.size(availableWrestlers);
 	const selectableWrestlers = _.isEmpty(availableWrestlers)
@@ -25,7 +25,7 @@ const mapStateToProps = (state) => {
 				return {
 					...wrestler,
 					isActive,
-					isDisabled: (_.size(selectedWrestlers) >= selectionLimit) && !isActive,
+					isDisabled: (_.size(wrestlers) >= selectionLimit) && !isActive,
 				};
 			});
 

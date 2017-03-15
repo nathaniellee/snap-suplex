@@ -24,7 +24,7 @@ const defaultState = {
 	refScore: defaultRefScore,
 	roundNumber: null,
 	rounds: [],
-	wrestlers: [],
+	wrestlers: {},
 };
 
 describe('matchSetup', () => {
@@ -95,15 +95,15 @@ describe('matchSetup', () => {
 		});
 
 		describe(`"${ADD_WRESTLER_TO_MATCH}" action`, () => {
-			describe('`wrestlers` array in state is empty', () => {
-				test('adds wrestler to the `wrestlers` array.', () => {
+			describe('`wrestlers` map in state is empty', () => {
+				test('adds wrestler to the `wrestlers` map.', () => {
 					expect(state).toEqual(defaultState);
 					action = {
 						type: ADD_WRESTLER_TO_MATCH,
 						wrestler: { id: 16 },
 					};
 					state = reducer(state, action);
-					expect(_.find(state.wrestlers, { id: 16 })).toBeTruthy();
+					expect(_.has(state.wrestlers, 16)).toBeTruthy();
 					expect(_.omit(state, 'wrestlers')).toEqual(_.omit(defaultState, 'wrestlers'));
 				});
 			});
@@ -121,7 +121,7 @@ describe('matchSetup', () => {
 						wrestler: { id: 32 },
 					};
 					state = reducer(state, action);
-					expect(_.find(state.wrestlers, { id: 32 })).toBeTruthy();
+					expect(_.has(state.wrestlers, 32)).toBeTruthy();
 					expect(_.omit(state, 'wrestlers')).toEqual(_.omit(defaultState, 'wrestlers'));
 				});
 			});
@@ -144,7 +144,7 @@ describe('matchSetup', () => {
 						wrestler: { id: 52 },
 					};
 					state = reducer(state, action);
-					expect(_.find(state.wrestlers, { id: 52 })).toBeUndefined();
+					expect(_.has(state.wrestlers, 52)).toBeFalsy();
 					expect(_.omit(state, 'wrestlers')).toEqual(_.omit(defaultState, 'wrestlers'));
 				});
 			});
@@ -159,14 +159,14 @@ describe('matchSetup', () => {
 					wrestler: { id: 25 },
 				};
 				state = reducer(state, action);
-				expect(_.find(state.wrestlers, { id: 25 })).toBeTruthy();
+				expect(_.has(state.wrestlers, 25)).toBeTruthy();
 
 				action = {
 					type: REMOVE_WRESTLER_FROM_MATCH,
 					wrestlerId: 25,
 				};
 				state = reducer(state, action);
-				expect(_.includes(state.wrestlers, 25)).toBeFalsy();
+				expect(_.has(state.wrestlers, 25)).toBeFalsy();
 
 				expect(_.omit(state, 'wrestlers'))
 					.toEqual(_.omit(defaultState, 'wrestlers'));
