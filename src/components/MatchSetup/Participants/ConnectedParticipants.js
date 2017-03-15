@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 		pageIndex,
 		wrestlers: wrestlerIds,
 	} = selectors.getMatchSetup(state);
-	const selectedWrestlers = _.map(wrestlerIds, (id) => selectors.getWrestler(state, id).wrestler);
+	const selectedWrestlers = _.map(wrestlerIds, (id) => selectors.getWrestler(state, id));
 	const availableWrestlers = selectors.getWrestlersAsArray(state);
 	const totalCount = _.size(availableWrestlers);
 	const selectableWrestlers = _.isEmpty(availableWrestlers)

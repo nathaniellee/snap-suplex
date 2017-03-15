@@ -170,9 +170,9 @@ describe('root', () => {
       describe('getWrestler', () => {
         test('returns the appropriate state.', () => {
           expect(selectors.getWrestler(state, 0))
-            .toEqual({ wrestler: null });
+            .toEqual(null);
           expect(selectors.getWrestler(state, mockWrestler.id))
-            .toEqual({ wrestler: wrestlersSelectors.getWrestler(state.wrestlers, mockWrestler.id) });
+            .toEqual(wrestlersSelectors.getWrestler(state.wrestlers, mockWrestler.id));
         });
       });
 

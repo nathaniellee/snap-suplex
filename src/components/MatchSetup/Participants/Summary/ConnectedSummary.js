@@ -5,7 +5,7 @@ import Summary from './Summary';
 
 const mapStateToProps = (state) => {
 	const { wrestlers: wrestlerIds } = selectors.getMatchSetup(state);
-	const selectedWrestlers = _.map(wrestlerIds, (id) => selectors.getWrestler(state, id).wrestler);
+	const selectedWrestlers = _.map(wrestlerIds, (id) => selectors.getWrestler(state, id));
 
 	return { selectedWrestlers };
 };
