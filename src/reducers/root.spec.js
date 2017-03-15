@@ -64,7 +64,7 @@ describe('root', () => {
       // Compare results from an action that the `matchSetup` reducer handles.
       action = {
         type: actionTypes.SET_NUM_ROUNDS,
-        maxRounds: 10,
+        numRounds: 10,
       };
       state = reducer(state, action);
       expect(state.matchSetup).toEqual(matchSetup(state.matchSetup, action));
