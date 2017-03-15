@@ -8,7 +8,6 @@ import MatchDialog from '../Match/Dialog/ConnectedDialog';
 import Parameters from './Parameters/ConnectedParameters';
 import Participants from './Participants/ConnectedParticipants';
 import Referee from './Referee/ConnectedReferee';
-import Strategies from './Strategies/ConnectedStrategies';
 import './MatchSetup.css';
 
 const {
@@ -28,10 +27,6 @@ const matchSetupSteps = [
 	{
 		label: 'Participants',
 		component: <Participants />,
-	},
-	{
-		label: 'Strategies',
-		component: <Strategies />,
 	},
 ];
 
