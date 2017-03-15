@@ -6,6 +6,10 @@ import {
   defaultRefScore,
   defaultStrategyId,
 } from '../../constants/defaults';
+import favoritesMap from '../../constants/favoritesMap';
+import roundLevelMap from '../../constants/roundLevelMap';
+import spotFlagsMap from '../../constants/spotFlagsMap';
+import statMap from '../../constants/statMap';
 
 const initialState = {
   dqRating: defaultDqRating,
@@ -14,6 +18,52 @@ const initialState = {
   refScore: defaultRefScore,
   strategies: {},
   wrestlers: [],
+};
+
+const getStrategyId = (strategy) => {
+  const {
+    flag,
+    level,
+    numFavorites,
+    stat,
+    targetStat,
+  } = strategy;
+
+  const statId = _.chain(statMap)
+    .get('byId')
+    .find({ value: stat })
+    .get('id')
+    .value();
+  const levelId = _.chain(roundLevelMap)
+    .get('byId')
+    .find({ value: level })
+    .get('id')
+    .value();
+  const favoritesId = _.chain(favoritesMap)
+    .get('byId')
+    .find({ value: numFavorites })
+    .get('id')
+    .value();
+  const flagId = _.isNull(flag)
+    ? 0
+    : _.chain(spotFlagsMap)
+      .get('byId')
+      .find({ value: flag })
+      .get('id')
+      .value();
+  const targetStatId = _.isNull(targetStat)
+    ? 0
+    : _.chain(statMap)
+      .get('byId')
+      .find({ value: targetStat })
+      .get('id')
+      .value();
+
+  return (statId * 10000) +
+    (levelId * 1000) +
+    (favoritesId * 100) +
+    (flagId * 10) +
+    (targetStatId * 1);
 };
 
 const match = (state = initialState, action = {}) => {
@@ -107,6 +157,17 @@ const match = (state = initialState, action = {}) => {
         ...state,
         strategies: _.omit(state.strategies, wrestlerId),
         wrestlers: _.without(state.wrestlers, wrestlerId),
+      };
+    }
+
+    case actionTypes.SET_STRATEGIES: {
+      const { strategies: strategiesById } = action;
+      return {
+        ...state,
+        strategies: _.reduce(strategiesById, (results, strategies, wrestlerId) => ({
+          ...results,
+          [wrestlerId]: _.map(strategies, (strategy) => getStrategyId(strategy)),
+        }), {}),
       };
     }
 
