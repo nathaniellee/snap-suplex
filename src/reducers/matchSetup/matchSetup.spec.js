@@ -23,6 +23,7 @@ const defaultState = {
 	pageIndex: 0,
 	refScore: defaultRefScore,
 	roundNumber: null,
+	rounds: [],
 	wrestlers: [],
 };
 
