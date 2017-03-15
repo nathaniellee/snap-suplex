@@ -38,7 +38,7 @@ describe('match action creators', () => {
 		test('creates the expected action.', () => {
 			const expectedAction = {
 				type: actionTypes.SET_NUM_ROUNDS,
-				maxRounds: 8,
+				numRounds: 8,
 			};
 			expect(actionCreators.setNumRounds(8)).toEqual(expectedAction);
 		});
