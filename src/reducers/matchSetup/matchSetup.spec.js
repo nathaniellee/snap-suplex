@@ -4,7 +4,6 @@ import {
   defaultDqRating,
   defaultNumRounds,
   defaultRefScore,
-  defaultStrategyId,
 } from '../../constants/defaults';
 import reducer, { selectors } from './matchSetup';
 
@@ -22,7 +21,6 @@ const defaultState = {
 	numRounds: defaultNumRounds,
 	pageIndex: 0,
 	refScore: defaultRefScore,
-	strategies: {},
 	wrestlers: [],
 };
 
@@ -59,77 +57,11 @@ describe('matchSetup', () => {
 				expect(state).toEqual(defaultState);
 				action = {
 					type: SET_NUM_ROUNDS,
-					numRounds: 8,
+					numRounds: 35,
 				};
 				state = reducer(state, action);
-				expect(state.numRounds).toEqual(8);
+				expect(state.numRounds).toEqual(35);
 				expect(_.omit(state, 'numRounds')).toEqual(_.omit(defaultState, 'numRounds'));
-			});
-
-			describe('`strategies` in state is empty', () => {
-				test('sets `numRounds` in state to the value of `numRounds` from the action.', () => {
-					expect(state).toEqual(defaultState);
-					action = {
-						type: SET_NUM_ROUNDS,
-						numRounds: 12,
-					};
-					state = reducer(state, action);
-					expect(_.omit(state, 'numRounds')).toEqual(_.omit(defaultState, 'numRounds'));
-				});
-			});
-
-			describe('`strategies` in state is not empty', () => {
-				describe('`numRounds` from the action is less than `numRounds` in state', () => {
-					test('reduces each array in `strategies` accordingly.', () => {
-						expect(state).toEqual(defaultState);
-
-						action = {
-							type: ADD_WRESTLER_TO_MATCH,
-							wrestlerId: 1,
-						};
-						state = reducer(state, action);
-						_.forEach(state.strategies, (strategies) => {
-							expect(_.size(strategies)).toEqual(defaultNumRounds);
-						});
-
-						action = {
-							type: SET_NUM_ROUNDS,
-							numRounds: 5,
-						};
-						state = reducer(state, action);
-						_.forEach(state.strategies, (strategies) => {
-							expect(_.size(strategies)).toEqual(5);
-						});
-					});
-				});
-
-				describe('`numRounds` from the action is greater than `numRounds` in state', () => {
-					test('adds default strategy IDs to each array in `strategies` accordingly.', () => {
-						expect(state).toEqual(defaultState);
-
-						action = {
-							type: ADD_WRESTLER_TO_MATCH,
-							wrestlerId: 1,
-						};
-						state = reducer(state, action);
-						_.forEach(state.strategies, (strategies) => {
-							expect(_.size(strategies)).toEqual(defaultNumRounds);
-						});
-
-						action = {
-							type: SET_NUM_ROUNDS,
-							numRounds: 15,
-						};
-						state = reducer(state, action);
-						_.forEach(state.strategies, (strategies) => {
-							expect(_.size(strategies)).toEqual(15);
-							const diff = 15 - defaultNumRounds;
-							_.forEach(_.takeRight(strategies, diff), (strategyId) => {
-								expect(strategyId).toEqual(defaultStrategyId);
-							});
-						});
-					});
-				});
 			});
 		});
 
@@ -160,79 +92,39 @@ describe('matchSetup', () => {
 		});
 
 		describe(`"${ADD_WRESTLER_TO_MATCH}" action`, () => {
-			beforeEach(() => {
+			test('adds `wrestlerId` to the `wrestlers` array in state.', () => {
+				expect(state).toEqual(defaultState);
 				action = {
 					type: ADD_WRESTLER_TO_MATCH,
 					wrestlerId: 16,
 				};
-			});
-
-			test('adds `wrestlerId` to the `wrestlers` array in state.', () => {
-				expect(state).toEqual(defaultState);
 				state = reducer(state, action);
 				expect(_.includes(state.wrestlers, 16)).toBeTruthy();
-				expect(_.omit(state, ['strategies', 'wrestlers']))
-					.toEqual(_.omit(defaultState, ['strategies', 'wrestlers']));
-			});
-
-			test('adds default strategies for `wrestlerId` to the `strategies` map in state.', () => {
-				expect(state).toEqual(defaultState);
-
-				state = reducer(state, action);
-				expect(_.has(state.strategies, '16')).toBeTruthy();
-
-				_.forEach(state.strategies['16'], (strategyId) => {
-					expect(strategyId).toEqual(defaultStrategyId);
-				});
-
-				expect(_.omit(state, ['strategies', 'wrestlers']))
-					.toEqual(_.omit(defaultState, ['strategies', 'wrestlers']));
+				expect(_.omit(state, 'wrestlers'))
+					.toEqual(_.omit(defaultState, 'wrestlers'));
 			});
 		});
 
 		describe(`"${REMOVE_WRESTLER_FROM_MATCH}" action`, () => {
-			let addWrestlerAction;
-			let removeWrestlerAction;
-
-			beforeEach(() => {
-				addWrestlerAction = {
-					type: ADD_WRESTLER_TO_MATCH,
-					wrestlerId: 25,
-				};
-				removeWrestlerAction = {
-					type: REMOVE_WRESTLER_FROM_MATCH,
-					wrestlerId: 25,
-				};
-			});
-
 			test('removes `wrestlerId` from the `wrestlers` array in state.', () => {
 				expect(state).toEqual(defaultState);
 
-				state = reducer(state, addWrestlerAction);
+				action = {
+					type: ADD_WRESTLER_TO_MATCH,
+					wrestlerId: 25,
+				};
+				state = reducer(state, action);
 				expect(_.includes(state.wrestlers, 25)).toBeTruthy();
 
-				state = reducer(state, removeWrestlerAction);
+				action = {
+					type: REMOVE_WRESTLER_FROM_MATCH,
+					wrestlerId: 25,
+				};
+				state = reducer(state, action);
 				expect(_.includes(state.wrestlers, 25)).toBeFalsy();
 
-				expect(_.omit(state, ['strategies', 'wrestlers']))
-					.toEqual(_.omit(defaultState, ['strategies', 'wrestlers']));
-			});
-
-			test('removes `wrestlerId` from the `strategies` map in state.', () => {
-				expect(state).toEqual(defaultState);
-				
-				state = reducer(state, addWrestlerAction);
-				expect(_.has(state.strategies, '25')).toBeTruthy();
-
-				_.forEach(state.strategies['25'], (strategyId) => {
-					expect(strategyId).toEqual(defaultStrategyId);
-				});
-
-				state = reducer(state, removeWrestlerAction);
-				expect(_.has(state.strategies, '25')).toBeFalsy();
-
-				expect(_.omit(state, ['strategies', 'wrestlers']))
-					.toEqual(_.omit(defaultState, ['strategies', 'wrestlers']));
+				expect(_.omit(state, 'wrestlers'))
+					.toEqual(_.omit(defaultState, 'wrestlers'));
 			});
 		});
 	});
