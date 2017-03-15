@@ -2,9 +2,9 @@ import _ from 'lodash';
 import { selectors } from '../../reducers/root';
 import actionTypes from './actionTypes';
 
-const addWrestler = (wrestlerId) => ({
+const addWrestler = (wrestler) => ({
 	type: actionTypes.ADD_WRESTLER_TO_MATCH,
-	wrestlerId,
+	wrestler,
 });
 
 const removeWrestler = (wrestlerId) => ({
@@ -16,14 +16,15 @@ export default {
 	addWrestler,
 	removeWrestler,
 
-	selectWrestler: (wrestlerId) => (dispatch, getState) => {
+	selectWrestler: (wrestler) => (dispatch, getState) => {
 		const state = getState();
 		const { wrestlers } = selectors.getMatchSetup(state);
+		const wrestlerId = wrestler.id;
 
-		if (_.includes(wrestlers, wrestlerId)) {
+		if (_.has(wrestlers, wrestlerId)) {
 			dispatch(removeWrestler(wrestlerId));
-		} else if (_.size(wrestlers) < 2) {
-			dispatch(addWrestler(wrestlerId));
+		} else {
+			dispatch(addWrestler(wrestler));
 		}
 	},
 

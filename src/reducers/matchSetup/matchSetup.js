@@ -5,6 +5,7 @@ import {
   defaultNumRounds,
   defaultRefScore,
 } from '../../constants/defaults';
+import {} from '../../utils/match';
 
 const initialState = {
   dqRating: defaultDqRating,
@@ -51,12 +52,18 @@ const match = (state = initialState, action = {}) => {
     }
 
     case actionTypes.ADD_WRESTLER_TO_MATCH: {
-      const { wrestlerId } = action;
+      const { wrestlers } = state;
+
+      if (_.size(wrestlers) >= 2) {
+        return state;
+      }
+
+      const wrestler = _.cloneDeep(action.wrestler);
       return {
         ...state,
         wrestlers: [
-          ...state.wrestlers,
-          wrestlerId,
+          ...wrestlers,
+          wrestler,
         ],
       };
     }
@@ -65,11 +72,13 @@ const match = (state = initialState, action = {}) => {
       const { wrestlerId } = action;
       return {
         ...state,
-        wrestlers: _.without(state.wrestlers, wrestlerId),
+        wrestlers: _.reject(state.wrestlers, { id: wrestlerId }),
       };
     }
 
     case actionTypes.START_MATCH: {
+      // Need to update this reducer to deal with wrestler objects instead of just IDs since we
+      // need to have data to seed the initial stat values and such.
       return {
         ...state,
         roundNumber: 1,

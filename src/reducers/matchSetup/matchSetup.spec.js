@@ -95,29 +95,71 @@ describe('matchSetup', () => {
 		});
 
 		describe(`"${ADD_WRESTLER_TO_MATCH}" action`, () => {
-			test('adds `wrestlerId` to the `wrestlers` array in state.', () => {
-				expect(state).toEqual(defaultState);
-				action = {
-					type: ADD_WRESTLER_TO_MATCH,
-					wrestlerId: 16,
-				};
-				state = reducer(state, action);
-				expect(_.includes(state.wrestlers, 16)).toBeTruthy();
-				expect(_.omit(state, 'wrestlers'))
-					.toEqual(_.omit(defaultState, 'wrestlers'));
+			describe('`wrestlers` array in state is empty', () => {
+				test('adds wrestler to the `wrestlers` array.', () => {
+					expect(state).toEqual(defaultState);
+					action = {
+						type: ADD_WRESTLER_TO_MATCH,
+						wrestler: { id: 16 },
+					};
+					state = reducer(state, action);
+					expect(_.find(state.wrestlers, { id: 16 })).toBeTruthy();
+					expect(_.omit(state, 'wrestlers')).toEqual(_.omit(defaultState, 'wrestlers'));
+				});
+			});
+
+			describe('`wrestlers` array in state contains one wrestler', () => {
+				test('adds wrestler to the `wrestlers` array.', () => {
+					expect(state).toEqual(defaultState);
+					action = {
+						type: ADD_WRESTLER_TO_MATCH,
+						wrestler: { id: 31 },
+					};
+					state = reducer(state, action);
+					action = {
+						type: ADD_WRESTLER_TO_MATCH,
+						wrestler: { id: 32 },
+					};
+					state = reducer(state, action);
+					expect(_.find(state.wrestlers, { id: 32 })).toBeTruthy();
+					expect(_.omit(state, 'wrestlers')).toEqual(_.omit(defaultState, 'wrestlers'));
+				});
+			});
+
+			describe('`wrestlers` array in state contains two wrestlers', () => {
+				test('does not add wrestler to the `wrestlers` array.', () => {
+					expect(state).toEqual(defaultState);
+					action = {
+						type: ADD_WRESTLER_TO_MATCH,
+						wrestler: { id: 50 },
+					};
+					state = reducer(state, action);
+					action = {
+						type: ADD_WRESTLER_TO_MATCH,
+						wrestler: { id: 51 },
+					};
+					state = reducer(state, action);
+					action = {
+						type: ADD_WRESTLER_TO_MATCH,
+						wrestler: { id: 52 },
+					};
+					state = reducer(state, action);
+					expect(_.find(state.wrestlers, { id: 52 })).toBeUndefined();
+					expect(_.omit(state, 'wrestlers')).toEqual(_.omit(defaultState, 'wrestlers'));
+				});
 			});
 		});
 
 		describe(`"${REMOVE_WRESTLER_FROM_MATCH}" action`, () => {
-			test('removes `wrestlerId` from the `wrestlers` array in state.', () => {
+			test('removes the appropriate wrestler from the `wrestlers` array in state.', () => {
 				expect(state).toEqual(defaultState);
 
 				action = {
 					type: ADD_WRESTLER_TO_MATCH,
-					wrestlerId: 25,
+					wrestler: { id: 25 },
 				};
 				state = reducer(state, action);
-				expect(_.includes(state.wrestlers, 25)).toBeTruthy();
+				expect(_.find(state.wrestlers, { id: 25 })).toBeTruthy();
 
 				action = {
 					type: REMOVE_WRESTLER_FROM_MATCH,

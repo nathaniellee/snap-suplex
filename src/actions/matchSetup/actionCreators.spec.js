@@ -4,12 +4,13 @@ import actionTypes from './actionTypes';
 describe('match action creators', () => {
 	describe('addWrestler', () => {
 		test('creates the expected action.', () => {
+			const wrestler = { id: 1 };
 			const expectedAction = {
 				type: actionTypes.ADD_WRESTLER_TO_MATCH,
-				wrestlerId: 1,
+				wrestler,
 			};
 
-			expect(actionCreators.addWrestler(1)).toEqual(expectedAction);
+			expect(actionCreators.addWrestler(wrestler)).toEqual(expectedAction);
 		});
 	});
 
