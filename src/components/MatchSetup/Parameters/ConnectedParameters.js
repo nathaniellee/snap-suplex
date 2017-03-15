@@ -7,8 +7,8 @@ import Parameters from './Parameters';
 const mapStateToProps = (state) => selectors.getMatchSetup(state);
 
 const mapDispatchToProps = (dispatch) => ({
-	onChangeMaxRounds: (maxRounds) => {
-		dispatch(actionCreators.setNumRounds(maxRounds));
+	onChangeNumRounds: (numRounds) => {
+		dispatch(actionCreators.setNumRounds(numRounds));
 	},
 });
 

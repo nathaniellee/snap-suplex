@@ -32,9 +32,9 @@ export default {
 		dqRating,
 	}),
 
-	setNumRounds: (maxRounds) => ({
+	setNumRounds: (numRounds) => ({
 		type: actionTypes.SET_NUM_ROUNDS,
-		maxRounds,
+		numRounds,
 	}),
 
 	setPageIndex: (pageIndex) => ({

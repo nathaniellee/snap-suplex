@@ -4,6 +4,8 @@ import {
 	RadioGroup,
 } from 'lucid';
 import React from 'react';
+import { defaultNumRounds } from '../../../constants/defaults';
+import numRoundsOptions from '../../../constants/numRoundsOptions';
 import './Parameters.css';
 
 const {
@@ -11,30 +13,25 @@ const {
 	oneOf,
 } = React.PropTypes;
 
-const maxRoundsOptions = _.range(10, 70, 10);
-
 export default React.createClass({
 	propTypes: {
-		maxRounds: oneOf(maxRoundsOptions),
-		onChangeMaxRounds: func,
+		numRounds: oneOf(numRoundsOptions),
+		onChangeNumRounds: func,
 	},
 
 	getDefaultProps() {
 		return {
-			maxRounds: 10,
-			onChangeMaxRounds: _.noop,
+			numRounds: defaultNumRounds,
+			onChangeNumRounds: _.noop,
 		};
 	},
 
-	onChangeMaxRounds(selectedIndex) {
-		this.props.onChangeMaxRounds(maxRoundsOptions[selectedIndex]);
+	onChangeNumRounds(selectedIndex) {
+		this.props.onChangeNumRounds(numRoundsOptions[selectedIndex]);
 	},
 
 	render() {
-		const {
-			maxRounds,
-		} = this.props;
-
+		const { numRounds } = this.props;
 		return (
 			<div className='Parameters'>
 				<Grid isGutterless>
@@ -63,20 +60,20 @@ export default React.createClass({
 				</Grid>
 				<Grid isGutterless>
 					<Grid.Cell
-						className='Parameters-max-rounds-label'
+						className='Parameters-num-rounds-label'
 						is2
 					>
 						Number of rounds:
 					</Grid.Cell>
 					<Grid.Cell
-						className='Parameters-max-rounds-input'
+						className='Parameters-num-rounds-input'
 						is10
 					>
 						<RadioGroup
-							selectedIndex={_.indexOf(maxRoundsOptions, maxRounds)}
-							onSelect={this.onChangeMaxRounds}
+							selectedIndex={_.indexOf(numRoundsOptions, numRounds)}
+							onSelect={this.onChangeNumRounds}
 						>
-							{_.map(maxRoundsOptions, (option) => (
+							{_.map(numRoundsOptions, (option) => (
 								<RadioGroup.RadioButton
 									key={option}
 								>
