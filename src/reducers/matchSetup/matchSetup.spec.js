@@ -12,6 +12,7 @@ const {
 	ADD_WRESTLER_TO_MATCH,
 	REMOVE_WRESTLER_FROM_MATCH,
 	SET_DQ_RATING,
+	SET_NUM_ROUNDS,
 	SET_PAGE_INDEX,
 	SET_REF_SCORE,
 } = actionTypes;
@@ -50,6 +51,21 @@ describe('matchSetup', () => {
 				state = reducer(state, action);
 				expect(state.dqRating).toEqual(8);
 				expect(_.omit(state, 'dqRating')).toEqual(_.omit(defaultState, 'dqRating'));
+			});
+		});
+
+		describe(`"${SET_NUM_ROUNDS}" action`, () => {
+			describe('`strategies` in state is empty', () => {
+				test('sets `numRounds` in state to the value of `numRounds` from the action.', () => {
+					expect(state).toEqual(defaultState);
+					action = {
+						type: SET_NUM_ROUNDS,
+						numRounds: 8,
+					};
+					state = reducer(state, action);
+					expect(state.numRounds).toEqual(8);
+					expect(_.omit(state, 'numRounds')).toEqual(_.omit(defaultState, 'numRounds'));
+				});
 			});
 		});
 
