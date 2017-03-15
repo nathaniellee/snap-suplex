@@ -5,11 +5,13 @@ import { selectors } from '../../reducers/root';
 import MatchSetup from './MatchSetup';
 
 const mapStateToProps = (state) => {
-	const { wrestlers } = selectors.getMatchSetup(state);
-	const { isMatchUnderway } = selectors.getMatch(state);
+	const {
+		roundNumber,
+		wrestlers,
+	} = selectors.getMatchSetup(state);
 
 	return {
-		isMatchUnderway,
+		didMatchStart: !_.isNull(roundNumber),
 		isStartDisabled: _.size(wrestlers) < 2
 	};
 };

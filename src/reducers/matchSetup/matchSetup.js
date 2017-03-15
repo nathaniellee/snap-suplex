@@ -11,6 +11,7 @@ const initialState = {
   numRounds: defaultNumRounds,
   pageIndex: 0,
   refScore: defaultRefScore,
+  roundNumber: null,
   wrestlers: [],
 };
 
@@ -64,6 +65,13 @@ const match = (state = initialState, action = {}) => {
       return {
         ...state,
         wrestlers: _.without(state.wrestlers, wrestlerId),
+      };
+    }
+
+    case actionTypes.START_MATCH: {
+      return {
+        ...state,
+        roundNumber: 1,
       };
     }
 

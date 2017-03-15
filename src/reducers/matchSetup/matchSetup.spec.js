@@ -14,6 +14,7 @@ const {
 	SET_NUM_ROUNDS,
 	SET_PAGE_INDEX,
 	SET_REF_SCORE,
+	START_MATCH,
 } = actionTypes;
 
 const defaultState = {
@@ -21,6 +22,7 @@ const defaultState = {
 	numRounds: defaultNumRounds,
 	pageIndex: 0,
 	refScore: defaultRefScore,
+	roundNumber: null,
 	wrestlers: [],
 };
 
@@ -47,7 +49,7 @@ describe('matchSetup', () => {
 					dqRating: 8,
 				};
 				state = reducer(state, action);
-				expect(state.dqRating).toEqual(8);
+				expect(state.dqRating).toBe(8);
 				expect(_.omit(state, 'dqRating')).toEqual(_.omit(defaultState, 'dqRating'));
 			});
 		});
@@ -60,7 +62,7 @@ describe('matchSetup', () => {
 					numRounds: 35,
 				};
 				state = reducer(state, action);
-				expect(state.numRounds).toEqual(35);
+				expect(state.numRounds).toBe(35);
 				expect(_.omit(state, 'numRounds')).toEqual(_.omit(defaultState, 'numRounds'));
 			});
 		});
@@ -73,7 +75,7 @@ describe('matchSetup', () => {
 					pageIndex: 3,
 				};
 				state = reducer(state, action);
-				expect(state.pageIndex).toEqual(3);
+				expect(state.pageIndex).toBe(3);
 				expect(_.omit(state, 'pageIndex')).toEqual(_.omit(defaultState, 'pageIndex'));
 			});
 		});
@@ -86,7 +88,7 @@ describe('matchSetup', () => {
 					refScore: 6,
 				};
 				state = reducer(state, action);
-				expect(state.refScore).toEqual(6);
+				expect(state.refScore).toBe(6);
 				expect(_.omit(state, 'refScore')).toEqual(_.omit(defaultState, 'refScore'));
 			});
 		});
@@ -125,6 +127,16 @@ describe('matchSetup', () => {
 
 				expect(_.omit(state, 'wrestlers'))
 					.toEqual(_.omit(defaultState, 'wrestlers'));
+			});
+		});
+
+		describe(`"${START_MATCH}" action`, () => {
+			test('sets `roundNumber` in state to 1.', () => {
+				expect(state).toEqual(defaultState);
+				action = { type: START_MATCH };
+				state = reducer(state, action);
+				expect(state.roundNumber).toBe(1);
+				expect(_.omit(state, 'roundNumber')).toEqual(_.omit(defaultState, 'roundNumber'));
 			});
 		});
 	});

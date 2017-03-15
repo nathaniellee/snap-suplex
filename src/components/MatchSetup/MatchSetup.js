@@ -32,14 +32,14 @@ const matchSetupSteps = [
 
 export default React.createClass({
 	propTypes: {
-		isMatchUnderway: bool,
+		didMatchStart: bool,
 		isStartDisabled: bool,
 		onClickStartMatch: func,
 	},
 
 	getDefaultProps() {
 		return {
-			isMatchUnderway: false,
+			didMatchStart: false,
 			isStartDisabled: false,
 			onClickStartMatch: _.noop,
 		};
@@ -55,7 +55,7 @@ export default React.createClass({
 
 	render() {
 		const {
-			isMatchUnderway,
+			didMatchStart,
 			isStartDisabled,
 			onClickStartMatch,
 		} = this.props;
@@ -86,7 +86,7 @@ export default React.createClass({
 						Start the Match!
 					</Button>
 				</div>
-				{isMatchUnderway ? (
+				{didMatchStart ? (
 					<MatchDialog />
 				) : null}
 			</div>
