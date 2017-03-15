@@ -65,7 +65,7 @@ const match = (state = initialState, action = {}) => {
             ...rounds,
             ..._.fill(Array(difference), defaultStrategyId),
           ],
-        })),
+        }), {}),
       };
     }
 
