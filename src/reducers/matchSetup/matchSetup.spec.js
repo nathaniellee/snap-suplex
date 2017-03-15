@@ -55,16 +55,80 @@ describe('matchSetup', () => {
 		});
 
 		describe(`"${SET_NUM_ROUNDS}" action`, () => {
+			test('sets `numRounds` in state to the value of `numRounds` from the action.', () => {
+				expect(state).toEqual(defaultState);
+				action = {
+					type: SET_NUM_ROUNDS,
+					numRounds: 8,
+				};
+				state = reducer(state, action);
+				expect(state.numRounds).toEqual(8);
+				expect(_.omit(state, 'numRounds')).toEqual(_.omit(defaultState, 'numRounds'));
+			});
+
 			describe('`strategies` in state is empty', () => {
 				test('sets `numRounds` in state to the value of `numRounds` from the action.', () => {
 					expect(state).toEqual(defaultState);
 					action = {
 						type: SET_NUM_ROUNDS,
-						numRounds: 8,
+						numRounds: 12,
 					};
 					state = reducer(state, action);
-					expect(state.numRounds).toEqual(8);
 					expect(_.omit(state, 'numRounds')).toEqual(_.omit(defaultState, 'numRounds'));
+				});
+			});
+
+			describe('`strategies` in state is not empty', () => {
+				describe('`numRounds` from the action is less than `numRounds` in state', () => {
+					test('reduces each array in `strategies` accordingly.', () => {
+						expect(state).toEqual(defaultState);
+
+						action = {
+							type: ADD_WRESTLER_TO_MATCH,
+							wrestlerId: 1,
+						};
+						state = reducer(state, action);
+						_.forEach(state.strategies, (strategies) => {
+							expect(_.size(strategies)).toEqual(defaultNumRounds);
+						});
+
+						action = {
+							type: SET_NUM_ROUNDS,
+							numRounds: 5,
+						};
+						state = reducer(state, action);
+						_.forEach(state.strategies, (strategies) => {
+							expect(_.size(strategies)).toEqual(5);
+						});
+					});
+				});
+
+				describe('`numRounds` from the action is greater than `numRounds` in state', () => {
+					test('adds default strategy IDs to each array in `strategies` accordingly.', () => {
+						expect(state).toEqual(defaultState);
+
+						action = {
+							type: ADD_WRESTLER_TO_MATCH,
+							wrestlerId: 1,
+						};
+						state = reducer(state, action);
+						_.forEach(state.strategies, (strategies) => {
+							expect(_.size(strategies)).toEqual(defaultNumRounds);
+						});
+
+						action = {
+							type: SET_NUM_ROUNDS,
+							numRounds: 15,
+						};
+						state = reducer(state, action);
+						_.forEach(state.strategies, (strategies) => {
+							expect(_.size(strategies)).toEqual(15);
+							const diff = 15 - defaultNumRounds;
+							_.forEach(_.takeRight(strategies, diff), (strategyId) => {
+								expect(strategyId).toEqual(defaultStrategyId);
+							});
+						});
+					});
 				});
 			});
 		});
