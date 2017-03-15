@@ -6,16 +6,20 @@ import Strategies from './Strategies';
 
 const mapStateToProps = (state) => {
 	const {
-		maxRounds,
-		strategies,
+		numRounds,
+		strategies: strategiesById,
 		wrestlers: wrestlerIds,
 	} = selectors.getMatchSetup(state);
-	const selectedWrestlers = _.map(wrestlerIds, (id) => selectors.getWrestler(state, id).wrestler);
+	const selectedWrestlers = _.map(wrestlerIds, (wrestlerId) =>
+		selectors.getWrestler(state, wrestlerId).wrestler);
 
 	return {
-		maxRounds,
+		numRounds,
 		selectedWrestlers,
-		strategies,
+		strategies: _.reduce(strategiesById, (results, strategyIds, wrestlerId) => ({
+			...results,
+			[wrestlerId]: _.map(strategyIds, (strategyId) => selectors.getStrategy(state, strategyId)),
+		}), {}),
 	};
 };
 
