@@ -12,6 +12,9 @@ const mapDispatchToProps = (dispatch) => {
 		fetchMoves: () => {
 			dispatch(fetchActionCreators.fetchMoves());
 		},
+		fetchStrategies: () => {
+			dispatch(fetchActionCreators.fetchStrategies());
+		},
 		fetchWrestlers: () => {
 			dispatch(fetchActionCreators.fetchWrestlers());
 		},
