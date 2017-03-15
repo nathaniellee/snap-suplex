@@ -34,13 +34,13 @@ describe('match action creators', () => {
 		});
 	});
 
-	describe('setMaxRounds', () => {
+	describe('setNumRounds', () => {
 		test('creates the expected action.', () => {
 			const expectedAction = {
-				type: actionTypes.SET_MAX_ROUNDS,
+				type: actionTypes.SET_NUM_ROUNDS,
 				maxRounds: 8,
 			};
-			expect(actionCreators.setMaxRounds(8)).toEqual(expectedAction);
+			expect(actionCreators.setNumRounds(8)).toEqual(expectedAction);
 		});
 	});
 

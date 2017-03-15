@@ -8,7 +8,7 @@ const mapStateToProps = (state) => selectors.getMatchSetup(state);
 
 const mapDispatchToProps = (dispatch) => ({
 	onChangeMaxRounds: (maxRounds) => {
-		dispatch(actionCreators.setMaxRounds(maxRounds));
+		dispatch(actionCreators.setNumRounds(maxRounds));
 	},
 });
 
