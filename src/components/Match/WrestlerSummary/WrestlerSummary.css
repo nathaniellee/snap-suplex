@@ -1,0 +1,28 @@
+.WrestlerSummary {
+	flex: 1;
+}
+
+.WrestlerSummary .lucid-Panel-Header {
+	font-weight: bold;
+}
+
+.WrestlerSummary .lucid-Panel-Footer {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+.WrestlerSummary-stats {
+	display: flex;
+	justify-content: space-between;
+}
+
+.WrestlerSummary-stats section {
+	display: flex;
+	flex-direction: column;
+}
+
+.WrestlerSummary-stats section span {
+	display: flex;
+	justify-content: center;
+}

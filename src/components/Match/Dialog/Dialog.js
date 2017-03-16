@@ -1,25 +1,28 @@
 import _ from 'lodash';
 import { Dialog } from 'lucid';
 import React from 'react';
+import { Provider } from 'react-redux';
+import store from '../../../utils/store';
+import Match from '../ConnectedMatch';
 
 const {
-	array,
+	object,
 } = React.PropTypes;
 
 export default React.createClass({
 	propTypes: {
-		selectedWrestlers: array,
+		wrestlers: object,
 	},
 
 	getDefaultProps() {
 		return {
-			selectedWrestlers: [],
+			wrestlers: {},
 		};
 	},
 
 	render() {
-		const { selectedWrestlers } = this.props;
-		const title = _.chain(selectedWrestlers)
+		const { wrestlers } = this.props;
+		const title = _.chain(wrestlers)
 			.map('name')
 			.join(' vs. ')
 			.value();
@@ -27,7 +30,11 @@ export default React.createClass({
 		return (
 			<Dialog isShown={true}>
 				<Dialog.Header>{title}</Dialog.Header>
-				<section />
+				<section>
+					<Provider store={store}>
+						<Match />
+					</Provider>
+				</section>
 			</Dialog>
 		);
 	},

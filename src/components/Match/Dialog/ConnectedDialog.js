@@ -4,18 +4,8 @@ import { selectors } from '../../../reducers/root';
 import Dialog from './Dialog';
 
 const mapStateToProps = (state) => {
-	const {
-		dqRating,
-		numRounds,
-		refScore,
-		wrestlers,
-	} = selectors.getMatchSetup(state);
-	return {
-		dqRating,
-		numRounds,
-		refScore,
-		wrestlers,
-	};
+	const { wrestlers } = selectors.getMatchSetup(state);
+	return { wrestlers };
 };
 
 const mapDispatchToProps = () => ({});
