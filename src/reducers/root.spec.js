@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import actionTypes from '../actions/actionTypes';
-import match, { selectors as matchSelectors } from './match/match';
 import matchSetup, { selectors as matchSetupSelectors } from './matchSetup/matchSetup';
 import moves, { selectors as movesSelectors } from './moves/moves';
 import strategies, { selectors as strategiesSelectors } from './strategies/strategies';
@@ -49,17 +48,11 @@ describe('root', () => {
 
     test('combines the appropriate reducers.', () => {
       expect(_.xor([
-        'match',
         'matchSetup',
         'moves',
         'strategies',
         'wrestlers',
       ], _.keys(state))).toHaveLength(0);
-
-      // Compare results from an action that the `match` reducer handles.
-      action = { type: actionTypes.START_MATCH };
-      state = reducer(state, action);
-      expect(state.match).toEqual(match(state.match, action));
 
       // Compare results from an action that the `matchSetup` reducer handles.
       action = {
@@ -85,14 +78,6 @@ describe('root', () => {
     describe('get', () => {
       test('returns the appropriate state.', () => {
         expect(selectors.get(state)).toEqual(state);
-      });
-    });
-
-    describe('match', () => {
-      describe('getMatch', () => {
-        test('returns the appropriate state.', () => {
-          expect(selectors.getMatch(state)).toEqual(matchSelectors.get(state.match));
-        });
       });
     });
 
