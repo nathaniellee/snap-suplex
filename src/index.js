@@ -12,11 +12,9 @@ import Home from './components/Home/Home';
 import MatchSetup from './components/MatchSetup/ConnectedMatchSetup';
 import Matches from './components/Matches/Matches';
 import Wrestlers from './components/Wrestlers/ConnectedWrestlers';
-import createStore from './utils/createStore';
+import store from './utils/store';
 import '../node_modules/lucid/dist/index.css';
 import './index.css';
-
-const store = createStore({});
 
 render(
 	<Provider store={store}>
