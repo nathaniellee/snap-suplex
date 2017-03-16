@@ -5,7 +5,9 @@ import {
   defaultNumRounds,
   defaultRefScore,
 } from '../../constants/defaults';
-import {} from '../../utils/match';
+import {
+  getInitialHealth,
+} from '../../utils/match';
 
 const initialState = {
   dqRating: defaultDqRating,
@@ -77,10 +79,16 @@ const match = (state = initialState, action = {}) => {
     }
 
     case actionTypes.START_MATCH: {
-      // Need to update this reducer to deal with wrestler objects instead of just IDs since we
-      // need to have data to seed the initial stat values and such.
+      const { wrestlers } = state;
       return {
         ...state,
+        wrestlers: _.reduce(wrestlers, (results, wrestler, wrestlerId) => ({
+          ...results,
+          [wrestlerId]: {
+            ...wrestler,
+            health: getInitialHealth(wrestler.stats.sta),
+          },
+        }), {}),
         roundNumber: 1,
       };
     }

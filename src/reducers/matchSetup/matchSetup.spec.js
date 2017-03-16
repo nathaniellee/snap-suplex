@@ -5,6 +5,9 @@ import {
   defaultNumRounds,
   defaultRefScore,
 } from '../../constants/defaults';
+import {
+  getInitialHealth,
+} from '../../utils/match';
 import reducer, { selectors } from './matchSetup';
 
 const {
@@ -180,6 +183,26 @@ describe('matchSetup', () => {
 				state = reducer(state, action);
 				expect(state.roundNumber).toBe(1);
 				expect(_.omit(state, 'roundNumber')).toEqual(_.omit(defaultState, 'roundNumber'));
+			});
+
+			test('determines initial health for each wrestler.', () => {
+				expect(state).toEqual(defaultState);
+				action = {
+					type: ADD_WRESTLER_TO_MATCH,
+					wrestler: {
+						id: 101,
+						stats: {
+							sta: 3,
+						},
+					},
+				};
+				state = reducer(state, action);
+				action = { type: START_MATCH };
+				state = reducer(state, action);
+				expect(_.has(state.wrestlers, 101)).toBeTruthy();
+				expect(state.wrestlers[101].health).toBe(getInitialHealth(3));
+				expect(_.omit(state, ['roundNumber', 'wrestlers']))
+					.toEqual(_.omit(defaultState, ['roundNumber', 'wrestlers']));
 			});
 		});
 	});
