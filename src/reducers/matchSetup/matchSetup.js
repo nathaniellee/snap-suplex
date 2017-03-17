@@ -1,25 +1,10 @@
 import _ from 'lodash';
 import actionTypes from '../../actions/actionTypes';
-import {
-  defaultDqRating,
-  defaultNumRounds,
-  defaultRefScore,
-  defaultStrategy,
-} from '../../constants/defaults';
+import { defaultStrategy } from '../../constants/defaults';
+import initialState from '../../constants/initialMatchState';
 import {
   getInitialHealth,
 } from '../../utils/match';
-
-const initialState = {
-  dqRating: defaultDqRating,
-  numRounds: defaultNumRounds,
-  pageIndex: 0,
-  refScore: defaultRefScore,
-  roundNumber: null,
-  rounds: [],
-  strategies: null,
-  wrestlers: {},   // Maybe this should also start off null...
-};
 
 const match = (state = initialState, action = {}) => {
   switch (action.type) {

@@ -1,10 +1,7 @@
 import _ from 'lodash';
 import actionTypes from '../../actions/actionTypes';
-import {
-  defaultDqRating,
-  defaultNumRounds,
-  defaultRefScore,
-} from '../../constants/defaults';
+import { defaultStrategy } from '../../constants/defaults';
+import defaultState from '../../constants/initialMatchState';
 import {
   getInitialHealth,
 } from '../../utils/match';
@@ -19,17 +16,6 @@ const {
 	SET_REF_SCORE,
 	START_MATCH,
 } = actionTypes;
-
-const defaultState = {
-	dqRating: defaultDqRating,
-	numRounds: defaultNumRounds,
-	pageIndex: 0,
-	refScore: defaultRefScore,
-	roundNumber: null,
-	rounds: [],
-	strategies: null,
-	wrestlers: {},
-};
 
 describe('matchSetup', () => {
 	let action;
@@ -235,6 +221,7 @@ describe('matchSetup', () => {
 				action = { type: START_MATCH };
 				state = reducer(state, action);
 				expect(_.has(state.strategies, 88)).toBeTruthy();
+				expect(state.strategies[88]).toEqual(defaultStrategy);
 				expect(_.omit(state, [
 					'roundNumber',
 					'strategies',
