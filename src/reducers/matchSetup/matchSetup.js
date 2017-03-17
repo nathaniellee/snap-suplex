@@ -4,6 +4,7 @@ import { defaultStrategy } from '../../constants/defaults';
 import initialState from '../../constants/initialMatchState';
 import {
   getInitialHealth,
+  getInitiative,
 } from '../../utils/match';
 
 const match = (state = initialState, action = {}) => {
@@ -67,8 +68,19 @@ const match = (state = initialState, action = {}) => {
 
     case actionTypes.START_MATCH: {
       const { wrestlers } = state;
+
+      if (_.size(wrestlers) < 2) {
+        return state;
+      }
+
+      const {
+        winner: attacker,
+        loser: defender,
+      } = getInitiative(wrestlers);
       return {
         ...state,
+        attacker,
+        defender,
         roundNumber: 1,
         strategies: _.reduce(wrestlers, (results, wrestler, wrestlerId) => ({
           ...results,
