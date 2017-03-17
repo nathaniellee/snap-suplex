@@ -27,6 +27,7 @@ const defaultState = {
 	refScore: defaultRefScore,
 	roundNumber: null,
 	rounds: [],
+	strategies: null,
 	wrestlers: {},
 };
 
@@ -182,7 +183,15 @@ describe('matchSetup', () => {
 				action = { type: START_MATCH };
 				state = reducer(state, action);
 				expect(state.roundNumber).toBe(1);
-				expect(_.omit(state, 'roundNumber')).toEqual(_.omit(defaultState, 'roundNumber'));
+				expect(_.omit(state, [
+					'roundNumber',
+					'strategies',
+					'wrestlers'
+				])).toEqual(_.omit(defaultState, [
+					'roundNumber',
+					'strategies',
+					'wrestlers'
+				]));
 			});
 
 			test('determines initial health for each wrestler.', () => {
@@ -201,8 +210,40 @@ describe('matchSetup', () => {
 				state = reducer(state, action);
 				expect(_.has(state.wrestlers, 101)).toBeTruthy();
 				expect(state.wrestlers[101].health).toBe(getInitialHealth(3));
-				expect(_.omit(state, ['roundNumber', 'wrestlers']))
-					.toEqual(_.omit(defaultState, ['roundNumber', 'wrestlers']));
+				expect(_.omit(state, [
+					'roundNumber',
+					'strategies',
+					'wrestlers',
+				])).toEqual(_.omit(defaultState, [
+					'roundNumber',
+					'strategies',
+					'wrestlers',
+				]));
+			});
+
+			test('adds default strategies for each wrestler.', () => {
+				expect(state).toEqual(defaultState);
+				action = {
+					type: ADD_WRESTLER_TO_MATCH,
+					wrestler: { id: 88,
+						stats: {
+							sta: 2,
+						},
+					},
+				};
+				state = reducer(state, action);
+				action = { type: START_MATCH };
+				state = reducer(state, action);
+				expect(_.has(state.strategies, 88)).toBeTruthy();
+				expect(_.omit(state, [
+					'roundNumber',
+					'strategies',
+					'wrestlers',
+				])).toEqual(_.omit(defaultState, [
+					'roundNumber',
+					'strategies',
+					'wrestlers',
+				]));
 			});
 		});
 	});

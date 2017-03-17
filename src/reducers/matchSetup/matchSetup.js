@@ -4,6 +4,7 @@ import {
   defaultDqRating,
   defaultNumRounds,
   defaultRefScore,
+  defaultStrategy,
 } from '../../constants/defaults';
 import {
   getInitialHealth,
@@ -16,7 +17,8 @@ const initialState = {
   refScore: defaultRefScore,
   roundNumber: null,
   rounds: [],
-  wrestlers: {},
+  strategies: null,
+  wrestlers: {},   // Maybe this should also start off null...
 };
 
 const match = (state = initialState, action = {}) => {
@@ -82,6 +84,13 @@ const match = (state = initialState, action = {}) => {
       const { wrestlers } = state;
       return {
         ...state,
+        roundNumber: 1,
+        strategies: _.reduce(wrestlers, (results, wrestler, wrestlerId) => ({
+          ...results,
+          [wrestlerId]: {
+            ...defaultStrategy,
+          },
+        }), {}),
         wrestlers: _.reduce(wrestlers, (results, wrestler, wrestlerId) => ({
           ...results,
           [wrestlerId]: {
@@ -89,7 +98,6 @@ const match = (state = initialState, action = {}) => {
             health: getInitialHealth(wrestler.stats.sta),
           },
         }), {}),
-        roundNumber: 1,
       };
     }
 
