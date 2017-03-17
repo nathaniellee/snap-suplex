@@ -27,8 +27,8 @@ const getHighestStat = (stats) => _.chain(stats)
 	.max()
 	.value();
 
-// Returns the id of the wrestler who wins the initiative roll.
-export const getInitiativeWinner = (wrestlers) => {
+// Returns the IDs of the winner and loser of the initiative rolls.
+export const getInitiative = (wrestlers) => {
 	const results = _.chain(wrestlers)
 		.map(({
 			id,
@@ -44,9 +44,11 @@ export const getInitiativeWinner = (wrestlers) => {
 		.value();
 
 	if (_.size(results) === 1) {
-		const winnerId = _.head(results).id;
-		return _.find(wrestlers, { id: winnerId });
+		return {
+			winner: _.head(results).id,
+			loser: _.last(results).id,
+		};
 	}
 
-	return getInitiativeWinner(wrestlers);
+	return getInitiative(wrestlers);
 };
