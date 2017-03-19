@@ -17,7 +17,8 @@ const mapStateToProps = (state) => {
 	const totalCount = _.size(availableWrestlers);
 	const selectableWrestlers = _.isEmpty(availableWrestlers)
 		? []
-		: _(availableWrestlers)
+		: _.chain(availableWrestlers)
+			.reverse()
 			.chunk(pageSize)
 			.nth(pageIndex)
 			.map((wrestler) => {
@@ -27,7 +28,8 @@ const mapStateToProps = (state) => {
 					isActive,
 					isDisabled: (_.size(wrestlers) >= selectionLimit) && !isActive,
 				};
-			});
+			})
+			.value();
 
 	return {
 		pageIndex,

@@ -16,6 +16,8 @@ export default {
 	addWrestler,
 	removeWrestler,
 
+	resetMatch: () => ({ type: actionTypes.RESET_MATCH }),
+
 	resolveCurrentRound: (strategies) => ({
 		type: actionTypes.RESOLVE_CURRENT_ROUND,
 		strategies,

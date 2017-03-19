@@ -11,13 +11,6 @@ const healthLevelsMap = {
 	8: [40, 24, 12, 4],
 };
 
-const toHitModifierMap = {
-	1: [0, -1, -2, -3],
-	2: [0, 0, -1, -2],
-	3: [0, 0, 0, -1],
-	4: [0, 0, 0, 0],
-};
-
 // Returns the starting health for the provided stamina.
 export const getInitialHealth = (stamina) => _.chain(healthLevelsMap)
 	.get(stamina)
@@ -31,17 +24,21 @@ export const getHealthLevel = (stamina, health) => {
 	return index + 1;
 };
 
+const toHitModifierMap = {
+	1: [0, -1, -2, -3],
+	2: [0, 0, -1, -2],
+	3: [0, 0, 0, -1],
+	4: [0, 0, 0, 0],
+};
+
 // Returns the to-hit modifier for the provided health level and round level.
 export const getToHitModifier = (healthLevel, roundLevel) => {
 	const modifiers = _.get(toHitModifierMap, healthLevel);
 	return _.nth(modifiers, roundLevel);
 };
 
-// Simulate the roll of a 10-sided die.
-const roll = () => _.random(1, 10);
-
-// Returns whether a roll is successful against the provided stat value.
-const statRoll = (stat) => (roll() <= stat);
+// Returns whether a roll is successful against the provided value.
+const roll = (value) => (_.random(1, 10) <= value);
 
 // Returns the highest stat value.
 const getHighestStat = (stats) => _.chain(stats)
@@ -57,7 +54,7 @@ export const getInitiative = (wrestlers) => {
 			stats,
 		}) => ({
 			id,
-			result: statRoll(getHighestStat(stats)),
+			result: roll(getHighestStat(stats)),
 		}))
 		.filter(({
 			id,
@@ -89,8 +86,8 @@ export const getToHitResults = ({
   defenderStat,
   defenderToHitModifier,
 }) => {
-	const attackerSucceeded = statRoll(attackerStat + attackerToHitModifier);
-	const defenderSucceeded = statRoll(defenderStat + defenderToHitModifier);
+	const attackerSucceeded = roll(attackerStat + attackerToHitModifier);
+	const defenderSucceeded = roll(defenderStat + defenderToHitModifier);
 
 	if (attackerSucceeded) {
 		return {
@@ -114,4 +111,23 @@ export const getToHitResults = ({
 	  defenderStat,
 	  defenderToHitModifier,
 	});
+};
+
+// Returns the pin rating associated with the provided health value.
+const getPinRating = (health) => _.ceil(health / 5) + 1;
+
+// Returns the number of failed pin attempt rolls by the defender.
+export const getPinAttemptResults = (defenderHealth, numRolls) => {
+	const pinRating = getPinRating(defenderHealth);
+	let numFailures = 0;
+	
+	for (let i = 0; i < numRolls; i++) {
+		if (roll(pinRating)) {
+			return numFailures;
+		} else {
+			numFailures += 1;
+		}
+	}
+
+	return numFailures;
 };

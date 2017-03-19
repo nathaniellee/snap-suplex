@@ -1,9 +1,9 @@
 import _ from 'lodash';
 import React from 'react';
 import {
-	defaultDqRating,
+// 	defaultDqRating,
 	defaultNumRounds,
-	defaultRefScore,
+// 	defaultRefScore,
 } from '../../constants/defaults';
 import CurrentRound from './CurrentRound/ConnectedCurrentRound';
 import RoundSummary from './RoundSummary/RoundSummary';
@@ -20,18 +20,21 @@ export default React.createClass({
 	propTypes: {
 		attackerId: number,
 		defenderId: number,
-		dqRating: number,
+		// dqRating: number,
 		numRounds: number,
-		refScore: number,
+		// refScore: number,
+		roundNumber: number,
 		rounds: array,
+		winnerId: number,
 		wrestlers: object,
 	},
 
 	getDefaultProps() {
 		return {
-			dqRating: defaultDqRating,
+			// dqRating: defaultDqRating,
 			numRounds: defaultNumRounds,
-			refScore: defaultRefScore,
+			// refScore: defaultRefScore,
+			roundNumber: 1,
 			rounds: [],
 			wrestlers: {},
 		};
@@ -41,14 +44,16 @@ export default React.createClass({
 		const {
 			attackerId,
 			defenderId,
-			dqRating,
+			// dqRating,
 			numRounds,
-			refScore,
+			// refScore,
 			roundNumber,
 			rounds,
 			strategies,
+			winnerId,
 			wrestlers,
 		} = this.props;
+		const timeLimitReached = roundNumber === numRounds + 1;
 
 		return (
 			<div className='Match'>
@@ -62,6 +67,7 @@ export default React.createClass({
 							bra,
 							dex,
 							tec,
+							sta,
 						},
 					}) => (
 						<WrestlerSummary
@@ -74,31 +80,32 @@ export default React.createClass({
 							bra={bra}
 							dex={dex}
 							tec={tec}
+							sta={sta}
 						/>
 					))}
 				</div>
-				<div>
-					<CurrentRound
-						initialStrategies={strategies}
-						roundNumber={roundNumber}
-					/>
-				</div>
+				{_.isNil(winnerId) && !timeLimitReached ? (
+					<div>
+						<CurrentRound
+							initialStrategies={strategies}
+							roundNumber={roundNumber}
+						/>
+					</div>
+				) : null}
 				<div className='Match-rounds'>
 					{_.map(_.reverse([...rounds]), ({
-						attemptPin,
-						attemptSubmission,
 						damage,
 						loserId,
+						numPinAttemptFailures,
 						roundNumber,
 						targetStat,
 						winnerId,
 					}) => (
 						<RoundSummary
 							key={roundNumber}
-							attemptPin={attemptPin}
-							attemptSubmission={attemptSubmission}
 							damage={damage}
 							loser={_.get(wrestlers, loserId)}
+							numPinAttemptFailures={numPinAttemptFailures}
 							roundNumber={roundNumber}
 							targetStat={targetStat}
 							winner={_.get(wrestlers, winnerId)}
