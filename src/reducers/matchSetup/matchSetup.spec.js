@@ -229,14 +229,14 @@ describe('matchSetup', () => {
 
 					expect(state.roundNumber).toBe(1);
 					expect(_.omit(state, [
-						'attacker',
-						'defender',
+						'attackerId',
+						'defenderId',
 						'roundNumber',
 						'strategies',
 						'wrestlers'
 					])).toEqual(_.omit(defaultState, [
-						'attacker',
-						'defender',
+						'attackerId',
+						'defenderId',
 						'roundNumber',
 						'strategies',
 						'wrestlers'
@@ -274,14 +274,14 @@ describe('matchSetup', () => {
 					expect(state.wrestlers[102].health).toBe(getInitialHealth(5));
 
 					expect(_.omit(state, [
-						'attacker',
-						'defender',
+						'attackerId',
+						'defenderId',
 						'roundNumber',
 						'strategies',
 						'wrestlers',
 					])).toEqual(_.omit(defaultState, [
-						'attacker',
-						'defender',
+						'attackerId',
+						'defenderId',
 						'roundNumber',
 						'strategies',
 						'wrestlers',
@@ -317,14 +317,14 @@ describe('matchSetup', () => {
 					expect(state.strategies[96]).toEqual(defaultStrategy);
 
 					expect(_.omit(state, [
-						'attacker',
-						'defender',
+						'attackerId',
+						'defenderId',
 						'roundNumber',
 						'strategies',
 						'wrestlers',
 					])).toEqual(_.omit(defaultState, [
-						'attacker',
-						'defender',
+						'attackerId',
+						'defenderId',
 						'roundNumber',
 						'strategies',
 						'wrestlers',
