@@ -1,10 +1,10 @@
 import _ from 'lodash';
 import React from 'react';
-// import {
+import {
 // 	defaultDqRating,
-// 	defaultNumRounds,
+	defaultNumRounds,
 // 	defaultRefScore,
-// } from '../../constants/defaults';
+} from '../../constants/defaults';
 import CurrentRound from './CurrentRound/ConnectedCurrentRound';
 import RoundSummary from './RoundSummary/RoundSummary';
 import WrestlerSummary from './WrestlerSummary/WrestlerSummary';
@@ -21,17 +21,20 @@ export default React.createClass({
 		attackerId: number,
 		defenderId: number,
 		// dqRating: number,
-		// numRounds: number,
+		numRounds: number,
 		// refScore: number,
+		roundNumber: number,
 		rounds: array,
+		winnerId: number,
 		wrestlers: object,
 	},
 
 	getDefaultProps() {
 		return {
 			// dqRating: defaultDqRating,
-			// numRounds: defaultNumRounds,
+			numRounds: defaultNumRounds,
 			// refScore: defaultRefScore,
+			roundNumber: 1,
 			rounds: [],
 			wrestlers: {},
 		};
@@ -42,13 +45,15 @@ export default React.createClass({
 			attackerId,
 			defenderId,
 			// dqRating,
-			// numRounds,
+			numRounds,
 			// refScore,
 			roundNumber,
 			rounds,
 			strategies,
+			winnerId,
 			wrestlers,
 		} = this.props;
+		const timeLimitReached = roundNumber === numRounds + 1;
 
 		return (
 			<div className='Match'>
@@ -79,12 +84,14 @@ export default React.createClass({
 						/>
 					))}
 				</div>
-				<div>
-					<CurrentRound
-						initialStrategies={strategies}
-						roundNumber={roundNumber}
-					/>
-				</div>
+				{_.isNil(winnerId) && !timeLimitReached ? (
+					<div>
+						<CurrentRound
+							initialStrategies={strategies}
+							roundNumber={roundNumber}
+						/>
+					</div>
+				) : null}
 				<div className='Match-rounds'>
 					{_.map(_.reverse([...rounds]), ({
 						damage,
