@@ -85,6 +85,12 @@ const match = (state = initialState, action = {}) => {
       };
     }
 
+    case actionTypes.RESET_MATCH: {
+      return {
+        ...initialState,
+      };
+    }
+
     case actionTypes.START_MATCH: {
       const { wrestlers } = state;
 
