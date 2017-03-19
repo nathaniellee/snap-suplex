@@ -1,0 +1,11 @@
+.RoundSummary {
+	margin: 12px 0 0 !important;
+}
+
+.RoundSummary .lucid-Panel-content > div {
+	display: flex;
+}
+
+.RoundSummary .lucid-Panel-content > div > span:first-child {
+	margin-right: 12px;
+}

@@ -1,9 +1,37 @@
 .WrestlerSummary {
 	flex: 1;
+	margin: 0 !important;
+}
+
+.WrestlerSummary:first-child {
+	margin-right: 6px !important;
+}
+
+.WrestlerSummary:last-child {
+	margin-left: 6px !important;
+}
+
+.WrestlerSummary-is-attacker,
+.WrestlerSummary-is-defender {
+	background-position: right 12px top 50%;
+	background-repeat: no-repeat;
+}
+
+.WrestlerSummary-is-attacker {
+	background-image: url(../sword.png);
+}
+
+.WrestlerSummary-is-defender {
+	background-image: url(../shield.png);
 }
 
 .WrestlerSummary .lucid-Panel-Header {
 	font-weight: bold;
+}
+
+.WrestlerSummary .lucid-Panel-Header span {
+	display: inline-block;
+	margin-right: 5px;
 }
 
 .WrestlerSummary .lucid-Panel-Footer {

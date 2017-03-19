@@ -1,0 +1,28 @@
+.StrategyPanel {
+	flex: 1;
+	margin: 0 !important;
+}
+
+.StrategyPanel:first-child {
+	margin-right: 6px !important;
+}
+
+.StrategyPanel:last-child {
+	margin-left: 6px !important;
+}
+
+.StrategyPanel-fields {
+	display: flex;
+	justify-content: space-between;
+}
+
+.StrategyField {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.StrategyField-label {
+	font-size: smaller;
+	margin-bottom: 3px;
+}

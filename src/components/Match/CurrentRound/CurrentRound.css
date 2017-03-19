@@ -1,0 +1,19 @@
+.CurrentRound {
+	border-color: #3fa516 !important;
+	margin: 0 !important;
+}
+
+.CurrentRound > header {
+	background-color: #bce0ad;
+	background-color: #3fa516;
+	color: white;
+	font-weight: bold;
+}
+
+.CurrentRound > footer {
+	background-color: #f4f4f4;
+}
+
+.CurrentRound-strategies {
+	display: flex;
+}

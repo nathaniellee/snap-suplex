@@ -5,19 +5,25 @@ import {
 	defaultNumRounds,
 	defaultRefScore,
 } from '../../constants/defaults';
+import CurrentRound from './CurrentRound/ConnectedCurrentRound';
+import RoundSummary from './RoundSummary/RoundSummary';
 import WrestlerSummary from './WrestlerSummary/WrestlerSummary';
 import './Match.css';
 
 const {
+	array,
 	number,
 	object,
 } = React.PropTypes;
 
 export default React.createClass({
 	propTypes: {
+		attackerId: number,
+		defenderId: number,
 		dqRating: number,
 		numRounds: number,
 		refScore: number,
+		rounds: array,
 		wrestlers: object,
 	},
 
@@ -26,32 +32,27 @@ export default React.createClass({
 			dqRating: defaultDqRating,
 			numRounds: defaultNumRounds,
 			refScore: defaultRefScore,
+			rounds: [],
 			wrestlers: {},
-		};
-	},
-
-	getInitialState() {
-		const { wrestlers } = this.props;
-		return {
-			wrestlers: _.chain(wrestlers)
-				.map((wrestler) => _.cloneDeep(wrestler))
-				.value(),
 		};
 	},
 
 	render() {
 		const {
+			attackerId,
+			defenderId,
 			dqRating,
 			numRounds,
 			refScore,
-		} = this.props;
-		const {
+			roundNumber,
+			rounds,
+			strategies,
 			wrestlers,
-		} = this.state;
+		} = this.props;
 
 		return (
 			<div className='Match'>
-				<header className='Match-wrestler-summaries'>
+				<div className='Match-wrestler-summaries'>
 					{_.map(wrestlers, ({
 						id,
 						name,
@@ -66,6 +67,8 @@ export default React.createClass({
 						<WrestlerSummary
 							key={id}
 							name={name}
+							isAttacker={id === attackerId}
+							isDefender={id === defenderId}
 							health={health}
 							str={str}
 							bra={bra}
@@ -73,12 +76,31 @@ export default React.createClass({
 							tec={tec}
 						/>
 					))}
-				</header>
-				<section>
-					<p>DQ Rating: {dqRating}</p>
-					<p># Rounds: {numRounds}</p>
-					<p>Ref Score: {refScore}</p>
-				</section>
+				</div>
+				<div>
+					<CurrentRound
+						initialStrategies={strategies}
+						roundNumber={roundNumber}
+					/>
+				</div>
+				<div className='Match-rounds'>
+					{_.map(_.reverse([...rounds]), ({
+						damage,
+						loserId,
+						roundNumber,
+						targetStat,
+						winnerId,
+					}) => (
+						<RoundSummary
+							key={roundNumber}
+							damage={damage}
+							loser={_.get(wrestlers, loserId)}
+							roundNumber={roundNumber}
+							targetStat={targetStat}
+							winner={_.get(wrestlers, winnerId)}
+						/>
+					))}
+				</div>
 			</div>
 		);
 	},

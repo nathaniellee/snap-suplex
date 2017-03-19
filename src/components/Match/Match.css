@@ -1,3 +1,8 @@
 .Match-wrestler-summaries {
 	display: flex;
+	margin-bottom: 12px;
+}
+
+.Match-rounds {
+	margin-top: 12px;
 }
