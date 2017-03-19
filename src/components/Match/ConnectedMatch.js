@@ -4,18 +4,8 @@ import { selectors } from '../../reducers/root';
 import Match from './Match';
 
 const mapStateToProps = (state) => {
-	const {
-		dqRating,
-		numRounds,
-		refScore,
-		wrestlers,
-	} = selectors.getMatchSetup(state);
-	return {
-		dqRating,
-		numRounds,
-		refScore,
-		wrestlers,
-	};
+	const matchState = selectors.getMatchSetup(state);
+	return _.omit(matchState, 'pageIndex');
 };
 
 const mapDispatchToProps = () => ({});
