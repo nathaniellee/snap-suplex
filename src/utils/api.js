@@ -172,7 +172,7 @@ const postWrestler = (wrestler) => {
 		byId,
 	} = wrestlers;
 
-	const newId = _.max(_.map(wrestlers, 'id')) + 1;
+	const newId = getNewId(allIds);
 	const newWrestler = {
 		...wrestler,
 		id: newId,
