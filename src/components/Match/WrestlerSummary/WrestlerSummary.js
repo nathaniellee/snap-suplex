@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import { Panel } from 'lucid';
 import React from 'react';
+import { getHealthLevel } from '../../../utils/match';
 import './WrestlerSummary.css';
 
 const {
@@ -18,13 +19,14 @@ const WrestlerSummary = ({
 	bra = 0,
 	dex = 0,
 	tec = 0,
+	sta = 0,
 }) => (
 	<Panel className='WrestlerSummary'>
 		<Panel.Header className={classnames({
 			'WrestlerSummary-is-attacker': isAttacker,
 			'WrestlerSummary-is-defender': isDefender,
 		})}>
-			<span>{name}</span>
+			<span>{`${name} (level ${getHealthLevel(sta, health)})`}</span>
 		</Panel.Header>
 		<div className='WrestlerSummary-stats'>
 			<section>
