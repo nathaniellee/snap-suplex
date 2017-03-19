@@ -3,6 +3,7 @@ import _ from 'lodash';
 export default _.reduce([
 	'ADD_WRESTLER_TO_MATCH',
 	'REMOVE_WRESTLER_FROM_MATCH',
+	'RESOLVE_CURRENT_ROUND',
 	'SET_DQ_RATING',
 	'SET_NUM_ROUNDS',
 	'SET_PAGE_INDEX',

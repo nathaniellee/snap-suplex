@@ -16,6 +16,11 @@ export default {
 	addWrestler,
 	removeWrestler,
 
+	resolveCurrentRound: (strategies) => ({
+		type: actionTypes.RESOLVE_CURRENT_ROUND,
+		strategies,
+	}),
+
 	selectWrestler: (wrestler) => (dispatch, getState) => {
 		const state = getState();
 		const { wrestlers } = selectors.getMatchSetup(state);
