@@ -139,7 +139,6 @@ const match = (state = initialState, action = {}) => {
 
       const {
         attackerWon,
-        attackerSucceeded,
         defenderSucceeded,
       } = getToHitResults({
         attackerStat: attacker.stats[attackerStat],
@@ -155,16 +154,17 @@ const match = (state = initialState, action = {}) => {
       const roundLoserId = loser.id;
 
       const winningStrats = strategies[roundWinnerId];
-      const winningStat = winningStrats.stat;
+      // const winningStat = winningStrats.stat;
       const winningLevel = winningStrats.level;
-      const winningNumFavorites = winningStrats.numFavorites;
+      // const winningNumFavorites = winningStrats.numFavorites;
       const winningFlag = winningStrats.flag;
       const winningTargetStat = winningStrats.targetStat;
 
       const damage = winningLevel;
       const loserHealth = loser.health - damage;
 
-      const attemptPin = winningFlag === 'pinning' || loserHealth <= 15;
+      const attemptPin = winningFlag === 'pinning' ||
+        (loserHealth <= 15 && !defenderSucceeded);
 
       let numPinAttemptFailures;
 

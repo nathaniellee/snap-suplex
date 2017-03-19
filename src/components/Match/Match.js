@@ -1,10 +1,10 @@
 import _ from 'lodash';
 import React from 'react';
-import {
-	defaultDqRating,
-	defaultNumRounds,
-	defaultRefScore,
-} from '../../constants/defaults';
+// import {
+// 	defaultDqRating,
+// 	defaultNumRounds,
+// 	defaultRefScore,
+// } from '../../constants/defaults';
 import CurrentRound from './CurrentRound/ConnectedCurrentRound';
 import RoundSummary from './RoundSummary/RoundSummary';
 import WrestlerSummary from './WrestlerSummary/WrestlerSummary';
@@ -20,18 +20,18 @@ export default React.createClass({
 	propTypes: {
 		attackerId: number,
 		defenderId: number,
-		dqRating: number,
-		numRounds: number,
-		refScore: number,
+		// dqRating: number,
+		// numRounds: number,
+		// refScore: number,
 		rounds: array,
 		wrestlers: object,
 	},
 
 	getDefaultProps() {
 		return {
-			dqRating: defaultDqRating,
-			numRounds: defaultNumRounds,
-			refScore: defaultRefScore,
+			// dqRating: defaultDqRating,
+			// numRounds: defaultNumRounds,
+			// refScore: defaultRefScore,
 			rounds: [],
 			wrestlers: {},
 		};
@@ -41,9 +41,9 @@ export default React.createClass({
 		const {
 			attackerId,
 			defenderId,
-			dqRating,
-			numRounds,
-			refScore,
+			// dqRating,
+			// numRounds,
+			// refScore,
 			roundNumber,
 			rounds,
 			strategies,
