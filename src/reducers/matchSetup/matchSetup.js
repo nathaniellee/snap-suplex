@@ -6,6 +6,7 @@ import {
   getHealthLevel,
   getInitialHealth,
   getInitiative,
+  getPinAttemptResults,
   getToHitModifier,
   getToHitResults,
 } from '../../utils/match';
@@ -150,10 +151,10 @@ const match = (state = initialState, action = {}) => {
       const winner = attackerWon ? attacker : defender;
       const loser = attackerWon ? defender : attacker;
 
-      const winnerId = winner.id;
-      const loserId = loser.id;
+      const roundWinnerId = winner.id;
+      const roundLoserId = loser.id;
 
-      const winningStrats = strategies[winnerId];
+      const winningStrats = strategies[roundWinnerId];
       const winningStat = winningStrats.stat;
       const winningLevel = winningStrats.level;
       const winningNumFavorites = winningStrats.numFavorites;
@@ -164,30 +165,52 @@ const match = (state = initialState, action = {}) => {
       const loserHealth = loser.health - damage;
 
       const attemptPin = winningFlag === 'pinning' || loserHealth <= 15;
-      const attemptSubmission = winningFlag === 'submission';
+
+      let numPinAttemptFailures;
+
+      if (attemptPin) {
+        let numPinAttempts = 3;
+        numPinAttemptFailures = 0;
+
+        if (winningFlag === 'pinning') {
+          numPinAttempts = 2;
+          numPinAttemptFailures = 1;
+        }
+
+        // Account for finisher when we incorporate finishers.
+
+        numPinAttemptFailures += getPinAttemptResults(loserHealth, numPinAttempts);
+      } else {
+        numPinAttemptFailures = null;
+      }
+
+      let matchWinnerId = null;
+      if (numPinAttemptFailures === 3) {
+        matchWinnerId = roundWinnerId;
+      }
 
       const roundResults = {
-        winnerId,
-        loserId,
+        winnerId: roundWinnerId,
+        loserId: roundLoserId,
         damage,
         roundNumber,
         targetStat: winningTargetStat,
-        attemptPin,
-        attemptSubmission,
+        numPinAttemptFailures,
       };
 
       return {
         ...state,
-        attackerId: winnerId,
-        defenderId: loserId,
+        attackerId: roundWinnerId,
+        defenderId: roundLoserId,
         roundNumber: roundNumber + 1,
         rounds: [
           ...rounds,
           roundResults,
         ],
+        winnerId: matchWinnerId,
         wrestlers: {
           ...wrestlers,
-          [loserId]: {
+          [roundLoserId]: {
             ...loser,
             health: loserHealth,
           },
