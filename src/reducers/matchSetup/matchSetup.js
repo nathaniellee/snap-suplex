@@ -185,7 +185,6 @@ const match = (state = initialState, action = {}) => {
           ...rounds,
           roundResults,
         ],
-        // strategies: getDefaultStrategies(wrestlers),
         wrestlers: {
           ...wrestlers,
           [loserId]: {

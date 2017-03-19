@@ -85,6 +85,8 @@ export default React.createClass({
 				</div>
 				<div className='Match-rounds'>
 					{_.map(_.reverse([...rounds]), ({
+						attemptPin,
+						attemptSubmission,
 						damage,
 						loserId,
 						roundNumber,
@@ -93,6 +95,8 @@ export default React.createClass({
 					}) => (
 						<RoundSummary
 							key={roundNumber}
+							attemptPin={attemptPin}
+							attemptSubmission={attemptSubmission}
 							damage={damage}
 							loser={_.get(wrestlers, loserId)}
 							roundNumber={roundNumber}

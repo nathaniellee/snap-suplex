@@ -3,12 +3,15 @@ import React from 'react';
 import './RoundSummary.css';
 
 const {
+	bool,
 	number,
 	object,
 	string,
 } = React.PropTypes;
 
 const RoundSummary = ({
+	attemptPin = false,
+	attemptSubmission = false,
 	damage = null,
 	loser,
 	roundNumber = 1,
@@ -19,6 +22,12 @@ const RoundSummary = ({
 
 	if (damage) {
 		description = `${winner.name} inflicted ${damage} damage to ${loser.name}.`;
+		if (attemptPin) {
+			description = `${description} ${winner.name} makes the cover...`;
+		}
+		if (attemptSubmission) {
+			description = `${description} The referee checks for submission...`;
+		}
 	} else {
 		description = `${winner.name} did not inflict any damage to ${loser.name}.`;
 	}
@@ -34,6 +43,8 @@ const RoundSummary = ({
 };
 
 RoundSummary.propTypes = {
+	attemptPin: bool,
+	attemptSubmission: bool,
 	damage: number,
 	loser: object.isRequired,
 	roundNumber: number,
