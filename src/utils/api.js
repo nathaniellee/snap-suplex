@@ -167,6 +167,10 @@ const getWrestlers = () => {
 const postWrestler = (wrestler) => {
 	const data = fetchData();
 	const { wrestlers } = data;
+	const {
+		allIds,
+		byId,
+	} = wrestlers;
 
 	const newId = _.max(_.map(wrestlers, 'id')) + 1;
 	const newWrestler = {
@@ -175,10 +179,16 @@ const postWrestler = (wrestler) => {
 	};
 	const updatedData = {
 		...data,
-		wrestlers: [
-			...wrestlers,
-			newWrestler,
-		],
+		wrestlers: {
+			allIds: [
+				...allIds,
+				newId,
+			],
+			byId: {
+				...byId,
+				[newId]: newWrestler,
+			},
+		},
 	};
 
 	putData(updatedData);
