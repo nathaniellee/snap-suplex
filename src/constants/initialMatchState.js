@@ -5,8 +5,8 @@ import {
 } from './defaults';
 
 export default {
-  attacker: null,
-  defender: null,
+  attackerId: null,
+  defenderId: null,
   dqRating: defaultDqRating,
   numRounds: defaultNumRounds,
   pageIndex: 0,
