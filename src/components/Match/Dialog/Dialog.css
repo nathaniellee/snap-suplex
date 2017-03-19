@@ -1,0 +1,10 @@
+.MatchDialog .lucid-Dialog-footer {
+	align-items: center;
+	background-color: #f4f4f4;
+	display: flex;
+	justify-content: space-between;
+}
+
+.MatchDialog .MatchDialog-result-description {
+	font-weight: bold;
+}

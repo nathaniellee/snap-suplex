@@ -20,7 +20,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-	onClickConfirmVictory: () => {
+	onClickConfirmMatchOver: () => {
 		dispatch(actionCreators.resetMatch());
 	},
 });
