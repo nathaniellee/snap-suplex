@@ -62,6 +62,7 @@ export default React.createClass({
 							bra,
 							dex,
 							tec,
+							sta,
 						},
 					}) => (
 						<WrestlerSummary
@@ -74,6 +75,7 @@ export default React.createClass({
 							bra={bra}
 							dex={dex}
 							tec={tec}
+							sta={sta}
 						/>
 					))}
 				</div>
@@ -85,20 +87,18 @@ export default React.createClass({
 				</div>
 				<div className='Match-rounds'>
 					{_.map(_.reverse([...rounds]), ({
-						attemptPin,
-						attemptSubmission,
 						damage,
 						loserId,
+						numPinAttemptFailures,
 						roundNumber,
 						targetStat,
 						winnerId,
 					}) => (
 						<RoundSummary
 							key={roundNumber}
-							attemptPin={attemptPin}
-							attemptSubmission={attemptSubmission}
 							damage={damage}
 							loser={_.get(wrestlers, loserId)}
+							numPinAttemptFailures={numPinAttemptFailures}
 							roundNumber={roundNumber}
 							targetStat={targetStat}
 							winner={_.get(wrestlers, winnerId)}
