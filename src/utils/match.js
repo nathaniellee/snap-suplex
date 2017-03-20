@@ -38,7 +38,7 @@ export const getToHitModifier = (healthLevel, roundLevel) => {
 };
 
 // Returns whether a roll is successful against the provided value.
-const roll = (value) => (_.random(1, 10) <= value);
+export const roll = (value) => (_.random(1, 10) <= value);
 
 // Returns the highest stat value.
 const getHighestStat = (stats) => _.chain(stats)
