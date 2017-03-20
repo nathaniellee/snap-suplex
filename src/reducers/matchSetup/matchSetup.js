@@ -160,9 +160,9 @@ const match = (state = initialState, action = {}) => {
       const roundLoserId = loser.id;
 
       const winningStrats = strategies[roundWinnerId];
-      // const winningStat = winningStrats.stat;
+      const winningStat = winningStrats.stat;
       const winningLevel = winningStrats.level;
-      // const winningNumFavorites = winningStrats.numFavorites;
+      const winningNumFavorites = winningStrats.numFavorites;
       const winningFlag = winningStrats.flag;
       const winningTargetStat = winningStrats.targetStat;
 
