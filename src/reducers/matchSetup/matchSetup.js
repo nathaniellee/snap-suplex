@@ -200,6 +200,10 @@ const match = (state = initialState, action = {}) => {
         loserId: roundLoserId,
         damage,
         roundNumber,
+        stat: winningStat,
+        level: winningLevel,
+        numFavorites: winningNumFavorites,
+        flag: winningFlag,
         targetStat: winningTargetStat,
         numPinAttemptFailures,
       };
