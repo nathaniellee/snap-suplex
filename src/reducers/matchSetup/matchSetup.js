@@ -177,6 +177,16 @@ const match = (state = initialState, action = {}) => {
         }
       } else if (winningFlag === 'pinning' || winningFlag === 'submission') {
         damage -= 1;
+      } else if (winningFlag === 'highrisk') {
+        damage += 2;
+      }
+
+      // If the round loser attempted a high risk move they suffer the consequences of missing.
+      const losingStrats = strategies[roundLoserId];
+      const losingLevel = losingStrats.level;
+      const losingFlag = losingStrats.flag;
+      if (losingFlag === 'highrisk') {
+        damage += losingLevel;
       }
 
       const loserHealth = loser.health - damage;
