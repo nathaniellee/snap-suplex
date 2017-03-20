@@ -175,6 +175,8 @@ const match = (state = initialState, action = {}) => {
         if (roll > 5) {
           winnerHealth -= 1;
         }
+      } else if (winningFlag === 'pinning' || winningFlag === 'submission') {
+        damage -= 1;
       }
 
       const loserHealth = loser.health - damage;
