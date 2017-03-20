@@ -9,6 +9,7 @@ import {
   getPinAttemptResults,
   getToHitModifier,
   getToHitResults,
+  roll,
 } from '../../utils/match';
 
 const getDefaultStrategies = (wrestlers) => _.reduce(wrestlers, (results, wrestler, id) => ({
@@ -166,7 +167,16 @@ const match = (state = initialState, action = {}) => {
       const winningFlag = winningStrats.flag;
       const winningTargetStat = winningStrats.targetStat;
 
-      const damage = winningLevel;
+      let damage = winningLevel;
+      let winnerHealth = winner.health;
+
+      if (winningFlag === 'stiff') {
+        damage += 1;
+        if (roll > 5) {
+          winnerHealth -= 1;
+        }
+      }
+
       const loserHealth = loser.health - damage;
 
       const attemptPin = winningFlag === 'pinning' ||
@@ -195,6 +205,7 @@ const match = (state = initialState, action = {}) => {
         matchWinnerId = roundWinnerId;
       }
 
+      // TODO: Decide if full strategies should be included in the results for logging purposes.
       const roundResults = {
         winnerId: roundWinnerId,
         loserId: roundLoserId,
@@ -223,6 +234,10 @@ const match = (state = initialState, action = {}) => {
           [roundLoserId]: {
             ...loser,
             health: loserHealth,
+          },
+          [roundWinnerId]: {
+            ...winner,
+            health: winnerHealth,
           },
         },
       };
