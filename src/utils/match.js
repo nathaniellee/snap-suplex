@@ -120,9 +120,28 @@ const getPinRating = (health) => _.ceil(health / 5) + 1;
 export const getPinAttemptResults = (defenderHealth, numRolls) => {
 	const pinRating = getPinRating(defenderHealth);
 	let numFailures = 0;
-	
+
 	for (let i = 0; i < numRolls; i++) {
 		if (roll(pinRating)) {
+			return numFailures;
+		} else {
+			numFailures += 1;
+		}
+	}
+
+	return numFailures;
+};
+
+// Returns the submission rating associated with the provided health value.
+const getSubmissionRating = (health) => _.ceil(health / 5) + 1;
+
+// Returns the number of failed submission attempt rolls by the defender.
+export const getSubmissionAttemptResults = (defenderHealth, numRolls) => {
+	const submissionRating = getSubmissionRating(defenderHealth);
+	let numFailures = 0;
+
+	for (let i = 0; i < numRolls; i++) {
+		if (roll(submissionRating)) {
 			return numFailures;
 		} else {
 			numFailures += 1;
