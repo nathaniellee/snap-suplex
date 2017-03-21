@@ -156,47 +156,71 @@ const match = (state = initialState, action = {}) => {
 
       const winner = attackerWon ? attacker : defender;
       const loser = attackerWon ? defender : attacker;
+      const loserSucceeded = attackerWon ? defenderSucceeded : false;
 
       const roundWinnerId = winner.id;
       const roundLoserId = loser.id;
 
       const winningStrats = strategies[roundWinnerId];
-      const winningStat = winningStrats.stat;
       const winningLevel = winningStrats.level;
-      const winningNumFavorites = winningStrats.numFavorites;
       const winningFlag = winningStrats.flag;
-      const winningTargetStat = winningStrats.targetStat;
 
-      let damage = winningLevel;
       let winnerHealth = winner.health;
+      let loserHealth = loser.health;
+      let damage = winningLevel;
+      let shouldAttemptPin = false;
+      let shouldAttemptSubmission = false;
 
-      if (winningFlag === 'stiff') {
-        damage += 1;
-        if (roll > 5) {
-          winnerHealth -= 1;
+      switch (winningFlag) {
+        case 'stiff': {
+          damage += 1;
+          if (roll() > 5) {
+            winnerHealth -= 1;
+          }
+          break;
         }
-      } else if (winningFlag === 'pinning' || winningFlag === 'submission') {
-        damage -= 1;
-      } else if (winningFlag === 'highrisk') {
-        damage += 2;
+
+        case 'highrisk': {
+          damage += 2;
+          break;
+        }
+
+        case 'illegal': {
+          damage += 1;
+          break;
+        }
+
+        case 'pinning': {
+          damage -= 1;
+          shouldAttemptPin = true;
+          break;
+        }
+
+        case 'submission': {
+          damage -= 1;
+          shouldAttemptSubmission = true;
+          break;
+        }
+
+        default: {}
       }
 
-      // If the round loser attempted a high risk move they suffer the consequences of missing.
+      // If the round loser attempted a high risk move and missed, they suffer the consequences.
       const losingStrats = strategies[roundLoserId];
       const losingLevel = losingStrats.level;
       const losingFlag = losingStrats.flag;
-      if (losingFlag === 'highrisk') {
+      if (losingFlag === 'highrisk' && !loserSucceeded) {
         damage += losingLevel;
       }
 
-      const loserHealth = loser.health - damage;
-
-      const attemptPin = winningFlag === 'pinning' ||
-        (loserHealth <= 15 && !defenderSucceeded);
+      loserHealth -= damage;
+      if (loserHealth <= 15 && !loserSucceeded) {
+        shouldAttemptPin = true;
+      }
 
       let numPinAttemptFailures;
 
-      if (attemptPin) {
+      if (shouldAttemptPin) {
         let numPinAttempts = 3;
         numPinAttemptFailures = 0;
 
@@ -223,11 +247,11 @@ const match = (state = initialState, action = {}) => {
         loserId: roundLoserId,
         damage,
         roundNumber,
-        stat: winningStat,
+        stat: winningStrats.stat,
         level: winningLevel,
-        numFavorites: winningNumFavorites,
+        numFavorites: winningStrats.numFavorites,
         flag: winningFlag,
-        targetStat: winningTargetStat,
+        targetStat: winningStrats.targetStat,
         numPinAttemptFailures,
       };
 
