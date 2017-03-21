@@ -15,16 +15,17 @@ const {
 
 export default React.createClass({
 	propTypes: {
-		attackerId: number.isRequired,
-		defenderId: number.isRequired,
-		strategies: object.isRequired,
-		roundNumber: number.isRequired,
+		attackerId: number,
+		defenderId: number,
+		strategies: object,
+		roundNumber: number,
 		onChangeStrategies: func,
 		onResolve: func,
 	},
 
 	getDefaultProps() {
 		return {
+			strategies: {},
 			onChangeStrategies: _.noop,
 			onResolve: _.noop,
 		};
