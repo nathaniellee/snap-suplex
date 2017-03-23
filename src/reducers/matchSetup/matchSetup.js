@@ -7,6 +7,7 @@ import {
   getInitialHealth,
   getInitiative,
   getPinAttemptResults,
+  getSubmissionAttemptResults,
   getToHitModifier,
   getToHitResults,
   roll,
@@ -174,7 +175,7 @@ const match = (state = initialState, action = {}) => {
       switch (winningFlag) {
         case 'stiff': {
           damage += 1;
-          if (roll() > 5) {
+          if (roll(5)) {
             winnerHealth -= 1;
           }
           break;
@@ -214,11 +215,15 @@ const match = (state = initialState, action = {}) => {
       }
 
       loserHealth -= damage;
-      if (loserHealth <= 15 && !loserSucceeded) {
+      if (loserHealth <= 15 && !loserSucceeded && winningFlag !== 'pinning') {
         shouldAttemptPin = true;
       }
 
-      let numPinAttemptFailures;
+      let numPinAttemptFailures = null;
+      let numSubmissionCycles = null;
+      let disqualified = false;
+      let pinned = false;
+      let submitted = false;
 
       if (shouldAttemptPin) {
         let numPinAttempts = 3;
@@ -232,13 +237,38 @@ const match = (state = initialState, action = {}) => {
         // Account for finisher when we incorporate finishers.
 
         numPinAttemptFailures += getPinAttemptResults(loserHealth, numPinAttempts);
-      } else {
-        numPinAttemptFailures = null;
-      }
+        if (numPinAttemptFailures === 3) {
+          pinned = true;
+        }
+      } else if (shouldAttemptSubmission) {
+        const escapeRating = 10 - winner.stats.tec;
+        const submissionDamage = winningLevel - 1;
+        numSubmissionCycles = 0;
 
-      let matchWinnerId = null;
-      if (numPinAttemptFailures === 3) {
-        matchWinnerId = roundWinnerId;
+        const submissionCycle = () => {
+          const escaped = roll(escapeRating);
+          if (escaped) {
+            return;
+          }
+
+          // The victim takes damage every time they fail to escape the submission hold except in
+          // the case of the initial failure since damage plus bonuses was already inflicted.
+          if (numSubmissionCycles > 0) {
+            loserHealth -= submissionDamage;
+            damage += submissionDamage;
+          }
+
+          const numResistSubmissionFailures = getSubmissionAttemptResults(loserHealth);
+          if (numResistSubmissionFailures === 3) {
+            submitted = true;
+            return;
+          }
+
+          numSubmissionCycles += 1;
+          submissionCycle();
+        };
+
+        submissionCycle();
       }
 
       // TODO: Decide if full strategies should be included in the results for logging purposes.
@@ -252,7 +282,19 @@ const match = (state = initialState, action = {}) => {
         numFavorites: winningStrats.numFavorites,
         flag: winningFlag,
         targetStat: winningStrats.targetStat,
-        numPinAttemptFailures,
+        disqualified,
+        pinAttempt: shouldAttemptPin
+          ? {
+            count: numPinAttemptFailures,
+            pinned,
+          }
+          : null,
+        submissionAttempt: shouldAttemptSubmission
+          ? {
+            cycles: numSubmissionCycles,
+            submitted,
+          }
+          : null,
       };
 
       return {
@@ -264,7 +306,7 @@ const match = (state = initialState, action = {}) => {
           ...rounds,
           roundResults,
         ],
-        winnerId: matchWinnerId,
+        winnerId: pinned || submitted ? roundWinnerId : null,
         wrestlers: {
           ...wrestlers,
           [roundLoserId]: {
