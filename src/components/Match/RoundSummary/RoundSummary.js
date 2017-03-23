@@ -6,45 +6,53 @@ import './RoundSummary.css';
 const {
 	number,
 	object,
-	string,
 } = React.PropTypes;
 
 const RoundSummary = ({
 	damage = null,
 	loser,
-	numPinAttemptFailures = null,
 	roundNumber = 1,
-	targetStat,
 	winner,
+	pinAttempt,
+	submissionAttempt,
 }) => {
-	let description;
+	let summaryText = damage
+		? `${winner.name} inflicted ${damage} damage to ${loser.name}.`
+		: `${winner.name} did not inflict any damage to ${loser.name}.`;
 
-	if (damage) {
-		description = `${winner.name} inflicted ${damage} damage to ${loser.name}.`;
-		if (_.isNumber(numPinAttemptFailures)) {
-			description = `${description} ${winner.name} makes the cover!`;
-			if (numPinAttemptFailures === 0) {
-				description = `${description} And ${loser.name} kicks out right away!`;
-			}
-			if (numPinAttemptFailures === 1) {
-				description = `${description} 1... and a kick out!`;
-			}
-			if (numPinAttemptFailures === 2) {
-				description = `${description} 1... 2... and ${loser.name} just manages to get the shoulder up!`;
-			}
-			if (numPinAttemptFailures === 3) {
-				description = `${description} 1... 2... 3! DING DING DING!!`;
-			}
+	if (!_.isNull(pinAttempt)) {
+		const { count } = pinAttempt;
+		let pinText = ` ${winner.name} makes the cover!`
+		if (count === 0) {
+			pinText = `${pinText} And ${loser.name} kicks out right away!`;
+		} else if (count === 1) {
+			pinText = `${pinText} 1... and a kick out!`;
+		} else if (count === 2) {
+			pinText = `${pinText} 1... 2... and ${loser.name} just manages to get the shoulder up!`;
 		}
-	} else {
-		description = `${winner.name} did not inflict any damage to ${loser.name}.`;
+		pinText = `${pinText} 1... 2... 3! DING DING DING!!`;
+		summaryText = `${summaryText} ${pinText}`;
+	}
+
+	if (!_.isNull(submissionAttempt)) {
+		const {
+			cycles,
+			submitted,
+		} = submissionAttempt;
+		const durationText = cycles === 0
+			? ` immediately`
+			: ` after ${cycles} cycles in that submission hold`;
+		const submissionText = submitted
+			? ` ${loser.name} taps out ${durationText}!`
+			: ` ${loser.name} escapes ${durationText}.`;
+		summaryText = `${summaryText} ${submissionText}`;
 	}
 
 	return (
 		<Panel className='RoundSummary'>
 			<div>
 				<span>{roundNumber}</span>
-				<span>{description}</span>
+				<span>{summaryText}</span>
 			</div>
 		</Panel>
 	);
@@ -53,9 +61,7 @@ const RoundSummary = ({
 RoundSummary.propTypes = {
 	damage: number,
 	loser: object.isRequired,
-	numPinAttemptFailures: number,
 	roundNumber: number,
-	targetStat: string,
 	winner: object.isRequired,
 };
 
