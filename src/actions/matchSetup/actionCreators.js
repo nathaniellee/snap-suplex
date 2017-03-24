@@ -66,5 +66,10 @@ export default {
 		strategies,
 	}),
 
+	setWarnings: (warnings) => ({
+		type: actionTypes.SET_WARNINGS,
+		warnings,
+	}),
+
 	startMatch: () => ({ type: actionTypes.START_MATCH }),
 };

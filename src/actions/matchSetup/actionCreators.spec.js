@@ -69,6 +69,16 @@ describe('match action creators', () => {
 		});
 	});
 
+	describe('setWarnings', () => {
+		test('creates the expected action.', () => {
+			const expectedAction = {
+				type: actionTypes.SET_WARNINGS,
+				warnings: 6,
+			};
+			expect(actionCreators.setWarnings(6)).toEqual(expectedAction);
+		});
+	});
+
 	describe('startMatch', () => {
 		test('creates the expected action.', () => {
 			const expectedAction = { type: actionTypes.START_MATCH };

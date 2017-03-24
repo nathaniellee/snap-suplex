@@ -10,6 +10,7 @@ export default _.reduce([
 	'SET_PAGE_INDEX',
 	'SET_REF_SCORE',
 	'SET_STRATEGIES',
+	'SET_WARNINGS',
 	'START_MATCH',
 ], (actionTypes, type) => ({
 	...actionTypes,
