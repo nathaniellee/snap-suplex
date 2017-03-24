@@ -14,5 +14,6 @@ export default {
   roundNumber: null,
   rounds: [],
   strategies: null,
+  warnings: 0,
   wrestlers: {},   // Maybe this should also start off null...
 };
