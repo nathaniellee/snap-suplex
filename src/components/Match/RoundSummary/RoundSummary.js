@@ -29,8 +29,9 @@ const RoundSummary = ({
 			pinText = `${pinText} 1... and a kick out!`;
 		} else if (count === 2) {
 			pinText = `${pinText} 1... 2... and ${loser.name} just manages to get the shoulder up!`;
+		} else {
+			pinText = `${pinText} 1... 2... 3! DING DING DING!!`;
 		}
-		pinText = `${pinText} 1... 2... 3! DING DING DING!!`;
 		summaryText = `${summaryText} ${pinText}`;
 	}
 
