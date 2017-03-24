@@ -14,6 +14,7 @@ const {
 	SET_NUM_ROUNDS,
 	SET_PAGE_INDEX,
 	SET_REF_SCORE,
+	SET_WARNINGS,
 	START_MATCH,
 } = actionTypes;
 
@@ -85,6 +86,20 @@ describe('matchSetup', () => {
 
 				expect(state.refScore).toBe(6);
 				expect(_.omit(state, 'refScore')).toEqual(_.omit(defaultState, 'refScore'));
+			});
+		});
+
+		describe(`"${SET_WARNINGS}" action`, () => {
+			test('sets `warnings` in state to the value of `warnings` from the action.', () => {
+				expect(state).toEqual(defaultState);
+				action = {
+					type: SET_WARNINGS,
+					warnings: 8,
+				};
+				state = reducer(state, action);
+
+				expect(state.warnings).toBe(8);
+				expect(_.omit(state, 'warnings')).toEqual(_.omit(defaultState, 'warnings'));
 			});
 		});
 
