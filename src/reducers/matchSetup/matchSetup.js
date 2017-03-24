@@ -215,7 +215,7 @@ const match = (state = initialState, action = {}) => {
       }
 
       loserHealth -= damage;
-      if (loserHealth <= 15 && !loserSucceeded && winningFlag !== 'pinning') {
+      if (loserHealth <= 15 && !loserSucceeded && winningFlag !== 'submission') {
         shouldAttemptPin = true;
       }
 
