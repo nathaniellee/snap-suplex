@@ -258,10 +258,12 @@ const match = (state = initialState, action = {}) => {
             damage += submissionDamage;
           }
 
-          const numResistSubmissionFailures = getSubmissionAttemptResults(loserHealth);
-          if (numResistSubmissionFailures === 3) {
-            submitted = true;
-            return;
+          if (loserHealth <= 20) {
+            const numResistSubmissionFailures = getSubmissionAttemptResults(loserHealth);
+            if (numResistSubmissionFailures === 3) {
+              submitted = true;
+              return;
+            }
           }
 
           numSubmissionCycles += 1;
