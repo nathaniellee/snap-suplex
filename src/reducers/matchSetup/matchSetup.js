@@ -62,6 +62,14 @@ const match = (state = initialState, action = {}) => {
       };
     }
 
+    case actionTypes.SET_WARNINGS: {
+      const { warnings } = action;
+      return {
+        ...state,
+        warnings,
+      };
+    }
+
     case actionTypes.ADD_WRESTLER_TO_MATCH: {
       const { wrestlers } = state;
 
