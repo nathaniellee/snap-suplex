@@ -13,12 +13,22 @@ const RoundSummary = ({
 	loser,
 	roundNumber = 1,
 	winner,
+	caughtCheating,
+	disqualified,
 	pinAttempt,
 	submissionAttempt,
 }) => {
 	let summaryText = damage
 		? `${winner.name} inflicted ${damage} damage to ${loser.name}.`
 		: `${winner.name} did not inflict any damage to ${loser.name}.`;
+
+	if (caughtCheating) {
+		if (disqualified) {
+			summaryText = `${summaryText} ${winner.name} has been disqualified! The ref's calling for the bell!`;
+		} else {
+			summaryText = `${summaryText} ${winner.name}'s lucky that the ref didn't call for the bell right then and there!`;
+		}
+	}
 
 	if (!_.isNull(pinAttempt)) {
 		const { count } = pinAttempt;

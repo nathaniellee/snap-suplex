@@ -132,6 +132,8 @@ const match = (state = initialState, action = {}) => {
       const {
         attackerId,
         defenderId,
+        dqRating,
+        refScore,
         roundNumber,
         rounds,
         strategies,
@@ -177,6 +179,9 @@ const match = (state = initialState, action = {}) => {
       let winnerHealth = winner.health;
       let loserHealth = loser.health;
       let damage = winningLevel;
+      let warnings = state.warnings;
+      let caughtCheating = false;
+      let disqualified = false;
       let shouldAttemptPin = false;
       let shouldAttemptSubmission = false;
 
@@ -196,6 +201,13 @@ const match = (state = initialState, action = {}) => {
 
         case 'illegal': {
           damage += 1;
+          caughtCheating = !roll(refScore);
+          if (caughtCheating) {
+            warnings += winningLevel;
+            if (warnings >= dqRating) {
+              disqualified = true;
+            }
+          }
           break;
         }
 
@@ -223,65 +235,67 @@ const match = (state = initialState, action = {}) => {
       }
 
       loserHealth -= damage;
-      if (loserHealth <= 15 && !loserSucceeded && winningFlag !== 'submission') {
+      if (loserHealth <= 15 && !loserSucceeded && winningFlag !== 'submission' && !disqualified) {
         shouldAttemptPin = true;
       }
 
       let numPinAttemptFailures = null;
       let numSubmissionCycles = null;
-      let disqualified = false;
       let pinned = false;
       let submitted = false;
 
-      if (shouldAttemptPin) {
-        let numPinAttempts = 3;
-        numPinAttemptFailures = 0;
+      if (!disqualified) {
+        if (shouldAttemptPin) {
+          let numPinAttempts = 3;
+          numPinAttemptFailures = 0;
 
-        if (winningFlag === 'pinning') {
-          numPinAttempts = 2;
-          numPinAttemptFailures = 1;
-        }
-
-        // Account for finisher when we incorporate finishers.
-
-        numPinAttemptFailures += getPinAttemptResults(loserHealth, numPinAttempts);
-        if (numPinAttemptFailures === 3) {
-          pinned = true;
-        }
-      } else if (shouldAttemptSubmission) {
-        const escapeRating = 10 - winner.stats.tec;
-        const submissionDamage = winningLevel - 1;
-        numSubmissionCycles = 0;
-
-        const submissionCycle = () => {
-          const escaped = roll(escapeRating);
-          if (escaped) {
-            return;
+          if (winningFlag === 'pinning') {
+            numPinAttempts = 2;
+            numPinAttemptFailures = 1;
           }
 
-          // The victim takes damage every time they fail to escape the submission hold except in
-          // the case of the initial failure since damage plus bonuses was already inflicted.
-          if (numSubmissionCycles > 0) {
-            loserHealth -= submissionDamage;
-            damage += submissionDamage;
-          }
+          // Account for finisher when we incorporate finishers.
 
-          if (loserHealth <= 20) {
-            const numResistSubmissionFailures = getSubmissionAttemptResults(loserHealth);
-            if (numResistSubmissionFailures === 3) {
-              submitted = true;
+          numPinAttemptFailures += getPinAttemptResults(loserHealth, numPinAttempts);
+          if (numPinAttemptFailures === 3) {
+            pinned = true;
+          }
+        } else if (shouldAttemptSubmission) {
+          const escapeRating = 10 - winner.stats.tec;
+          const submissionDamage = winningLevel - 1;
+          numSubmissionCycles = 0;
+
+          const submissionCycle = () => {
+            const escaped = roll(escapeRating);
+            if (escaped) {
               return;
             }
-          }
 
-          numSubmissionCycles += 1;
+            // The victim takes damage every time they fail to escape the submission hold except in
+            // the case of the initial failure since damage plus bonuses was already inflicted.
+            if (numSubmissionCycles > 0) {
+              loserHealth -= submissionDamage;
+              damage += submissionDamage;
+            }
+
+            if (loserHealth <= 20) {
+              const numResistSubmissionFailures = getSubmissionAttemptResults(loserHealth);
+              if (numResistSubmissionFailures === 3) {
+                submitted = true;
+                return;
+              }
+            }
+
+            numSubmissionCycles += 1;
+            submissionCycle();
+          };
+
           submissionCycle();
-        };
-
-        submissionCycle();
+        }
       }
 
       // TODO: Decide if full strategies should be included in the results for logging purposes.
+      // TODO: Include data around illegal move being used.
       const roundResults = {
         winnerId: roundWinnerId,
         loserId: roundLoserId,
@@ -292,6 +306,7 @@ const match = (state = initialState, action = {}) => {
         numFavorites: winningStrats.numFavorites,
         flag: winningFlag,
         targetStat: winningStrats.targetStat,
+        caughtCheating,
         disqualified,
         pinAttempt: shouldAttemptPin
           ? {
@@ -307,6 +322,13 @@ const match = (state = initialState, action = {}) => {
           : null,
       };
 
+      let winnerId = null;
+      if (pinned || submitted) {
+        winnerId = roundWinnerId;
+      } else if (disqualified) {
+        winnerId = roundLoserId;
+      }
+
       return {
         ...state,
         attackerId: roundWinnerId,
@@ -316,7 +338,8 @@ const match = (state = initialState, action = {}) => {
           ...rounds,
           roundResults,
         ],
-        winnerId: pinned || submitted ? roundWinnerId : null,
+        warnings,
+        winnerId,
         wrestlers: {
           ...wrestlers,
           [roundLoserId]: {
