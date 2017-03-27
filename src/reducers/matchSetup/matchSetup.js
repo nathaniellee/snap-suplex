@@ -3,13 +3,11 @@ import actionTypes from '../../actions/actionTypes';
 import { defaultStrategy } from '../../constants/defaults';
 import initialState from '../../constants/initialMatchState';
 import {
-  getHealthLevel,
   getInitialHealth,
   getInitiative,
   pinAttempt,
   submissionAttempt,
-  getToHitModifier,
-  toHitRoll,
+  getRoundWinnerLoser,
   roll,
 } from '../../utils/match';
 
@@ -140,56 +138,44 @@ const match = (state = initialState, action = {}) => {
         wrestlers,
       } = state;
 
-      const attacker = _.get(wrestlers, attackerId);
-      const defender = _.get(wrestlers, defenderId);
-
-      const attackerHealthLevel = getHealthLevel(attacker.stats.sta, attacker.health);
-      const defenderHealthLevel = getHealthLevel(defender.stats.sta, defender.health);
-
-      const attackerRoundLevel = strategies[attackerId].level;
-      const defenderRoundLevel = strategies[defenderId].level;
-
-      const attackerToHitModifier = getToHitModifier(defenderHealthLevel, attackerRoundLevel);
-      const defenderToHitModifier = getToHitModifier(attackerHealthLevel, defenderRoundLevel);
-
-      const attackerStat = strategies[attackerId].stat;
-      const defenderStat = strategies[defenderId].stat;
-
       const {
-        attackerWon,
-        defenderSucceeded,
-      } = toHitRoll({
-        attackerStat: attacker.stats[attackerStat],
-        attackerToHitModifier,
-        defenderStat: defender.stats[defenderStat],
-        defenderToHitModifier,
+        roundWinner,
+        roundLoser,
+        roundLoserSucceeded,
+      } = getRoundWinnerLoser({
+        attackerId,
+        defenderId,
+        strategies,
+        wrestlers,
       });
 
-      const winner = attackerWon ? attacker : defender;
-      const loser = attackerWon ? defender : attacker;
-      const loserSucceeded = attackerWon ? defenderSucceeded : false;
-
-      const roundWinnerId = winner.id;
-      const roundLoserId = loser.id;
+      const roundWinnerId = roundWinner.id;
+      const roundLoserId = roundLoser.id;
 
       const winningStrats = strategies[roundWinnerId];
       const winningLevel = winningStrats.level;
       const winningFlag = winningStrats.flag;
 
-      let winnerHealth = winner.health;
-      let loserHealth = loser.health;
+      const losingStrats = strategies[roundLoserId];
+      const losingLevel = losingStrats.level;
+      const losingFlag = losingStrats.flag;
+
+      let roundWinnerHealth = roundWinner.health;
+      let roundLoserHealth = roundLoser.health;
       let damage = winningLevel;
       let warnings = state.warnings;
       let caughtCheating = false;
       let disqualified = false;
       let shouldAttemptPin = false;
       let shouldAttemptSubmission = false;
+      let pinned = false;
+      let submitted = false;
 
       switch (winningFlag) {
         case 'stiff': {
           damage += 1;
           if (roll(5)) {
-            winnerHealth -= 1;
+            roundWinnerHealth -= 1;
           }
           break;
         }
@@ -227,22 +213,17 @@ const match = (state = initialState, action = {}) => {
       }
 
       // If the round loser attempted a high risk move and missed, they suffer the consequences.
-      const losingStrats = strategies[roundLoserId];
-      const losingLevel = losingStrats.level;
-      const losingFlag = losingStrats.flag;
-      if (losingFlag === 'highrisk' && !loserSucceeded) {
+      if (losingFlag === 'highrisk' && !roundLoserSucceeded) {
         damage += losingLevel;
       }
 
-      loserHealth -= damage;
-      if (loserHealth <= 15 && !loserSucceeded && winningFlag !== 'submission' && !disqualified) {
+      roundLoserHealth -= damage;
+      if (roundLoserHealth <= 15 && !roundLoserSucceeded && winningFlag !== 'submission' && !disqualified) {
         shouldAttemptPin = true;
       }
 
       let numPinAttemptFailures = null;
       let numSubmissionCycles = null;
-      let pinned = false;
-      let submitted = false;
 
       if (!disqualified) {
         if (shouldAttemptPin) {
@@ -256,12 +237,12 @@ const match = (state = initialState, action = {}) => {
 
           // Account for finisher when we incorporate finishers.
 
-          numPinAttemptFailures += pinAttempt(loserHealth, numPinAttempts);
+          numPinAttemptFailures += pinAttempt(roundLoserHealth, numPinAttempts);
           if (numPinAttemptFailures === 3) {
             pinned = true;
           }
         } else if (shouldAttemptSubmission) {
-          const escapeRating = 10 - winner.stats.tec;
+          const escapeRating = 10 - roundWinner.stats.tec;
           const submissionDamage = winningLevel - 1;
           numSubmissionCycles = 0;
 
@@ -274,12 +255,12 @@ const match = (state = initialState, action = {}) => {
             // The victim takes damage every time they fail to escape the submission hold except in
             // the case of the initial failure since damage plus bonuses was already inflicted.
             if (numSubmissionCycles > 0) {
-              loserHealth -= submissionDamage;
+              roundLoserHealth -= submissionDamage;
               damage += submissionDamage;
             }
 
-            if (loserHealth <= 20) {
-              const numResistSubmissionFailures = submissionAttempt(loserHealth);
+            if (roundLoserHealth <= 20) {
+              const numResistSubmissionFailures = submissionAttempt(roundLoserHealth);
               if (numResistSubmissionFailures === 3) {
                 submitted = true;
                 return;
@@ -322,33 +303,33 @@ const match = (state = initialState, action = {}) => {
           : null,
       };
 
-      let winnerId = null;
+      let matchWinnerId = null;
       if (pinned || submitted) {
-        winnerId = roundWinnerId;
+        matchWinnerId = roundWinnerId;
       } else if (disqualified) {
-        winnerId = roundLoserId;
+        matchWinnerId = roundLoserId;
       }
 
       return {
         ...state,
         attackerId: roundWinnerId,
         defenderId: roundLoserId,
+        matchWinnerId,
         roundNumber: roundNumber + 1,
         rounds: [
           ...rounds,
           roundResults,
         ],
         warnings,
-        winnerId,
         wrestlers: {
           ...wrestlers,
           [roundLoserId]: {
-            ...loser,
-            health: loserHealth,
+            ...roundLoser,
+            health: roundLoserHealth,
           },
           [roundWinnerId]: {
-            ...winner,
-            health: winnerHealth,
+            ...roundWinner,
+            health: roundWinnerHealth,
           },
         },
       };

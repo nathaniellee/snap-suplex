@@ -6,15 +6,15 @@ import Dialog from './Dialog';
 
 const mapStateToProps = (state) => {
 	const {
+		matchWinnerId,
 		numRounds,
 		roundNumber,
-		winnerId,
 		wrestlers,
 	} = selectors.getMatchSetup(state);
 	return {
+		matchWinnerId,
 		numRounds,
 		roundNumber,
-		winnerId,
 		wrestlers,
 	};
 };

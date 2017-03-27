@@ -113,6 +113,47 @@ export const toHitRoll = ({
 	});
 };
 
+export const getRoundWinnerLoser = ({
+	attackerId,
+	defenderId,
+	strategies,
+	wrestlers,
+}) => {
+  const attacker = _.get(wrestlers, attackerId);
+  const defender = _.get(wrestlers, defenderId);
+
+  const {
+  	level: attackerStrategyLevel,
+  	stat: attackerStat,
+  } = strategies[attackerId];
+  const {
+  	level: defenderStrategyLevel,
+  	stat: defenderStat,
+  } = strategies[defenderId];
+
+  const attackerHealthLevel = getHealthLevel(attacker.stats.sta, attacker.health);
+  const defenderHealthLevel = getHealthLevel(defender.stats.sta, defender.health);
+
+  const attackerToHitModifier = getToHitModifier(defenderHealthLevel, attackerStrategyLevel);
+  const defenderToHitModifier = getToHitModifier(attackerHealthLevel, defenderStrategyLevel);
+
+  const {
+    attackerWon,
+    defenderSucceeded,
+  } = toHitRoll({
+    attackerStat: attacker.stats[attackerStat],
+    attackerToHitModifier,
+    defenderStat: defender.stats[defenderStat],
+    defenderToHitModifier,
+  });
+
+  return {
+  	roundWinner: attackerWon ? attacker : defender,
+  	roundLoser: attackerWon ? defender : attacker,
+  	roundLoserSucceeded: attackerWon ? defenderSucceeded : false,
+  };
+};
+
 // Returns the pin rating associated with the provided health value.
 const getPinRating = (health) => _.ceil(health / 5) + 1;
 

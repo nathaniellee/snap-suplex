@@ -1,9 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 import {
-// 	defaultDqRating,
 	defaultNumRounds,
-// 	defaultRefScore,
 } from '../../constants/defaults';
 import CurrentRound from './CurrentRound/ConnectedCurrentRound';
 import RoundSummary from './RoundSummary/RoundSummary';
@@ -20,20 +18,16 @@ export default React.createClass({
 	propTypes: {
 		attackerId: number,
 		defenderId: number,
-		// dqRating: number,
+		matchWinnerId: number,
 		numRounds: number,
-		// refScore: number,
 		roundNumber: number,
 		rounds: array,
-		winnerId: number,
 		wrestlers: object,
 	},
 
 	getDefaultProps() {
 		return {
-			// dqRating: defaultDqRating,
 			numRounds: defaultNumRounds,
-			// refScore: defaultRefScore,
 			roundNumber: 1,
 			rounds: [],
 			wrestlers: {},
@@ -44,13 +38,11 @@ export default React.createClass({
 		const {
 			attackerId,
 			defenderId,
-			// dqRating,
+			matchWinnerId,
 			numRounds,
-			// refScore,
 			roundNumber,
 			rounds,
 			strategies,
-			winnerId,
 			wrestlers,
 		} = this.props;
 		const timeLimitReached = roundNumber === numRounds + 1;
@@ -84,7 +76,7 @@ export default React.createClass({
 						/>
 					))}
 				</div>
-				{_.isNil(winnerId) && !timeLimitReached ? (
+				{_.isNil(matchWinnerId) && !timeLimitReached ? (
 					<div>
 						<CurrentRound
 							initialStrategies={strategies}

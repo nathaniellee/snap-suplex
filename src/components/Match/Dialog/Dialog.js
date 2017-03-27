@@ -18,9 +18,9 @@ const {
 
 export default React.createClass({
 	propTypes: {
+		matchWinnerId: number,
 		numRounds: number,
 		roundNumber: number,
-		winnerId: number,
 		wrestlers: object,
 		onClickConfirmMatchOver: func,
 	},
@@ -36,9 +36,9 @@ export default React.createClass({
 
 	render() {
 		const {
+			matchWinnerId,
 			numRounds,
 			roundNumber,
-			winnerId,
 			wrestlers,
 			onClickConfirmMatchOver,
 		} = this.props;
@@ -59,13 +59,13 @@ export default React.createClass({
 						<Match />
 					</Provider>
 				</section>
-				{_.isNil(winnerId) && !timeLimitReached ? null : (
+				{_.isNil(matchWinnerId) && !timeLimitReached ? null : (
 					<Dialog.Footer>
 						<span className='MatchDialog-result-description'>
-							{_.isNil(winnerId) ? (
+							{_.isNil(matchWinnerId) ? (
 								`Time limit draw!`
 							) : (
-								`${_.get(wrestlers, winnerId).name} wins!`
+								`${_.get(wrestlers, matchWinnerId).name} wins!`
 							)}
 						</span>
 						<span>
