@@ -6,10 +6,10 @@ import {
   getHealthLevel,
   getInitialHealth,
   getInitiative,
-  getPinAttemptResults,
-  getSubmissionAttemptResults,
+  pinAttempt,
+  submissionAttempt,
   getToHitModifier,
-  getToHitResults,
+  toHitRoll,
   roll,
 } from '../../utils/match';
 
@@ -158,7 +158,7 @@ const match = (state = initialState, action = {}) => {
       const {
         attackerWon,
         defenderSucceeded,
-      } = getToHitResults({
+      } = toHitRoll({
         attackerStat: attacker.stats[attackerStat],
         attackerToHitModifier,
         defenderStat: defender.stats[defenderStat],
@@ -256,7 +256,7 @@ const match = (state = initialState, action = {}) => {
 
           // Account for finisher when we incorporate finishers.
 
-          numPinAttemptFailures += getPinAttemptResults(loserHealth, numPinAttempts);
+          numPinAttemptFailures += pinAttempt(loserHealth, numPinAttempts);
           if (numPinAttemptFailures === 3) {
             pinned = true;
           }
@@ -279,7 +279,7 @@ const match = (state = initialState, action = {}) => {
             }
 
             if (loserHealth <= 20) {
-              const numResistSubmissionFailures = getSubmissionAttemptResults(loserHealth);
+              const numResistSubmissionFailures = submissionAttempt(loserHealth);
               if (numResistSubmissionFailures === 3) {
                 submitted = true;
                 return;

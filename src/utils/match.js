@@ -80,7 +80,7 @@ export const getInitiative = (wrestlers) => {
 };
 
 // Returns true if the attacker won the round and false if the defender won.
-export const getToHitResults = ({
+export const toHitRoll = ({
   attackerStat,
   attackerToHitModifier,
   defenderStat,
@@ -105,7 +105,7 @@ export const getToHitResults = ({
 		};
 	}
 
-	return getToHitResults({
+	return toHitRoll({
 	  attackerStat,
 	  attackerToHitModifier,
 	  defenderStat,
@@ -117,7 +117,7 @@ export const getToHitResults = ({
 const getPinRating = (health) => _.ceil(health / 5) + 1;
 
 // Returns the number of failed pin attempt rolls by the defender.
-export const getPinAttemptResults = (defenderHealth, numRolls) => {
+export const pinAttempt = (defenderHealth, numRolls) => {
 	const pinRating = getPinRating(defenderHealth);
 	let numFailures = 0;
 
@@ -136,7 +136,7 @@ export const getPinAttemptResults = (defenderHealth, numRolls) => {
 const getSubmissionRating = (health) => _.ceil(health / 5) + 1;
 
 // Returns the number of failed submission resist rolls by the defender.
-export const getSubmissionAttemptResults = (defenderHealth) => {
+export const submissionAttempt = (defenderHealth) => {
 	const submissionRating = getSubmissionRating(defenderHealth);
 	let numFailures = 0;
 
